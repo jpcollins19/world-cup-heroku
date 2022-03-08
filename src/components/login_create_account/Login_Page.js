@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { authenticate } from "../store";
+import { authenticate } from "../../store";
 import { useState } from "react";
 
 const Login_Page = () => {
@@ -18,7 +18,7 @@ const Login_Page = () => {
     ev.preventDefault();
     try {
       dispatch(authenticate(email, password));
-      location.hash = "#/home";
+      location.hash = "#/leaderboard";
     } catch (err) {
       console.log(err);
     }

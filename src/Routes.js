@@ -2,23 +2,33 @@ import { useEffect } from "react";
 import { withRouter, Route, Switch } from "react-router-dom";
 import { me } from "./store";
 import { useSelector, useDispatch } from "react-redux";
-// import Pre_Login_Page from "./pre_login/Pre_Login_Page";
-import Login_Page from "./components/Login_Page";
-import Home_Page from "./components/Home_Page";
+import Login_Page from "./components/login_create_account/Login_Page";
+import Leaderboard_Page from "./components/leaderboard/Leaderboard_Page";
+import Group_Details_Page from "./components/group_details/Group_Details_Page";
 
 const Routes = () => {
   const dispatch = useDispatch();
-  useEffect(() => dispatch(me()), []);
 
   const auth = useSelector((state) => state.auth);
 
+  useEffect(() => dispatch(me()), []);
+
+  const joe = useSelector((state) => state.users).find(
+    (user) => user.name === "Joe"
+  );
+
+  if (!auth || !joe) {
+    return null;
+  }
+
   return auth.id ? (
     <Switch>
-      <Route exact path="/home" component={Home_Page} />
+      <Route exact path="/leaderboard" component={Leaderboard_Page} />
+      <Route exact path="/group_details" component={Group_Details_Page} />
     </Switch>
   ) : (
     <Switch>
-      <Route exact path="/" component={Login_Page} />
+      <Route exact path="/login" component={Login_Page} />
     </Switch>
   );
 };
