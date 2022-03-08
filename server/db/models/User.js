@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const db = require("../db.js");
 require("dotenv").config();
 
-const { STRING, UUID, UUIDV4 } = Sequelize;
+const { STRING, UUID, UUIDV4, BOOLEAN, INTEGER } = Sequelize;
 
 const SALT_ROUNDS = 5;
 
@@ -33,6 +33,167 @@ const User = db.define("users", {
     validate: {
       notEmpty: true,
     },
+  },
+
+  paid: {
+    type: BOOLEAN,
+    defaultValue: false,
+  },
+  groupA1: {
+    type: STRING,
+  },
+  groupA2: {
+    type: STRING,
+  },
+  groupA3: {
+    type: STRING,
+  },
+  groupA4: {
+    type: STRING,
+  },
+
+  groupB1: {
+    type: STRING,
+  },
+  groupB2: {
+    type: STRING,
+  },
+  groupB3: {
+    type: STRING,
+  },
+  groupB4: {
+    type: STRING,
+  },
+
+  groupC1: {
+    type: STRING,
+  },
+  groupC2: {
+    type: STRING,
+  },
+  groupC3: {
+    type: STRING,
+  },
+  groupC4: {
+    type: STRING,
+  },
+
+  groupD1: {
+    type: STRING,
+  },
+  groupD2: {
+    type: STRING,
+  },
+  groupD3: {
+    type: STRING,
+  },
+  groupD4: {
+    type: STRING,
+  },
+
+  groupE1: {
+    type: STRING,
+  },
+  groupE2: {
+    type: STRING,
+  },
+  groupE3: {
+    type: STRING,
+  },
+  groupE4: {
+    type: STRING,
+  },
+
+  groupF1: {
+    type: STRING,
+  },
+  groupF2: {
+    type: STRING,
+  },
+  groupF3: {
+    type: STRING,
+  },
+  groupF4: {
+    type: STRING,
+  },
+
+  groupG1: {
+    type: STRING,
+  },
+  groupG2: {
+    type: STRING,
+  },
+  groupG3: {
+    type: STRING,
+  },
+  groupG4: {
+    type: STRING,
+  },
+
+  groupH1: {
+    type: STRING,
+  },
+  groupH2: {
+    type: STRING,
+  },
+  groupH3: {
+    type: STRING,
+  },
+  groupH4: {
+    type: STRING,
+  },
+
+  knockQ1: {
+    type: STRING,
+  },
+  knockQ2: {
+    type: STRING,
+  },
+  knockQ3: {
+    type: STRING,
+  },
+  knockQ4: {
+    type: STRING,
+  },
+  knockQ5: {
+    type: STRING,
+  },
+  knockQ6: {
+    type: STRING,
+  },
+  knockQ7: {
+    type: STRING,
+  },
+  knockQ8: {
+    type: STRING,
+  },
+
+  knockS1: {
+    type: STRING,
+  },
+  knockS2: {
+    type: STRING,
+  },
+  knockS3: {
+    type: STRING,
+  },
+  knockS4: {
+    type: STRING,
+  },
+
+  knockF1: {
+    type: STRING,
+  },
+  knockF2: {
+    type: STRING,
+  },
+
+  knockChamp: {
+    type: STRING,
+  },
+
+  tiebreaker: {
+    type: INTEGER,
   },
 });
 

@@ -1,3 +1,5 @@
+//transfer all src info to this app
+
 const express = require("express");
 const app = express();
 const syncAndSeed = require("./server/script/seed");
@@ -7,11 +9,9 @@ app.use(express.json());
 
 app.use("/dist", express.static(path.join(__dirname, "dist")));
 
-// app.use("/public/css", express.static(path.join(__dirname, "public/css")));
-// app.use("/public/pics", express.static(path.join(__dirname, "public/pics")));
-
-app.use("/", require("./server/api/users.js"));
-app.use("/", require("./server/api/auth.js"));
+app.use("/", require("./server/api/users"));
+app.use("/", require("./server/api/auth"));
+app.use("/", require("./server/api/teams"));
 app.use("/", (req, res, next) =>
   res.sendFile(path.join(__dirname, "html/main.html"))
 );
