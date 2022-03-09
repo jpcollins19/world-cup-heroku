@@ -14,7 +14,7 @@ const Header_NU = () => {
       />
       <CssBaseline />
       <AppBar
-        position="sticky"
+        position="fixed"
         color="default"
         elevation={0}
         sx={{

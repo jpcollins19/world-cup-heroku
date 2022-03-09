@@ -1,9 +1,14 @@
 import axios from "axios";
 
 const LOAD_USERS = "LOAD_USERS";
+const ADD_USER = "ADD_USER";
 
 const _loadUsers = (users) => {
   return { type: LOAD_USERS, users };
+};
+
+const _addUser = (user) => {
+  return { type: ADD_USER, user };
 };
 
 export const loadUsers = () => {
@@ -13,10 +18,19 @@ export const loadUsers = () => {
   };
 };
 
+export const addUser = (user) => {
+  return async (dispatch) => {
+    user = (await axios.post("/api/add/user", user)).data;
+    dispatch(_addUser(user));
+  };
+};
+
 export const users = (state = [], action) => {
   switch (action.type) {
     case LOAD_USERS:
       return action.users;
+    case ADD_USER:
+      return [...state, action.user];
     default:
       return state;
   }

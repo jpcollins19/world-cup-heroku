@@ -7,7 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 import Alert from "@mui/material/Alert";
 import { useDispatch, useSelector } from "react-redux";
-import { authenticate } from "../../store";
+import { addUser } from "../../store";
 import { useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
@@ -17,11 +17,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Login_Page = () => {
+const Create_Account_Page = () => {
   const dispatch = useDispatch();
 
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+  const [password1, setPassword1] = useState("");
   const [showPW, setShowPW] = useState(false);
   const [error, setError] = useState("");
 
@@ -40,16 +42,31 @@ const Login_Page = () => {
   }
 
   const onChange = (ev) => {
-    ev.target.name === "email"
-      ? setEmail(ev.target.value)
-      : setPassword(ev.target.value);
+    switch (ev.target.name) {
+      case "email":
+        setEmail(ev.target.value);
+        break;
+      case "name":
+        setName(ev.target.value);
+        break;
+      case "password":
+        setPassword(ev.target.value);
+        break;
+      case "password1":
+        setPassword1(ev.target.value);
+        break;
+      default:
+        break;
+    }
   };
+
+  console.log("pw", password);
 
   const onSubmit = async (ev) => {
     ev.preventDefault();
     try {
-      dispatch(authenticate(email, password));
-      location.hash = "#/leaderboard";
+      dispatch(addUser({ email, name, password }));
+      location.hash = "#/login";
     } catch (err) {
       console.log(err.response);
       setError(err.response);
@@ -57,9 +74,9 @@ const Login_Page = () => {
   };
 
   return (
-    <main id="login-page" className="white-text">
-      <div className="main-cont-login">
-        <div className="main-cont1-login">
+    <main id="create-account-page" className="white-text">
+      <div className="main-cont-create-account">
+        <div className="main-cont1-create-account">
           <div id="main-text-container-login" className="black-text">
             <Container component="main" maxWidth="xs">
               <CssBaseline />
@@ -72,12 +89,18 @@ const Login_Page = () => {
                 }}
               >
                 <Typography component="h1" variant="h">
-                  Sign in
+                  Create Account
                 </Typography>
                 <div className="error-cont-login">
                   <Alert severity="error">Alert goes here blah blah blah</Alert>
                 </div>
-                <Box component="form" onSubmit={onSubmit} sx={{ mt: 1 }}>
+                <Box
+                  component="form"
+                  onSubmit={onSubmit}
+                  sx={{ mt: 1 }}
+                  display="flex"
+                  flexDirection="column"
+                >
                   <TextField
                     onChange={onChange}
                     sx={{
@@ -91,16 +114,44 @@ const Login_Page = () => {
                     name="email"
                     inputProps={{
                       style: {
+                        textAlign: "center",
                         color: "black",
                         fontWeight: "bold",
                       },
                     }}
                     InputLabelProps={{
                       style: {
-                        display: "flex",
-                        justifyContent: "center",
+                        textAlign: "center",
                         color: "black",
                         marginLeft: "25%",
+                      },
+                    }}
+                    className={classes.textField}
+                  />
+
+                  <TextField
+                    onChange={onChange}
+                    sx={{
+                      margin: 1,
+                      padding: 0,
+                      width: 275,
+                    }}
+                    margin="normal"
+                    required
+                    label="Name"
+                    name="name"
+                    inputProps={{
+                      style: {
+                        textAlign: "center",
+                        color: "black",
+                        fontWeight: "bold",
+                      },
+                    }}
+                    InputLabelProps={{
+                      style: {
+                        textAlign: "center",
+                        color: "black",
+                        marginLeft: "35%",
                       },
                     }}
                     className={classes.textField}
@@ -133,24 +184,44 @@ const Login_Page = () => {
                     className={classes.textField}
                     // type={showPW ? "text" : "password"}
                   />
+
+                  <TextField
+                    onChange={onChange}
+                    sx={{
+                      margin: 1,
+                      padding: 0,
+                      width: 275,
+                    }}
+                    margin="normal"
+                    required
+                    label="Confirm Password"
+                    name="password1"
+                    inputProps={{
+                      style: {
+                        textAlign: "center",
+                        color: "black",
+                        fontWeight: "bold",
+                      },
+                    }}
+                    InputLabelProps={{
+                      style: {
+                        textAlign: "center",
+                        color: "black",
+                        marginLeft: "20%",
+                      },
+                    }}
+                    className={classes.textField}
+                    // type={showPW ? "text" : "password"}
+                  />
                   <div className="view-pw" onClick={() => showPwClick()}>
                     View Password
                   </div>
                   <div className="button-cont">
                     <button disabled={!email || !password}>
-                      <span className="button_top"> Sign In</span>
+                      <span className="button_top"> Submit</span>
                     </button>
                   </div>
                   <div className="forgot-pw-cont">
-                    <Link to="/forgot_pw" style={{ textDecoration: "none" }}>
-                      <h4 className="white-text">Forgot Password</h4>
-                    </Link>
-                    <Link
-                      to="/create_account"
-                      style={{ textDecoration: "none" }}
-                    >
-                      <h4 className="white-text">Create Account</h4>
-                    </Link>
                     <Link to="/" style={{ textDecoration: "none" }}>
                       <h4 className="white-text">Cancel</h4>
                     </Link>
@@ -165,4 +236,4 @@ const Login_Page = () => {
   );
 };
 
-export default Login_Page;
+export default Create_Account_Page;

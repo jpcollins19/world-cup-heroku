@@ -1,0 +1,206 @@
+.pre-login-page {
+  background-image: url("https://i2-prod.mirror.co.uk/incoming/article12925525.ece/ALTERNATES/s1200c/Final-France-vs-Croatia-Moscow-Russian-Federation-15-Jul-2018.jpg");
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+}
+
+#login-page {
+  padding-top: 16rem;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+#create-account-page {
+  padding-top: 14rem;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.black-text {
+  margin: 0;
+  text-align: center;
+  color: black;
+}
+
+.main-cont-login {
+  border-radius: 1rem;
+  padding: 0.5rem;
+  background: black;
+  height: 33rem;
+  width: 30rem;
+}
+
+.main-cont-create-account {
+  border-radius: 1rem;
+  padding: 1rem;
+  background: black;
+  height: 39rem;
+  width: 30rem;
+}
+
+.main-cont1-login {
+  border-radius: 1rem;
+  padding: 1rem;
+  height: 32rem;
+  background: linear-gradient(
+    to right,
+    blue 0%,
+    blue 15%,
+    white 30%,
+    white 70%,
+    red 85%,
+    red 100%
+  );
+}
+
+.main-cont1-create-account {
+  border-radius: 1rem;
+  padding: 1rem;
+  height: 37rem;
+  background: linear-gradient(
+    to right,
+    blue 0%,
+    blue 15%,
+    white 30%,
+    white 70%,
+    red 85%,
+    red 100%
+  );
+}
+
+#main-text-container-login > h1 {
+  margin: 0;
+  padding: 1rem 0rem 0rem 0rem;
+}
+
+/* .error-cont-login {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0rem 0rem 0rem;
+  text-shadow: 0px 0px black;
+} */
+
+/* .login-cont {
+  display: flex;
+  flex-direction: column;
+  height: 6rem;
+  justify-content: space-around;
+}
+
+.create-account-cont {
+  display: flex;
+  flex-direction: column;
+  height: 10rem;
+  justify-content: space-around;
+} */
+
+/* .login-cont > div {
+  padding-bottom: 1rem;
+} */
+
+/* #email-info {
+  height: 2rem;
+  width: 15rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+#pw-info {
+  height: 2rem;
+  width: 15rem;
+  text-align: center;
+  font-size: 1rem;
+} */
+
+/* #submit-cont {
+  padding: 1rem;
+}
+
+#submit-info {
+  height: 2rem;
+  width: 5rem;
+} */
+
+/* .pw-cont {
+  display: flex;
+  flex-direction: column;
+} */
+
+.view-pw {
+  font-size: 1rem;
+  text-shadow: none;
+  cursor: pointer;
+  padding-bottom: 1rem;
+}
+
+.button-cont {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  /* Variables */
+  --button_radius: 0.75em;
+  --button_color: #e8e8e8;
+  --button_outline_color: #000000;
+  font-size: 17px;
+  font-weight: bold;
+  border: none;
+  border-radius: var(--button_radius);
+  background: var(--button_outline_color);
+  width: 10rem;
+}
+
+.button_top {
+  display: block;
+  box-sizing: border-box;
+  border: 2px solid var(--button_outline_color);
+  border-radius: var(--button_radius);
+  padding: 0.75em 1.5em;
+  background: var(--button_color);
+  color: var(--button_outline_color);
+  transform: translateY(-0.2em);
+  transition: transform 0.1s ease;
+}
+
+button:hover .button_top {
+  /* Pull the button upwards when hovered */
+  transform: translateY(-0.33em);
+}
+
+button:active .button_top {
+  /* Push the button downwards when pressed */
+  transform: translateY(0);
+}
+
+.forgot-pw-cont {
+  padding: 1rem 1rem 0.5rem 1rem;
+}
+
+.forgot-pw-cont > a > h4 {
+  margin: 0.5rem;
+}
+
+/* .forgot-pw-info > div {
+  display: flex;
+  align-items: center;
+  padding: 3rem 3rem 0rem 3rem;
+  flex-direction: column;
+  text-align: center;
+}
+
+.forgot-pw-info > ul {
+  display: flex;
+  align-items: center;
+  padding: 3rem;
+  flex-direction: column;
+} */
+
+/* #create-account-cont {
+  padding: 0rem 1rem 0.5rem 1rem;
+} */
