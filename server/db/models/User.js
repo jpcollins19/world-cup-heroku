@@ -34,6 +34,10 @@ const User = db.define("users", {
       notEmpty: true,
     },
   },
+  admin: {
+    type: BOOLEAN,
+    defaultValue: false,
+  },
 
   paid: {
     type: BOOLEAN,
@@ -204,7 +208,7 @@ const User = db.define("users", {
 
 //before WC starts: pre
 //once the WC commences: commenced
-//once groupstage settles, before KO stage begins: pre-KO
+//once groupstage settles, before KO stage begins: pre-ko
 //once KO stage commences: KO
 
 User.addHook("beforeSave", async function (user) {

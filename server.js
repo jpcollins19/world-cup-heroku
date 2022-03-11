@@ -1,4 +1,12 @@
-//start an excel doc with stage info like you did for the masters
+//add each page accordingly, audit below to see if you have notes for the page at hand
+
+//rules
+//group details
+//my picks through the group stage
+//pool picks through the group stage
+//leaderboard
+//my picks for KO stage
+//pool picks for KO stage
 
 ////my_picks_unlocked page
 
@@ -40,55 +48,9 @@
 //what does it look like pre-tournament
 
 //------------------------------------------------------------
-////before WC starts - BEFORE part makes their picks:\
 
-//My_Picks_Locked: hide the "bottom box" tag
-//Pool_Picks_Page: hide the "top-box" tag
-//Pool_Picks_Page: hide "bottom box" tag
-//Point_System_Cont: hide the pathname conditional that holds the pool_picks "select" tag
-//App: comment out the My_Picks_Unlocked path that goes to the knockout path - audit to make sure this works
-//My_Picks_Unlocked: hide the "bottom box" tag?
-
-//------------------------------------------------------------
-////before WC starts - AFTER part makes their picks:
-
-//Pool_Picks_Page: un-hide the "top-box" tag
-
-//------------------------------------------------------------
-////once the WC commences:
-
-//Point_System_Cont: hide the pathname conditional that holds the my_picks "select / adjust picks" tag
-//Leaderboard_Page: un-hide the Leaderboard_Cont component
-//Point_System_Cont: un-hide the pathname conditional that holds the pool_picks "select" tag
-//App: comment out the My_Picks_Unlocked path that goes to the group path - audit to make sure this works
-
-//------------------------------------------------------------
-////once groupstage settles, before KO stage begins
-
-//postgres_info: complete the groupFinishingPosition instance for each team.
-//Point_System_Cont: hide the pathname conditional that holds the pool_picks "select" tag
-//Pool_Picks_Page: hide the "box left" tag
-//My_Picks_Locked: un-hide the "bottom box" tag
-//Point_System_Cont: un-hide the pathname conditional that holds the my_picks "select" tag
-//need to potentially change this one: adjust the edit options to only edit the ko stage info
-//App: un-hide the My_Picks_Unlocked path that goes to the KO path - audit to make sure this works
-
-//------------------------------------------------------------
-////once KO stage commences:
-
-//Point_System_Cont: hide the pathname conditional that holds the my_picks "select" tag
-//Pool_Picks_Page: un-hide "box left" tag
-//Pool_Picks_Page: un-hide "bottom box" tag
-//Pool_Picks_Page: comment out all of the <div>&nbsp;</div> at the bottom
-//Point_System_Cont: un-hide the pathname conditional that holds the pool_picks "select" tag
-//App: comment out the My_Picks_Unlocked path that goes to the KO path - audit to make sure this works
-
-//------------------------------------------------------------
-//stage table:
-//before WC starts: pre-WC
-//once the WC commences: WC-C
-//once groupstage settles, before KO stage begins: pre-KO
-//once KO stage commences: KO-C
+//admin page
+//edit name page
 
 //apply all error handling
 

@@ -50,6 +50,7 @@ const users = [
     email: "joe@gmail.com",
     password: "joe",
     name: "Joe",
+    admin: true,
 
     groupA1: "Uruguay",
     groupA2: "Russia",
@@ -364,6 +365,7 @@ const syncAndSeed = async () => {
         email: obj.email,
         password: obj.password,
         name: obj.name,
+        admin: obj.admin,
         groupA1: obj.groupA1,
         groupA2: obj.groupA2,
         groupA3: obj.groupA3,
