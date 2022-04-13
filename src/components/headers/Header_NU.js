@@ -8,13 +8,13 @@ import "./Headers.css";
 
 const Header_NU = () => {
   return (
-    <div>
+    <div className="header-cont">
       <GlobalStyles
         styles={{ ul: { margin: 0, padding: 0, listStyle: "none" } }}
       />
       <CssBaseline />
       <AppBar
-        position="fixed"
+        position="sticky"
         color="default"
         elevation={0}
         sx={{
@@ -35,7 +35,7 @@ const Header_NU = () => {
             color="inherit"
             sx={{ flexGrow: 1, textAlign: "center" }}
           >
-            Qatar World Cup
+            Qatar 2022 World Cup
           </Typography>
         </Toolbar>
         <Toolbar sx={{ justifyContent: "center" }}>

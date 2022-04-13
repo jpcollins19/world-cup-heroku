@@ -1,22 +1,22 @@
 .pre-login-page {
-  background-image: url("https://i2-prod.mirror.co.uk/incoming/article12925525.ece/ALTERNATES/s1200c/Final-France-vs-Croatia-Moscow-Russian-Federation-15-Jul-2018.jpg");
+  background-image: url("https://media.gettyimages.com/photos/kylian-mbappe-of-france-celebrates-with-the-world-cup-trophy-his-picture-id999533962?s=612x612");
   width: 100vw;
-  height: 100vh;
+  height: 84vh;
   background-size: cover;
 }
 
 #login-page {
-  padding-top: 16rem;
+  padding-top: 7rem;
   width: 100vw;
-  height: 100vh;
+  height: 84vh;
   display: flex;
   justify-content: center;
 }
 
 #create-account-page {
-  padding-top: 14rem;
+  padding-top: 7rem;
   width: 100vw;
-  height: 100vh;
+  height: 84vh;
   display: flex;
   justify-content: center;
 }
@@ -37,9 +37,9 @@
 
 .main-cont-create-account {
   border-radius: 1rem;
-  padding: 1rem;
+  padding: 0.5rem;
   background: black;
-  height: 39rem;
+  height: 38rem;
   width: 30rem;
 }
 
@@ -161,7 +161,7 @@ button {
   box-sizing: border-box;
   border: 2px solid var(--button_outline_color);
   border-radius: var(--button_radius);
-  padding: 0.75em 1.5em;
+  padding: 0.75em;
   background: var(--button_color);
   color: var(--button_outline_color);
   transform: translateY(-0.2em);

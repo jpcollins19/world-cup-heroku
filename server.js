@@ -1,50 +1,40 @@
-//add each page accordingly, audit below to see if you have notes for the page at hand
-
-//rules
-//group details
 //my picks through the group stage
 //pool picks through the group stage
 //leaderboard
 //my picks for KO stage
 //pool picks for KO stage
+//edit name
+//admin
 
 ////my_picks_unlocked page
-
-//////group
+///group
 //need to make it a component and on step to house changes to the component state
-//cannot submit the same team more than once
+//error handling in excel doc
+
+////my_picks_locked
+//way to tell if someone hasn't paid
+//way to tell if someone has invalid picks?
 
 //////knockout
 //create a page to edit the knockout picks
 //knockout stage - add logic for when you click on a R16 name, it auto poulates into the quarters
-//if you edit a team to advance, and you have them winning the tourney - un select all previous picks
+//error handling in excel doc
 
-//create a stage instance and apply this to each wc stage of your server notes
-//^^ audit after
-
-////my_picks_unlocked page
-//error handling
-//group - cannot submit the same team twice
-//group - incomplete picks
-//no tiebreaker
-//ko - incomplete picks
-
-////new login - pre tourney
+////pre tourney
 //when the part has no selections, only the option to choose group picks shows
 //^^cannot submit incomplete picks
-//make it so you cannot submit the same userName(when the time comes to create login info)
 
-//new login - mid tourny - aka knockout stage
+//mid tourny - aka knockout stage
 //knockout stage - add logic for when you click on a R16 name, it auto poulates into the quarters
 
 ////rules page
 //adjust rules/scoring accordingly
-//adjust payment and submitting info too
+//adjust payment and submitting info
 
 ////pool-picks
 //what does it look like pre-tournament - make the van persie pic fit the screen?
 
-//all other tabs
+//all tabs
 //what does it look like pre-tournament
 
 //------------------------------------------------------------
@@ -53,6 +43,8 @@
 //edit name page
 
 //apply all error handling
+
+//incorporate web sockets for teams and parts
 
 //figure out a forgot pw route
 

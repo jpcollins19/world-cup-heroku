@@ -417,6 +417,24 @@ const currentScoresObj = (parts, teams, actualGoalsScored = null) => {
     }, {});
 };
 
+const groupDetailsPush = (arr, group) => {
+  return (
+    <div>
+      <div className="single-group-cont-text-1">
+        <h3>Group {group}</h3>
+        {arr
+          .filter((team) => team.group === group)
+          .map((team) => (
+            <div key={team.id}>
+              <img className="flag" src={team.flag}></img>
+              <div className="country-name">{team.name}</div>
+            </div>
+          ))}
+      </div>
+    </div>
+  );
+};
+
 module.exports = {
   singleGroupCalc,
   totalScoreCalc,
@@ -424,4 +442,5 @@ module.exports = {
   knockoutPartTeamPush,
   knockoutPartClassPush,
   currentScoresObj,
+  groupDetailsPush,
 };

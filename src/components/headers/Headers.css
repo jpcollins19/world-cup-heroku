@@ -1,3 +1,10 @@
+.header-cont {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 15vh;
+}
+
 .login-row {
   display: flex;
   padding: 0;
@@ -8,6 +15,8 @@
 .last-updated-cont {
   padding: 0.9rem 0rem 0rem 1rem;
   flex-grow: 1;
+  font-weight: bold;
+  font-size: 1.3rem;
 }
 
 .last-updated-cont-NU {
@@ -19,4 +28,13 @@
   padding: 0.5rem 3rem 0rem 0rem;
   font-size: 1.5rem;
   padding-bottom: 2rem;
+}
+
+.login-cont > a {
+  color: blue;
+}
+
+.body-cont {
+  overflow: auto;
+  height: 84vh;
 }

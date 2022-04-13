@@ -1,0 +1,61 @@
+.group-details-page {
+  background-image: url("https://c8.alamy.com/comp/2EC1NN4/football-nike-2006-world-cup-official-kit-launch-for-brazil-portugal-australia-holland-korea-mexico-croatia-usa-olympic-stadium-berlin-germany-13206-l-r-australias-marco-bresciano-damarcus-beasley-of-the-us-hollands-ruud-van-nistelrooy-portugals-luis-figo-brazils-adriano-koreas-js-park-croatias-dado-prso-and-mexicos-jared-borgetti-pose-with-their-kits-for-the-fifa-world-cup-2006-mandatory-credit-action-images-tobias-schwarz-livepic-2EC1NN4.jpg");
+  width: 100vw;
+  height: 84vh;
+  background-size: cover;
+}
+
+.group-details-full-table-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100vw;
+  height: 75vh;
+}
+
+.single-group-cont {
+  padding: 3rem 6rem 0rem 6rem;
+}
+
+.single-group-cont-text-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem 2rem 1rem 3rem;
+  /* background-color: rgb(240, 244, 205); */
+  background: linear-gradient(
+    to bottom,
+    rgb(159, 159, 147) 0%,
+    rgb(222, 222, 212) 25%,
+    rgb(203, 203, 192) 50%,
+    rgb(222, 222, 212) 75%,
+    rgb(159, 159, 147) 100%
+  );
+  border-radius: 4rem;
+  width: 18rem;
+  height: 17rem;
+}
+
+.single-group-cont-text-1 > h3 {
+  margin-top: 0rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+.single-group-cont-text-1 > div {
+  display: flex;
+  align-items: center;
+}
+
+.flag {
+  height: 25px;
+  width: 45px;
+}
+
+.country-name {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  padding-left: 1rem;
+}

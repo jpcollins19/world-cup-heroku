@@ -74,6 +74,7 @@ const Login_Page = () => {
                 <Typography component="h1" variant="h">
                   Sign in
                 </Typography>
+
                 <div className="error-cont-login">
                   <Alert severity="error">Alert goes here blah blah blah</Alert>
                 </div>
@@ -93,6 +94,7 @@ const Login_Page = () => {
                       style: {
                         color: "black",
                         fontWeight: "bold",
+                        textAlign: "center",
                       },
                     }}
                     InputLabelProps={{

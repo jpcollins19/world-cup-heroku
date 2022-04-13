@@ -7,12 +7,14 @@ import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import GlobalStyles from "@mui/material/GlobalStyles";
 import "./Headers.css";
+import { useLocation } from "react-router-dom";
 
 const Header_U = () => {
+  const { pathname } = useLocation();
   const dispatch = useDispatch();
 
   return (
-    <div>
+    <div className="header-cont">
       <GlobalStyles
         styles={{ ul: { margin: 0, padding: 0, listStyle: "none" } }}
       />
@@ -41,48 +43,76 @@ const Header_U = () => {
             color="inherit"
             sx={{ flexGrow: 1, textAlign: "center" }}
           >
-            Qatar World Cup
+            Qatar 2022 World Cup
           </Typography>
         </Toolbar>
         <Toolbar sx={{ justifyContent: "center" }}>
           <nav>
             <Link
               variant="button"
-              color="text.primary"
               href="#/leaderboard"
               sx={{ my: 1, mx: 1.5 }}
+              color={pathname === "/leaderboard" ? "#ede7f6" : "text.primary"}
+              // className={pathname === "/leaderboard" && "selected"}
+              fontWeight="bold"
+              backgroundColor={
+                pathname === "/leaderboard" ? "#115293" : "inherit"
+              }
+              borderRadius="4rem"
+              padding="7"
             >
               Leaderboard
             </Link>
+
             <Link
               variant="button"
-              color="text.primary"
               href="#/my_picks"
               sx={{ my: 1, mx: 1.5 }}
+              color={pathname === "/my_picks" ? "#ede7f6" : "text.primary"}
+              fontWeight="bold"
+              backgroundColor={pathname === "/my_picks" ? "#115293" : "inherit"}
+              borderRadius="4rem"
+              padding="7"
             >
               My Picks
             </Link>
             <Link
               variant="button"
-              color="text.primary"
               href="#/pool_picks"
               sx={{ my: 1, mx: 1.5 }}
+              color={pathname === "/pool_picks" ? "#ede7f6" : "text.primary"}
+              fontWeight="bold"
+              backgroundColor={
+                pathname === "/pool_picks" ? "#115293" : "inherit"
+              }
+              borderRadius="4rem"
+              padding="7"
             >
               Pool Picks
             </Link>
             <Link
               variant="button"
-              color="text.primary"
               href="#/group_details"
               sx={{ my: 1, mx: 1.5 }}
+              color={pathname === "/group_details" ? "#ede7f6" : "text.primary"}
+              fontWeight="bold"
+              backgroundColor={
+                pathname === "/group_details" ? "#115293" : "inherit"
+              }
+              borderRadius="4rem"
+              padding="7"
             >
               Group Details
             </Link>
             <Link
               variant="button"
-              color="text.primary"
               href="#rules"
               sx={{ my: 1, mx: 1.5 }}
+              color={pathname === "/rules" ? "#ede7f6" : "text.primary"}
+              fontWeight="bold"
+              backgroundColor={pathname === "/rules" ? "#115293" : "inherit"}
+              borderRadius="4rem"
+              padding="7"
             >
               Rules / General Information
             </Link>
