@@ -57,7 +57,7 @@ const Login_Page = () => {
   };
 
   return (
-    <main id="login-page" className="white-text">
+    <main id="login-page">
       <div className="main-cont-login">
         <div className="main-cont1-login">
           <div id="main-text-container-login" className="black-text">
@@ -145,16 +145,16 @@ const Login_Page = () => {
                   </div>
                   <div className="forgot-pw-cont">
                     <Link to="/forgot_pw" style={{ textDecoration: "none" }}>
-                      <h4 className="white-text">Forgot Password</h4>
+                      <h4>Forgot Password</h4>
                     </Link>
                     <Link
                       to="/create_account"
                       style={{ textDecoration: "none" }}
                     >
-                      <h4 className="white-text">Create Account</h4>
+                      <h4>Create Account</h4>
                     </Link>
                     <Link to="/" style={{ textDecoration: "none" }}>
-                      <h4 className="white-text">Cancel</h4>
+                      <h4>Cancel</h4>
                     </Link>
                   </div>
                 </Box>

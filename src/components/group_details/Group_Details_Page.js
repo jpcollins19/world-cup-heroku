@@ -15,13 +15,15 @@ const Group_Details_Page = () => {
         ? "Brazil"
         : team.name === "Switz"
         ? "Switzerland"
-        : team.name === "Costa Rica"
-        ? "Costa_Rica"
+        : team.name === "USA"
+        ? "United_States"
         : team.name === "S. Korea"
         ? "South_Korea"
         : team.name
     }.jpg`,
   }));
+
+  console.log(teams);
 
   return (
     <main className="group-details-page">

@@ -8,6 +8,7 @@ import Create_Account_Page from "./components/login_create_account/Create_Accoun
 import Leaderboard_Page from "./components/leaderboard/Leaderboard_Page";
 import Group_Details_Page from "./components/group_details/Group_Details_Page";
 import Rules_Page from "./components/rules/Rules_Page";
+import My_Picks_Locked_Page from "./components/my_picks/My_Picks_Locked_Page";
 
 const Routes = () => {
   const dispatch = useDispatch();
@@ -27,6 +28,7 @@ const Routes = () => {
   return auth.id ? (
     <Switch>
       <Route exact path="/leaderboard" component={Leaderboard_Page} />
+      <Route exact path="/my_picks" component={My_Picks_Locked_Page} />
       <Route exact path="/group_details" component={Group_Details_Page} />
       <Route exact path="/rules" component={Rules_Page} />
     </Switch>

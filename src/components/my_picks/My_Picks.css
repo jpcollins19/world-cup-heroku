@@ -1,0 +1,511 @@
+.my-picks-page {
+  background-image: url("https://as01.epimg.net/futbol/imagenes/2020/04/10/primera/1586529604_835391_1586529700_noticia_normal.jpg");
+  width: 99.5vw;
+  max-height: 82.5vh;
+  min-height: 82.5vh;
+  background-size: cover;
+  overflow: auto;
+  margin-top: 1rem;
+}
+
+.my-picks-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.my-picks-header {
+  display: flex;
+  border: solid 4px cornsilk;
+}
+
+.point-system-table-cont {
+  display: flex;
+  padding: 1rem 0rem 0rem 1rem;
+  align-items: center;
+  border: solid 4px red;
+  flex: 0.37;
+}
+
+.point-system-table-text {
+  display: flex;
+  flex: 0.45;
+  border: solid 4px blue;
+}
+
+.point-system-table-text > div {
+  background-color: rgb(235, 209, 209);
+}
+
+.color-cont {
+  width: 1rem;
+}
+
+.blue-PS {
+  background-color: rgb(12, 218, 233);
+  color: rgb(12, 218, 233);
+}
+
+.yellow-PS {
+  background-color: yellow;
+  color: yellow;
+}
+
+.green-PS {
+  background-color: rgb(8, 233, 8);
+  color: rgb(8, 233, 8);
+}
+
+.orange-PS {
+  background-color: orange;
+  color: orange;
+}
+
+.notes-cont {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border: solid 4px purple;
+  min-width: 31rem;
+}
+
+.my-picks-header-name {
+  display: flex;
+  border: solid 4px dodgerblue;
+  flex: 0.23;
+  justify-content: center;
+}
+
+.my-picks-header-name > h1 {
+  display: flex;
+  align-items: center;
+  font-size: 3rem;
+}
+
+.white-text {
+  margin: 0;
+  text-align: center;
+  text-shadow: 2px 2px black;
+  color: white;
+}
+
+.button-cont-picks {
+  display: flex;
+  flex: 0.4;
+  justify-content: center;
+  border: solid 4px purple;
+  align-items: center;
+}
+
+.button-cont-picks > button {
+  cursor: pointer;
+  width: 16rem;
+  height: 3rem;
+  background-color: rgb(204, 200, 200);
+}
+
+.button-cont-picks > button > a {
+  color: black;
+}
+
+.top {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  border: solid 4px red;
+}
+
+.box {
+  padding: 1rem;
+  margin: 0.5rem;
+}
+
+.left {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  border: solid 4px green;
+  padding: 0;
+}
+
+.predictions-cont {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border: solid 4px orange;
+}
+
+.single-group-cont-picks {
+  width: 21.5rem;
+  border: solid 4px dodgerblue;
+}
+
+.single-group-cont-picks > h4 {
+  text-shadow: 2px 2px black;
+  color: white;
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.3rem;
+  font-size: 1.5rem;
+}
+
+.single-group-cont-picks > div {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.8rem;
+  border: solid black 2px;
+  border-radius: 1rem;
+  background-color: rgb(235, 209, 209);
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+
+.single-group-cont-picks > div > div > h5 {
+  margin: 0rem;
+}
+
+.single-group-cont-picks > div > div > div {
+  margin: 0.1rem;
+  border: solid black 1px;
+}
+
+.right {
+  width: 20%;
+  border: solid 4px purple;
+}
+
+.prediction-cont > div {
+  width: 8rem;
+}
+
+.outcome-pos-cont > div {
+  width: 8rem;
+}
+
+.points-cont > div > h2 {
+  padding: 1rem;
+}
+
+.blue {
+  background-color: rgb(12, 218, 233);
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.green {
+  background-color: rgb(8, 233, 8);
+}
+
+.orange {
+  background-color: orange;
+}
+
+/* .submit {
+  display: flex;
+  justify-content: end;
+  padding-right: 20rem;
+  }
+  
+  .cancel {
+    display: flex;
+    justify-content: end;
+    padding-right: 23.5rem;
+    color:white;
+    padding-top: .5rem
+  
+    }
+  
+  
+  .top-unlocked {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .single-group-cont-picks-unlocked {
+    width: 12rem;
+  }
+  
+  .single-group-cont-picks-unlocked > h4 {
+    text-shadow: 2px 2px black;
+    color: white;
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 0.3rem;
+    font-size: 0.8rem;
+  }
+  
+  .single-group-cont-picks-unlocked > div {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.8rem;
+    border: solid red 2px;
+    border-radius: 1rem;
+    background-color: rgb(235, 209, 209);
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+  }
+  
+  .single-group-cont-picks-unlocked > div > div > h5 {
+    margin: 0rem;
+    padding: 0rem;
+  }
+  
+  .single-group-cont-picks-unlocked > div > div > div {
+    margin: 0.1rem;
+    border: solid black 1px;
+  }
+  
+  .tiebreaker > h2{
+  margin-bottom: .5rem
+  }
+  
+  .tiebreaker > input{
+    text-align: center;
+    font-weight: bolder;
+  }
+  
+  .prediction-cont-locked {
+    width: 7rem;
+  }
+  
+  .prediction-cont-locked > select {
+    width: 7rem;
+    text-align: center
+  }
+  
+  button {
+    width: 10rem;
+    height: 2rem;
+  }
+  
+  .bottom > div {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .knockout-cont-unlocked {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+  
+  .knockout-cont-unlocked > div {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .knockout-cont-unlocked > div > div {
+    width: 8rem;
+    text-align: center;
+  }
+  
+  .knockout-cont-unlocked > div > div > h2 {
+    text-shadow: 2px 2px black;
+    color: white;
+  }
+  
+  .knockout-cont-unlocked > div > div > div > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid red 2px;
+    height: 2rem;
+    border-radius: 0.5rem;
+    background-color: rgb(117, 107, 107);
+  }
+  
+  .knockout-cont-unlocked > div > .champ {
+    width: 10rem;
+  }
+  
+  .knockout-cont-unlocked > div > .champ > div > div {
+    height: 4rem;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+  
+  * {
+  box-sizing: border-box;
+}
+
+.picks-header {
+  padding: 0rem 8rem 0rem 8rem;
+}
+
+.left > h2 {
+  font-size: 2rem;
+  padding-bottom: 1rem;
+}
+
+
+
+
+
+
+
+
+
+.total-points-cont {
+  padding-top: 0.3rem;
+  padding-bottom: 0.1rem;
+}
+
+.total-points-cont > div {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  max-height: 400px;
+  list-style: none;
+  overflow: auto;
+}
+
+.total-points-cont > h4 {
+  text-shadow: 2px 2px black;
+  color: white;
+}
+
+.total-points-cont > div > div > h4 {
+  text-shadow: 2px 2px black;
+  color: white;
+}
+
+.total-points-cont > div > div > div {
+  border: solid black 1px;
+  padding: 0.3rem;
+}
+
+.total-points-text-cont {
+  width: 7rem;
+}
+
+.total-points-text-cont > h4 {
+  margin: 0;
+  padding: 0.5rem;
+}
+
+.total-points-text-cont > div {
+  border: solid black 2px;
+  background-color: rgb(235, 209, 209);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.total-points-points-cont {
+  width: 4rem;
+}
+
+.total-points-points-cont > h4 {
+  margin: 0;
+  padding: 0.2rem 0.2rem 0.2rem 0rem;
+}
+
+.total-points-points-cont > div {
+  border: solid black 2px;
+  background-color: rgb(235, 209, 209);
+  margin: 0.2rem 0.2rem 0.2rem 0rem;
+}
+
+.center {
+  text-align: center;
+}
+
+.knockout-cont {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.knockout-cont > div {
+  display: flex;
+  justify-content: space-around;
+}
+
+.knockout-cont > div > div {
+  width: 8rem;
+  text-align: center;
+}
+
+.joe {
+  color: white;
+}
+
+.knockout-cont > div > div > h2 {
+  text-shadow: 2px 2px black;
+  color: white;
+}
+
+.knockout-cont > div > div > div > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid black 2px;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background-color: rgb(117, 107, 107);
+}
+
+.wrong {
+  color: red;
+  text-decoration: line-through;
+}
+
+.correct {
+  color: rgb(11, 238, 11);
+}
+
+.R16 > div {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.R16 > div > div {
+  margin-top: 0.5rem;
+}
+
+.quarters > div {
+  padding-top: 3rem;
+}
+
+.quarters > div > div {
+  margin-top: 1.5rem;
+}
+
+.semis > div {
+  padding-top: 6rem;
+}
+
+.semis > div > div {
+  margin-top: 3rem;
+}
+
+.final > div {
+  padding-top: 11.3rem;
+}
+
+.knockout-cont > div > .champ {
+  width: 10rem;
+}
+
+.champ > div {
+  padding-top: 10.5rem;
+}
+
+.knockout-cont > div > .champ > div > div {
+  height: 4rem;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}  */

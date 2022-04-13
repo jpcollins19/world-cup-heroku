@@ -74,7 +74,7 @@ const Create_Account_Page = () => {
   };
 
   return (
-    <main id="create-account-page" className="white-text">
+    <main id="create-account-page">
       <div className="main-cont-create-account">
         <div className="main-cont1-create-account">
           <div id="main-text-container-login" className="black-text">
@@ -223,7 +223,7 @@ const Create_Account_Page = () => {
                   </div>
                   <div className="forgot-pw-cont">
                     <Link to="/" style={{ textDecoration: "none" }}>
-                      <h4 className="white-text">Cancel</h4>
+                      <h4>Cancel</h4>
                     </Link>
                   </div>
                 </Box>
