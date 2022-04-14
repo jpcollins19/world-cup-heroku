@@ -183,7 +183,7 @@ const totalScoreCalc = (
   return points.reduce((a, b) => a + b);
 };
 
-const knockoutPartTeamPush = (part, teams, position) => {
+const knockoutPartTeamPush = (part, position) => {
   return part[`knock${position}`];
 };
 
@@ -435,6 +435,10 @@ const groupDetailsPush = (arr, group) => {
   );
 };
 
+const knockoutR16Push = (teams, finishingPosition) => {
+  return teams.find((team) => team.knockoutPosition === finishingPosition).name;
+};
+
 module.exports = {
   singleGroupCalc,
   totalScoreCalc,
@@ -443,4 +447,5 @@ module.exports = {
   knockoutPartClassPush,
   currentScoresObj,
   groupDetailsPush,
+  knockoutR16Push,
 };

@@ -136,7 +136,7 @@
 }
 
 .single-group-cont-picks {
-  width: 21.5rem;
+  width: 23.5rem;
   border: solid 4px dodgerblue;
 }
 
@@ -153,7 +153,7 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 1rem;
   border: solid black 2px;
   border-radius: 1rem;
   background-color: rgb(235, 209, 209);
@@ -168,11 +168,6 @@
 .single-group-cont-picks > div > div > div {
   margin: 0.1rem;
   border: solid black 1px;
-}
-
-.right {
-  width: 20%;
-  border: solid 4px purple;
 }
 
 .prediction-cont > div {
@@ -203,6 +198,160 @@
   background-color: orange;
 }
 
+.right {
+  width: 20%;
+  border: solid 4px purple;
+}
+
+.total-points-cont {
+  padding-top: 0.3rem;
+  padding-bottom: 0.1rem;
+  border: solid 4px red;
+}
+
+.total-points-cont > div {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  max-height: 400px;
+  list-style: none;
+  overflow: auto;
+  border: solid 4px blue;
+}
+
+.total-points-cont > h3 {
+  text-shadow: 2px 2px black;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.total-points-cont > div > div > h4 {
+  text-shadow: 2px 2px black;
+  color: white;
+  margin: 0;
+  padding: 0.5rem;
+}
+
+.total-points-text-cont {
+  width: 7rem;
+}
+
+.total-points-text-cont > div {
+  border: solid 2px black;
+  background-color: rgb(235, 209, 209);
+  margin: 0.2rem 0.2rem 0.2rem 0rem;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.total-points-points-cont {
+  width: 4rem;
+}
+
+.total-points-points-cont > div {
+  border: solid 2px black;
+  background-color: rgb(235, 209, 209);
+  margin: 0.2rem 0.2rem 0.2rem 0rem;
+}
+
+/*////knockout stuff below////*/
+
+.knockout-cont {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  border: solid 4px dodgerblue
+}
+
+.knockout-cont > div {
+  display: flex;
+  justify-content: space-around;
+  border: solid 4px purple
+}
+
+.knockout-cont > div > div {
+  width: 8rem;
+  text-align: center;
+  border: solid 4px red
+}
+
+.R16 > div {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border: solid 4px orange
+}
+
+.R16 > div > div {
+  margin-top: 0.5rem;
+}
+
+.quarters > div {
+  padding-top: 3rem;
+  border: solid 4px green
+}
+
+.quarters > div > div {
+  margin-top: 1.5rem;
+}
+
+.semis > div {
+  padding-top: 6rem;
+  border: solid 4px yellow
+}
+
+.semis > div > div {
+  margin-top: 3rem;
+}
+
+.final > div {
+  padding-top: 11.3rem;
+  border: solid 4px blue
+}
+
+.knockout-cont > div > .champ {
+  width: 10rem;
+}
+
+.champ > div {
+  padding-top: 10.5rem;
+  border: solid 4px rgb(75, 241, 75)
+}
+
+.knockout-cont > div > .champ > div > div {
+  height: 4rem;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+} 
+
+/* .joe {
+  color: white;
+} */
+
+.knockout-cont > div > div > h2 {
+  text-shadow: 2px 2px black;
+  color: white;
+}
+
+.knockout-cont > div > div > div > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid black 2px;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background-color: rgb(117, 107, 107);
+  border: solid 4px dodgerblue;
+}
+
+/* .center {
+  text-align: center;
+} */
+
 /* .submit {
   display: flex;
   justify-content: end;
@@ -217,7 +366,6 @@
     padding-top: .5rem
   
     }
-  
   
   .top-unlocked {
     display: flex;
@@ -349,113 +497,6 @@
 
 
 
-
-
-
-
-
-
-.total-points-cont {
-  padding-top: 0.3rem;
-  padding-bottom: 0.1rem;
-}
-
-.total-points-cont > div {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  max-height: 400px;
-  list-style: none;
-  overflow: auto;
-}
-
-.total-points-cont > h4 {
-  text-shadow: 2px 2px black;
-  color: white;
-}
-
-.total-points-cont > div > div > h4 {
-  text-shadow: 2px 2px black;
-  color: white;
-}
-
-.total-points-cont > div > div > div {
-  border: solid black 1px;
-  padding: 0.3rem;
-}
-
-.total-points-text-cont {
-  width: 7rem;
-}
-
-.total-points-text-cont > h4 {
-  margin: 0;
-  padding: 0.5rem;
-}
-
-.total-points-text-cont > div {
-  border: solid black 2px;
-  background-color: rgb(235, 209, 209);
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.total-points-points-cont {
-  width: 4rem;
-}
-
-.total-points-points-cont > h4 {
-  margin: 0;
-  padding: 0.2rem 0.2rem 0.2rem 0rem;
-}
-
-.total-points-points-cont > div {
-  border: solid black 2px;
-  background-color: rgb(235, 209, 209);
-  margin: 0.2rem 0.2rem 0.2rem 0rem;
-}
-
-.center {
-  text-align: center;
-}
-
-.knockout-cont {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-}
-
-.knockout-cont > div {
-  display: flex;
-  justify-content: space-around;
-}
-
-.knockout-cont > div > div {
-  width: 8rem;
-  text-align: center;
-}
-
-.joe {
-  color: white;
-}
-
-.knockout-cont > div > div > h2 {
-  text-shadow: 2px 2px black;
-  color: white;
-}
-
-.knockout-cont > div > div > div > div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: solid black 2px;
-  height: 2rem;
-  border-radius: 0.5rem;
-  background-color: rgb(117, 107, 107);
-}
-
 .wrong {
   color: red;
   text-decoration: line-through;
@@ -465,47 +506,14 @@
   color: rgb(11, 238, 11);
 }
 
-.R16 > div {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
 
-.R16 > div > div {
-  margin-top: 0.5rem;
-}
 
-.quarters > div {
-  padding-top: 3rem;
-}
 
-.quarters > div > div {
-  margin-top: 1.5rem;
-}
 
-.semis > div {
-  padding-top: 6rem;
-}
 
-.semis > div > div {
-  margin-top: 3rem;
-}
 
-.final > div {
-  padding-top: 11.3rem;
-}
 
-.knockout-cont > div > .champ {
-  width: 10rem;
-}
 
-.champ > div {
-  padding-top: 10.5rem;
-}
+ 
 
-.knockout-cont > div > .champ > div > div {
-  height: 4rem;
-  font-weight: bold;
-  font-size: 2rem;
-  margin-top: 0;
-  margin-bottom: 2rem;
-}  */
+*/

@@ -1,50 +1,29 @@
-//my picks through the group stage
-//pool picks through the group stage
-//leaderboard
-//my picks for KO stage
-//pool picks for KO stage
-//edit name
-//admin
+////my picks locked
+//seed team finishing position info
+//seed part ko picks
+//audit total points data for all parts
+//do css work on ko
 
-////my_picks_unlocked page
-///group
-//need to make it a component and on step to house changes to the component state
-//error handling in excel doc
+////leaderboard in its entirety
 
-////my_picks_locked
+////pool picks in its entirety
 //way to tell if someone hasn't paid
 //way to tell if someone has invalid picks?
 
-//////knockout
-//create a page to edit the knockout picks
+////my picks unlocked in its entirety
 //knockout stage - add logic for when you click on a R16 name, it auto poulates into the quarters
 //error handling in excel doc
 
-////pre tourney
-//when the part has no selections, only the option to choose group picks shows
-//^^cannot submit incomplete picks
-
-//mid tourny - aka knockout stage
-//knockout stage - add logic for when you click on a R16 name, it auto poulates into the quarters
+////edit name page
+////admin page
 
 ////rules page
 //adjust rules/scoring accordingly
 //adjust payment and submitting info
 
-////pool-picks
-//what does it look like pre-tournament - make the van persie pic fit the screen?
+////test/apply all error handling
 
-//all tabs
-//what does it look like pre-tournament
-
-//------------------------------------------------------------
-
-//admin page
-//edit name page
-
-//apply all error handling
-
-//incorporate web sockets for teams and parts
+////incorporate web sockets for teams and parts -- send to heroku without websockets and test first
 
 //figure out a forgot pw route
 

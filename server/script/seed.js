@@ -397,25 +397,6 @@ const syncAndSeed = async () => {
         groupH3: obj.groupH3,
         groupH4: obj.groupH4,
 
-        knockQ1: obj.knockQ1,
-        knockQ2: obj.knockQ2,
-        knockQ3: obj.knockQ3,
-        knockQ4: obj.knockQ4,
-        knockQ5: obj.knockQ5,
-        knockQ6: obj.knockQ6,
-        knockQ7: obj.knockQ7,
-        knockQ8: obj.knockQ8,
-
-        knockS1: obj.knockS1,
-        knockS2: obj.knockS2,
-        knockS3: obj.knockS3,
-        knockS4: obj.knockS4,
-
-        knockF1: obj.knockF1,
-        knockF2: obj.knockF2,
-
-        knockChamp: obj.knockChamp,
-
         tiebreaker: obj.tiebreaker,
       })
     )
@@ -453,6 +434,25 @@ const syncAndSeed = async () => {
   S_Korea.groupFinishingPosition = 2;
   Portugal.groupFinishingPosition = 3;
   Uruguay.groupFinishingPosition = 4;
+
+  Joe.knockQ1 = Ecuador.name;
+  Joe.knockQ2 = Argentina.name;
+  Joe.knockQ3 = Canada.name;
+  Joe.knockQ4 = Brasil.name;
+  Joe.knockQ5 = England.name;
+  Joe.knockQ6 = Denmark.name;
+  Joe.knockQ7 = Belgium.name;
+  Joe.knockQ8 = Cameroon.name;
+
+  Joe.knockS1 = Argentina.name;
+  Joe.knockS2 = Brasil.name;
+  Joe.knockS3 = Denmark.name;
+  Joe.knockS4 = Belgium.name;
+
+  Joe.knockF1 = Argentina.name;
+  Joe.knockF2 = Belgium.name;
+
+  Joe.knockChamp = Argentina.name;
 
   // Uruguay.advanceToQ = true;
 
@@ -495,6 +495,7 @@ const syncAndSeed = async () => {
     S_Korea.save(),
     Portugal.save(),
     Uruguay.save(),
+    Joe.save(),
   ]);
 };
 

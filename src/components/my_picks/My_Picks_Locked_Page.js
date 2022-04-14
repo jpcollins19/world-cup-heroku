@@ -2,9 +2,9 @@ import { useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 import Point_System_Cont from "./Point_System_Cont";
 import Single_Group_Cont_Locked from "./locked/group/Single_Group_Cont_Locked";
-// import Total_Points_Cont from "./locked/group_section/Total_Points_Cont";
-// import Knockout_Cont from "./locked/knockout_section/Knockout_Cont";
-import "./My_Picks.css";
+import Total_Points_Cont from "./Total_Points_Cont";
+import Knockout_Cont_Locked from "./locked/ko/Knockout_Cont_Locked";
+import "./My_Picks_Locked.css";
 
 const My_Picks_Locked_Page = () => {
   const { pathname } = useLocation();
@@ -26,10 +26,19 @@ const My_Picks_Locked_Page = () => {
                 to="/my_picks_edit_group"
                 style={{ textDecoration: "none" }}
               >
-                Select / Adjust{" "}
-                {pathname === "/my_picks" ? "Group" : "Knockout"} Picks
+                Select / Adjust Group Picks
               </Link>
             </button>
+          </div>
+        </div>
+        <div className="top box">
+          <div className="box left">
+            <div className="predictions-cont">
+              <Knockout_Cont_Locked />
+            </div>
+          </div>
+          <div className="box right">
+            <Total_Points_Cont />
           </div>
         </div>
         <div className="top box">
@@ -45,15 +54,8 @@ const My_Picks_Locked_Page = () => {
               <Single_Group_Cont_Locked group={"H"} />
             </div>
           </div>
-          {/* fix css on text size of a single group cont and then resume work below */}
-          {/* fix css on text size of a single group cont and then resume work below */}
-          {/* fix css on text size of a single group cont and then resume work below */}
-          {/* fix css on text size of a single group cont and then resume work below */}
-          {/* fix css on text size of a single group cont and then resume work below */}
-          {/* fix css on text size of a single group cont and then resume work below */}
-          {/* fix css on text size of a single group cont and then resume work below */}
           <div className="box right">
-            {/* <Total_Points_Cont part={part} teams={teams} /> */}
+            <Total_Points_Cont />
           </div>
         </div>
         {/* <div className="bottom box">
