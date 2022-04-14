@@ -43,6 +43,7 @@ const My_Picks_Locked_Page = () => {
         </div>
         <div className="top box">
           <div className="box left">
+            <Point_System_Cont />
             <div className="predictions-cont">
               <Single_Group_Cont_Locked group={"A"} />
               <Single_Group_Cont_Locked group={"B"} />

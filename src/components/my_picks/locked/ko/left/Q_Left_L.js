@@ -16,18 +16,18 @@ const Q_Left_L = () => {
       <h2>Quarters</h2>
 
       <div className="white-text">
-        <div className={knockoutPartClassPush(user, teams, "Q1")}>
+        <div className={`Q1L ${knockoutPartClassPush(user, teams, "Q1")}`}>
           {knockoutPartTeamPush(user, "Q1")}
         </div>
-        <div className={knockoutPartClassPush(user, teams, "Q2")}>
+        <div className={`Q2L ${knockoutPartClassPush(user, teams, "Q2")}`}>
           {knockoutPartTeamPush(user, "Q2")}
         </div>
       </div>
       <div className="white-text">
-        <div className={knockoutPartClassPush(user, teams, "Q3")}>
+        <div className={`Q3L ${knockoutPartClassPush(user, teams, "Q3")}`}>
           {knockoutPartTeamPush(user, "Q3")}
         </div>
-        <div className={knockoutPartClassPush(user, teams, "Q4")}>
+        <div className={`Q4L ${knockoutPartClassPush(user, teams, "Q4")}`}>
           {knockoutPartTeamPush(user, "Q4")}
         </div>
       </div>

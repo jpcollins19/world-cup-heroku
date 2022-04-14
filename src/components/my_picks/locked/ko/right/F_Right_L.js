@@ -15,7 +15,7 @@ const F_Right_L = () => {
     <div className="final">
       <h2>Final</h2>
       <div className="white-text">
-        <div className={knockoutPartClassPush(user, teams, "F2")}>
+        <div className={`F1L ${knockoutPartClassPush(user, teams, "F2")}`}>
           {knockoutPartTeamPush(user, "F2")}
         </div>
       </div>

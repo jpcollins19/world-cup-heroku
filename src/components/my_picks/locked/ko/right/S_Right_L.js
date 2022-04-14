@@ -15,10 +15,10 @@ const S_Right_L = () => {
     <div className="semis">
       <h2>Semis</h2>
       <div className="white-text">
-        <div className={knockoutPartClassPush(user, teams, "S3")}>
+        <div className={`S1L ${knockoutPartClassPush(user, teams, "S3")}`}>
           {knockoutPartTeamPush(user, "S3")}
         </div>
-        <div className={knockoutPartClassPush(user, teams, "S4")}>
+        <div className={`S2L ${knockoutPartClassPush(user, teams, "S4")}`}>
           {knockoutPartTeamPush(user, "S4")}
         </div>
       </div>

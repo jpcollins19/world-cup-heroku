@@ -24,11 +24,12 @@
   align-items: center;
   border: solid 4px red;
   flex: 0.37;
+  justify-content: center;
 }
 
 .point-system-table-text {
   display: flex;
-  flex: 0.45;
+  /* flex: 0.45; */
   border: solid 4px blue;
 }
 
@@ -263,7 +264,8 @@
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  border: solid 4px dodgerblue
+  border: solid 4px yellow;
+  width:100%
 }
 
 .knockout-cont > div {
@@ -273,7 +275,7 @@
 }
 
 .knockout-cont > div > div {
-  width: 8rem;
+  width: 10rem;
   text-align: center;
   border: solid 4px red
 }
@@ -288,36 +290,61 @@
   margin-top: 0.5rem;
 }
 
+
 .quarters > div {
-  padding-top: 3rem;
+  padding-top: .8rem;
   border: solid 4px green
 }
 
-.quarters > div > div {
-  margin-top: 1.5rem;
+.Q1L{
+  margin-top: 15%;
+}
+
+.Q2L{
+  margin-top: 50%;
+}
+
+.Q3L{
+  margin-top: 38%;
+}
+
+.Q4L{
+  margin-top: 47%;
+}
+
+.wrong {
+  color: red;
+  text-decoration: line-through;
+}
+
+.correct {
+  color: rgb(11, 238, 11);
 }
 
 .semis > div {
-  padding-top: 6rem;
-  border: solid 4px yellow
+  border: solid 4px yellow;
 }
 
-.semis > div > div {
-  margin-top: 3rem;
+.S1L {
+  margin-top: 60%
 }
 
-.final > div {
-  padding-top: 11.3rem;
-  border: solid 4px blue
+.S2L {
+  margin-top: 120%
+}
+
+.F1L {
+  margin-top: 130%;
+  border: solid 4px blue;
 }
 
 .knockout-cont > div > .champ {
-  width: 10rem;
+  width: 13rem;
 }
 
 .champ > div {
-  padding-top: 10.5rem;
-  border: solid 4px rgb(75, 241, 75)
+  margin-top: 90%;
+  border: solid 4px rgb(75, 241, 75);
 }
 
 .knockout-cont > div > .champ > div > div {
@@ -326,7 +353,7 @@
   font-size: 2rem;
   margin-top: 0;
   margin-bottom: 2rem;
-} 
+}
 
 /* .joe {
   color: white;
@@ -497,14 +524,7 @@
 
 
 
-.wrong {
-  color: red;
-  text-decoration: line-through;
-}
 
-.correct {
-  color: rgb(11, 238, 11);
-}
 
 
 

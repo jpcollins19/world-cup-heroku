@@ -1,18 +1,15 @@
-////my picks locked
-//seed team finishing position info
-//seed part ko picks
-//audit total points data for all parts
-//do css work on ko
-
 ////leaderboard in its entirety
+//mark off things to audit for during each stage for the leaderboard page
 
 ////pool picks in its entirety
 //way to tell if someone hasn't paid
 //way to tell if someone has invalid picks?
+//mark off things to audit for during each stage for the pool picks page
 
 ////my picks unlocked in its entirety
 //knockout stage - add logic for when you click on a R16 name, it auto poulates into the quarters
 //error handling in excel doc
+//mark off things to audit for during each stage for the unlockd page page
 
 ////edit name page
 ////admin page
