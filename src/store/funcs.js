@@ -417,26 +417,35 @@ const currentScoresObj = (parts, teams, actualGoalsScored = null) => {
     }, {});
 };
 
-const groupDetailsPush = (arr, group) => {
-  return (
-    <div>
-      <div className="single-group-cont-text-1">
-        <h3>Group {group}</h3>
-        {arr
-          .filter((team) => team.group === group)
-          .map((team) => (
-            <div key={team.id}>
-              <img className="flag" src={team.flag}></img>
-              <div className="country-name">{team.name}</div>
-            </div>
-          ))}
-      </div>
-    </div>
-  );
-};
+// const groupDetailsPush = (arr, group) => {
+//   return (
+//     <div>
+//       <div className="single-group-cont-text-1">
+//         <h3>Group {group}</h3>
+//         {arr
+//           .filter((team) => team.group === group)
+//           .map((team) => (
+//             <div key={team.id}>
+//               <img className="flag" src={team.flag}></img>
+//               <div className="country-name">{team.name}</div>
+//             </div>
+//           ))}
+//       </div>
+//     </div>
+//   );
+// };
 
 const knockoutR16Push = (teams, finishingPosition) => {
   return teams.find((team) => team.knockoutPosition === finishingPosition).name;
+};
+
+const teamRankSort = (teams) => {
+  const sorted = teams.sort((a, b) => b.Pts - a.Pts);
+
+  return sorted.reduce((a, team, idx) => {
+    a[idx + 1] = team.name;
+    return a;
+  }, {});
 };
 
 module.exports = {
@@ -446,6 +455,6 @@ module.exports = {
   knockoutPartTeamPush,
   knockoutPartClassPush,
   currentScoresObj,
-  groupDetailsPush,
   knockoutR16Push,
+  teamRankSort,
 };

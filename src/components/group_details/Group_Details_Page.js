@@ -4,26 +4,24 @@ import { groupDetailsPush } from "../../store";
 import "./Group_Details.css";
 
 const Group_Details_Page = () => {
-  let teams = useSelector((state) => state.teams);
+  // let teams = useSelector((state) => state.teams);
 
-  teams = teams.map((team) => ({
-    ...team,
-    flag: `https://www.sciencekids.co.nz/images/pictures/flags680/${
-      team.name === "Saudi Arabia"
-        ? "Saudi_Arabia"
-        : team.name === "Brasil"
-        ? "Brazil"
-        : team.name === "Switz"
-        ? "Switzerland"
-        : team.name === "USA"
-        ? "United_States"
-        : team.name === "S. Korea"
-        ? "South_Korea"
-        : team.name
-    }.jpg`,
-  }));
-
-  console.log(teams);
+  // teams = teams.map((team) => ({
+  //   ...team,
+  //   flag: `https://www.sciencekids.co.nz/images/pictures/flags680/${
+  //     team.name === "Saudi Arabia"
+  //       ? "Saudi_Arabia"
+  //       : team.name === "Brasil"
+  //       ? "Brazil"
+  //       : team.name === "Switz"
+  //       ? "Switzerland"
+  //       : team.name === "USA"
+  //       ? "United_States"
+  //       : team.name === "S. Korea"
+  //       ? "South_Korea"
+  //       : team.name
+  //   }.jpg`,
+  // }));
 
   return (
     <main className="group-details-page">
@@ -32,14 +30,22 @@ const Group_Details_Page = () => {
         <div>&nbsp;</div>
         <div>&nbsp;</div>
         <div className="group-details-full-table-container">
-          <Single_Cont groupA={groupDetailsPush(teams, "A")} />
+          {/* <Single_Cont groupA={groupDetailsPush(teams, "A")} />
           <Single_Cont groupB={groupDetailsPush(teams, "B")} />
           <Single_Cont groupC={groupDetailsPush(teams, "C")} />
           <Single_Cont groupD={groupDetailsPush(teams, "D")} />
           <Single_Cont groupE={groupDetailsPush(teams, "E")} />
           <Single_Cont groupF={groupDetailsPush(teams, "F")} />
           <Single_Cont groupG={groupDetailsPush(teams, "G")} />
-          <Single_Cont groupH={groupDetailsPush(teams, "H")} />
+          <Single_Cont groupH={groupDetailsPush(teams, "H")} /> */}
+          <Single_Cont group={"A"} />
+          <Single_Cont group={"B"} />
+          <Single_Cont group={"C"} />
+          <Single_Cont group={"D"} />
+          <Single_Cont group={"E"} />
+          <Single_Cont group={"F"} />
+          <Single_Cont group={"G"} />
+          <Single_Cont group={"H"} />
         </div>
         <div>&nbsp;</div>
       </div>

@@ -3,6 +3,7 @@
   width: 100vw;
   height: 84vh;
   background-size: cover;
+  overflow: auto;
 }
 
 .group-details-full-table-container {
@@ -14,14 +15,11 @@
 }
 
 .single-group-cont {
-  padding: 3rem 6rem 0rem 6rem;
-}
-
-.single-group-cont-text-1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 1rem 2rem 1rem 2rem;
+  padding: 0rem 2rem 1rem 2rem;
+  margin: 1rem 0.5rem 1rem 0.5rem;
   background: linear-gradient(
     to bottom,
     rgb(159, 159, 147) 0%,
@@ -31,11 +29,11 @@
     rgb(159, 159, 147) 100%
   );
   border-radius: 4rem;
-  width: 17rem;
-  height: 17rem;
+  width: 35rem;
+  height: 18rem;
 }
 
-.single-group-cont-text-1 > h3 {
+.group-header {
   margin-top: 0rem;
   margin-bottom: 0.5rem;
   font-size: 1.7rem;
@@ -43,19 +41,73 @@
   border-bottom: solid 2px rgb(175, 170, 170);
 }
 
-.single-group-cont-text-1 > div {
+.text-header {
+  display: flex;
+}
+
+.text-header > div {
+  margin: 0rem 0.2rem 0rem 0.2rem;
+  min-width: 1.5rem;
+  text-align: center;
+}
+
+.team {
+  display: flex;
+  flex: 1;
+}
+
+.team-row-cont {
+  border-bottom: solid 2px rgb(175, 170, 170);
+}
+
+.tie {
+  color: red;
+}
+
+.single-group-cont-text {
   display: flex;
   align-items: center;
 }
 
+.single-group-cont-text > div {
+  font-size: 1.5rem;
+}
+
 .flag {
   height: 25px;
-  width: 45px;
+  min-width: 45px;
+  max-width: 45px;
 }
 
 .country-name {
   display: flex;
   align-items: center;
-  font-size: 1.5rem;
   padding-left: 1rem;
+  min-width: 39.5%;
+  max-width: 39.5%;
+}
+
+.MP {
+  margin-right: 1.1rem;
+  margin-left: 1.2rem;
+}
+
+.W {
+  margin-right: 1.1rem;
+}
+
+.D {
+  margin-right: 1.1rem;
+}
+
+.L {
+  margin-right: 1rem;
+}
+
+.GF {
+  margin-right: 1rem;
+}
+
+.GA {
+  margin-right: 1rem;
 }

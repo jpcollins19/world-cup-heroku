@@ -93,25 +93,6 @@ const users = [
     groupH4: "S. Korea",
 
     tiebreaker: 152,
-
-    // knockQ1: "Uruguay",
-    // knockQ2: "France",
-    // knockQ3: "Brasil",
-    // knockQ4: "Belgium",
-    // knockQ5: "Russia",
-    // knockQ6: "Croatia",
-    // knockQ7: "Sweden",
-    // knockQ8: "England",
-
-    // knockS1: "Uruguay",
-    // knockS2: "Belgium",
-    // knockS3: "Croatia",
-    // knockS4: "England",
-
-    // knockF1: "Belgium",
-    // knockF2: "Croatia",
-
-    // knockChamp: "Belgium",
   },
   {
     email: "stanley@gmail.com",
@@ -532,6 +513,12 @@ const syncAndSeed = async () => {
   Kelly.knockChamp = Italy.name;
 
   //////////////////////////////////////////////////
+  Ecuador.tieExists = true;
+  Netherlands.tieExists = true;
+  Italy.tieExists = true;
+  Spain.tieExists = true;
+  //////////////////////////////////////////////////
+
   Ecuador.advanceToQ = true;
   Argentina.advanceToQ = true;
   Canada.advanceToQ = true;

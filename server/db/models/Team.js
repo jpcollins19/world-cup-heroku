@@ -15,6 +15,52 @@ const Team = db.define("teams", {
   group: {
     type: STRING,
   },
+
+  MP: {
+    type: INTEGER,
+    defaultValue: 0,
+  },
+
+  W: {
+    type: INTEGER,
+    defaultValue: 0,
+  },
+
+  D: {
+    type: INTEGER,
+    defaultValue: 0,
+  },
+
+  L: {
+    type: INTEGER,
+    defaultValue: 0,
+  },
+
+  GF: {
+    type: INTEGER,
+    defaultValue: 0,
+  },
+
+  GA: {
+    type: INTEGER,
+    defaultValue: 0,
+  },
+
+  GD: {
+    type: INTEGER,
+    defaultValue: 0,
+  },
+
+  Pts: {
+    type: INTEGER,
+    defaultValue: 0,
+  },
+
+  tieExists: {
+    type: BOOLEAN,
+    defaultValue: false,
+  },
+
   groupFinishingPosition: {
     type: INTEGER,
     defaultValue: null,

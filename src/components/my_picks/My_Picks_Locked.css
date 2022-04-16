@@ -112,7 +112,7 @@
   padding: 0;
   margin: 0;
   justify-content: center;
-  border: solid 4px red;
+  /* border: solid 4px red; */
 }
 
 .box {
@@ -124,7 +124,7 @@
   display: flex;
   width: 80%;
   flex-direction: column;
-  border: solid 4px green;
+  /* border: solid 4px green; */
   padding: 0;
 }
 
@@ -133,7 +133,7 @@
   width: 100%;
   flex-wrap: wrap;
   justify-content: space-around;
-  border: solid 4px orange;
+  /* border: solid 4px orange; */
 }
 
 .single-group-cont-picks {
@@ -264,52 +264,51 @@
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  border: solid 4px yellow;
-  width:100%
+  /* border: solid 4px yellow; */
+  width: 100%;
 }
 
 .knockout-cont > div {
   display: flex;
   justify-content: space-around;
-  border: solid 4px purple
+  /* border: solid 4px purple; */
 }
 
 .knockout-cont > div > div {
   width: 10rem;
   text-align: center;
-  border: solid 4px red
+  /* border: solid 4px red; */
 }
 
 .R16 > div {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  border: solid 4px orange
+  /* border: solid 4px orange; */
 }
 
 .R16 > div > div {
   margin-top: 0.5rem;
 }
 
-
 .quarters > div {
-  padding-top: .8rem;
-  border: solid 4px green
+  padding: 0.8rem 0.5rem 0rem 0.5rem;
+  /* border: solid 4px green; */
 }
 
-.Q1L{
+.Q1L {
   margin-top: 15%;
 }
 
-.Q2L{
-  margin-top: 50%;
+.Q2L {
+  margin-top: 45%;
 }
 
-.Q3L{
+.Q3L {
   margin-top: 38%;
 }
 
-.Q4L{
-  margin-top: 47%;
+.Q4L {
+  margin-top: 41%;
 }
 
 .wrong {
@@ -322,20 +321,26 @@
 }
 
 .semis > div {
-  border: solid 4px yellow;
+  padding: 0.8rem 0.5rem 0rem 0.5rem;
+  /* border: solid 4px yellow; */
 }
 
 .S1L {
-  margin-top: 60%
+  margin-top: 49%;
 }
 
 .S2L {
-  margin-top: 120%
+  margin-top: 110%;
+}
+
+.final > div {
+  padding: 0.8rem 0.5rem 0rem 0.5rem;
+  /* border: solid 4px yellow; */
 }
 
 .F1L {
-  margin-top: 130%;
-  border: solid 4px blue;
+  margin-top: 115%;
+  /* border: solid 4px purple; */
 }
 
 .knockout-cont > div > .champ {
@@ -343,8 +348,9 @@
 }
 
 .champ > div {
-  margin-top: 90%;
-  border: solid 4px rgb(75, 241, 75);
+  margin-top: 80%;
+  padding: 0.8rem 0.5rem 0rem 0.5rem;
+  /* border: solid 4px rgb(75, 241, 75); */
 }
 
 .knockout-cont > div > .champ > div > div {
@@ -354,10 +360,6 @@
   margin-top: 0;
   margin-bottom: 2rem;
 }
-
-/* .joe {
-  color: white;
-} */
 
 .knockout-cont > div > div > h2 {
   text-shadow: 2px 2px black;
@@ -371,8 +373,14 @@
   border: solid black 2px;
   height: 2rem;
   border-radius: 0.5rem;
-  background-color: rgb(117, 107, 107);
-  border: solid 4px dodgerblue;
+  background: linear-gradient(
+    to bottom,
+    rgb(159, 159, 147) 0%,
+    rgb(11, 11, 11) 50%,
+    rgb(159, 159, 147) 100%
+  );
+  /* background-color: rgb(117, 107, 107); */
+  /* border: solid 4px dodgerblue; */
 }
 
 /* .center {

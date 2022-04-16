@@ -1,3 +1,13 @@
+////group details
+//create test specs for func to sort teams
+//write func
+
+////nav bar
+//add # of picks submitted info
+
+////my picks locked
+//audit what happens after each game ends in the ko stage
+
 ////leaderboard in its entirety
 //mark off things to audit for during each stage for the leaderboard page
 
@@ -11,8 +21,9 @@
 //error handling in excel doc
 //mark off things to audit for during each stage for the unlockd page page
 
+////admin page for updating user info
+////admin page for updating team info
 ////edit name page
-////admin page
 
 ////rules page
 //adjust rules/scoring accordingly
@@ -23,6 +34,8 @@
 ////incorporate web sockets for teams and parts -- send to heroku without websockets and test first
 
 //figure out a forgot pw route
+
+//write test specs to determine scenario #11 in excel doc "java testing-audit info" - "tiebreaker testing" tab
 
 const express = require("express");
 const app = express();
