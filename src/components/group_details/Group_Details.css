@@ -60,10 +60,6 @@
   border-bottom: solid 2px rgb(175, 170, 170);
 }
 
-.tie {
-  color: red;
-}
-
 .single-group-cont-text {
   display: flex;
   align-items: center;

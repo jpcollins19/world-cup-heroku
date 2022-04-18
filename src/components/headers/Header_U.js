@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../store";
 import AppBar from "@mui/material/AppBar";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -12,6 +12,9 @@ import { useLocation } from "react-router-dom";
 const Header_U = () => {
   const { pathname } = useLocation();
   const dispatch = useDispatch();
+  const submittedPicks = useSelector((state) => state.users).filter(
+    (user) => user.tiebreaker !== null
+  );
 
   return (
     <div className="header-cont">
@@ -30,6 +33,10 @@ const Header_U = () => {
         <div className="login-row">
           <div className="last-updated-cont">
             Last Updated: 10/20/21 at 10:36 pm CT
+            <br></br>
+            <div className="submitted-picks">
+              # of submitted picks: {submittedPicks.length}
+            </div>
           </div>
           <div onClick={() => dispatch(logout())} className="login-cont">
             <Link href="#/login" style={{ textDecoration: "none" }}>

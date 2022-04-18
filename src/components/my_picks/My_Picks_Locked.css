@@ -5,7 +5,6 @@
   min-height: 82.5vh;
   background-size: cover;
   overflow: auto;
-  margin-top: 1rem;
 }
 
 .my-picks-container {
@@ -15,6 +14,7 @@
 
 .my-picks-header {
   display: flex;
+  margin-top: 2rem;
   border: solid 4px cornsilk;
 }
 
@@ -29,7 +29,6 @@
 
 .point-system-table-text {
   display: flex;
-  /* flex: 0.45; */
   border: solid 4px blue;
 }
 
@@ -208,6 +207,7 @@
   padding-top: 0.3rem;
   padding-bottom: 0.1rem;
   border: solid 4px red;
+  min-width: 22rem;
 }
 
 .total-points-cont > div {
@@ -218,6 +218,7 @@
   list-style: none;
   overflow: auto;
   border: solid 4px blue;
+  min-width: 10rem;
 }
 
 .total-points-cont > h3 {
@@ -235,7 +236,7 @@
 }
 
 .total-points-text-cont {
-  width: 7rem;
+  min-width: 7rem;
 }
 
 .total-points-text-cont > div {
@@ -249,7 +250,7 @@
 }
 
 .total-points-points-cont {
-  width: 4rem;
+  min-width: 4rem;
 }
 
 .total-points-points-cont > div {
@@ -258,14 +259,16 @@
   margin: 0.2rem 0.2rem 0.2rem 0rem;
 }
 
+/*/////////////////////////////*/
 /*////knockout stuff below////*/
+/*/////////////////////////////*/
 
 .knockout-cont {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  /* border: solid 4px yellow; */
   width: 100%;
+  /* border: solid 4px yellow; */
 }
 
 .knockout-cont > div {
@@ -275,40 +278,46 @@
 }
 
 .knockout-cont > div > div {
-  width: 10rem;
+  min-width: 10rem;
+  max-width: 13rem;
   text-align: center;
   /* border: solid 4px red; */
 }
 
+.L {
+  padding-right: 0.5rem;
+  /* border: solid 4px yellow; */
+  margin: 0;
+}
+
+.R {
+  padding-left: 0.5rem;
+  /* border: solid 4px dodgerblue; */
+}
+
 .R16 > div {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding: 0.5rem 0rem 0.5rem 0rem;
   /* border: solid 4px orange; */
 }
 
 .R16 > div > div {
-  margin-top: 0.5rem;
-}
-
-.quarters > div {
-  padding: 0.8rem 0.5rem 0rem 0.5rem;
-  /* border: solid 4px green; */
+  margin: 0.5rem 0rem 0.5rem 0rem;
 }
 
 .Q1L {
-  margin-top: 15%;
+  margin-top: 36%;
 }
 
 .Q2L {
-  margin-top: 45%;
+  margin-top: 50%;
 }
 
 .Q3L {
-  margin-top: 38%;
+  margin-top: 51%;
 }
 
 .Q4L {
-  margin-top: 41%;
+  margin-top: 49%;
 }
 
 .wrong {
@@ -320,45 +329,33 @@
   color: rgb(11, 238, 11);
 }
 
-.semis > div {
-  padding: 0.8rem 0.5rem 0rem 0.5rem;
-  /* border: solid 4px yellow; */
-}
-
 .S1L {
-  margin-top: 49%;
+  margin-top: 72%;
 }
 
 .S2L {
-  margin-top: 110%;
-}
-
-.final > div {
-  padding: 0.8rem 0.5rem 0rem 0.5rem;
-  /* border: solid 4px yellow; */
+  margin-top: 128%;
 }
 
 .F1L {
-  margin-top: 115%;
+  margin-top: 150%;
   /* border: solid 4px purple; */
 }
 
-.knockout-cont > div > .champ {
-  width: 13rem;
+.champ {
+  width: 12rem;
 }
 
 .champ > div {
-  margin-top: 80%;
-  padding: 0.8rem 0.5rem 0rem 0.5rem;
-  /* border: solid 4px rgb(75, 241, 75); */
+  width: 12rem;
 }
 
 .knockout-cont > div > .champ > div > div {
   height: 4rem;
   font-weight: bold;
   font-size: 2rem;
-  margin-top: 0;
-  margin-bottom: 2rem;
+  margin-top: 50%;
+  width: 12rem;
 }
 
 .knockout-cont > div > div > h2 {
@@ -371,7 +368,7 @@
   align-items: center;
   justify-content: center;
   border: solid black 2px;
-  height: 2rem;
+  height: 2.5rem;
   border-radius: 0.5rem;
   background: linear-gradient(
     to bottom,
@@ -379,6 +376,9 @@
     rgb(11, 11, 11) 50%,
     rgb(159, 159, 147) 100%
   );
+  font-size: 1.5rem;
+  /* min-width: 10rem;
+  max-width: 10rem; */
   /* background-color: rgb(117, 107, 107); */
   /* border: solid 4px dodgerblue; */
 }
@@ -529,19 +529,5 @@
   font-size: 2rem;
   padding-bottom: 1rem;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
 
 */

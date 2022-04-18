@@ -13,7 +13,6 @@ const My_Picks_Locked_Page = () => {
   return (
     <main className="my-picks-page white text">
       <div className="my-picks-container">
-        {/* <Route component={Point_System_Cont} path="/my_picks" exact /> */}
         <div className="my-picks-header">
           <Point_System_Cont />
           <div className="my-picks-header-name">

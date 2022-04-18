@@ -513,11 +513,6 @@ const syncAndSeed = async () => {
   Kelly.knockChamp = Italy.name;
 
   //////////////////////////////////////////////////
-  Ecuador.tieExists = true;
-  Netherlands.tieExists = true;
-  Italy.tieExists = true;
-  Spain.tieExists = true;
-  //////////////////////////////////////////////////
 
   Ecuador.advanceToQ = true;
   Argentina.advanceToQ = true;

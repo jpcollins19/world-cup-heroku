@@ -198,6 +198,7 @@ const User = db.define("users", {
 
   tiebreaker: {
     type: INTEGER,
+    defaultValue: null,
   },
 
   tourneyStage: {

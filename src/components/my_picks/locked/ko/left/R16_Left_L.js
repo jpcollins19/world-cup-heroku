@@ -5,7 +5,7 @@ const R16_Left_L = () => {
   const teams = useSelector((state) => state.teams);
 
   return (
-    <div className="R16">
+    <div className="R16 L">
       <h2>Round of 16</h2>
       <div className="white-text">
         <div>{teams.length && knockoutR16Push(teams, "A1")}</div>

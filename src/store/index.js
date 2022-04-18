@@ -7,7 +7,7 @@ const { users } = require("./users_store");
 const { teams } = require("./teams_store");
 
 const reducer = combineReducers({ auth, users, teams });
-const middleware = applyMiddleware(thunk, logger);
+const middleware = applyMiddleware(thunk);
 const store = createStore(reducer, middleware);
 
 export default store;

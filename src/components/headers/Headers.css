@@ -19,6 +19,11 @@
   font-size: 1.3rem;
 }
 
+.submitted-picks {
+  font-size: 1rem;
+  padding: 0.5rem 0rem 0rem 6rem;
+}
+
 .last-updated-cont-NU {
   padding: 0.5rem 0rem 0rem 1rem;
   flex-grow: 1;

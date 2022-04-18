@@ -78,59 +78,6 @@
   padding: 1rem 0rem 0rem 0rem;
 }
 
-/* .error-cont-login {
-  display: flex;
-  justify-content: center;
-  padding: 0.5rem 0rem 0rem 0rem;
-  text-shadow: 0px 0px black;
-} */
-
-/* .login-cont {
-  display: flex;
-  flex-direction: column;
-  height: 6rem;
-  justify-content: space-around;
-}
-
-.create-account-cont {
-  display: flex;
-  flex-direction: column;
-  height: 10rem;
-  justify-content: space-around;
-} */
-
-/* .login-cont > div {
-  padding-bottom: 1rem;
-} */
-
-/* #email-info {
-  height: 2rem;
-  width: 15rem;
-  text-align: center;
-  font-size: 1rem;
-}
-
-#pw-info {
-  height: 2rem;
-  width: 15rem;
-  text-align: center;
-  font-size: 1rem;
-} */
-
-/* #submit-cont {
-  padding: 1rem;
-}
-
-#submit-info {
-  height: 2rem;
-  width: 5rem;
-} */
-
-/* .pw-cont {
-  display: flex;
-  flex-direction: column;
-} */
-
 .view-pw {
   font-size: 1rem;
   text-shadow: none;
@@ -144,7 +91,6 @@
 }
 
 button {
-  /* Variables */
   --button_radius: 0.75em;
   --button_color: #e8e8e8;
   --button_outline_color: #000000;
@@ -186,22 +132,3 @@ button:active .button_top {
 .forgot-pw-cont > a > h4 {
   margin: 0.5rem;
 }
-
-/* .forgot-pw-info > div {
-  display: flex;
-  align-items: center;
-  padding: 3rem 3rem 0rem 3rem;
-  flex-direction: column;
-  text-align: center;
-}
-
-.forgot-pw-info > ul {
-  display: flex;
-  align-items: center;
-  padding: 3rem;
-  flex-direction: column;
-} */
-
-/* #create-account-cont {
-  padding: 0rem 1rem 0.5rem 1rem;
-} */

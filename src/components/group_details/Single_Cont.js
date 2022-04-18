@@ -2,9 +2,9 @@ import { useSelector } from "react-redux";
 import "./Group_Details.css";
 
 const Single_Cont = ({ group }) => {
-  let groupTeams = useSelector((state) => state.teams).filter(
-    (team) => team.group === group
-  );
+  let groupTeams = useSelector((state) => state.teams)
+    .filter((team) => team.group === group)
+    .sort((a, b) => a.groupFinishingPosition - b.groupFinishingPosition);
 
   groupTeams = groupTeams.map((team) => ({
     ...team,
@@ -22,8 +22,6 @@ const Single_Cont = ({ group }) => {
         : team.name
     }.jpg`,
   }));
-
-  console.log("groupTeams", groupTeams);
 
   return (
     <div>
@@ -46,8 +44,8 @@ const Single_Cont = ({ group }) => {
             groupTeams
               .filter((team) => team.group === group)
               .map((team) => (
-                <div className={`team-row-cont ${team.tieExists && "tie"}`}>
-                  <div key={team.id} className="single-group-cont-text">
+                <div key={team.id} className="team-row-cont">
+                  <div className="single-group-cont-text">
                     <img className="flag" src={team.flag}></img>
                     <div className="country-name">{team.name}</div>
                     <div className="MP">{team.MP}</div>

@@ -9,34 +9,28 @@ const S_Left_L = () => {
   const teams = useSelector((state) => state.teams);
 
   const userAudit = user.knockChamp;
-  const teamAudit = teams.filter((team) => team.advanceToS);
+  const advancingTeams = teams.filter((team) => team.advanceToS);
 
-  return teamAudit.length > 0 ? (
+  return (
     <div className="semis">
       <h2>Semis</h2>
       <div className="white-text">
-        <div className={`S1L ${knockoutPartClassPush(user, teams, "S1")}`}>
-          {knockoutPartTeamPush(user, "S1")}
+        <div
+          className={`S1L ${
+            advancingTeams.length >= 1 &&
+            knockoutPartClassPush(user, teams, "S1")
+          }`}
+        >
+          {userAudit && knockoutPartTeamPush(user, "S1")}
         </div>
-        <div className={`S2L ${knockoutPartClassPush(user, teams, "S2")}`}>
-          {knockoutPartTeamPush(user, "S2")}
+        <div
+          className={`S2L ${
+            advancingTeams.length >= 2 &&
+            knockoutPartClassPush(user, teams, "S2")
+          }`}
+        >
+          {userAudit && knockoutPartTeamPush(user, "S2")}
         </div>
-      </div>
-    </div>
-  ) : userAudit ? (
-    <div className="semis">
-      <h2>Semis</h2>
-      <div className="white-text">
-        <div>{knockoutPartTeamPush(user, "S1")}</div>
-        <div>{knockoutPartTeamPush(user, "S2")}</div>
-      </div>
-    </div>
-  ) : (
-    <div className="semis">
-      <h2>Semis</h2>
-      <div className="white-text">
-        <div></div>
-        <div></div>
       </div>
     </div>
   );

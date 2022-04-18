@@ -1,28 +1,16 @@
-////group details
-//create test specs for func to sort teams
-//write func
-
-////nav bar
-//add # of picks submitted info
-
-////my picks locked
-//audit what happens after each game ends in the ko stage
-
-////leaderboard in its entirety
-//mark off things to audit for during each stage for the leaderboard page
-
 ////pool picks in its entirety
 //way to tell if someone hasn't paid
 //way to tell if someone has invalid picks?
-//mark off things to audit for during each stage for the pool picks page
+//excel doc - mark off things to audit for during each stage for the pool picks page
 
 ////my picks unlocked in its entirety
 //knockout stage - add logic for when you click on a R16 name, it auto poulates into the quarters
 //error handling in excel doc
-//mark off things to audit for during each stage for the unlockd page page
+//excel doc - mark off things to audit for during each stage for the pool picks page
 
 ////admin page for updating user info
-////admin page for updating team info
+////admin page for updating group info
+////admin page for updating individual team info
 ////edit name page
 
 ////rules page
