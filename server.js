@@ -1,17 +1,27 @@
 ////pool picks in its entirety
-//way to tell if someone hasn't paid
-//way to tell if someone has invalid picks?
 //excel doc - mark off things to audit for during each stage for the pool picks page
 
 ////my picks unlocked in its entirety
 //knockout stage - add logic for when you click on a R16 name, it auto poulates into the quarters
+//try to break the submission process for both stages to see if you need to put an audit point in place to track if someone has invalid picks
 //error handling in excel doc
 //excel doc - mark off things to audit for during each stage for the pool picks page
 
 ////admin page for updating user info
+
+//all  pages
+//my-picks page - group stage - make the cont smaller if the group stage has no outcome or point info yet
+//pool-picks page - group stage - make the cont smaller if the group stage has no outcome or point info yet
+
 ////admin page for updating group info
 ////admin page for updating individual team info
 ////edit name page
+
+////pool picks
+//on a hard refresh, the dropdown option and pick info defaults back to the info for the person who is signed in
+
+////leaderboard
+//fix css on "score" and "rank" header centering
 
 ////rules page
 //adjust rules/scoring accordingly

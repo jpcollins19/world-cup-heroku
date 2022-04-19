@@ -51,7 +51,7 @@ const Single_Cont = ({ group }) => {
                     <div className="MP">{team.MP}</div>
                     <div className="W">{team.W} </div>
                     <div className="D">{team.D} </div>
-                    <div className="L">{team.L} </div>
+                    <div className="loss">{team.L} </div>
                     <div className="GF">{team.GF}</div>
                     <div className="GA">{team.GA}</div>
                     <div className="GA">{team.GD}</div>

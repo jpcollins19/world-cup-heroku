@@ -51,6 +51,7 @@ const users = [
     password: "nugget",
     name: "Joe",
     admin: true,
+    paid: true,
 
     groupA1: "Ecuador",
     groupA2: "Netherlands",
@@ -338,6 +339,8 @@ const syncAndSeed = async () => {
         password: obj.password,
         name: obj.name,
         admin: obj.admin,
+        paid: obj.paid,
+
         groupA1: obj.groupA1,
         groupA2: obj.groupA2,
         groupA3: obj.groupA3,

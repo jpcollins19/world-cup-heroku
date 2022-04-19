@@ -1,0 +1,215 @@
+.pool-picks-page {
+  background-image: url("http://wp.usatodaysports.com/wp-content/uploads/sites/90/2014/07/858510292-1.gif");
+
+  /* background-image: url("https://i.ytimg.com/vi/3jKj1_aI1EI/maxresdefault.jpg"); */
+
+  width: 99.5vw;
+  max-height: 82.5vh;
+  min-height: 82.5vh;
+  background-size: cover;
+  overflow: auto;
+}
+
+.pool-picks-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.pool-picks-header {
+  display: flex;
+  margin-top: 2rem;
+  border: solid 4px dodgerblue;
+}
+
+.pool-picks-header-name {
+  display: flex;
+  flex: 0.23;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: solid 4px purple;
+}
+
+.pool-picks-header-name > h1 {
+  display: flex;
+}
+
+.pool-picks-part-dropdown-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid 4px rgb(152, 235, 152);
+}
+
+.pool-picks-part-dropdown-cont > select {
+  text-align: center;
+  font-size: 1.2rem;
+  height: 3rem;
+}
+
+.top-pp {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  border: solid 4px red;
+}
+
+.box-pp {
+  /* padding: 1rem; */
+  margin-left: 0.5rem;
+}
+
+.left-pp {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  border: solid 4px rgb(130, 238, 130);
+  padding: 0;
+}
+
+.predictions-cont-pp {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border: solid 4px orange;
+}
+
+.single-group-cont-pp {
+  width: 23.5rem;
+  border: solid 4px dodgerblue;
+}
+
+.single-group-cont-pp > h4 {
+  text-shadow: 2px 2px black;
+  color: white;
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.3rem;
+  font-size: 1.5rem;
+}
+
+.single-group-cont-pp > div {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 1rem;
+  border: solid black 2px;
+  border-radius: 1rem;
+  background-color: rgb(235, 209, 209);
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+
+.single-group-cont-pp > div > div > h5 {
+  margin: 0rem;
+}
+
+.single-group-cont-pp > div > div > div {
+  margin: 0.1rem;
+  border: solid black 1px;
+}
+
+.prediction-cont-pp > div {
+  width: 8rem;
+}
+
+.outcome-pos-cont-pp > div {
+  width: 8rem;
+}
+
+.points-cont-pp > div > h2 {
+  padding: 1rem;
+}
+
+.right-pp {
+  width: 20%;
+  border: solid 4px purple;
+}
+
+/*/////////////////////////////*/
+/*/ ///knockout stuff below////*/
+/*/////////////////////////////*/
+
+.knockout-cont-pp {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 100%;
+  /* border: solid 4px yellow;  */
+}
+
+.knockout-cont-pp > div {
+  display: flex;
+  justify-content: space-around;
+  border: solid 4px purple;
+}
+
+.knockout-cont-pp > div > div {
+  min-width: 10rem;
+  max-width: 13rem;
+  text-align: center;
+  /* border: solid 4px red; */
+}
+
+.L-pp {
+  padding-right: 0.5rem;
+  margin: 0;
+  /* border: solid 4px yellow; */
+}
+
+.R-pp {
+  padding-left: 0.5rem;
+  border: solid 4px dodgerblue;
+}
+
+.R16-pp > div {
+  padding: 0.5rem 0rem 0.5rem 0rem;
+  /* border: solid 4px orange; */
+}
+
+.R16-pp > div > div {
+  margin: 0.5rem 0rem 0.5rem 0rem;
+}
+
+.knockout-cont-pp > div > .champ > div > div {
+  height: 4rem;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-top: 42%;
+  width: 12rem;
+}
+
+.knockout-cont-pp > div > div > h2 {
+  text-shadow: 2px 2px black;
+  color: white;
+  margin-top: 0.2rem;
+}
+
+.knockout-cont-pp > div > div > div > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid black 2px;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(
+    to bottom,
+    rgb(159, 159, 147) 0%,
+    rgb(11, 11, 11) 50%,
+    rgb(159, 159, 147) 100%
+  );
+  font-size: 1.5rem;
+  /* border: solid 4px dodgerblue; */
+}
+
+.trophy {
+  background-size: cover;
+  background-image: url("/public/pics/trophy.jpg");
+  height: 11.5rem;
+  border-radius: 1rem;
+  max-width: 10rem;
+  margin: 1rem;
+}

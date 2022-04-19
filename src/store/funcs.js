@@ -448,6 +448,10 @@ const teamRankSort = (teams) => {
   }, {});
 };
 
+const paidStatus = (users, name) => {
+  return users.find((user) => user.name === name).paid;
+};
+
 module.exports = {
   singleGroupCalc,
   totalScoreCalc,
@@ -457,4 +461,5 @@ module.exports = {
   currentScoresObj,
   knockoutR16Push,
   teamRankSort,
+  paidStatus,
 };

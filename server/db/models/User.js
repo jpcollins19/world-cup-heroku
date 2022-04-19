@@ -38,7 +38,6 @@ const User = db.define("users", {
     type: BOOLEAN,
     defaultValue: false,
   },
-
   paid: {
     type: BOOLEAN,
     defaultValue: false,

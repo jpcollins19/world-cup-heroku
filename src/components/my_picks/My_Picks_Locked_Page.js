@@ -58,10 +58,6 @@ const My_Picks_Locked_Page = () => {
             <Total_Points_Cont />
           </div>
         </div>
-        {/* <div className="bottom box">
-          <h1 className="white-text">Knockout Stage</h1>
-          <Knockout_Cont part={part} teams={teams} />
-        </div> */}
       </div>
     </main>
   );
