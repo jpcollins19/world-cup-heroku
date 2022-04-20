@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Point_System_Cont from "./Point_System_Cont";
 import Single_Group_Cont_Locked from "./locked/group/Single_Group_Cont_Locked";
 import Total_Points_Cont from "./Total_Points_Cont";
@@ -7,7 +7,6 @@ import Knockout_Cont_Locked from "./locked/ko/Knockout_Cont_Locked";
 import "./My_Picks_Locked.css";
 
 const My_Picks_Locked_Page = () => {
-  const { pathname } = useLocation();
   const user = useSelector((state) => state.auth);
 
   return (
@@ -21,10 +20,7 @@ const My_Picks_Locked_Page = () => {
 
           <div className="button-cont-picks">
             <button>
-              <Link
-                to="/my_picks_edit_group"
-                style={{ textDecoration: "none" }}
-              >
+              <Link to="/my_picks_edit_ko" style={{ textDecoration: "none" }}>
                 Select / Adjust Group Picks
               </Link>
             </button>

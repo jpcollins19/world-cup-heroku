@@ -33,7 +33,14 @@
 }
 
 .point-system-table-text > div {
-  background-color: rgb(235, 209, 209);
+  background: linear-gradient(
+    to bottom,
+    rgb(159, 159, 147) 0%,
+    rgb(222, 222, 212) 25%,
+    rgb(203, 203, 192) 50%,
+    rgb(222, 222, 212) 75%,
+    rgb(159, 159, 147) 100%
+  );
 }
 
 .color-cont {
@@ -156,7 +163,14 @@
   font-size: 1rem;
   border: solid black 2px;
   border-radius: 1rem;
-  background-color: rgb(235, 209, 209);
+  background: linear-gradient(
+    to bottom,
+    rgb(159, 159, 147) 0%,
+    rgb(222, 222, 212) 25%,
+    rgb(203, 203, 192) 50%,
+    rgb(222, 222, 212) 75%,
+    rgb(159, 159, 147) 100%
+  );
   padding-top: 0.3rem;
   padding-bottom: 0.3rem;
 }
@@ -241,7 +255,14 @@
 
 .total-points-text-cont > div {
   border: solid 2px black;
-  background-color: rgb(235, 209, 209);
+  background: linear-gradient(
+    to bottom,
+    rgb(159, 159, 147) 0%,
+    rgb(222, 222, 212) 25%,
+    rgb(203, 203, 192) 50%,
+    rgb(222, 222, 212) 75%,
+    rgb(159, 159, 147) 100%
+  );
   margin: 0.2rem 0.2rem 0.2rem 0rem;
 }
 
@@ -255,7 +276,14 @@
 
 .total-points-points-cont > div {
   border: solid 2px black;
-  background-color: rgb(235, 209, 209);
+  background: linear-gradient(
+    to bottom,
+    rgb(159, 159, 147) 0%,
+    rgb(222, 222, 212) 25%,
+    rgb(203, 203, 192) 50%,
+    rgb(222, 222, 212) 75%,
+    rgb(159, 159, 147) 100%
+  );
   margin: 0.2rem 0.2rem 0.2rem 0rem;
 }
 

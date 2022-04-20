@@ -25,7 +25,7 @@ const Pool_Picks_Page = () => {
             <h1 className="white-text">Picks for: {user.name}</h1>
           </div>
           <div className="pool-picks-part-dropdown-cont">
-            <h4 className="white-text">View Pool Picks</h4>
+            <h3 className="white-text">View Pool Picks</h3>
             <select onChange={(ev) => onChangeHandler(ev.target.value)}>
               <option key={user.id}>{user.name}</option>
               {users &&

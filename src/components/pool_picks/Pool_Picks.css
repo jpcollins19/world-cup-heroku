@@ -1,7 +1,7 @@
 .pool-picks-page {
-  background-image: url("http://wp.usatodaysports.com/wp-content/uploads/sites/90/2014/07/858510292-1.gif");
+  /* background-image: url("http://wp.usatodaysports.com/wp-content/uploads/sites/90/2014/07/858510292-1.gif"); */
 
-  /* background-image: url("https://i.ytimg.com/vi/3jKj1_aI1EI/maxresdefault.jpg"); */
+  background-image: url("https://i.ytimg.com/vi/3jKj1_aI1EI/maxresdefault.jpg");
 
   width: 99.5vw;
   max-height: 82.5vh;
@@ -23,7 +23,7 @@
 
 .pool-picks-header-name {
   display: flex;
-  flex: 0.23;
+  flex: 0.3;
   justify-content: center;
   flex-direction: column;
   align-items: center;
@@ -39,13 +39,24 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-left: 8rem;
   border: solid 4px rgb(152, 235, 152);
 }
 
 .pool-picks-part-dropdown-cont > select {
   text-align: center;
   font-size: 1.2rem;
-  height: 3rem;
+  border: solid black 2px;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(
+    to bottom,
+    rgb(159, 159, 147) 0%,
+    rgb(211, 208, 208) 50%,
+    rgb(159, 159, 147) 100%
+  );
+  font-size: 1.5rem;
+  width: 12rem;
 }
 
 .top-pp {
@@ -98,7 +109,14 @@
   font-size: 1rem;
   border: solid black 2px;
   border-radius: 1rem;
-  background-color: rgb(235, 209, 209);
+  background: linear-gradient(
+    to bottom,
+    rgb(159, 159, 147) 0%,
+    rgb(222, 222, 212) 25%,
+    rgb(203, 203, 192) 50%,
+    rgb(222, 222, 212) 75%,
+    rgb(159, 159, 147) 100%
+  );
   padding-top: 0.3rem;
   padding-bottom: 0.3rem;
 }
@@ -162,7 +180,7 @@
 
 .R-pp {
   padding-left: 0.5rem;
-  border: solid 4px dodgerblue;
+  /* border: solid 4px dodgerblue; */
 }
 
 .R16-pp > div {
