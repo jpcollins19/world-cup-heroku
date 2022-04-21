@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import R16_Game from "./games/R16_Game";
+import R16_Game_UL from "./games/R16_Game_UL";
 
 const R16_UL = ({
   side,
@@ -22,7 +22,7 @@ const R16_UL = ({
         <h2>Round of 16</h2>
         {nums.map((num, idx) => {
           return (
-            <R16_Game
+            <R16_Game_UL
               key={idx}
               setTeam={setTeam}
               game={`Q${side === "left" ? num : num + 4}`}

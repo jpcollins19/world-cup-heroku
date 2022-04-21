@@ -68,9 +68,7 @@ const Total_Points_Cont = () => {
               </div>
             </div>
           </div>
-          {user.tiebreaker && (
-            <h3>Tiebreaker: {user.tiebreaker} goals scored</h3>
-          )}
+          {user.tiebreaker && <h3>Tiebreaker: {user.tiebreaker} goals</h3>}
         </div>
       </div>
     </div>

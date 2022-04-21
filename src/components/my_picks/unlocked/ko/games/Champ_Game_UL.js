@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const Champ_Game = ({ champ, setChamp, CurrentFTeams }) => {
+const Champ_Game_UL = ({ champ, setChamp, CurrentFTeams }) => {
   const teamAnswer = champ && CurrentFTeams.includes(champ) ? champ : "";
 
   useEffect(() => {
@@ -18,4 +18,4 @@ const Champ_Game = ({ champ, setChamp, CurrentFTeams }) => {
   );
 };
 
-export default Champ_Game;
+export default Champ_Game_UL;

@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { knockoutR16Push } from "../../../../../store";
 
-const R16_Game = ({
+const R16_Game_UL = ({
   setTeam,
   game,
   setQ1,
@@ -45,4 +45,4 @@ const R16_Game = ({
   );
 };
 
-export default R16_Game;
+export default R16_Game_UL;

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const F_Game = ({
+const F_Game_UL = ({
   setTeam,
   game,
   F1,
@@ -18,7 +18,7 @@ const F_Game = ({
   }, [teamAnswer]);
 
   return (
-    <div className="white-text">
+    <div className="F">
       <input
         className={`reg-input ${teamAnswer.length > 1 ? "" : "ko-edit-red"}`}
         readOnly="readonly"
@@ -29,4 +29,4 @@ const F_Game = ({
   );
 };
 
-export default F_Game;
+export default F_Game_UL;

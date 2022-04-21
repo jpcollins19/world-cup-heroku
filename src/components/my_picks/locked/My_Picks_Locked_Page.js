@@ -9,6 +9,8 @@ import "./My_Picks_Locked.css";
 const My_Picks_Locked_Page = () => {
   const user = useSelector((state) => state.auth);
 
+  const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+
   return (
     <main className="my-picks-page white text">
       <div className="my-picks-container">
@@ -17,7 +19,6 @@ const My_Picks_Locked_Page = () => {
           <div className="my-picks-header-name">
             <h1 className="white-text">{user.name}</h1>
           </div>
-
           <div className="button-cont-picks">
             <button>
               <Link to="/my_picks_edit_ko" style={{ textDecoration: "none" }}>
@@ -40,14 +41,9 @@ const My_Picks_Locked_Page = () => {
           <div className="box left">
             <Point_System_Cont />
             <div className="predictions-cont">
-              <Single_Group_Cont_Locked group={"A"} />
-              <Single_Group_Cont_Locked group={"B"} />
-              <Single_Group_Cont_Locked group={"C"} />
-              <Single_Group_Cont_Locked group={"D"} />
-              <Single_Group_Cont_Locked group={"E"} />
-              <Single_Group_Cont_Locked group={"F"} />
-              <Single_Group_Cont_Locked group={"G"} />
-              <Single_Group_Cont_Locked group={"H"} />
+              {letters.map((letter) => (
+                <Single_Group_Cont_Locked key={letter} group={letter} />
+              ))}
             </div>
           </div>
           <div className="box right">

@@ -1,4 +1,4 @@
-import S_Game from "./games/S_Game";
+import S_Game_UL from "./games/S_Game_UL";
 
 const S_UL = ({
   side,
@@ -25,7 +25,7 @@ const S_UL = ({
   const nums = [1, 2];
 
   return (
-    <div className="semis">
+    <div>
       <h2>Semis</h2>
       {nums.map((num, idx) => {
         const gameNum = side === "left" ? num : num + 2;
@@ -50,8 +50,9 @@ const S_UL = ({
         const team2Q = eval(`Q${QGames[gameNum][1]}`);
 
         return (
-          <S_Game
+          <S_Game_UL
             key={idx}
+            gameNum={gameNum}
             setTeam={setTeam}
             game={`S${num}`}
             S1={game}

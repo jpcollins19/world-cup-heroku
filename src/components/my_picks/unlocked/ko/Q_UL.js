@@ -1,4 +1,4 @@
-import Q_Game from "./games/Q_Game";
+import Q_Game_UL from "./games/Q_Game_UL";
 
 const Q_UL = ({
   side,
@@ -19,7 +19,7 @@ const Q_UL = ({
   const nums = [1, 2, 3, 4];
 
   return (
-    <div className="quarters">
+    <div className="quarters-edit">
       <h2>Quarters</h2>
       {nums.map((num, idx) => {
         const gameNum = side === "left" ? num : num + 4;
@@ -37,8 +37,9 @@ const Q_UL = ({
         };
 
         return (
-          <Q_Game
+          <Q_Game_UL
             key={idx}
+            gameNum={gameNum}
             setTeam={setTeam}
             game={`Q${num}`}
             Q1={game}

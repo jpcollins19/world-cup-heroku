@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 
-const S_Game = ({
+const S_Game_UL = ({
   setTeam,
+  gameNum,
   game,
   S1,
   S2,
@@ -18,12 +19,25 @@ const S_Game = ({
 
   const teamAnswer = gameVar && CurrentQTeams.includes(gameVar) ? gameVar : "";
 
+  let gameClass;
+
+  switch (gameNum % 2) {
+    case 1:
+      gameClass = "S1";
+      break;
+    case 0:
+      gameClass = "S2";
+      break;
+    default:
+      break;
+  }
+
   useEffect(() => {
     teamAnswer === "" && setTeam(currentSemiTeamSet, "");
   }, [teamAnswer]);
 
   return (
-    <div className="white-text">
+    <div className={gameClass}>
       <input
         className={`reg-input ${teamAnswer.length > 1 ? "" : "ko-edit-red"}`}
         readOnly="readonly"
@@ -34,4 +48,4 @@ const S_Game = ({
   );
 };
 
-export default S_Game;
+export default S_Game_UL;

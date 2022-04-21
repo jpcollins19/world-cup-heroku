@@ -1,4 +1,4 @@
-import F_Game from "./games/F_Game";
+import F_Game_UL from "./games/F_Game_UL";
 
 const F_UL = ({
   side,
@@ -26,9 +26,9 @@ const F_UL = ({
   const team2S = eval(`S${SGames[gameNum][1]}`);
 
   return (
-    <div className="final">
+    <div>
       <h2>Final</h2>
-      <F_Game
+      <F_Game_UL
         setTeam={setTeam}
         game={`F${gameNum}`}
         F1={game}
