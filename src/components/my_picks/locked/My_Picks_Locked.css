@@ -312,10 +312,41 @@
   /* border: solid 4px red; */
 }
 
+.knockout-cont > div > div > h2 {
+  text-shadow: 2px 2px black;
+  color: white;
+  margin-top: 0.2rem;
+}
+
+.knockout-cont > div > div > div > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid black 2px;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(
+    to bottom,
+    rgb(159, 159, 147) 0%,
+    rgb(11, 11, 11) 50%,
+    rgb(159, 159, 147) 100%
+  );
+  font-size: 1.5rem;
+  /* border: solid 4px dodgerblue; */
+}
+
+.knockout-cont > div > .champ > div > div {
+  height: 4rem;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-top: 50%;
+  width: 12rem;
+}
+
 .L {
   padding-right: 0.5rem;
-  /* border: solid 4px yellow; */
   margin: 0;
+  /* border: solid 4px yellow; */
 }
 
 .R {
@@ -376,35 +407,4 @@
 
 .champ > div {
   width: 12rem;
-}
-
-.knockout-cont > div > .champ > div > div {
-  height: 4rem;
-  font-weight: bold;
-  font-size: 2rem;
-  margin-top: 50%;
-  width: 12rem;
-}
-
-.knockout-cont > div > div > h2 {
-  text-shadow: 2px 2px black;
-  color: white;
-  margin-top: 0.2rem;
-}
-
-.knockout-cont > div > div > div > div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: solid black 2px;
-  height: 2.5rem;
-  border-radius: 0.5rem;
-  background: linear-gradient(
-    to bottom,
-    rgb(159, 159, 147) 0%,
-    rgb(11, 11, 11) 50%,
-    rgb(159, 159, 147) 100%
-  );
-  font-size: 1.5rem;
-  /* border: solid 4px dodgerblue; */
 }

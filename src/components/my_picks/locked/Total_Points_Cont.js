@@ -3,7 +3,7 @@ import {
   singleGroupCalc,
   knockoutRoundCalc,
   totalScoreCalc,
-} from "../../store";
+} from "../../../store";
 
 const Total_Points_Cont = () => {
   const user = useSelector((state) => state.auth);

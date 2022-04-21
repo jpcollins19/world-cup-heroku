@@ -184,26 +184,72 @@ section > div {
   /* border: solid 4px red;  */
 }
 
-.Q1L-edit {
-  margin-top: 36%;
-  padding-left: 0.5rem;
+.knockout-cont-edit > div > div > h2 {
+  text-shadow: 2px 2px black;
+  color: white;
+  margin-top: 0.2rem;
+  border: solid 4px red;
 }
 
-.Q2L-edit {
-  margin-top: 36%;
-  padding-left: 0.5rem;
-}
-
-.cancel {
+.knockout-cont-edit > div > div > div > input {
   display: flex;
-  flex: 0.2;
-}
-
-.team-name {
-  display: flex;
-  flex: 0.75;
-  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  background: linear-gradient(
+    to bottom,
+    rgb(159, 159, 147) 0%,
+    rgb(11, 11, 11) 50%,
+    rgb(159, 159, 147) 100%
+  );
+  font-size: 1.5rem;
+  text-shadow: 2px 2px black;
+  color: white;
+  text-align: center;
   cursor: pointer;
+  margin: 0.5rem 0rem 0.5rem 0rem;
+}
+
+.reg-input {
+  height: 3rem;
+  min-width: 11rem;
+  max-width: 11rem;
+}
+
+.R16 {
+  border: solid 4px orange;
+}
+
+.quarters {
+  border: solid 4px dodgerblue;
+}
+
+.semis {
+  border: solid 4px green;
+}
+
+.final {
+  border: solid 4px yellow;
+}
+
+.ko-edit-red {
+  border: solid 2px red;
+}
+
+.champ-edit {
+  width: 13rem;
+}
+
+.champ-edit > div {
+  width: 12rem;
+}
+
+.champ-input {
+  height: 4rem;
+  font-weight: bold;
+  font-size: 2rem;
+  /* margin-top: 50%; */
+  max-width: 13rem;
+  min-width: 13rem;
 }
 
 /* 
@@ -212,8 +258,6 @@ section > div {
   padding: 0.5rem 0rem 0.5rem 0rem;
    border: solid 4px orange; 
 }
-
-
 
 .L {
   padding-right: 0.5rem;
@@ -224,6 +268,10 @@ section > div {
 .R {
   padding-left: 0.5rem;
    border: solid 4px dodgerblue; 
+}
+
+.Q1L {
+  margin-top: 36%;
 }
 
 
@@ -261,51 +309,12 @@ section > div {
    border: solid 4px purple; 
 }
 
-.champ {
-  width: 12rem;
-}
 
-.champ > div {
-  width: 12rem;
-}
-
-.knockout-cont > div > .champ > div > div {
-  height: 4rem;
-  font-weight: bold;
-  font-size: 2rem;
-  margin-top: 50%;
-  width: 12rem;
-}
 
 
  */
 
-.knockout-cont-edit > div > div > h2 {
-  text-shadow: 2px 2px black;
-  color: white;
-  margin-top: 0.2rem;
-}
-
-.knockout-cont-edit > div > div > div > input {
-  display: flex;
-  align-items: center;
-  border: solid black 2px;
-  height: 3rem;
-  border-radius: 0.5rem;
-  background: linear-gradient(
-    to bottom,
-    rgb(159, 159, 147) 0%,
-    rgb(11, 11, 11) 50%,
-    rgb(159, 159, 147) 100%
-  );
-  font-size: 1.5rem;
-  min-width: 13rem;
-  max-width: 13rem;
-  text-shadow: 2px 2px black;
-  color: white;
-  text-align: center;
-}
-
+/* 
 .knockout-cont-edit > div > div > div > div {
   display: flex;
   align-items: center;
@@ -318,10 +327,11 @@ section > div {
     rgb(11, 11, 11) 50%,
     rgb(159, 159, 147) 100%
   );
+  background: red;
   font-size: 1.5rem;
-  min-width: 13rem;
-  max-width: 13rem;
-}
+  min-width: 12rem;
+  max-width: 12rem;
+} */
 
 /* .L > div > div {
   display: flex;
@@ -334,15 +344,3 @@ section > div {
   justify-content: center;
   cursor: pointer;
 } */
-
-.L > div > input {
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.R > div > input {
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-}

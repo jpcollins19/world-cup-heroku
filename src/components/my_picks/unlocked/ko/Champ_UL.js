@@ -2,23 +2,17 @@ import { useSelector } from "react-redux";
 import { knockoutPartTeamPush, knockoutPartClassPush } from "../../../../store";
 
 const Champ_L = () => {
-  const user = useSelector((state) => state.auth);
-  const teams = useSelector((state) => state.teams);
-
-  const userAudit = user.knockChamp;
-  const advancingTeams = teams.filter((team) => team.advanceToChamp);
-
   return (
-    <div className="champ">
+    <div className="champ-edit">
       <h2>Champion</h2>
       <div className="white-text">
-        <div
-          className={
-            advancingTeams.length && knockoutPartClassPush(user, teams, "Champ")
-          }
-        >
-          {userAudit && knockoutPartTeamPush(user, "Champ")}
-        </div>
+        <input
+          // className={gameVar.length > 1 ? "" : "ko-edit-red"}
+          className="ko-edit-red champ-input"
+          readOnly="readonly"
+          defaultValue="champ"
+          // onClick={(ev) => setTeam(setGame, ev.target.value)}
+        ></input>
       </div>
     </div>
   );

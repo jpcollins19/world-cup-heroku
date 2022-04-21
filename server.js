@@ -1,6 +1,10 @@
 ////my picks unlocked
 //ko - do css only
 
+////my picks locked
+//group stage - adjust single group cont so it is a map like in the unlocked page
+//ko stage so there is no right or left - adjust css in real time as well, maybe done need all of the extra classNames
+
 ////add admin page for updating user info
 
 //all pages - add logic for each stage of the tourney, test too
@@ -17,6 +21,9 @@
 ////admin page for updating group info
 ////admin page for updating individual team info
 ////edit name page
+
+////loagin and create account pages
+//make it so the email is all lower case letters when submitted
 
 ////bugs
 //pool picks page - on a hard refresh, the dropdown option and pick info defaults back to the info for the person who is signed in

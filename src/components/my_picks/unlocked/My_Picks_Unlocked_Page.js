@@ -1,11 +1,11 @@
 // import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import Single_Group_Cont_Unlocked from "./unlocked/group/Single_Group_Cont_Unlocked";
-import Knockout_Cont_Unlocked from "./unlocked/ko/Knockout_Cont_Unlocked";
+import Single_Group_Cont_Unlocked from "./group/Single_Group_Cont_Unlocked";
+import Knockout_Cont_Unlocked from "./ko/Knockout_Cont_Unlocked";
 import "./My_Picks_Unlocked.css";
 
 const My_Picks_Unlocked_Page = () => {
-  // const user = useSelector((state) => state.auth);
+  const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
 
   return (
     <main className="my-picks-page-ul ">
@@ -30,14 +30,9 @@ const My_Picks_Unlocked_Page = () => {
         <div className="edit-full-cont">
           <Knockout_Cont_Unlocked />
           {/* <div className="predictions-cont-edit">
-            <Single_Group_Cont_Unlocked group={"A"} />
-            <Single_Group_Cont_Unlocked group={"B"} />
-            <Single_Group_Cont_Unlocked group={"C"} />
-            <Single_Group_Cont_Unlocked group={"D"} />
-            <Single_Group_Cont_Unlocked group={"E"} />
-            <Single_Group_Cont_Unlocked group={"F"} />
-            <Single_Group_Cont_Unlocked group={"G"} />
-            <Single_Group_Cont_Unlocked group={"H"} />
+            {letters.map((letter) => (
+              <Single_Group_Cont_Unlocked group={letter} />
+            ))}
           </div> */}
         </div>
       </div>
