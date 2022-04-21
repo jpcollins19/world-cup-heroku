@@ -1,17 +1,45 @@
 import Q_Game from "./games/Q_Game";
 
-const Q_UL = ({ side, setTeam, Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8 }) => {
+const Q_UL = ({
+  side,
+  setTeam,
+  Q1,
+  Q2,
+  Q3,
+  Q4,
+  Q5,
+  Q6,
+  Q7,
+  Q8,
+  setS1,
+  setS2,
+  setS3,
+  setS4,
+}) => {
   const nums = [1, 2, 3, 4];
 
   return (
     <div className="quarters">
       <h2>Quarters</h2>
       {nums.map((num, idx) => {
-        const game = eval(`Q${side === "left" ? num : num + 4}`);
+        const gameNum = side === "left" ? num : num + 4;
+        const game = eval(`Q${gameNum}`);
+
+        const semiGames = {
+          1: 1,
+          2: 1,
+          3: 2,
+          4: 2,
+          5: 3,
+          6: 3,
+          7: 4,
+          8: 4,
+        };
 
         return (
           <Q_Game
             key={idx}
+            setTeam={setTeam}
             game={`Q${num}`}
             Q1={game}
             Q2={game}
@@ -21,6 +49,11 @@ const Q_UL = ({ side, setTeam, Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8 }) => {
             Q6={game}
             Q7={game}
             Q8={game}
+            setNextGame={`setS${semiGames[gameNum]}`}
+            setS1={setS1}
+            setS2={setS2}
+            setS3={setS3}
+            setS4={setS4}
           />
         );
       })}

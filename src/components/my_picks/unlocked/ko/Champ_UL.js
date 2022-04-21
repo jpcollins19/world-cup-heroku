@@ -1,19 +1,10 @@
-import { useSelector } from "react-redux";
-import { knockoutPartTeamPush, knockoutPartClassPush } from "../../../../store";
+import Champ_Game from "./games/Champ_Game";
 
-const Champ_L = () => {
+const Champ_L = ({ champ, setChamp, F1, F2 }) => {
   return (
     <div className="champ-edit">
       <h2>Champion</h2>
-      <div className="white-text">
-        <input
-          // className={gameVar.length > 1 ? "" : "ko-edit-red"}
-          className="ko-edit-red champ-input"
-          readOnly="readonly"
-          defaultValue="champ"
-          // onClick={(ev) => setTeam(setGame, ev.target.value)}
-        ></input>
-      </div>
+      <Champ_Game champ={champ} setChamp={setChamp} CurrentFTeams={[F1, F2]} />
     </div>
   );
 };

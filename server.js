@@ -3,7 +3,7 @@
 
 ////my picks locked
 //group stage - adjust single group cont so it is a map like in the unlocked page
-//ko stage so there is no right or left - adjust css in real time as well, maybe done need all of the extra classNames
+//ko stage so there is no right or left - adjust css in real time as well, maybe dont need all of the extra classNames
 
 ////add admin page for updating user info
 
