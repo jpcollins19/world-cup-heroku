@@ -4,8 +4,11 @@ import {
   knockoutRoundCalc,
   totalScoreCalc,
 } from "../../../store";
+import { useLocation } from "react-router-dom";
 
-const Total_Points_Cont = () => {
+const Total_Points_Cont = ({ selectedUser }) => {
+  const { pathname } = useLocation();
+
   const user = useSelector((state) => state.auth);
   const teams = useSelector((state) => state.teams);
 
@@ -39,36 +42,121 @@ const Total_Points_Cont = () => {
               <h4>Points</h4>
               <div>{groupTotal}</div>
               <div>
-                {Object.values(knockoutRoundCalc("quarters", user, teams))[0]}
+                {
+                  Object.values(
+                    knockoutRoundCalc(
+                      "quarters",
+                      pathname === "/pool_picks" ? selectedUser : user,
+                      teams
+                    )
+                  )[0]
+                }
               </div>
               <div>
-                {Object.values(knockoutRoundCalc("semis", user, teams))[0]}
+                {
+                  Object.values(
+                    knockoutRoundCalc(
+                      "semis",
+                      pathname === "/pool_picks" ? selectedUser : user,
+                      teams
+                    )
+                  )[0]
+                }
               </div>
               <div>
-                {Object.values(knockoutRoundCalc("finals", user, teams))[0]}
+                {
+                  Object.values(
+                    knockoutRoundCalc(
+                      "finals",
+                      pathname === "/pool_picks" ? selectedUser : user,
+                      teams
+                    )
+                  )[0]
+                }
               </div>
               <div>
-                {Object.values(knockoutRoundCalc("champ", user, teams))[0]}
+                {
+                  Object.values(
+                    knockoutRoundCalc(
+                      "champ",
+                      pathname === "/pool_picks" ? selectedUser : user,
+                      teams
+                    )
+                  )[0]
+                }
               </div>
               <div className="bold">
                 {totalScoreCalc(
-                  singleGroupCalc(user, teams, "A"),
-                  singleGroupCalc(user, teams, "B"),
-                  singleGroupCalc(user, teams, "C"),
-                  singleGroupCalc(user, teams, "D"),
-                  singleGroupCalc(user, teams, "E"),
-                  singleGroupCalc(user, teams, "F"),
-                  singleGroupCalc(user, teams, "G"),
-                  singleGroupCalc(user, teams, "H"),
-                  knockoutRoundCalc("quarters", user, teams),
-                  knockoutRoundCalc("semis", user, teams),
-                  knockoutRoundCalc("finals", user, teams),
-                  knockoutRoundCalc("champ", user, teams)
+                  singleGroupCalc(
+                    pathname === "/pool_picks" ? selectedUser : user,
+                    teams,
+                    "A"
+                  ),
+                  singleGroupCalc(
+                    pathname === "/pool_picks" ? selectedUser : user,
+                    teams,
+                    "B"
+                  ),
+                  singleGroupCalc(
+                    pathname === "/pool_picks" ? selectedUser : user,
+                    teams,
+                    "C"
+                  ),
+                  singleGroupCalc(
+                    pathname === "/pool_picks" ? selectedUser : user,
+                    teams,
+                    "D"
+                  ),
+                  singleGroupCalc(
+                    pathname === "/pool_picks" ? selectedUser : user,
+                    teams,
+                    "E"
+                  ),
+                  singleGroupCalc(
+                    pathname === "/pool_picks" ? selectedUser : user,
+                    teams,
+                    "F"
+                  ),
+                  singleGroupCalc(
+                    pathname === "/pool_picks" ? selectedUser : user,
+                    teams,
+                    "G"
+                  ),
+                  singleGroupCalc(
+                    pathname === "/pool_picks" ? selectedUser : user,
+                    teams,
+                    "H"
+                  ),
+                  knockoutRoundCalc(
+                    "quarters",
+                    pathname === "/pool_picks" ? selectedUser : user,
+                    teams
+                  ),
+                  knockoutRoundCalc(
+                    "semis",
+                    pathname === "/pool_picks" ? selectedUser : user,
+                    teams
+                  ),
+                  knockoutRoundCalc(
+                    "finals",
+                    pathname === "/pool_picks" ? selectedUser : user,
+                    teams
+                  ),
+                  knockoutRoundCalc(
+                    "champ",
+                    pathname === "/pool_picks" ? selectedUser : user,
+                    teams
+                  )
                 )}
               </div>
             </div>
           </div>
-          {user.tiebreaker && <h3>Tiebreaker: {user.tiebreaker} goals</h3>}
+          {
+            <h3>
+              Tiebreaker:{" "}
+              {selectedUser ? selectedUser.tiebreaker : user.tiebreaker} goals
+            </h3>
+          }
         </div>
       </div>
     </div>

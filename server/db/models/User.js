@@ -44,108 +44,135 @@ const User = db.define("users", {
   },
   groupA1: {
     type: STRING,
+    defaultValue: null,
   },
   groupA2: {
     type: STRING,
+    defaultValue: null,
   },
   groupA3: {
     type: STRING,
+    defaultValue: null,
   },
   groupA4: {
     type: STRING,
+    defaultValue: null,
   },
 
   groupB1: {
     type: STRING,
+    defaultValue: null,
   },
   groupB2: {
     type: STRING,
+    defaultValue: null,
   },
   groupB3: {
     type: STRING,
+    defaultValue: null,
   },
   groupB4: {
     type: STRING,
+    defaultValue: null,
   },
 
   groupC1: {
     type: STRING,
+    defaultValue: null,
   },
   groupC2: {
     type: STRING,
+    defaultValue: null,
   },
   groupC3: {
     type: STRING,
+    defaultValue: null,
   },
   groupC4: {
     type: STRING,
+    defaultValue: null,
   },
 
   groupD1: {
     type: STRING,
+    defaultValue: null,
   },
   groupD2: {
     type: STRING,
+    defaultValue: null,
   },
   groupD3: {
     type: STRING,
+    defaultValue: null,
   },
   groupD4: {
     type: STRING,
+    defaultValue: null,
   },
 
   groupE1: {
     type: STRING,
+    defaultValue: null,
   },
   groupE2: {
     type: STRING,
+    defaultValue: null,
   },
   groupE3: {
     type: STRING,
+    defaultValue: null,
   },
   groupE4: {
     type: STRING,
+    defaultValue: null,
   },
-
   groupF1: {
     type: STRING,
+    defaultValue: null,
   },
   groupF2: {
     type: STRING,
+    defaultValue: null,
   },
   groupF3: {
     type: STRING,
+    defaultValue: null,
   },
   groupF4: {
     type: STRING,
+    defaultValue: null,
   },
-
   groupG1: {
     type: STRING,
+    defaultValue: null,
   },
   groupG2: {
     type: STRING,
+    defaultValue: null,
   },
   groupG3: {
     type: STRING,
+    defaultValue: null,
   },
   groupG4: {
     type: STRING,
+    defaultValue: null,
   },
-
   groupH1: {
     type: STRING,
+    defaultValue: null,
   },
   groupH2: {
     type: STRING,
+    defaultValue: null,
   },
   groupH3: {
     type: STRING,
   },
   groupH4: {
     type: STRING,
+    defaultValue: null,
   },
-
   knockQ1: {
     type: STRING,
   },

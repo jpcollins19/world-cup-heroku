@@ -4,7 +4,7 @@ import Prediction_Cont_Locked from "./Prediction_Cont_Locked";
 import Outcome_Cont_Locked from "./Outcome_Cont_Locked";
 import Points_Cont_Locked from "./Points_Cont_Locked";
 
-const Single_Group_Cont_Locked = ({ group }) => {
+const Single_Group_Cont_Locked = ({ group, selectedUser }) => {
   const user = useSelector((state) => state.auth);
 
   return user.groupA1 ? (
@@ -12,9 +12,9 @@ const Single_Group_Cont_Locked = ({ group }) => {
       <h4>Group {group}</h4>
       <div>
         <Rank_Cont_Locked />
-        <Prediction_Cont_Locked group={group} />
+        <Prediction_Cont_Locked group={group} selectedUser={selectedUser} />
         <Outcome_Cont_Locked group={group} />
-        <Points_Cont_Locked group={group} />
+        <Points_Cont_Locked group={group} selectedUser={selectedUser} />
       </div>
     </div>
   ) : (

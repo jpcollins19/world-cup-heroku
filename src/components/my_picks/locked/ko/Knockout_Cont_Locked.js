@@ -1,27 +1,21 @@
 import R16_L from "./R16_L";
 import Q_L from "./Q_L";
-// import R16_Left_L from "./left/R16_Left_L";
-// import Q_Left_L from "./left/Q_Left_L";
-// import S_Left_L from "./left/S_Left_L";
-// import F_Left_L from "./left/F_Left_L";
-// import Champ_L from "./Champ_L";
-// import R16_Right_L from "./right/R16_Right_L";
-// import Q_Right_L from "./right/Q_Right_L";
-// import S_Right_L from "./right/S_Right_L";
-// import F_Right_L from "./right/F_Right_L";
+import S_L from "./S_L";
+import F_L from "./F_L";
+import Champ_L from "./Champ_L";
 
-const Knockout_Cont_Locked = () => {
+const Knockout_Cont_Locked = ({ selectedUser }) => {
   return (
     <div className="knockout-cont">
       <div>
         <R16_L side={"left"} />
-        <Q_L side={"left"} />
-        {/* <S_Left_L />
-        <F_Left_L />
-        <Champ_L />
-        <F_Right_L />
-        <S_Right_L /> */}
-        <Q_L side={"right"} />
+        <Q_L side={"left"} selectedUser={selectedUser} />
+        <S_L side={"left"} selectedUser={selectedUser} />
+        <F_L side={"left"} selectedUser={selectedUser} />
+        <Champ_L selectedUser={selectedUser} />
+        <F_L side={"right"} selectedUser={selectedUser} />
+        <S_L side={"right"} selectedUser={selectedUser} />
+        <Q_L side={"right"} selectedUser={selectedUser} />
         <R16_L side={"right"} />
       </div>
     </div>

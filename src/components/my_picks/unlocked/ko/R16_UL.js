@@ -4,6 +4,14 @@ import R16_Game_UL from "./games/R16_Game_UL";
 const R16_UL = ({
   side,
   setTeam,
+  Q1,
+  Q2,
+  Q3,
+  Q4,
+  Q5,
+  Q6,
+  Q7,
+  Q8,
   setQ1,
   setQ2,
   setQ3,
@@ -26,6 +34,14 @@ const R16_UL = ({
               key={idx}
               setTeam={setTeam}
               game={`Q${side === "left" ? num : num + 4}`}
+              Q1={Q1}
+              Q2={Q2}
+              Q3={Q3}
+              Q4={Q4}
+              Q5={Q5}
+              Q6={Q6}
+              Q7={Q7}
+              Q8={Q8}
               setQ1={setQ1}
               setQ2={setQ2}
               setQ3={setQ3}

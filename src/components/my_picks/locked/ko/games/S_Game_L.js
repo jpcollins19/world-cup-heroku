@@ -5,43 +5,25 @@ import {
 } from "../../../../../store";
 import { useLocation } from "react-router-dom";
 
-const Q_Game_L = ({ game, gameNum, selectedUser }) => {
+const S_Game_L = ({ game, gameNum, selectedUser }) => {
   const { pathname } = useLocation();
 
   const user = useSelector((state) => state.auth);
   const teams = useSelector((state) => state.teams);
 
-  const userAudit = user && user.knockChamp;
-  const advancingTeams = teams.filter((team) => team.advanceToQ);
+  const userAudit = user.knockChamp;
+  const advancingTeams = teams.filter((team) => team.advanceToS);
 
   const teamNum = game.split("")[1];
 
   let gameClass;
 
-  switch (gameNum) {
+  switch (gameNum % 2) {
     case 1:
-      gameClass = "Q1L";
+      gameClass = "S1L";
       break;
-    case 5:
-      gameClass = "Q1L";
-      break;
-    case 2:
-      gameClass = "Q2L";
-      break;
-    case 6:
-      gameClass = "Q2L";
-      break;
-    case 3:
-      gameClass = "Q3L";
-      break;
-    case 7:
-      gameClass = "Q3L";
-      break;
-    case 4:
-      gameClass = "Q4L";
-      break;
-    case 8:
-      gameClass = "Q4L";
+    case 0:
+      gameClass = "S2L";
       break;
     default:
       break;
@@ -70,4 +52,4 @@ const Q_Game_L = ({ game, gameNum, selectedUser }) => {
   );
 };
 
-export default Q_Game_L;
+export default S_Game_L;

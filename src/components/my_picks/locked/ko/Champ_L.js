@@ -1,25 +1,11 @@
-import { useSelector } from "react-redux";
-import { knockoutPartTeamPush, knockoutPartClassPush } from "../../../../store";
+import Champ_Game_L from "./games/Champ_Game_L";
 
-const Champ_L = () => {
-  const user = useSelector((state) => state.auth);
-  const teams = useSelector((state) => state.teams);
-
-  const userAudit = user.knockChamp;
-  const advancingTeams = teams.filter((team) => team.advanceToChamp);
-
+const Champ_L = ({ selectedUser }) => {
   return (
     <div className="champ">
       <h2>Champion</h2>
-      <div className="white-text">
-        <div
-          className={
-            advancingTeams.length && knockoutPartClassPush(user, teams, "Champ")
-          }
-        >
-          {userAudit && knockoutPartTeamPush(user, "Champ")}
-        </div>
-      </div>
+      <Champ_Game_L selectedUser={selectedUser} />
+      <div className="trophy"></div>
     </div>
   );
 };

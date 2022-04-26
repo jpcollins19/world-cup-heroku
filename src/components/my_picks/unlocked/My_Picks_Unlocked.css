@@ -214,36 +214,36 @@ section > div {
   max-width: 11rem;
 }
 
-.Q1 {
+.Q1UL {
   margin-top: 37%;
 }
 
-.Q2 {
+.Q2UL {
   margin-top: 50%;
 }
 
-.Q3 {
+.Q3UL {
   margin-top: 50%;
 }
 
-.Q4 {
+.Q4UL {
   margin-top: 50%;
 }
 
-.S1 {
+.S1UL {
   margin-top: 72%;
 }
 
-.S2 {
+.S2UL {
   margin-top: 127%;
 }
 
-.F {
+.FUL {
   margin-top: 147%;
 }
 
 .ko-edit-red {
-  border: solid 2px red;
+  border: solid 3px red;
 }
 
 .champ-edit {

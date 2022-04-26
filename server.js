@@ -1,26 +1,26 @@
-////my picks locked
-//ko stage so there is no right or left - adjust css in real time as well, maybe dont need all of the extra classNames
-
-////roll through each game of ko stage to verify all looks good
+////my picks unlocked
+//knockout stage - add logic for when someone already has picks, it auto populates to their picks - audit this form scratch (give the auth no ko picks and go one by one)
+//group stage - adjust setup so there is a Group_Cont_Unlocked page
+//group stage - Group_Cont_Unlocked page - add local state to house group picks - look at pick em code for ideas on how to approach this clean
+//^^add logic for when someone already has picks, it auto populates to their picks
+//add submitting functionality
 
 ////add admin page for updating user info
 
 //all pages - add logic for each stage of the tourney, test too
 //my-picks page - group stage - make the cont smaller if the group stage has no outcome or point info yet
 //pool-picks page - group stage - make the cont smaller if the group stage has no outcome or point info yet
-
 ////my picks unlocked
-//add submitting functionality
-//knockout stage - add logic for when you click on a R16 name, it auto poulates into the quarters
+
 //both stages - try to break the submission process for both stages to see if you need to put an audit point in place to track if someone has invalid picks
 //error handling in excel doc
 //excel doc - mark off things to audit for during each stage for the my picks unlocked page
 
-////admin page for updating group info
-////admin page for updating individual team info
-////edit name page
+////add admin page for updating group info
+////add admin page for updating individual team info
+////add edit name page
 
-////loagin and create account pages
+////login and create account pages
 //make it so the email is all lower case letters when submitted
 
 ////bugs

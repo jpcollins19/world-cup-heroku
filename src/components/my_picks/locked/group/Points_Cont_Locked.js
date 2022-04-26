@@ -1,11 +1,18 @@
 import { useSelector } from "react-redux";
 import { singleGroupCalc } from "../../../../store";
+import { useLocation } from "react-router-dom";
 
-const Points_Cont_Locked = ({ group }) => {
+const Points_Cont_Locked = ({ group, selectedUser }) => {
+  const { pathname } = useLocation();
+
   const user = useSelector((state) => state.auth);
   const teams = useSelector((state) => state.teams);
 
-  const pointObj = singleGroupCalc(user, teams, group);
+  const pointObj = singleGroupCalc(
+    pathname === "/pool_picks" ? selectedUser : user,
+    teams,
+    group
+  );
 
   return (
     <div className="points-cont">

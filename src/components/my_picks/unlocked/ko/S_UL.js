@@ -3,16 +3,7 @@ import S_Game_UL from "./games/S_Game_UL";
 const S_UL = ({
   side,
   setTeam,
-  S1,
-  S2,
-  S3,
-  S4,
-  setS1,
-  setS2,
-  setS3,
-  setS4,
-  setF1,
-  setF2,
+  setChanged,
   Q1,
   Q2,
   Q3,
@@ -21,6 +12,22 @@ const S_UL = ({
   Q6,
   Q7,
   Q8,
+  S1,
+  S2,
+  S3,
+  S4,
+  setS1,
+  setS2,
+  setS3,
+  setS4,
+  F1,
+  F2,
+  setF1,
+  setF2,
+  F1Changed,
+  F2Changed,
+  setF1Changed,
+  setF2Changed,
 }) => {
   const nums = [1, 2];
 
@@ -54,6 +61,7 @@ const S_UL = ({
             key={idx}
             gameNum={gameNum}
             setTeam={setTeam}
+            setChanged={setChanged}
             game={`S${num}`}
             S1={game}
             S2={game}
@@ -61,9 +69,16 @@ const S_UL = ({
             S4={game}
             currentSemiTeamSet={currentSemiTeamSet}
             CurrentQTeams={[team1Q, team2Q]}
+            nextGame={`F${finals[gameNum]}`}
             setNextGame={`setF${finals[gameNum]}`}
             setF1={setF1}
             setF2={setF2}
+            F1={F1}
+            F2={F2}
+            F1Changed={F1Changed}
+            F2Changed={F2Changed}
+            setF1Changed={setF1Changed}
+            setF2Changed={setF2Changed}
           />
         );
       })}
