@@ -11,6 +11,7 @@ import Rules_Page from "./components/rules/Rules_Page";
 import My_Picks_Locked_Page from "./components/my_picks/locked/My_Picks_Locked_Page";
 import My_Picks_Unlocked_Page from "./components/my_picks/unlocked/My_Picks_Unlocked_Page";
 import Pool_Picks_Page from "./components/pool_picks/Pool_Picks_Page";
+import User_Admin_Page from "./components/admin/user/User_Admin_Page";
 
 const Routes = () => {
   const dispatch = useDispatch();
@@ -29,6 +30,9 @@ const Routes = () => {
 
   return auth.id ? (
     <Switch>
+      {auth.email === "joe@gmail.com" && (
+        <Route exact path="/admin/user" component={User_Admin_Page} />
+      )}
       <Route exact path="/leaderboard" component={Leaderboard_Page} />
       <Route exact path="/my_picks" component={My_Picks_Locked_Page} />
       <Route

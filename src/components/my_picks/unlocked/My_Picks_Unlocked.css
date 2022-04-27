@@ -63,6 +63,32 @@
   background-color: rgb(204, 200, 200);
 }
 
+.tiebreaker-cont-edit-picks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.tiebreaker-cont-edit-picks > h3 {
+  margin: 0;
+  padding-right: 0.5%;
+}
+
+.tiebreaker-cont-edit-picks > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tiebreaker-cont-edit-picks > div > input {
+  background: transparent;
+  border: solid 1px white;
+  max-width: 4rem;
+  height: 2rem;
+  font-size: 1.5rem;
+}
+
 .edit-full-cont {
   display: flex;
   justify-content: space-around;

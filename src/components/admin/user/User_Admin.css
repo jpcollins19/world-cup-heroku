@@ -1,0 +1,98 @@
+.user-admin-page {
+  background: linear-gradient(
+    to bottom,
+    rgb(6, 241, 233) 0%,
+    rgb(5, 189, 183) 25%,
+    rgb(2, 124, 120) 50%,
+    rgb(2, 82, 79) 75%,
+    rgb(0, 12, 11) 100%
+  );
+  width: 99.5vw;
+  max-height: 82.5vh;
+  min-height: 82.5vh;
+  background-size: cover;
+  overflow: auto;
+}
+
+.user-admin-container {
+  display: flex;
+  flex-direction: column;
+  border: solid 4px red;
+}
+
+.user-admin-header {
+  display: flex;
+  margin-top: 3rem;
+}
+
+.user-admin-dropdown-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20rem;
+}
+
+.user-admin-dropdown-cont > select {
+  text-align: center;
+  font-size: 1.2rem;
+  border: solid black 2px;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(
+    to bottom,
+    rgb(159, 159, 147) 0%,
+    rgb(211, 208, 208) 50%,
+    rgb(159, 159, 147) 100%
+  );
+  font-size: 1.5rem;
+  width: 17rem;
+}
+
+.user-details-cont {
+  display: flex;
+  flex: 1;
+  font-weight: bold;
+}
+
+.user-detail-title {
+  min-width: 27%;
+}
+
+.user-details-cont > div {
+  display: flex;
+  flex: 1;
+  padding-left: 1%;
+  flex-direction: column;
+}
+
+.user-details-cont > div > div {
+  display: flex;
+  align-items: center;
+}
+
+.user-details-cont > div > div > div {
+  font-size: 1.5rem;
+}
+
+.input-cont {
+  padding-left: 1%;
+}
+
+.input-cont > input {
+  background: transparent;
+  font-size: 1.5rem;
+  text-align: center;
+  border: solid 2px black;
+}
+
+.paid-cont {
+  padding-right: 5%;
+}
+
+.admin-button {
+  margin: 1% 10% 0% 10%;
+  cursor: pointer;
+  width: 10rem;
+  height: 3rem;
+  background-color: rgb(204, 200, 200);
+}

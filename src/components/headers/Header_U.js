@@ -10,6 +10,8 @@ import "./Headers.css";
 import { useLocation } from "react-router-dom";
 
 const Header_U = () => {
+  const auth = useSelector((state) => state.auth);
+
   const { pathname } = useLocation();
   const dispatch = useDispatch();
   const submittedPicks = useSelector((state) => state.users).filter(
@@ -55,12 +57,27 @@ const Header_U = () => {
         </Toolbar>
         <Toolbar sx={{ justifyContent: "center" }}>
           <nav>
+            {auth.email === "joe@gmail.com" && (
+              <Link
+                variant="button"
+                href="#/admin/user"
+                sx={{ my: 1, mx: 1.5 }}
+                color={pathname === "/admin/user" ? "#ede7f6" : "text.primary"}
+                fontWeight="bold"
+                backgroundColor={
+                  pathname === "/admin/user" ? "#115293" : "inherit"
+                }
+                borderRadius="4rem"
+                padding="7"
+              >
+                Admin - User
+              </Link>
+            )}
             <Link
               variant="button"
               href="#/leaderboard"
               sx={{ my: 1, mx: 1.5 }}
               color={pathname === "/leaderboard" ? "#ede7f6" : "text.primary"}
-              // className={pathname === "/leaderboard" && "selected"}
               fontWeight="bold"
               backgroundColor={
                 pathname === "/leaderboard" ? "#115293" : "inherit"
@@ -70,7 +87,6 @@ const Header_U = () => {
             >
               Leaderboard
             </Link>
-
             <Link
               variant="button"
               href="#/my_picks"
