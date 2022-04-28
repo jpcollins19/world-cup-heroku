@@ -1,7 +1,4 @@
-////add admin page for updating user info - need to add POST stuff - try and do this from memory first
-
 //all pages - add logic for each stage of the tourney, test too
-//my-picks page - group stage - make the cont smaller if the group stage has no outcome or point info yet
 //pool-picks page - group stage - make the cont smaller if the group stage has no outcome or point info yet
 
 ////my picks unlocked

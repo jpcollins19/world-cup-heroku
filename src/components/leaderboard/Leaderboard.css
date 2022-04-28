@@ -39,6 +39,14 @@
   font-size: 1rem;
 }
 
+.pre-tourney-header {
+  margin: 0;
+  text-align: center;
+  text-shadow: 2px 2px black;
+  color: white;
+  padding-top: 5%;
+}
+
 .rank-column {
   flex: 0.5;
   align-items: flex-end;

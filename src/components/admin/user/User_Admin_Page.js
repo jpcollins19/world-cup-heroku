@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import Input_Cont from "./Input_Cont";
+import { updateUser } from "../../../store";
 import "./User_Admin.css";
 
 const User_Admin_Page = () => {
@@ -16,6 +17,8 @@ const User_Admin_Page = () => {
   const joe = useSelector((state) =>
     state.users.find((user) => user.email === "joe@gmail.com")
   );
+
+  const dispatch = useDispatch();
 
   const onChangeHandler = async (id) => {
     const part = users.find((part) => part.id === id);
@@ -33,11 +36,29 @@ const User_Admin_Page = () => {
 
   const togglePaid = () => setPaid((value) => !value);
 
+  const handleSubmit = async (evt) => {
+    evt.preventDefault();
+
+    try {
+      const user = {
+        id: selectedUser.id,
+        name,
+        password,
+        paid,
+        tourneyStage,
+      };
+
+      dispatch(updateUser(user, history));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   // const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
 
   return (
     <main className="user-admin-page white text">
-      <div className="user-admin-container">
+      <form className="user-admin-container" onSubmit={handleSubmit}>
         <div className="user-admin-header">
           <div className="user-admin-dropdown-cont">
             <select
@@ -130,7 +151,7 @@ const User_Admin_Page = () => {
             <Total_Points_Cont selectedUser={selectedUser} />
           </div>
         </div> */}
-      </div>
+      </form>
     </main>
   );
 };

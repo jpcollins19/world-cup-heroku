@@ -1,18 +1,23 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Group_Cont_Unlocked from "./group/Group_Cont_Unlocked";
 import Knockout_Cont_Unlocked from "./ko/Knockout_Cont_Unlocked";
 import "./My_Picks_Unlocked.css";
 
 const My_Picks_Unlocked_Page = () => {
+  const joe = useSelector((state) => state.users).find(
+    (user) => user.email === "joe@gmail.com"
+  );
+
   return (
     <main className="my-picks-page-ul ">
       <div className="my-picks-container-ul">
         <div className="my-picks-header-ul">
           <div className="edit-picks-instruction-cont">
             <h3 className="white-text-ul">
-              {/* Select a country from the dropdowns to rank where you think each
-              country will finish in their group */}
-              Click on the country you think will win each game
+              {joe && joe.tourneyStage === "pre"
+                ? "Select a country from the dropdowns to rank where you think each country will finish in their group"
+                : "Click on the country you think will win each game"}
             </h3>
           </div>
         </div>
@@ -31,8 +36,8 @@ const My_Picks_Unlocked_Page = () => {
           </div>
         </div>
         <div className="edit-full-cont">
-          {/* <Knockout_Cont_Unlocked /> */}
-          <Group_Cont_Unlocked />
+          {joe && joe.tourneyStage === "pre" && <Group_Cont_Unlocked />}
+          {joe && joe.tourneyStage === "pre-ko" && <Knockout_Cont_Unlocked />}
         </div>
       </div>
     </main>

@@ -16,6 +16,7 @@
   display: flex;
   margin-top: 2rem;
   border: solid 4px cornsilk;
+  padding-top: 1%;
 }
 
 .point-system-table-cont {
@@ -142,9 +143,23 @@
   /* border: solid 4px orange; */
 }
 
+.single-group-cont-picks-pre-ko {
+  width: 15rem;
+  border: solid 4px dodgerblue;
+}
+
 .single-group-cont-picks {
   width: 23.5rem;
   border: solid 4px dodgerblue;
+}
+
+.single-group-cont-picks-pre-ko > h4 {
+  text-shadow: 2px 2px black;
+  color: white;
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.3rem;
+  font-size: 1.5rem;
 }
 
 .single-group-cont-picks > h4 {
@@ -154,6 +169,25 @@
   margin-top: 0.5rem;
   margin-bottom: 0.3rem;
   font-size: 1.5rem;
+}
+
+.single-group-cont-picks-pre-ko > div {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 1rem;
+  border: solid black 2px;
+  border-radius: 1rem;
+  background: linear-gradient(
+    to bottom,
+    rgb(159, 159, 147) 0%,
+    rgb(222, 222, 212) 25%,
+    rgb(203, 203, 192) 50%,
+    rgb(222, 222, 212) 75%,
+    rgb(159, 159, 147) 100%
+  );
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
 }
 
 .single-group-cont-picks > div {
@@ -175,8 +209,17 @@
   padding-bottom: 0.3rem;
 }
 
+.single-group-cont-picks-pre-ko > div > div > h5 {
+  margin: 0rem;
+}
+
 .single-group-cont-picks > div > div > h5 {
   margin: 0rem;
+}
+
+.single-group-cont-picks-pre-ko > div > div > div {
+  margin: 0.1rem;
+  border: solid black 1px;
 }
 
 .single-group-cont-picks > div > div > div {

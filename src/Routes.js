@@ -18,15 +18,11 @@ const Routes = () => {
 
   const auth = useSelector((state) => state.auth);
 
-  useEffect(() => dispatch(me()), []);
-
   const joe = useSelector((state) => state.users).find(
-    (user) => user.name === "Joe"
+    (user) => user.email === "joe@gmail.com"
   );
 
-  if (!auth || !joe) {
-    return null;
-  }
+  useEffect(() => dispatch(me()), []);
 
   return auth.id ? (
     <Switch>
@@ -35,16 +31,20 @@ const Routes = () => {
       )}
       <Route exact path="/leaderboard" component={Leaderboard_Page} />
       <Route exact path="/my_picks" component={My_Picks_Locked_Page} />
-      <Route
-        exact
-        path="/my_picks_edit_group"
-        component={My_Picks_Unlocked_Page}
-      />
-      <Route
-        exact
-        path="/my_picks_edit_ko"
-        component={My_Picks_Unlocked_Page}
-      />
+      {joe && joe.tourneyStage === "pre" && (
+        <Route
+          exact
+          path="/my_picks_edit_group"
+          component={My_Picks_Unlocked_Page}
+        />
+      )}
+      {joe && joe.tourneyStage === "pre-ko" && (
+        <Route
+          exact
+          path="/my_picks_edit_ko"
+          component={My_Picks_Unlocked_Page}
+        />
+      )}
       <Route exact path="/pool_picks" component={Pool_Picks_Page} />
       <Route exact path="/group_details" component={Group_Details_Page} />
       <Route exact path="/rules" component={Rules_Page} />

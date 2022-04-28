@@ -2,6 +2,7 @@ import axios from "axios";
 
 const LOAD_USERS = "LOAD_USERS";
 const ADD_USER = "ADD_USER";
+const UPDATE_USER = "UPDATE_USER";
 
 const _loadUsers = (users) => {
   return { type: LOAD_USERS, users };
@@ -9,6 +10,10 @@ const _loadUsers = (users) => {
 
 const _addUser = (user) => {
   return { type: ADD_USER, user };
+};
+
+const _updateUser = (user) => {
+  return { type: UPDATE_USER, user };
 };
 
 export const loadUsers = () => {
@@ -22,6 +27,14 @@ export const addUser = (user) => {
   return async (dispatch) => {
     user = (await axios.post("/api/add/user", user)).data;
     dispatch(_addUser(user));
+  };
+};
+
+export const updateUser = (user, history) => {
+  return async (dispatch) => {
+    user = (await axios.put(`/api/users/${user.id}`, user)).data;
+    dispatch(_updateUser(user));
+    history.push("/my_picks");
   };
 };
 
