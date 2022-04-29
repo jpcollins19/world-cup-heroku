@@ -420,6 +420,39 @@ const syncAndSeed = async () => {
   Portugal.groupFinishingPosition = 3;
   Uruguay.groupFinishingPosition = 4;
 
+  Ecuador.groupIsFinished = true;
+  Netherlands.groupIsFinished = true;
+  Qatar.groupIsFinished = true;
+  Senegal.groupIsFinished = true;
+  England.groupIsFinished = true;
+  Iran.groupIsFinished = true;
+  Sweden.groupIsFinished = true;
+  USA.groupIsFinished = true;
+  Argentina.groupIsFinished = true;
+  Mexico.groupIsFinished = true;
+  Poland.groupIsFinished = true;
+  Saudi_Arabia.groupIsFinished = true;
+  Denmark.groupIsFinished = true;
+  France.groupIsFinished = true;
+  Russia.groupIsFinished = true;
+  Tunisia.groupIsFinished = true;
+  Italy.groupIsFinished = true;
+  Germany.groupIsFinished = true;
+  Japan.groupIsFinished = true;
+  Spain.groupIsFinished = true;
+  Belgium.groupIsFinished = true;
+  Canada.groupIsFinished = true;
+  Croatia.groupIsFinished = true;
+  Morocco.groupIsFinished = true;
+  Brasil.groupIsFinished = true;
+  Cameroon.groupIsFinished = true;
+  Serbia.groupIsFinished = true;
+  Switz.groupIsFinished = true;
+  Ghana.groupIsFinished = true;
+  S_Korea.groupIsFinished = true;
+  Portugal.groupIsFinished = true;
+  Uruguay.groupIsFinished = true;
+
   //////////////////////////////////////////////////
   Joe.knockQ1 = Ecuador.name;
   Joe.knockQ2 = Argentina.name;
@@ -515,7 +548,7 @@ const syncAndSeed = async () => {
   Coach.knockChamp = Brasil.name;
   Kelly.knockChamp = Italy.name;
 
-  //////////////////////////////////////////////////
+  // //////////////////////////////////////////////////
 
   Ecuador.advanceToQ = true;
   Argentina.advanceToQ = true;

@@ -1,8 +1,5 @@
-//all pages - add logic for each stage of the tourney, test too
-//pool-picks page - group stage - make the cont smaller if the group stage has no outcome or point info yet
-
 ////my picks unlocked
-//group stage - Group_Cont_Unlocked page - add local state to house group picks - look at pick em code for ideas on how to approach this clean
+//group stage - Group_Cont_Unlocked page - add local state to house group picks - look at pick em code for ideas on how to approach this cleanly
 //^^add logic for when someone already has picks, it auto populates to their picks
 //add submitting functionality
 
@@ -35,6 +32,18 @@
 ////incorporate web sockets for teams and parts -- send to heroku without websockets and test first
 
 //figure out a forgot pw route
+
+//adjust the login feature so the user is never auto logged out
+
+/////////////////////////////////
+// Tourney Stage Info //
+
+// 1 = pre tourney
+// 2 = tourney commenced
+// 3 = group stages are finishing
+// 4 = pre-ko
+// 5 = ko commenced
+/////////////////////////////////
 
 const express = require("express");
 const app = express();

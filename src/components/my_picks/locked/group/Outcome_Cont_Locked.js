@@ -10,7 +10,7 @@ const Outcome_Cont_Locked = ({ group }) => {
       <div className="outcome-pos-cont">
         <h5>Outcome</h5>
         {teamsInGroup.map((team) => (
-          <div key={team.id}>{team.name}</div>
+          <div key={team.id}>{team.groupIsFinished ? team.name : ""}</div>
         ))}
       </div>
     )

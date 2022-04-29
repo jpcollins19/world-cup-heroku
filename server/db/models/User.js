@@ -226,17 +226,11 @@ const User = db.define("users", {
     type: INTEGER,
     defaultValue: null,
   },
-
   tourneyStage: {
-    type: STRING,
-    defaultValue: "pre",
+    type: INTEGER,
+    defaultValue: 1,
   },
 });
-
-//before WC starts: pre
-//once the WC commences: commenced
-//once groupstage settles, before KO stage begins: pre-ko
-//once KO stage commences: ko
 
 User.addHook("beforeSave", async function (user) {
   if (user._changed.has("password")) {

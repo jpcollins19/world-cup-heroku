@@ -13,20 +13,52 @@ const Total_Points_Cont = ({ selectedUser }) => {
   const teams = useSelector((state) => state.teams);
 
   const groupTotal = totalScoreCalc(
-    singleGroupCalc(user, teams, "A"),
-    singleGroupCalc(user, teams, "B"),
-    singleGroupCalc(user, teams, "C"),
-    singleGroupCalc(user, teams, "D"),
-    singleGroupCalc(user, teams, "E"),
-    singleGroupCalc(user, teams, "F"),
-    singleGroupCalc(user, teams, "G"),
-    singleGroupCalc(user, teams, "H")
+    singleGroupCalc(
+      pathname === "/pool_picks" ? selectedUser : user,
+      teams,
+      "A"
+    ),
+    singleGroupCalc(
+      pathname === "/pool_picks" ? selectedUser : user,
+      teams,
+      "B"
+    ),
+    singleGroupCalc(
+      pathname === "/pool_picks" ? selectedUser : user,
+      teams,
+      "C"
+    ),
+    singleGroupCalc(
+      pathname === "/pool_picks" ? selectedUser : user,
+      teams,
+      "D"
+    ),
+    singleGroupCalc(
+      pathname === "/pool_picks" ? selectedUser : user,
+      teams,
+      "E"
+    ),
+    singleGroupCalc(
+      pathname === "/pool_picks" ? selectedUser : user,
+      teams,
+      "F"
+    ),
+    singleGroupCalc(
+      pathname === "/pool_picks" ? selectedUser : user,
+      teams,
+      "G"
+    ),
+    singleGroupCalc(
+      pathname === "/pool_picks" ? selectedUser : user,
+      teams,
+      "H"
+    )
   );
 
   return (
     <div>
       <div>
-        <h2 className="white-text">Total Points</h2>
+        <h2 className="white-text">Points</h2>
         <div className="total-points-cont">
           <div>
             <div className="total-points-text-cont">

@@ -31,14 +31,14 @@ const Routes = () => {
       )}
       <Route exact path="/leaderboard" component={Leaderboard_Page} />
       <Route exact path="/my_picks" component={My_Picks_Locked_Page} />
-      {joe && joe.tourneyStage === "pre" && (
+      {joe && joe.tourneyStage === 1 && (
         <Route
           exact
           path="/my_picks_edit_group"
           component={My_Picks_Unlocked_Page}
         />
       )}
-      {joe && joe.tourneyStage === "pre-ko" && (
+      {joe && joe.tourneyStage === 4 && (
         <Route
           exact
           path="/my_picks_edit_ko"

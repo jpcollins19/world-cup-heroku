@@ -18,9 +18,7 @@ const Single_Group_Cont_Locked = ({ group, selectedUser }) => {
   return user.groupA1 ? (
     <div
       className={
-        joe && joe.tourneyStage === "pre"
-          ? "single-group-cont-picks-pre-ko"
-          : joe.tourneyStage === "commenced"
+        joe.tourneyStage <= 2
           ? "single-group-cont-picks-pre-ko"
           : "single-group-cont-picks"
       }
@@ -29,16 +27,8 @@ const Single_Group_Cont_Locked = ({ group, selectedUser }) => {
       <div>
         <Rank_Cont_Locked />
         <Prediction_Cont_Locked group={group} selectedUser={selectedUser} />
-        {joe && joe.tourneyStage === "pre-ko" && (
-          <Outcome_Cont_Locked group={group} />
-        )}
-        {joe && joe.tourneyStage === "ko" && (
-          <Outcome_Cont_Locked group={group} />
-        )}
-        {joe && joe.tourneyStage === "pre-ko" && (
-          <Points_Cont_Locked group={group} selectedUser={selectedUser} />
-        )}
-        {joe && joe.tourneyStage === "ko" && (
+        {joe.tourneyStage >= 3 && <Outcome_Cont_Locked group={group} />}
+        {joe.tourneyStage >= 3 && (
           <Points_Cont_Locked group={group} selectedUser={selectedUser} />
         )}
       </div>

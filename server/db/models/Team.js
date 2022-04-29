@@ -9,9 +9,11 @@ const Team = db.define("teams", {
     primaryKey: true,
     defaultValue: UUIDV4,
   },
+
   name: {
     type: STRING,
   },
+
   group: {
     type: STRING,
   },
@@ -57,6 +59,11 @@ const Team = db.define("teams", {
   },
 
   tieExists: {
+    type: BOOLEAN,
+    defaultValue: false,
+  },
+
+  groupIsFinished: {
     type: BOOLEAN,
     defaultValue: false,
   },

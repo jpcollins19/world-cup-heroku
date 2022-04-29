@@ -11,7 +11,7 @@ const Leaderboard_Page = () => {
     <main className="leaderboard-page">
       <div>
         <div className="table-cont">
-          {joe && joe.tourneyStage === "pre" ? (
+          {joe && joe.tourneyStage === 1 ? (
             <div>
               <h1 className="pre-tourney-header">
                 Leaderboard will not be available until the tournament commences

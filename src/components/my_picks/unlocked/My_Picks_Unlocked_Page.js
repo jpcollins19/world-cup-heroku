@@ -15,9 +15,12 @@ const My_Picks_Unlocked_Page = () => {
         <div className="my-picks-header-ul">
           <div className="edit-picks-instruction-cont">
             <h3 className="white-text-ul">
-              {joe && joe.tourneyStage === "pre"
-                ? "Select a country from the dropdowns to rank where you think each country will finish in their group"
-                : "Click on the country you think will win each game"}
+              {joe &&
+                joe.tourneyStage === 1 &&
+                "Select a country from the dropdowns to rank where you think each country will finish in their group"}
+              {joe &&
+                joe.tourneyStage === 4 &&
+                "Click on the country you think will win each game"}
             </h3>
           </div>
         </div>
@@ -29,15 +32,17 @@ const My_Picks_Unlocked_Page = () => {
         <div className="button-cont-edit-picks">
           <button>Submit Picks</button>
         </div>
-        <div className="tiebreaker-cont-edit-picks white-text">
-          <h3>Tiebreaker - total number of goals scored:</h3>
-          <div>
-            <input className="white-text" defaultValue={35}></input>
+        {joe && joe.tourneyStage === 1 && (
+          <div className="tiebreaker-cont-edit-picks white-text">
+            <h3>Tiebreaker - total number of goals scored:</h3>
+            <div>
+              <input className="white-text" defaultValue={35}></input>
+            </div>
           </div>
-        </div>
+        )}
         <div className="edit-full-cont">
-          {joe && joe.tourneyStage === "pre" && <Group_Cont_Unlocked />}
-          {joe && joe.tourneyStage === "pre-ko" && <Knockout_Cont_Unlocked />}
+          {joe && joe.tourneyStage === 1 && <Group_Cont_Unlocked />}
+          {joe && joe.tourneyStage === 4 && <Knockout_Cont_Unlocked />}
         </div>
       </div>
     </main>

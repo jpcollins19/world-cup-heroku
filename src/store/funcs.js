@@ -9,28 +9,31 @@ const singleGroupCalc = (partObj, teams, group) => {
     .sort((a, b) => a.groupFinishingPosition - b.groupFinishingPosition)
     .reduce(
       (a, teamObj) => {
-        switch (teamObj.groupFinishingPosition) {
-          case 1:
-            teamObj.name === partPrediction1
-              ? (a.R1 += 3)
-              : teamObj.name === partPrediction2
-              ? a.R1++
-              : "";
-            break;
-          case 2:
-            teamObj.name === partPrediction2
-              ? (a.R2 += 2)
-              : teamObj.name === partPrediction1
-              ? a.R2++
-              : ";";
-            break;
-          case 3:
-            teamObj.name === partPrediction3 ? (a.R3 += 1) : "";
-            break;
-          case 4:
-            teamObj.name === partPrediction4 ? (a.R4 += 1) : "";
-            break;
+        if (teamObj.groupIsFinished) {
+          switch (teamObj.groupFinishingPosition) {
+            case 1:
+              teamObj.name === partPrediction1
+                ? (a.R1 += 3)
+                : teamObj.name === partPrediction2
+                ? a.R1++
+                : "";
+              break;
+            case 2:
+              teamObj.name === partPrediction2
+                ? (a.R2 += 2)
+                : teamObj.name === partPrediction1
+                ? a.R2++
+                : ";";
+              break;
+            case 3:
+              teamObj.name === partPrediction3 ? (a.R3 += 1) : "";
+              break;
+            case 4:
+              teamObj.name === partPrediction4 ? (a.R4 += 1) : "";
+              break;
+          }
         }
+
         return a;
       },
       {
@@ -40,6 +43,43 @@ const singleGroupCalc = (partObj, teams, group) => {
         R4: 0,
       }
     );
+
+  // return teams
+  //   .filter((team) => team.group === group)
+  //   .sort((a, b) => a.groupFinishingPosition - b.groupFinishingPosition)
+  //   .reduce(
+  //     (a, teamObj) => {
+  //       switch (teamObj.groupFinishingPosition) {
+  //         case 1:
+  //           teamObj.name === partPrediction1
+  //             ? (a.R1 += 3)
+  //             : teamObj.name === partPrediction2
+  //             ? a.R1++
+  //             : "";
+  //           break;
+  //         case 2:
+  //           teamObj.name === partPrediction2
+  //             ? (a.R2 += 2)
+  //             : teamObj.name === partPrediction1
+  //             ? a.R2++
+  //             : ";";
+  //           break;
+  //         case 3:
+  //           teamObj.name === partPrediction3 ? (a.R3 += 1) : "";
+  //           break;
+  //         case 4:
+  //           teamObj.name === partPrediction4 ? (a.R4 += 1) : "";
+  //           break;
+  //       }
+  //       return a;
+  //     },
+  //     {
+  //       R1: 0,
+  //       R2: 0,
+  //       R3: 0,
+  //       R4: 0,
+  //     }
+  //   );
 };
 
 const knockoutRoundCalc = (round, partObj, teams) => {

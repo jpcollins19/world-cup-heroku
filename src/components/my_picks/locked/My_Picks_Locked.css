@@ -15,7 +15,7 @@
 .my-picks-header {
   display: flex;
   margin-top: 2rem;
-  border: solid 4px cornsilk;
+  /* border: solid 4px cornsilk; */
   padding-top: 1%;
 }
 
@@ -23,14 +23,14 @@
   display: flex;
   padding: 1rem 0rem 0rem 1rem;
   align-items: center;
-  border: solid 4px red;
   flex: 0.37;
   justify-content: center;
+  /* border: solid 4px red; */
 }
 
 .point-system-table-text {
   display: flex;
-  border: solid 4px blue;
+  /* border: solid 4px blue; */
 }
 
 .point-system-table-text > div {
@@ -71,15 +71,15 @@
 .notes-cont {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  border: solid 4px purple;
   min-width: 31rem;
+  /* border: solid 4px purple; */
 }
 
 .my-picks-header-name {
   display: flex;
-  border: solid 4px dodgerblue;
   flex: 0.23;
   justify-content: center;
+  /* border: solid 4px dodgerblue; */
 }
 
 .my-picks-header-name > h1 {
@@ -99,13 +99,13 @@
   display: flex;
   flex: 0.4;
   justify-content: center;
-  border: solid 4px purple;
   align-items: center;
+  /* border: solid 4px purple; */
 }
 
 .button-cont-picks > button {
   cursor: pointer;
-  width: 16rem;
+  width: 17rem;
   height: 3rem;
   background-color: rgb(204, 200, 200);
 }
@@ -131,8 +131,8 @@
   display: flex;
   width: 83%;
   flex-direction: column;
-  /* border: solid 4px green; */
   padding: 0;
+  /* border: solid 4px green; */
 }
 
 .predictions-cont {
@@ -145,12 +145,12 @@
 
 .single-group-cont-picks-pre-ko {
   width: 15rem;
-  border: solid 4px dodgerblue;
+  /* border: solid 4px dodgerblue; */
 }
 
 .single-group-cont-picks {
   width: 23.5rem;
-  border: solid 4px dodgerblue;
+  /* border: solid 4px dodgerblue; */
 }
 
 .single-group-cont-picks-pre-ko > h4 {
@@ -220,11 +220,13 @@
 .single-group-cont-picks-pre-ko > div > div > div {
   margin: 0.1rem;
   border: solid black 1px;
+  min-height: 1.66rem;
 }
 
 .single-group-cont-picks > div > div > div {
   margin: 0.1rem;
   border: solid black 1px;
+  min-height: 1.66rem;
 }
 
 .prediction-cont > div {
@@ -259,16 +261,16 @@
   width: 12%;
   display: flex;
   justify-content: center;
-  border: solid 4px purple;
+  /* border: solid 4px purple; */
 }
 
 .total-points-cont {
   padding-top: 0.3rem;
   padding-bottom: 0.1rem;
-  border: solid 4px red;
   min-width: 17rem;
   max-width: 17rem;
   margin: 0;
+  /* border: solid 4px red; */
 }
 
 .total-points-cont > div {
@@ -278,8 +280,8 @@
   max-height: 400px;
   list-style: none;
   overflow: auto;
-  border: solid 4px blue;
   min-width: 10rem;
+  /* border: solid 4px blue; */
 }
 
 .total-points-cont > h3 {
@@ -343,7 +345,7 @@
   justify-content: space-around;
   flex-direction: column;
   width: 100%;
-  border: solid 4px yellow;
+  /* border: solid 4px yellow; */
 }
 
 .knockout-cont > div {
