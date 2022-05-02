@@ -2,7 +2,9 @@ import { useSelector } from "react-redux";
 import "./Leaderboard.css";
 
 const Rank = () => {
-  const users = useSelector((state) => state.users);
+  const users = useSelector((state) => state.users).filter(
+    (user) => user.tiebreaker
+  );
 
   return (
     <div className="rank-column">

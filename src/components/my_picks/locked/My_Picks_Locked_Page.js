@@ -1,5 +1,7 @@
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { me } from "../../../store";
 import Point_System_Cont from "./Point_System_Cont";
 import Single_Group_Cont_Locked from "./group/Single_Group_Cont_Locked";
 import Total_Points_Cont from "./Total_Points_Cont";
@@ -7,7 +9,14 @@ import Knockout_Cont_Locked from "./ko/Knockout_Cont_Locked";
 import "./My_Picks_Locked.css";
 
 const My_Picks_Locked_Page = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(me());
+  }, []);
+
   const user = useSelector((state) => state.auth);
+
   const joe = useSelector((state) => state.users).find(
     (user) => user.email === "joe@gmail.com"
   );
@@ -22,7 +31,7 @@ const My_Picks_Locked_Page = () => {
     <main className="my-picks-page white text">
       <div className="my-picks-container">
         <div className="my-picks-header">
-          {joe.tourneyStage === 3 ? (
+          {joe.tourneyStage === 3 && user.tiebreaker ? (
             <Point_System_Cont />
           ) : (
             <div className="point-system-table-cont"></div>
@@ -42,7 +51,7 @@ const My_Picks_Locked_Page = () => {
                 </Link>
               </button>
             )}
-            {joe.tourneyStage === 4 && (
+            {joe.tourneyStage === 4 && user.tiebreaker && (
               <button>
                 <Link to="/my_picks_edit_ko" style={{ textDecoration: "none" }}>
                   Select / Adjust Knockout Picks
@@ -51,7 +60,7 @@ const My_Picks_Locked_Page = () => {
             )}
           </div>
         </div>
-        {joe.tourneyStage >= 4 && (
+        {joe.tourneyStage >= 4 && user.tiebreaker && (
           <div className="top box">
             <div className="box left">
               <div className="predictions-cont">

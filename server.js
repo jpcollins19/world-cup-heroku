@@ -1,11 +1,4 @@
-////my picks unlocked
-//group stage - Group_Cont_Unlocked page - add local state to house group picks - look at pick em code for ideas on how to approach this cleanly
-//^^add logic for when someone already has picks, it auto populates to their picks
-//add submitting functionality
-
-//both stages - try to break the submission process for both stages to see if you need to put an audit point in place to track if someone has invalid picks
-//error handling in excel doc
-//excel doc - mark off things to audit for during each stage for the my picks unlocked page
+//my picks unlocked - ko stage - add submission logic and test error handling
 
 ////user admin page - need to finish adding group and ko pick info, test updating this info too
 ////add admin page for updating group info
@@ -32,8 +25,6 @@
 ////incorporate web sockets for teams and parts -- send to heroku without websockets and test first
 
 //figure out a forgot pw route
-
-//adjust the login feature so the user is never auto logged out
 
 /////////////////////////////////
 // Tourney Stage Info //

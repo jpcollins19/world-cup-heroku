@@ -22,7 +22,7 @@ const Routes = () => {
     (user) => user.email === "joe@gmail.com"
   );
 
-  useEffect(() => dispatch(me()), []);
+  useEffect(() => dispatch(me()));
 
   return auth.id ? (
     <Switch>

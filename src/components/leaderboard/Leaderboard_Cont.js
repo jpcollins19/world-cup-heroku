@@ -6,17 +6,24 @@ import Score from "./Score";
 import "./Leaderboard.css";
 
 const Leaderboard_Cont = () => {
-  const users = useSelector((state) => state.users);
+  const users = useSelector((state) => state.users).filter(
+    (user) => user.tiebreaker
+  );
+
+  const auth = useSelector((state) => state.auth);
+
   const teams = useSelector((state) => state.teams);
 
   const rankInfo = currentScoresObj(users, teams, 152);
 
   return (
-    <div>
-      <Rank />
-      <Name rankInfo={rankInfo && rankInfo} />
-      <Score rankInfo={rankInfo && rankInfo} />
-    </div>
+    auth.tiebreaker && (
+      <div>
+        <Rank />
+        <Name rankInfo={rankInfo && rankInfo} />
+        <Score rankInfo={rankInfo && rankInfo} />
+      </div>
+    )
   );
 };
 

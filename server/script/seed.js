@@ -55,7 +55,7 @@ const users = [
 
     groupA1: "Ecuador",
     groupA2: "Netherlands",
-    groupA3: "Senagal",
+    groupA3: "Senegal",
     groupA4: "Qatar",
 
     groupB1: "England",
@@ -103,7 +103,7 @@ const users = [
 
     groupA1: "Ecuador",
     groupA2: "Netherlands",
-    groupA3: "Senagal",
+    groupA3: "Senegal",
     groupA4: "Qatar",
 
     groupB1: "England",
@@ -550,24 +550,24 @@ const syncAndSeed = async () => {
 
   // //////////////////////////////////////////////////
 
-  Ecuador.advanceToQ = true;
-  Argentina.advanceToQ = true;
-  Canada.advanceToQ = true;
-  Brasil.advanceToQ = true;
-  England.advanceToQ = true;
-  Denmark.advanceToQ = true;
-  Belgium.advanceToQ = true;
-  Cameroon.advanceToQ = true;
+  // Ecuador.advanceToQ = true;
+  // Argentina.advanceToQ = true;
+  // Canada.advanceToQ = true;
+  // Brasil.advanceToQ = true;
+  // England.advanceToQ = true;
+  // Denmark.advanceToQ = true;
+  // Belgium.advanceToQ = true;
+  // Cameroon.advanceToQ = true;
 
-  Argentina.advanceToS = true;
-  Brasil.advanceToS = true;
-  Denmark.advanceToS = true;
-  Belgium.advanceToS = true;
+  // Argentina.advanceToS = true;
+  // Brasil.advanceToS = true;
+  // Denmark.advanceToS = true;
+  // Belgium.advanceToS = true;
 
-  Argentina.advanceToF = true;
-  Belgium.advanceToF = true;
+  // Argentina.advanceToF = true;
+  // Belgium.advanceToF = true;
 
-  Argentina.advanceToChamp = true;
+  // Argentina.advanceToChamp = true;
 
   await Promise.all([
     Ecuador.save(),

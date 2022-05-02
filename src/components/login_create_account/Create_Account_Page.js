@@ -60,8 +60,6 @@ const Create_Account_Page = () => {
     }
   };
 
-  console.log("pw", password);
-
   const onSubmit = async (ev) => {
     ev.preventDefault();
     try {

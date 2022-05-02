@@ -63,11 +63,18 @@
   background-color: rgb(204, 200, 200);
 }
 
+.error-cont-tiebreaker {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0rem 0.5rem 0rem;
+  min-height: 4rem;
+  /* border: solid 4px dodgerblue; */
+}
+
 .tiebreaker-cont-edit-picks {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1rem;
 }
 
 .tiebreaker-cont-edit-picks > h3 {
@@ -79,6 +86,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0;
 }
 
 .tiebreaker-cont-edit-picks > div > input {
@@ -101,12 +109,12 @@
   width: 70%;
   flex-wrap: wrap;
   justify-content: space-around;
-  border: solid 4px orange;
+  /* border: solid 4px orange; */
 }
 
 .single-group-cont-edit-picks {
   width: 18rem;
-  border: solid 4px rgb(165, 239, 165);
+  /* border: solid 4px rgb(165, 239, 165); */
 }
 
 .single-group-cont-edit-picks > h4 {

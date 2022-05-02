@@ -11,11 +11,15 @@ const Pool_Picks_Page = () => {
     useSelector((state) => state.auth)
   );
 
+  const auth = useSelector((state) => state.auth);
+
   const joe = useSelector((state) => state.users).find(
     (user) => user.email === "joe@gmail.com"
   );
 
-  const users = useSelector((state) => state.users);
+  const users = useSelector((state) => state.users).filter(
+    (user) => user.tiebreaker
+  );
 
   const onChangeHandler = async (id) => {
     const part = users.find((part) => part.id === id);
@@ -36,30 +40,37 @@ const Pool_Picks_Page = () => {
       ) : (
         <div className="pool-picks-container">
           <div className="pool-picks-header">
-            {joe && joe.tourneyStage >= 3 && joe.tourneyStage <= 4 ? (
+            {joe &&
+            joe.tourneyStage >= 3 &&
+            joe.tourneyStage <= 4 &&
+            auth.tiebreaker ? (
               <Point_System_Cont />
             ) : (
               <div className="point-system-table-cont"></div>
             )}
-            <div className="pool-picks-header-name">
-              <h1 className="white-text">Picks for: {selectedUser.name}</h1>
-            </div>
-            <div className="pool-picks-part-dropdown-cont">
-              <h3 className="white-text">View Pool Picks</h3>
-              <select onChange={(ev) => onChangeHandler(ev.target.value)}>
-                <option key={selectedUser.id}>{selectedUser.name}</option>
-                {users &&
-                  users
-                    .filter((part) => selectedUser.id !== part.id)
-                    .map((part) => (
-                      <option key={part.id} value={part.id}>
-                        {part.name}
-                      </option>
-                    ))}
-              </select>
-            </div>
+            {auth.tiebreaker && (
+              <div className="pool-picks-header-name">
+                <h1 className="white-text">Picks for: {selectedUser.name}</h1>
+              </div>
+            )}
+            {auth.tiebreaker && (
+              <div className="pool-picks-part-dropdown-cont">
+                <h3 className="white-text">View Pool Picks</h3>
+                <select onChange={(ev) => onChangeHandler(ev.target.value)}>
+                  <option key={selectedUser.id}>{selectedUser.name}</option>
+                  {users &&
+                    users
+                      .filter((part) => selectedUser.id !== part.id)
+                      .map((part) => (
+                        <option key={part.id} value={part.id}>
+                          {part.name}
+                        </option>
+                      ))}
+                </select>
+              </div>
+            )}
           </div>
-          {joe && joe.tourneyStage === 5 && (
+          {joe && joe.tourneyStage === 5 && auth.tiebreaker && (
             <div className="top box">
               <div className="box left">
                 <div className="predictions-cont">
@@ -74,7 +85,9 @@ const Pool_Picks_Page = () => {
 
           <div className="top box">
             <div className="box left">
-              {joe && joe.tourneyStage === 5 && <Point_System_Cont />}
+              {joe && joe.tourneyStage === 5 && auth.tiebreaker && (
+                <Point_System_Cont />
+              )}
               <div className="predictions-cont">
                 {letters.map((letter) => (
                   <Single_Group_Cont
@@ -86,7 +99,7 @@ const Pool_Picks_Page = () => {
               </div>
             </div>
             <div className="box right">
-              {joe && joe.tourneyStage < 5 && (
+              {joe && joe.tourneyStage < 5 && auth.tiebreaker && (
                 <Total_Points_Cont selectedUser={selectedUser} />
               )}
             </div>
