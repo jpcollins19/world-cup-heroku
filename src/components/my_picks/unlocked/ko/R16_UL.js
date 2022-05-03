@@ -4,6 +4,7 @@ import R16_Game_UL from "./games/R16_Game_UL";
 const R16_UL = ({
   side,
   setTeam,
+  setKoError,
   Q1,
   Q2,
   Q3,
@@ -33,6 +34,7 @@ const R16_UL = ({
             <R16_Game_UL
               key={idx}
               setTeam={setTeam}
+              setKoError={setKoError}
               game={`Q${side === "left" ? num : num + 4}`}
               Q1={Q1}
               Q2={Q2}

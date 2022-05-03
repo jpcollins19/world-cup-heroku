@@ -5,6 +5,7 @@ const Q_Game_UL = ({
   gameNum,
   setTeam,
   setChanged,
+  setKoError,
   game,
   Q1,
   Q2,
@@ -112,7 +113,10 @@ const Q_Game_UL = ({
         className={`reg-input ${gameVar.length > 1 ? "" : "ko-edit-red"}`}
         readOnly="readonly"
         defaultValue={gameVar && gameVar}
-        onClick={(ev) => setTeam(setNextGameVar, ev.target.value)}
+        onClick={(ev) => {
+          setTeam(setNextGameVar, ev.target.value);
+          setKoError(false);
+        }}
       ></input>
     </div>
   );

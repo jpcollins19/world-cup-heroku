@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 const S_Game_UL = ({
   setTeam,
   setChanged,
+  setKoError,
   gameNum,
   game,
   S1,
@@ -75,7 +76,10 @@ const S_Game_UL = ({
         className={`reg-input ${teamAnswer.length > 1 ? "" : "ko-edit-red"}`}
         readOnly="readonly"
         defaultValue={teamAnswer && teamAnswer}
-        onClick={(ev) => setTeam(setNextGameVar, ev.target.value)}
+        onClick={(ev) => {
+          setTeam(setNextGameVar, ev.target.value);
+          setKoError(false);
+        }}
       ></input>
     </div>
   );

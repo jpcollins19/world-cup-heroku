@@ -1,5 +1,3 @@
-//my picks unlocked - ko stage - add submission logic and test error handling
-
 ////user admin page - need to finish adding group and ko pick info, test updating this info too
 ////add admin page for updating group info
 ////add admin page for updating individual team info

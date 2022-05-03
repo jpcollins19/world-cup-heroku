@@ -1,31 +1,13 @@
 import Single_Group_Cont_Unlocked from "./Single_Group_Cont_Unlocked";
 
-const Group_Cont_Unlocked = ({
-  onChangeSelectionObj,
-  groupAError,
-  groupBError,
-  groupCError,
-  groupDError,
-  groupEError,
-  groupFError,
-  groupGError,
-  groupHError,
-  setGroupAError,
-  setGroupBError,
-  setGroupCError,
-  setGroupDError,
-  setGroupEError,
-  setGroupFError,
-  setGroupGError,
-  setGroupHError,
-}) => {
+const Group_Cont_Unlocked = ({ onChangeSelectionObj, groupErrorObj }) => {
   const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
 
   return (
     <div className="predictions-cont-edit">
       {letters.map((letter) => {
-        const groupError = eval(`group${letter}Error`);
-        const setGroupError = eval(`setGroup${letter}Error`);
+        const groupError = groupErrorObj[`group${letter}Error`];
+        const setGroupError = groupErrorObj[`setGroup${letter}Error`];
 
         return (
           <Single_Group_Cont_Unlocked

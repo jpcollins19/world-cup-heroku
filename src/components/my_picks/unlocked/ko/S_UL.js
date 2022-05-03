@@ -4,6 +4,7 @@ const S_UL = ({
   side,
   setTeam,
   setChanged,
+  setKoError,
   Q1,
   Q2,
   Q3,
@@ -62,6 +63,7 @@ const S_UL = ({
             gameNum={gameNum}
             setTeam={setTeam}
             setChanged={setChanged}
+            setKoError={setKoError}
             game={`S${num}`}
             S1={game}
             S2={game}

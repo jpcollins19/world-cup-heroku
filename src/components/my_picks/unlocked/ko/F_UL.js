@@ -4,6 +4,7 @@ const F_UL = ({
   side,
   setTeam,
   setChanged,
+  setKoError,
   S1,
   S2,
   S3,
@@ -35,6 +36,7 @@ const F_UL = ({
       <F_Game_UL
         setTeam={setTeam}
         setChanged={setChanged}
+        setKoError={setKoError}
         game={`F${gameNum}`}
         F1={game}
         F2={game}

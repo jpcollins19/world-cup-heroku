@@ -4,6 +4,7 @@ import { knockoutR16Push } from "../../../../../store";
 
 const R16_Game_UL = ({
   setTeam,
+  setKoError,
   game,
   Q1,
   Q2,
@@ -80,7 +81,10 @@ const R16_Game_UL = ({
           readOnly="readonly"
           className="reg-input"
           defaultValue={knockoutR16Push(teams, obj[game][idx])}
-          onClick={(ev) => setTeam(setGame, ev.target.value)}
+          onClick={(ev) => {
+            setTeam(setGame, ev.target.value);
+            setKoError(false);
+          }}
         ></input>
       ))}
     </div>
