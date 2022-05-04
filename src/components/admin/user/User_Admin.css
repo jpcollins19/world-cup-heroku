@@ -96,3 +96,10 @@
   height: 3rem;
   background-color: rgb(204, 200, 200);
 }
+
+.user-admin {
+  display: flex;
+  flex-direction: column;
+  border-top: solid 2px black;
+  padding-top: 1%;
+}

@@ -1,4 +1,4 @@
-////user admin page - need to finish adding group and ko pick info, test updating this info too
+////user admin page -- test updating this info when you have a fresh brain before moving on to next item
 ////add admin page for updating group info
 ////add admin page for updating individual team info
 ////add edit name page

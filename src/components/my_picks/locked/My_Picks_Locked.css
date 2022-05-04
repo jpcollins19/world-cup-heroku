@@ -144,12 +144,14 @@
 }
 
 .single-group-cont-picks-pre-ko {
-  width: 15rem;
+  min-width: 15rem;
+  margin: 1% 4% 2% 4%;
   /* border: solid 4px dodgerblue; */
 }
 
 .single-group-cont-picks {
   width: 23.5rem;
+  margin: 1% 0% 2% 0%;
   /* border: solid 4px dodgerblue; */
 }
 
