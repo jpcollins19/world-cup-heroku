@@ -1,3 +1,6 @@
+//all pages with a dropdown - incorporate react Select feature like you did in hoovs app in memberships page
+//npm i react-select --save-dev
+
 ////user admin page -- test updating this info when you have a fresh brain before moving on to next item
 ////add admin page for updating group info
 ////add admin page for updating individual team info

@@ -1,0 +1,142 @@
+.group-admin-page {
+  background: linear-gradient(
+    to bottom,
+    rgb(6, 241, 233) 0%,
+    rgb(5, 189, 183) 25%,
+    rgb(2, 124, 120) 50%,
+    rgb(2, 82, 79) 75%,
+    rgb(0, 12, 11) 100%
+  );
+  width: 100vw;
+  height: 84vh;
+  background-size: cover;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.group-admin-dropdown-cont {
+  margin-top: 5%;
+}
+
+.group-admin-dropdown-cont > select {
+  text-align: center;
+  font-size: 1.2rem;
+  border: solid black 2px;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(
+    to bottom,
+    rgb(159, 159, 147) 0%,
+    rgb(211, 208, 208) 50%,
+    rgb(159, 159, 147) 100%
+  );
+  font-size: 1.5rem;
+  width: 12rem;
+  text-align-last: center;
+  text-align: center;
+  -ms-text-align-last: center;
+  -moz-text-align-last: center;
+}
+
+.group-cont {
+  display: flex;
+  align-items: center;
+  border: solid 2px red;
+}
+
+.single-group-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0rem 2rem 1rem 2rem;
+  margin: 1rem 0.5rem 1rem 0.5rem;
+  background: linear-gradient(
+    to bottom,
+    rgb(159, 159, 147) 0%,
+    rgb(222, 222, 212) 25%,
+    rgb(203, 203, 192) 50%,
+    rgb(222, 222, 212) 75%,
+    rgb(159, 159, 147) 100%
+  );
+  border-radius: 4rem;
+  width: 35rem;
+  height: 18rem;
+}
+
+.group-header {
+  margin-top: 0rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.7rem;
+  text-align: center;
+  border-bottom: solid 2px rgb(175, 170, 170);
+}
+
+.text-header {
+  display: flex;
+}
+
+.text-header > div {
+  margin: 0rem 0.2rem 0rem 0.2rem;
+  min-width: 1.5rem;
+  text-align: center;
+}
+
+.team {
+  display: flex;
+  flex: 1;
+}
+
+.team-row-cont {
+  border-bottom: solid 2px rgb(175, 170, 170);
+}
+
+.single-group-cont-text {
+  display: flex;
+  align-items: center;
+}
+
+.single-group-cont-text > div {
+  font-size: 1.5rem;
+}
+
+.flag {
+  height: 25px;
+  min-width: 45px;
+  max-width: 45px;
+}
+
+.country-name {
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  min-width: 39.5%;
+  max-width: 39.5%;
+}
+
+.MP {
+  margin-right: 1.1rem;
+  margin-left: 1.2rem;
+}
+
+.W {
+  margin-right: 1.1rem;
+}
+
+.D {
+  margin-right: 1rem;
+}
+
+.loss {
+  margin-right: 1.1rem;
+}
+
+.GF {
+  margin-right: 1rem;
+}
+
+.GA {
+  margin-right: 1.1rem;
+}

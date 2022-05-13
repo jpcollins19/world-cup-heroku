@@ -48,6 +48,12 @@
   width: 17rem;
 }
 
+/* .user-admin-dropdown-cont > select > option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
 .user-details-cont {
   display: flex;
   flex: 1;

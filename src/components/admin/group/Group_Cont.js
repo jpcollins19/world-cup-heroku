@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
 
-const Single_Cont = ({ group }) => {
+const Group_Cont = ({ group }) => {
   let groupTeams = useSelector((state) => state.teams)
     .filter((team) => team.group === group)
-    .sort((a, b) => a.groupFinishingPosition - b.groupFinishingPosition);
+    .sort((a, b) => a.name - b.name);
 
   groupTeams = groupTeams.map((team) => ({
     ...team,
@@ -64,4 +64,4 @@ const Single_Cont = ({ group }) => {
   );
 };
 
-export default Single_Cont;
+export default Group_Cont;

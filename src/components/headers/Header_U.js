@@ -6,8 +6,8 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import GlobalStyles from "@mui/material/GlobalStyles";
-import "./Headers.css";
 import { useLocation } from "react-router-dom";
+import "./Headers.css";
 
 const Header_U = () => {
   const auth = useSelector((state) => state.auth);
@@ -71,6 +71,22 @@ const Header_U = () => {
                 padding="7"
               >
                 Admin - User
+              </Link>
+            )}
+            {auth.email === "joe@gmail.com" && (
+              <Link
+                variant="button"
+                href="#/admin/group"
+                sx={{ my: 1, mx: 1.5 }}
+                color={pathname === "/admin/group" ? "#ede7f6" : "text.primary"}
+                fontWeight="bold"
+                backgroundColor={
+                  pathname === "/admin/group" ? "#115293" : "inherit"
+                }
+                borderRadius="4rem"
+                padding="7"
+              >
+                Admin - Group
               </Link>
             )}
             <Link
