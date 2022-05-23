@@ -459,6 +459,16 @@ const dupeValInArr = (arr) => {
   return arr.length === new Set(arr).size;
 };
 
+const urlWord = (str) => {
+  return str.split("").reduce((a, letter) => {
+    if (letter === " ") {
+      letter = "_";
+    }
+    a += letter;
+    return a;
+  }, "");
+};
+
 module.exports = {
   singleGroupCalc,
   totalScoreCalc,
@@ -470,4 +480,5 @@ module.exports = {
   teamRankSort,
   paidStatus,
   dupeValInArr,
+  urlWord,
 };

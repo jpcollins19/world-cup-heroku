@@ -2,8 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { HashRouter as Router } from "react-router-dom";
 import { loadUsers, loadTeams } from "./store";
-import Header_U from "./components/headers/Header_U";
-import Header_NU from "./components/headers/Header_NU";
+import Header from "./components/headers/Header";
 import Routes from "./Routes";
 import "./components/headers/Headers.css";
 
@@ -15,11 +14,9 @@ const App = () => {
     dispatch(loadTeams());
   }, []);
 
-  const auth = useSelector((state) => state.auth);
-
   return (
     <Router>
-      {auth.id ? <Header_U /> : <Header_NU />}
+      <Header />
       <div className="body-cont">
         <Routes />
       </div>

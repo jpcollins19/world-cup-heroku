@@ -44,7 +44,6 @@
 .group-cont {
   display: flex;
   align-items: center;
-  border: solid 2px red;
 }
 
 .single-group-cont {

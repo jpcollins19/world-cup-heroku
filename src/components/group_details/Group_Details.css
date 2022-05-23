@@ -6,6 +6,10 @@
   overflow: auto;
 }
 
+.group-details-container {
+  padding-top: 3%;
+}
+
 .group-details-full-table-container {
   display: flex;
   flex-wrap: wrap;

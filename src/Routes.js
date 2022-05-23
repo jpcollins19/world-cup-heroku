@@ -25,16 +25,46 @@ const Routes = () => {
 
   useEffect(() => dispatch(me()), []);
 
+  const routeObjsAdmin = [
+    { path: "/admin/users", component: User_Admin_Page },
+    { path: "/admin/groups", component: Group_Admin_Page },
+  ];
+
+  const routeObjs = [
+    [
+      { path: "/leaderboard", component: Leaderboard_Page },
+      { path: "/my_picks", component: My_Picks_Locked_Page },
+      { path: "/pool_picks", component: Pool_Picks_Page },
+      { path: "/group_details", component: Group_Details_Page },
+      { path: "/rules", component: Rules_Page },
+    ],
+    [
+      { path: "/", component: Pre_Login_Page },
+      { path: "/login", component: Login_Page },
+      { path: "/create_account", component: Create_Account_Page },
+      { path: "/rules", component: Rules_Page },
+    ],
+  ];
+
   return auth.id ? (
     <Switch>
-      {auth.email === "joe@gmail.com" && (
-        <Route exact path="/admin/user" component={User_Admin_Page} />
-      )}
-      {auth.email === "joe@gmail.com" && (
-        <Route exact path="/admin/group" component={Group_Admin_Page} />
-      )}
-      <Route exact path="/leaderboard" component={Leaderboard_Page} />
-      <Route exact path="/my_picks" component={My_Picks_Locked_Page} />
+      {auth.email === "joe@gmail.com" &&
+        routeObjsAdmin.map((route) => (
+          <Route
+            key={route.path}
+            exact
+            path={route.path}
+            component={route.component}
+          />
+        ))}
+      {routeObjs[0].map((route) => (
+        <Route
+          key={route.path}
+          exact
+          path={route.path}
+          component={route.component}
+        />
+      ))}
       {joe && joe.tourneyStage === 1 && (
         <Route
           exact
@@ -49,16 +79,17 @@ const Routes = () => {
           component={My_Picks_Unlocked_Page}
         />
       )}
-      <Route exact path="/pool_picks" component={Pool_Picks_Page} />
-      <Route exact path="/group_details" component={Group_Details_Page} />
-      <Route exact path="/rules" component={Rules_Page} />
     </Switch>
   ) : (
     <Switch>
-      <Route exact path="/" component={Pre_Login_Page} />
-      <Route exact path="/login" component={Login_Page} />
-      <Route exact path="/create_account" component={Create_Account_Page} />
-      <Route exact path="/rules" component={Rules_Page} />
+      {routeObjs[1].map((route) => (
+        <Route
+          key={route.path}
+          exact
+          path={route.path}
+          component={route.component}
+        />
+      ))}
       {/* <Redirect to="/login" /> */}
     </Switch>
   );

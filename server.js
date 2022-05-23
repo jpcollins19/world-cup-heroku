@@ -1,5 +1,8 @@
+//look at css for all pages to verify they are % and not rem based - on Leaderboard
+//leaderboard - "score" and "rank" header centering
+
 //all pages with a dropdown - incorporate react Select feature like you did in hoovs app in memberships page
-//npm i react-select --save-dev
+//npm i react-select
 
 ////user admin page -- test updating this info when you have a fresh brain before moving on to next item
 ////add admin page for updating group info
@@ -8,12 +11,11 @@
 
 ////login and create account pages
 //make it so the email is all lower case letters when submitted
+//change submit button to something better
 
 ////bugs
 //pool picks page - on a hard refresh, the dropdown option and pick info defaults back to the info for the person who is signed in
-
-////fix css
-//leaderboard - "score" and "rank" header centering
+//^way to fix this is to house the selected part in the store/backend
 
 ////rules page
 //adjust rules/scoring accordingly

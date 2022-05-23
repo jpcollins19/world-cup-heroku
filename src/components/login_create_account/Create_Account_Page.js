@@ -109,7 +109,9 @@ const Create_Account_Page = () => {
                     margin="normal"
                     required
                     label="Email Address"
+                    variant="filled"
                     name="email"
+                    InputProps={{ disableUnderline: true }}
                     inputProps={{
                       style: {
                         textAlign: "center",
@@ -137,7 +139,9 @@ const Create_Account_Page = () => {
                     margin="normal"
                     required
                     label="Name"
+                    variant="filled"
                     name="name"
+                    InputProps={{ disableUnderline: true }}
                     inputProps={{
                       style: {
                         textAlign: "center",
@@ -164,7 +168,9 @@ const Create_Account_Page = () => {
                     margin="normal"
                     required
                     label="Password"
+                    variant="filled"
                     name="password"
+                    InputProps={{ disableUnderline: true }}
                     inputProps={{
                       style: {
                         textAlign: "center",
@@ -193,7 +199,9 @@ const Create_Account_Page = () => {
                     margin="normal"
                     required
                     label="Confirm Password"
+                    variant="filled"
                     name="password1"
+                    InputProps={{ disableUnderline: true }}
                     inputProps={{
                       style: {
                         textAlign: "center",

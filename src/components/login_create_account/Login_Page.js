@@ -89,7 +89,9 @@ const Login_Page = () => {
                     margin="normal"
                     required
                     label="Email Address"
+                    variant="filled"
                     name="email"
+                    InputProps={{ disableUnderline: true }}
                     inputProps={{
                       style: {
                         color: "black",
@@ -117,7 +119,9 @@ const Login_Page = () => {
                     margin="normal"
                     required
                     label="Password"
+                    variant="filled"
                     name="password"
+                    InputProps={{ disableUnderline: true }}
                     inputProps={{
                       style: {
                         textAlign: "center",

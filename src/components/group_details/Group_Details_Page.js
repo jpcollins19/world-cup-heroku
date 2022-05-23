@@ -5,9 +5,6 @@ const Group_Details_Page = () => {
   return (
     <main className="group-details-page">
       <div className="group-details-container">
-        <div>&nbsp;</div>
-        <div>&nbsp;</div>
-        <div>&nbsp;</div>
         <div className="group-details-full-table-container">
           <Single_Cont group={"A"} />
           <Single_Cont group={"B"} />
@@ -18,7 +15,6 @@ const Group_Details_Page = () => {
           <Single_Cont group={"G"} />
           <Single_Cont group={"H"} />
         </div>
-        <div>&nbsp;</div>
       </div>
     </main>
   );
