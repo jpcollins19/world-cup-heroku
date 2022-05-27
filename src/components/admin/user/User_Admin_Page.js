@@ -6,6 +6,7 @@ import Input_Cont from "./Input_Cont";
 import Single_Group_Cont_Unlocked from "./group/Single_Group_Cont_Unlocked";
 import Knockout_Cont_Unlocked from "./ko/Knockout_Cont_Unlocked";
 import Alert from "@mui/material/Alert";
+import Select from "react-select";
 import "./User_Admin.css";
 
 const User_Admin_Page = () => {
@@ -13,10 +14,22 @@ const User_Admin_Page = () => {
 
   const history = useHistory();
 
-  const users = useSelector((state) => state.users);
-  const joe = useSelector((state) =>
-    state.users.find((user) => user.email === "joe@gmail.com")
-  );
+  const users = useSelector((state) => state.users)
+    .map((user) => {
+      return {
+        value: user,
+        label: user.email,
+      };
+    })
+    .reduce((a, user, idx) => {
+      user.value.email === "joe@gmail.com"
+        ? (user.rank = -1)
+        : (user.rank = idx);
+
+      a.push(user);
+      return a;
+    }, [])
+    .sort((a, b) => a.rank - b.rank);
 
   const [selectedUser, setSelectedUser] = useState({});
   const [name, setName] = useState("");
@@ -292,29 +305,74 @@ const User_Admin_Page = () => {
     }
   };
 
+  const styles = {
+    placeholder: (styles) => {
+      return {
+        ...styles,
+        color: "black",
+      };
+    },
+    dropdownIndicator: (styles) => {
+      return {
+        ...styles,
+        color: "black",
+        "&:hover": {
+          color: "black",
+        },
+      };
+    },
+    indicatorSeparator: (styles) => {
+      return {
+        ...styles,
+        background: "black",
+      };
+    },
+    control: (styles) => {
+      return {
+        ...styles,
+        background: "none",
+        color: "black",
+        border: "solid black 2px",
+        cursor: "pointer",
+        width: "19rem",
+        borderRadius: "0.5rem",
+        fontSize: "1.2rem",
+        textAlign: "center",
+        "&:hover": {
+          border: "solid black 2px",
+        },
+      };
+    },
+    option: (styles) => {
+      return {
+        ...styles,
+        background: "white",
+        color: "black",
+        borderBottom: "solid lightGrey 2px",
+        cursor: "pointer",
+        width: "19rem",
+        fontSize: "1.2rem",
+        textAlign: "center",
+        "&:hover": {
+          background: "rgb(242, 242, 234)",
+        },
+      };
+    },
+  };
+
   return (
     <main className="user-admin-page white text">
       <form className="user-admin-container" onSubmit={onSubmit}>
         <div className="user-admin-header">
           <div className="user-admin-dropdown-cont">
-            <select
-              onChange={(ev) => {
-                setSelectedUser(
-                  users.find((user) => user.id === ev.target.value)
-                );
-              }}
-            >
-              <option value={joe && joe.id}>Select User</option>
-              <option value={joe && joe.id}>{joe && joe.email}</option>
-              {users &&
-                users
-                  .filter((user) => user.email !== "joe@gmail.com")
-                  .map((user) => (
-                    <option key={user.id} value={user.id}>
-                      {user.email}
-                    </option>
-                  ))}
-            </select>
+            <Select
+              options={users.length && users}
+              placeholder={"Select User"}
+              onChange={(user) => setSelectedUser(user.value)}
+              styles={styles}
+              isSearchable={false}
+              className="user-admin-dropdown"
+            />
           </div>
           <div className="user-details-cont">
             <div>

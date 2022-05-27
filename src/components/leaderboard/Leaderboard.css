@@ -55,6 +55,7 @@
 .rank-column > div {
   flex: 0.5;
   align-items: flex-end;
+  padding-right: 10%;
 }
 
 .small-box {
@@ -101,4 +102,5 @@
 
 .score-column > div {
   flex: 0.5;
+  padding-left: 14%;
 }

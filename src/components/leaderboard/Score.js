@@ -1,5 +1,3 @@
-import "./Leaderboard.css";
-
 const Score = ({ rankInfo }) => {
   if (!rankInfo) {
     return null;

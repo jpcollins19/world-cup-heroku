@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 import {
   knockoutPartTeamPush,
   knockoutPartClassPush,
 } from "../../../../../store";
-import { useLocation } from "react-router-dom";
 
 const Champ_Game_L = ({ selectedUser }) => {
   const { pathname } = useLocation();

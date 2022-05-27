@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 import { paidStatus } from "../../store";
-import "./Leaderboard.css";
 
 const Name = ({ rankInfo }) => {
   const users = useSelector((state) => state.users);

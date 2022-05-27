@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 import {
   singleGroupCalc,
   knockoutRoundCalc,
   totalScoreCalc,
 } from "../../../store";
-import { useLocation } from "react-router-dom";
 
 const Total_Points_Cont = ({ selectedUser }) => {
   const { pathname } = useLocation();

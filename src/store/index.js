@@ -5,8 +5,9 @@ import auth from "./auth_store";
 
 const { users } = require("./users_store");
 const { teams } = require("./teams_store");
+const { updated } = require("./updated_store");
 
-const reducer = combineReducers({ auth, users, teams });
+const reducer = combineReducers({ auth, users, teams, updated });
 const middleware = applyMiddleware(thunk);
 const store = createStore(reducer, middleware);
 
@@ -14,4 +15,5 @@ export default store;
 export * from "./auth_store";
 export * from "./users_store";
 export * from "./teams_store";
+export * from "./updated_store";
 export * from "./funcs";

@@ -469,6 +469,10 @@ const urlWord = (str) => {
   }, "");
 };
 
+const findTeam = (obj, letter, rank) => {
+  return { value: obj, label: obj[`group${letter}${rank}`] };
+};
+
 module.exports = {
   singleGroupCalc,
   totalScoreCalc,
@@ -481,4 +485,5 @@ module.exports = {
   paidStatus,
   dupeValInArr,
   urlWord,
+  findTeam,
 };

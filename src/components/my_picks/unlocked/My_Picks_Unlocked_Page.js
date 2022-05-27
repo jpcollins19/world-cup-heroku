@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { updateUser, dupeValInArr } from "../../../store";
 import Alert from "@mui/material/Alert";
@@ -17,6 +17,42 @@ const My_Picks_Unlocked_Page = () => {
   const joe = useSelector((state) => state.users).find(
     (user) => user.email === "joe@gmail.com"
   );
+  const [tiebreaker, setTiebreaker] = useState(
+    user && user.tiebreaker ? user.tiebreaker : null
+  );
+  const [tiebreakerError, setTiebreakerError] = useState(false);
+  const [groupAError, setGroupAError] = useState(false);
+  const [groupBError, setGroupBError] = useState(false);
+  const [groupCError, setGroupCError] = useState(false);
+  const [groupDError, setGroupDError] = useState(false);
+  const [groupEError, setGroupEError] = useState(false);
+  const [groupFError, setGroupFError] = useState(false);
+  const [groupGError, setGroupGError] = useState(false);
+  const [groupHError, setGroupHError] = useState(false);
+  //
+  const [koError, setKoError] = useState(false);
+  const [Q1, setQ1] = useState("");
+  const [Q2, setQ2] = useState("");
+  const [Q3, setQ3] = useState("");
+  const [Q4, setQ4] = useState("");
+  const [Q5, setQ5] = useState("");
+  const [Q6, setQ6] = useState("");
+  const [Q7, setQ7] = useState("");
+  const [Q8, setQ8] = useState("");
+  const [S1, setS1] = useState("");
+  const [S1Changed, setS1Changed] = useState(false);
+  const [S2, setS2] = useState("");
+  const [S2Changed, setS2Changed] = useState(false);
+  const [S3, setS3] = useState("");
+  const [S3Changed, setS3Changed] = useState(false);
+  const [S4, setS4] = useState("");
+  const [S4Changed, setS4Changed] = useState(false);
+  const [F1, setF1] = useState("");
+  const [F1Changed, setF1Changed] = useState(false);
+  const [F2, setF2] = useState("");
+  const [F2Changed, setF2Changed] = useState(false);
+  const [champ, setChamp] = useState("");
+  const [champChanged, setChampChanged] = useState(false);
 
   const [selectionObj, setSelectionObj] = useState({
     A: {
@@ -68,43 +104,6 @@ const My_Picks_Unlocked_Page = () => {
       4: user && user.groupH4 ? user.groupH4 : null,
     },
   });
-
-  const [tiebreaker, setTiebreaker] = useState(
-    user && user.tiebreaker ? user.tiebreaker : null
-  );
-  const [tiebreakerError, setTiebreakerError] = useState(false);
-  const [groupAError, setGroupAError] = useState(false);
-  const [groupBError, setGroupBError] = useState(false);
-  const [groupCError, setGroupCError] = useState(false);
-  const [groupDError, setGroupDError] = useState(false);
-  const [groupEError, setGroupEError] = useState(false);
-  const [groupFError, setGroupFError] = useState(false);
-  const [groupGError, setGroupGError] = useState(false);
-  const [groupHError, setGroupHError] = useState(false);
-  //
-  const [koError, setKoError] = useState(false);
-  const [Q1, setQ1] = useState("");
-  const [Q2, setQ2] = useState("");
-  const [Q3, setQ3] = useState("");
-  const [Q4, setQ4] = useState("");
-  const [Q5, setQ5] = useState("");
-  const [Q6, setQ6] = useState("");
-  const [Q7, setQ7] = useState("");
-  const [Q8, setQ8] = useState("");
-  const [S1, setS1] = useState("");
-  const [S1Changed, setS1Changed] = useState(false);
-  const [S2, setS2] = useState("");
-  const [S2Changed, setS2Changed] = useState(false);
-  const [S3, setS3] = useState("");
-  const [S3Changed, setS3Changed] = useState(false);
-  const [S4, setS4] = useState("");
-  const [S4Changed, setS4Changed] = useState(false);
-  const [F1, setF1] = useState("");
-  const [F1Changed, setF1Changed] = useState(false);
-  const [F2, setF2] = useState("");
-  const [F2Changed, setF2Changed] = useState(false);
-  const [champ, setChamp] = useState("");
-  const [champChanged, setChampChanged] = useState(false);
 
   const onChangeSelectionObj = (group, rank, team) => {
     selectionObj[group][rank] = team;
@@ -268,7 +267,7 @@ const My_Picks_Unlocked_Page = () => {
             <h3 className="white-text-ul">
               {joe &&
                 joe.tourneyStage === 1 &&
-                "Select a country from the dropdowns to rank where you think each country will finish in their group"}
+                "Select a country from the dropdowns to rank where you think they will finish in their group"}
               {joe &&
                 joe.tourneyStage === 4 &&
                 "Click on the country you think will win each game"}

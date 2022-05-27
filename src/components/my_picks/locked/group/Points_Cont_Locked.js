@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import { singleGroupCalc } from "../../../../store";
 import { useLocation } from "react-router-dom";
+import { singleGroupCalc } from "../../../../store";
 
 const Points_Cont_Locked = ({ group, selectedUser }) => {
   const { pathname } = useLocation();

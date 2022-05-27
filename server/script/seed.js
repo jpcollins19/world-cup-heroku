@@ -1,6 +1,6 @@
 const {
   db,
-  models: { User, Team },
+  models: { User, Team, Updated },
 } = require("../db/index.js");
 
 const teamInfo = [
@@ -53,47 +53,47 @@ const users = [
     admin: true,
     paid: true,
 
-    groupA1: "Ecuador",
-    groupA2: "Netherlands",
-    groupA3: "Senegal",
-    groupA4: "Qatar",
+    // groupA1: "Ecuador",
+    // groupA2: "Netherlands",
+    // groupA3: "Senegal",
+    // groupA4: "Qatar",
 
-    groupB1: "England",
-    groupB2: "Iran",
-    groupB3: "Sweden",
-    groupB4: "USA",
+    // groupB1: "England",
+    // groupB2: "Iran",
+    // groupB3: "Sweden",
+    // groupB4: "USA",
 
-    groupC1: "Argentina",
-    groupC2: "Poland",
-    groupC3: "Mexico",
-    groupC4: "Saudi Arabia",
+    // groupC1: "Argentina",
+    // groupC2: "Poland",
+    // groupC3: "Mexico",
+    // groupC4: "Saudi Arabia",
 
-    groupD1: "France",
-    groupD2: "Denmark",
-    groupD3: "Russia",
-    groupD4: "Tunisia",
+    // groupD1: "France",
+    // groupD2: "Denmark",
+    // groupD3: "Russia",
+    // groupD4: "Tunisia",
 
-    groupE1: "Italy",
-    groupE2: "Germany",
-    groupE3: "Japan",
-    groupE4: "Spain",
+    // groupE1: "Italy",
+    // groupE2: "Germany",
+    // groupE3: "Japan",
+    // groupE4: "Spain",
 
-    groupF1: "Morocco",
-    groupF2: "Canada",
-    groupF3: "Belgium",
-    groupF4: "Croatia",
+    // groupF1: "Morocco",
+    // groupF2: "Canada",
+    // groupF3: "Belgium",
+    // groupF4: "Croatia",
 
-    groupG1: "Brasil",
-    groupG2: "Cameroon",
-    groupG3: "Serbia",
-    groupG4: "Switz",
+    // groupG1: "Brasil",
+    // groupG2: "Cameroon",
+    // groupG3: "Serbia",
+    // groupG4: "Switz",
 
-    groupH1: "Uruguay",
-    groupH2: "Ghana",
-    groupH3: "Portugal",
-    groupH4: "S. Korea",
+    // groupH1: "Uruguay",
+    // groupH2: "Ghana",
+    // groupH3: "Portugal",
+    // groupH4: "S. Korea",
 
-    tiebreaker: 152,
+    // tiebreaker: 152,
   },
   {
     email: "stanley@gmail.com",
@@ -287,6 +287,13 @@ const users = [
   },
 ];
 
+const updated = [
+  {
+    idd: 1,
+    answer: "Last Updated: 10/20/21 at 10:36 pm",
+  },
+];
+
 const syncAndSeed = async () => {
   await db.sync({ force: true });
   /////////////////////////////////////////////////////////////
@@ -382,6 +389,15 @@ const syncAndSeed = async () => {
         groupH4: obj.groupH4,
 
         tiebreaker: obj.tiebreaker,
+      })
+    )
+  );
+
+  const [updatedAnswer] = await Promise.all(
+    updated.map((obj) =>
+      Updated.create({
+        idd: obj.idd,
+        answer: obj.answer,
       })
     )
   );

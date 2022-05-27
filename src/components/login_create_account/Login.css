@@ -5,16 +5,16 @@
   background-size: cover;
 }
 
-#login-page {
-  padding-top: 7rem;
+.login-page {
+  padding-top: 5%;
   width: 100vw;
   height: 84vh;
   display: flex;
   justify-content: center;
 }
 
-#create-account-page {
-  padding-top: 7rem;
+.create-account-page {
+  padding-top: 5%;
   width: 100vw;
   height: 84vh;
   display: flex;
@@ -73,7 +73,7 @@
   );
 }
 
-#main-text-container-login > h1 {
+.main-text-container-login > h1 {
   margin: 0;
   padding: 1rem 0rem 0rem 0rem;
 }
@@ -90,7 +90,7 @@
   justify-content: center;
 }
 
-button {
+.button-cont > button {
   --button_radius: 0.75em;
   --button_color: #e8e8e8;
   --button_outline_color: #000000;
@@ -115,12 +115,12 @@ button {
   cursor: pointer;
 }
 
-button:hover .button_top {
+.button-cont > button:hover .button_top {
   /* Pull the button upwards when hovered */
   transform: translateY(-0.33em);
 }
 
-button:active .button_top {
+.button-cont > button:active .button_top {
   /* Push the button downwards when pressed */
   transform: translateY(0);
 }

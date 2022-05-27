@@ -1,14 +1,14 @@
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { authenticate } from "../../store";
+import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import { makeStyles } from "@material-ui/core/styles";
-import { Link } from "react-router-dom";
 import Alert from "@mui/material/Alert";
-import { useDispatch, useSelector } from "react-redux";
-import { authenticate } from "../../store";
-import { useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
   textField: {
@@ -57,10 +57,10 @@ const Login_Page = () => {
   };
 
   return (
-    <main id="login-page">
+    <main className="login-page">
       <div className="main-cont-login">
         <div className="main-cont1-login">
-          <div id="main-text-container-login" className="black-text">
+          <div className="main-text-container-login black-text">
             <Container component="main" maxWidth="xs">
               <CssBaseline />
               <Box

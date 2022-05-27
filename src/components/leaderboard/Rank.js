@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import "./Leaderboard.css";
 
 const Rank = () => {
   const users = useSelector((state) => state.users).filter(

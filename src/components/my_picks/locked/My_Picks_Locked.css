@@ -1,8 +1,8 @@
 .my-picks-page {
   background-image: url("https://as01.epimg.net/futbol/imagenes/2020/04/10/primera/1586529604_835391_1586529700_noticia_normal.jpg");
   width: 99.5vw;
-  max-height: 82.5vh;
-  min-height: 82.5vh;
+  max-height: 84vh;
+  min-height: 84vh;
   background-size: cover;
   overflow: auto;
 }
@@ -15,7 +15,6 @@
 .my-picks-header {
   display: flex;
   margin-top: 2rem;
-  /* border: solid 4px cornsilk; */
   padding-top: 1%;
 }
 
@@ -25,12 +24,10 @@
   align-items: center;
   flex: 0.37;
   justify-content: center;
-  /* border: solid 4px red; */
 }
 
 .point-system-table-text {
   display: flex;
-  /* border: solid 4px blue; */
 }
 
 .point-system-table-text > div {

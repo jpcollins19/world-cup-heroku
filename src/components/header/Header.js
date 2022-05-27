@@ -1,25 +1,20 @@
-import { useDispatch, useSelector } from "react-redux";
-import { logout, urlWord } from "../../store";
+import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
+import { urlWord } from "../../store";
 import AppBar from "@mui/material/AppBar";
 import CssBaseline from "@mui/material/CssBaseline";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import GlobalStyles from "@mui/material/GlobalStyles";
-import { useLocation } from "react-router-dom";
-import "./Headers.css";
+import TopRow from "./TopRow";
+import "./Header.css";
 
 const Header = () => {
-  const auth = useSelector((state) => state.auth);
-
   const { pathname } = useLocation();
-  const dispatch = useDispatch();
-  const submittedPicks = useSelector((state) => state.users).filter(
-    (user) => user.tiebreaker !== null
-  );
 
+  const auth = useSelector((state) => state.auth);
   const adminOptions = ["users", "groups"];
-
   const navOptions = ["leaderboard", "my picks", "pool picks", "group details"];
 
   return (
@@ -36,37 +31,17 @@ const Header = () => {
           borderBottom: (theme) => `1px solid ${theme.palette.divider}`,
         }}
       >
-        <div className="login-row">
-          <div
-            className={auth.id ? "last-updated-cont" : "last-updated-cont-NU"}
-          >
-            {auth.id ? " Last Updated: 10/20/21 at 10:36 pm CT" : ""}
-            {auth.id && <br></br>}
-            {auth.id && (
-              <div className="submitted-picks">
-                # of submitted picks: {submittedPicks.length}
-              </div>
-            )}
-          </div>
-          {auth.id ? (
-            <div className="login-cont" onClick={() => dispatch(logout())}>
-              <Link href="#/login" style={{ textDecoration: "none" }}>
-                Sign Out
-              </Link>
-            </div>
-          ) : (
-            <div className="login-cont">
-              <Link href="#/login" style={{ textDecoration: "none" }}>
-                Sign In
-              </Link>
-            </div>
-          )}
-        </div>
+        <TopRow />
         <Toolbar>
           <Typography
             variant="h2"
             color="inherit"
-            sx={{ flexGrow: 1, textAlign: "center" }}
+            sx={{
+              flexGrow: 1,
+              textAlign: "center",
+              cursor: "default",
+              zIndex: 5,
+            }}
           >
             Qatar 2022 World Cup
           </Typography>

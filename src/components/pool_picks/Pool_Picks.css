@@ -17,7 +17,6 @@
 .pool-picks-header {
   display: flex;
   margin-top: 2rem;
-  /* border: solid 4px dodgerblue; */
 }
 
 .pool-picks-header-name {
@@ -26,7 +25,6 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  /* border: solid 4px purple; */
 }
 
 .pool-picks-header-name > h1 {
@@ -39,7 +37,6 @@
   justify-content: center;
   align-items: center;
   padding-left: 8rem;
-  /* border: solid 4px rgb(152, 235, 152); */
 }
 
 .pool-picks-part-dropdown-cont > select {

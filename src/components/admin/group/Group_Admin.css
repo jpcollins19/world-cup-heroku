@@ -21,29 +21,22 @@
   margin-top: 5%;
 }
 
-.group-admin-dropdown-cont > select {
-  text-align: center;
-  font-size: 1.2rem;
-  border: solid black 2px;
-  height: 2.5rem;
-  border-radius: 0.5rem;
+.group-admin-dropdown {
   background: linear-gradient(
     to bottom,
     rgb(159, 159, 147) 0%,
-    rgb(211, 208, 208) 50%,
+    rgb(222, 222, 212) 25%,
+    rgb(203, 203, 192) 50%,
+    rgb(222, 222, 212) 75%,
     rgb(159, 159, 147) 100%
   );
-  font-size: 1.5rem;
-  width: 12rem;
-  text-align-last: center;
-  text-align: center;
-  -ms-text-align-last: center;
-  -moz-text-align-last: center;
+  border-radius: 0.5rem;
 }
 
 .group-cont {
   display: flex;
   align-items: center;
+  padding-top: 2%;
 }
 
 .single-group-cont {

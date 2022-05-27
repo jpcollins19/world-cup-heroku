@@ -9,8 +9,7 @@ const Single_Group_Cont_Unlocked = ({
   setGroupError,
 }) => {
   const onChange = (answer, group) => {
-    const answerArr = answer.split(",");
-    onChangeSelectionObj(group, Number(answerArr[0]), answerArr[1]);
+    onChangeSelectionObj(group, answer[0], answer[1]);
     setGroupError(false);
   };
 

@@ -19,9 +19,20 @@
   font-size: 1.3rem;
 }
 
+.last-updated-cont > div > input {
+  font-size: 1rem;
+  width: 20rem;
+}
+
+.last-updated-button {
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
 .submitted-picks {
   font-size: 1rem;
   padding: 0.5rem 0rem 0rem 6rem;
+  z-index: 10;
 }
 
 .last-updated-cont-NU {
