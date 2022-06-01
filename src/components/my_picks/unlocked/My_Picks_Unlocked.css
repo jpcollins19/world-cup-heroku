@@ -180,15 +180,15 @@ section > div {
   max-width: 10rem;
 }
 
-.group-admin-dropdown {
-  background: linear-gradient(
+.group-dropdown {
+  /* background: linear-gradient(
     to bottom,
     rgb(159, 159, 147) 0%,
     rgb(222, 222, 212) 25%,
     rgb(203, 203, 192) 50%,
     rgb(222, 222, 212) 75%,
     rgb(159, 159, 147) 100%
-  );
+  ); */
   border-radius: 0.5rem;
 }
 

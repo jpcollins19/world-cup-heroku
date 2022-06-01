@@ -4,11 +4,13 @@ import Point_System_Cont from "../my_picks/locked/Point_System_Cont";
 import Single_Group_Cont from "../my_picks/locked/group/Single_Group_Cont_Locked";
 import Total_Points_Cont from "../my_picks/locked/Total_Points_Cont";
 import Knockout_Cont from "../my_picks/locked/ko/Knockout_Cont_Locked";
+import Select from "react-select";
+import { formatSelectedUser } from "../../store";
 import "./Pool_Picks.css";
 
 const Pool_Picks_Page = () => {
   const [selectedUser, setSelectedUser] = useState(
-    useSelector((state) => state.auth)
+    formatSelectedUser(useSelector((state) => state.auth))
   );
 
   const auth = useSelector((state) => state.auth);
@@ -17,16 +19,75 @@ const Pool_Picks_Page = () => {
     (user) => user.email === "joe@gmail.com"
   );
 
-  const users = useSelector((state) => state.users).filter(
-    (user) => user.tiebreaker
-  );
+  const users = useSelector((state) => state.users)
+    .filter((user) => user.tiebreaker)
+    .map((user) => {
+      return { value: user, label: user.name };
+    });
 
-  const onChangeHandler = async (id) => {
-    const part = users.find((part) => part.id === id);
+  const onChange = async (user) => {
+    const part = users.find((part) => part.value.id === user.value.id);
     setSelectedUser(part);
   };
 
   const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+
+  const styles = {
+    placeholder: (styles) => {
+      return {
+        ...styles,
+        color: "black",
+      };
+    },
+    dropdownIndicator: (styles) => {
+      return {
+        ...styles,
+        color: "black",
+        "&:hover": {
+          color: "black",
+        },
+      };
+    },
+    indicatorSeparator: (styles) => {
+      return {
+        ...styles,
+        background: "black",
+      };
+    },
+    control: (styles) => {
+      return {
+        ...styles,
+        background: "none",
+        color: "black",
+        border: "solid black 1px",
+        cursor: "pointer",
+        width: "13rem",
+        height: 38,
+        minHeight: 38,
+        fontSize: "1rem",
+        textAlign: "center",
+        "&:hover": {
+          border: "solid black 1px",
+        },
+      };
+    },
+    option: (styles) => {
+      return {
+        ...styles,
+        background: "white",
+        color: "black",
+        borderBottom: "solid lightGrey 2px",
+        cursor: "pointer",
+        width: "12.5rem",
+        height: "2.5rem",
+        fontSize: "1rem",
+        textAlign: "center",
+        "&:hover": {
+          background: "rgb(242, 242, 234)",
+        },
+      };
+    },
+  };
 
   return (
     <main className="pool-picks-page white text">
@@ -50,23 +111,22 @@ const Pool_Picks_Page = () => {
             )}
             {auth.tiebreaker && (
               <div className="pool-picks-header-name">
-                <h1 className="white-text">Picks for: {selectedUser.name}</h1>
+                <h1 className="white-text">
+                  Picks for: {selectedUser.value.name}
+                </h1>
               </div>
             )}
             {auth.tiebreaker && (
               <div className="pool-picks-part-dropdown-cont">
                 <h3 className="white-text">View Pool Picks</h3>
-                <select onChange={(ev) => onChangeHandler(ev.target.value)}>
-                  <option key={selectedUser.id}>{selectedUser.name}</option>
-                  {users &&
-                    users
-                      .filter((part) => selectedUser.id !== part.id)
-                      .map((part) => (
-                        <option key={part.id} value={part.id}>
-                          {part.name}
-                        </option>
-                      ))}
-                </select>
+                <Select
+                  options={users}
+                  defaultValue={selectedUser}
+                  onChange={(value) => onChange(value)}
+                  styles={styles}
+                  isSearchable={false}
+                  className="pool-picks-dropdown"
+                />
               </div>
             )}
           </div>
@@ -74,11 +134,11 @@ const Pool_Picks_Page = () => {
             <div className="top box">
               <div className="box left">
                 <div className="predictions-cont">
-                  <Knockout_Cont selectedUser={selectedUser} />
+                  <Knockout_Cont selectedUser={selectedUser.value} />
                 </div>
               </div>
               <div className="box right">
-                <Total_Points_Cont selectedUser={selectedUser} />
+                <Total_Points_Cont selectedUser={selectedUser.value} />
               </div>
             </div>
           )}
@@ -93,14 +153,14 @@ const Pool_Picks_Page = () => {
                   <Single_Group_Cont
                     key={letter}
                     group={letter}
-                    selectedUser={selectedUser}
+                    selectedUser={selectedUser.value}
                   />
                 ))}
               </div>
             </div>
             <div className="box right">
               {joe && joe.tourneyStage < 5 && auth.tiebreaker && (
-                <Total_Points_Cont selectedUser={selectedUser} />
+                <Total_Points_Cont selectedUser={selectedUser.value} />
               )}
             </div>
           </div>

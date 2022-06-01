@@ -58,8 +58,8 @@ const Prediction_Cont_Unlocked = ({ group, onChange }) => {
         color: "black",
         borderBottom: "solid lightGrey 2px",
         cursor: "pointer",
-        width: "10rem",
-        height: "1.5rem",
+        width: "9.5rem",
+        height: "2.5rem",
         fontSize: "1rem",
         textAlign: "center",
         "&:hover": {

@@ -3,8 +3,8 @@
 
   background-image: url("https://i.ytimg.com/vi/3jKj1_aI1EI/maxresdefault.jpg");
   width: 99.5vw;
-  max-height: 82.5vh;
-  min-height: 82.5vh;
+  max-height: 84vh;
+  min-height: 84vh;
   background-size: cover;
   overflow: auto;
 }
@@ -37,20 +37,17 @@
   justify-content: center;
   align-items: center;
   padding-left: 8rem;
+  margin-top: 1%;
 }
 
-.pool-picks-part-dropdown-cont > select {
-  text-align: center;
-  font-size: 1.2rem;
-  border: solid black 2px;
-  height: 2.5rem;
-  border-radius: 0.5rem;
+.pool-picks-dropdown {
   background: linear-gradient(
     to bottom,
     rgb(159, 159, 147) 0%,
-    rgb(211, 208, 208) 50%,
+    rgb(222, 222, 212) 25%,
+    rgb(203, 203, 192) 50%,
+    rgb(222, 222, 212) 75%,
     rgb(159, 159, 147) 100%
   );
-  font-size: 1.5rem;
-  width: 12rem;
+  border-radius: 0.5rem;
 }

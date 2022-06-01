@@ -1,11 +1,3 @@
-//my picks edit page
-//do css work on the dropdown options
-//audit for work both scenarios of user not having picks vs. having picks
-//audit work that submitting and editing works
-
-//pool picks page dropdown - incorporate react Select
-
-////user admin page -- test updating this info for every aspect
 ////add admin page for updating group info
 ////add admin page for updating individual team info
 ////add edit name page
@@ -14,10 +6,7 @@
 //make it so the email is all lower case letters when submitted
 //change submit button to something better
 
-////all pages that have a submit/edit button - do css work on these
-
-////bugs
-//pool picks page - on a hard refresh, the dropdown option and pick info defaults back to the info for the person who is signed in
+////all pages that have a submit/edit buttons - do css work on these
 
 ////rules page
 //adjust rules/scoring accordingly

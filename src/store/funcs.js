@@ -473,6 +473,10 @@ const findTeam = (obj, letter, rank) => {
   return { value: obj, label: obj[`group${letter}${rank}`] };
 };
 
+const formatSelectedUser = (obj) => {
+  return { value: obj, label: obj.name };
+};
+
 module.exports = {
   singleGroupCalc,
   totalScoreCalc,
@@ -486,4 +490,5 @@ module.exports = {
   dupeValInArr,
   urlWord,
   findTeam,
+  formatSelectedUser,
 };
