@@ -45,16 +45,16 @@ const Single_Cont = ({ group }) => {
               .map((team) => (
                 <div key={team.id} className="team-row-cont">
                   <div className="single-group-cont-text">
-                    <img className="flag" src={team.flag}></img>
-                    <div className="country-name">{team.name}</div>
-                    <div className="MP">{team.MP}</div>
-                    <div className="W">{team.W} </div>
-                    <div className="D">{team.D} </div>
-                    <div className="loss">{team.L} </div>
-                    <div className="GF">{team.GF}</div>
-                    <div className="GA">{team.GA}</div>
-                    <div className="GA">{team.GD}</div>
-                    <div className="pts">{team.Pts}</div>
+                    <img className="flag-gd" src={team.flag}></img>
+                    <div className="name-gd">{team.name}</div>
+                    <div className="MP-gd">{team.MP}</div>
+                    <div className="W-gd">{team.W} </div>
+                    <div className="D-gd">{team.D} </div>
+                    <div className="L-gd">{team.L} </div>
+                    <div className="GF-gd">{team.GF}</div>
+                    <div className="GA-gd">{team.GA}</div>
+                    <div className="GA-gd">{team.GD}</div>
+                    <div className="pts-gd">{team.pts}</div>
                   </div>
                 </div>
               ))}

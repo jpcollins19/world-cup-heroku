@@ -39,7 +39,7 @@
   padding-top: 2%;
 }
 
-.single-group-cont {
+.single-group-cont-edit {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,8 +54,8 @@
     rgb(159, 159, 147) 100%
   );
   border-radius: 4rem;
-  width: 35rem;
-  height: 18rem;
+  width: 43rem;
+  height: 20rem;
 }
 
 .group-header {
@@ -71,14 +71,44 @@
 }
 
 .text-header > div {
-  margin: 0rem 0.2rem 0rem 0.2rem;
   min-width: 1.5rem;
   text-align: center;
 }
 
-.team {
-  display: flex;
-  flex: 1;
+.position-edit {
+  padding-right: 1rem;
+}
+
+.team-edit {
+  padding-right: 11.5rem;
+}
+
+.header-MP {
+  padding-right: 1.1rem;
+}
+
+.header-W {
+  padding-right: 1.4rem;
+}
+
+.header-D {
+  padding-right: 1.6rem;
+}
+
+.header-L {
+  padding-right: 1.6rem;
+}
+
+.header-GF {
+  padding-right: 1.1rem;
+}
+
+.header-GA {
+  padding-right: 1rem;
+}
+
+.header-GD {
+  padding-right: 0.8rem;
 }
 
 .team-row-cont {
@@ -90,8 +120,14 @@
   align-items: center;
 }
 
-.single-group-cont-text > div {
+.single-group-cont-text > input {
   font-size: 1.5rem;
+  width: 2rem;
+  text-align: center;
+}
+
+.position {
+  margin-right: 1rem;
 }
 
 .flag {
@@ -100,35 +136,21 @@
   max-width: 45px;
 }
 
-.country-name {
+.name {
   display: flex;
   align-items: center;
-  padding-left: 1rem;
-  min-width: 39.5%;
-  max-width: 39.5%;
+  margin-left: 1rem;
+  min-width: 25%;
+  max-width: 25%;
+}
+.input-space {
+  margin-left: 2%;
 }
 
-.MP {
-  margin-right: 1.1rem;
-  margin-left: 1.2rem;
-}
-
-.W {
-  margin-right: 1.1rem;
-}
-
-.D {
-  margin-right: 1rem;
-}
-
-.loss {
-  margin-right: 1.1rem;
-}
-
-.GF {
-  margin-right: 1rem;
-}
-
-.GA {
-  margin-right: 1.1rem;
+.group-admin-page > button {
+  margin-top: 2%;
+  width: 10rem;
+  height: 2.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
 }

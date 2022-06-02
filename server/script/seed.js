@@ -436,154 +436,154 @@ const syncAndSeed = async () => {
   Portugal.groupFinishingPosition = 3;
   Uruguay.groupFinishingPosition = 4;
 
-  Ecuador.groupIsFinished = true;
-  Netherlands.groupIsFinished = true;
-  Qatar.groupIsFinished = true;
-  Senegal.groupIsFinished = true;
-  England.groupIsFinished = true;
-  Iran.groupIsFinished = true;
-  Sweden.groupIsFinished = true;
-  USA.groupIsFinished = true;
-  Argentina.groupIsFinished = true;
-  Mexico.groupIsFinished = true;
-  Poland.groupIsFinished = true;
-  Saudi_Arabia.groupIsFinished = true;
-  Denmark.groupIsFinished = true;
-  France.groupIsFinished = true;
-  Russia.groupIsFinished = true;
-  Tunisia.groupIsFinished = true;
-  Italy.groupIsFinished = true;
-  Germany.groupIsFinished = true;
-  Japan.groupIsFinished = true;
-  Spain.groupIsFinished = true;
-  Belgium.groupIsFinished = true;
-  Canada.groupIsFinished = true;
-  Croatia.groupIsFinished = true;
-  Morocco.groupIsFinished = true;
-  Brasil.groupIsFinished = true;
-  Cameroon.groupIsFinished = true;
-  Serbia.groupIsFinished = true;
-  Switz.groupIsFinished = true;
-  Ghana.groupIsFinished = true;
-  S_Korea.groupIsFinished = true;
-  Portugal.groupIsFinished = true;
-  Uruguay.groupIsFinished = true;
+  // Ecuador.groupIsFinished = true;
+  // Netherlands.groupIsFinished = true;
+  // Qatar.groupIsFinished = true;
+  // Senegal.groupIsFinished = true;
+  // England.groupIsFinished = true;
+  // Iran.groupIsFinished = true;
+  // Sweden.groupIsFinished = true;
+  // USA.groupIsFinished = true;
+  // Argentina.groupIsFinished = true;
+  // Mexico.groupIsFinished = true;
+  // Poland.groupIsFinished = true;
+  // Saudi_Arabia.groupIsFinished = true;
+  // Denmark.groupIsFinished = true;
+  // France.groupIsFinished = true;
+  // Russia.groupIsFinished = true;
+  // Tunisia.groupIsFinished = true;
+  // Italy.groupIsFinished = true;
+  // Germany.groupIsFinished = true;
+  // Japan.groupIsFinished = true;
+  // Spain.groupIsFinished = true;
+  // Belgium.groupIsFinished = true;
+  // Canada.groupIsFinished = true;
+  // Croatia.groupIsFinished = true;
+  // Morocco.groupIsFinished = true;
+  // Brasil.groupIsFinished = true;
+  // Cameroon.groupIsFinished = true;
+  // Serbia.groupIsFinished = true;
+  // Switz.groupIsFinished = true;
+  // Ghana.groupIsFinished = true;
+  // S_Korea.groupIsFinished = true;
+  // Portugal.groupIsFinished = true;
+  // Uruguay.groupIsFinished = true;
 
   //////////////////////////////////////////////////
-  Joe.knockQ1 = Ecuador.name;
-  Joe.knockQ2 = Argentina.name;
-  Joe.knockQ3 = Canada.name;
-  Joe.knockQ4 = Brasil.name;
-  Joe.knockQ5 = England.name;
-  Joe.knockQ6 = Denmark.name;
-  Joe.knockQ7 = Belgium.name;
-  Joe.knockQ8 = Cameroon.name;
+  // Joe.knockQ1 = Ecuador.name;
+  // Joe.knockQ2 = Argentina.name;
+  // Joe.knockQ3 = Canada.name;
+  // Joe.knockQ4 = Brasil.name;
+  // Joe.knockQ5 = England.name;
+  // Joe.knockQ6 = Denmark.name;
+  // Joe.knockQ7 = Belgium.name;
+  // Joe.knockQ8 = Cameroon.name;
 
-  Stan.knockQ1 = Ecuador.name;
-  Stan.knockQ2 = Argentina.name;
-  Stan.knockQ3 = Canada.name;
-  Stan.knockQ4 = Brasil.name;
-  Stan.knockQ5 = England.name;
-  Stan.knockQ6 = Denmark.name;
-  Stan.knockQ7 = Belgium.name;
-  Stan.knockQ8 = Cameroon.name;
+  // Stan.knockQ1 = Ecuador.name;
+  // Stan.knockQ2 = Argentina.name;
+  // Stan.knockQ3 = Canada.name;
+  // Stan.knockQ4 = Brasil.name;
+  // Stan.knockQ5 = England.name;
+  // Stan.knockQ6 = Denmark.name;
+  // Stan.knockQ7 = Belgium.name;
+  // Stan.knockQ8 = Cameroon.name;
 
-  E.knockQ1 = Iran.name;
-  E.knockQ2 = Argentina.name;
-  E.knockQ3 = Canada.name;
-  E.knockQ4 = Brasil.name;
-  E.knockQ5 = England.name;
-  E.knockQ6 = Denmark.name;
-  E.knockQ7 = Germany.name;
-  E.knockQ8 = Cameroon.name;
+  // E.knockQ1 = Iran.name;
+  // E.knockQ2 = Argentina.name;
+  // E.knockQ3 = Canada.name;
+  // E.knockQ4 = Brasil.name;
+  // E.knockQ5 = England.name;
+  // E.knockQ6 = Denmark.name;
+  // E.knockQ7 = Germany.name;
+  // E.knockQ8 = Cameroon.name;
 
-  Coach.knockQ1 = Ecuador.name;
-  Coach.knockQ2 = Argentina.name;
-  Coach.knockQ3 = Italy.name;
-  Coach.knockQ4 = Brasil.name;
-  Coach.knockQ5 = England.name;
-  Coach.knockQ6 = Mexico.name;
-  Coach.knockQ7 = Belgium.name;
-  Coach.knockQ8 = Ghana.name;
+  // Coach.knockQ1 = Ecuador.name;
+  // Coach.knockQ2 = Argentina.name;
+  // Coach.knockQ3 = Italy.name;
+  // Coach.knockQ4 = Brasil.name;
+  // Coach.knockQ5 = England.name;
+  // Coach.knockQ6 = Mexico.name;
+  // Coach.knockQ7 = Belgium.name;
+  // Coach.knockQ8 = Ghana.name;
 
-  Kelly.knockQ1 = Iran.name;
-  Kelly.knockQ2 = Argentina.name;
-  Kelly.knockQ3 = Italy.name;
-  Kelly.knockQ4 = Brasil.name;
-  Kelly.knockQ5 = England.name;
-  Kelly.knockQ6 = Denmark.name;
-  Kelly.knockQ7 = Belgium.name;
-  Kelly.knockQ8 = Ghana.name;
-
-  ////
-  Joe.knockS1 = Argentina.name;
-  Joe.knockS2 = Brasil.name;
-  Joe.knockS3 = Denmark.name;
-  Joe.knockS4 = Belgium.name;
-
-  Stan.knockS1 = Argentina.name;
-  Stan.knockS2 = Brasil.name;
-  Stan.knockS3 = Denmark.name;
-  Stan.knockS4 = Belgium.name;
-
-  E.knockS1 = Iran.name;
-  E.knockS2 = Canada.name;
-  E.knockS3 = England.name;
-  E.knockS4 = Germany.name;
-
-  Coach.knockS1 = Ecuador.name;
-  Coach.knockS2 = Brasil.name;
-  Coach.knockS3 = Mexico.name;
-  Coach.knockS4 = Belgium.name;
-
-  Kelly.knockS1 = Iran.name;
-  Kelly.knockS2 = Italy.name;
-  Kelly.knockS3 = Denmark.name;
-  Kelly.knockS4 = Ghana.name;
+  // Kelly.knockQ1 = Iran.name;
+  // Kelly.knockQ2 = Argentina.name;
+  // Kelly.knockQ3 = Italy.name;
+  // Kelly.knockQ4 = Brasil.name;
+  // Kelly.knockQ5 = England.name;
+  // Kelly.knockQ6 = Denmark.name;
+  // Kelly.knockQ7 = Belgium.name;
+  // Kelly.knockQ8 = Ghana.name;
 
   ////
-  Joe.knockF1 = Argentina.name;
-  Joe.knockF2 = Belgium.name;
+  // Joe.knockS1 = Argentina.name;
+  // Joe.knockS2 = Brasil.name;
+  // Joe.knockS3 = Denmark.name;
+  // Joe.knockS4 = Belgium.name;
 
-  Stan.knockF1 = Argentina.name;
-  Stan.knockF2 = Belgium.name;
+  // Stan.knockS1 = Argentina.name;
+  // Stan.knockS2 = Brasil.name;
+  // Stan.knockS3 = Denmark.name;
+  // Stan.knockS4 = Belgium.name;
 
-  E.knockF1 = Canada.name;
-  E.knockF2 = Germany.name;
+  // E.knockS1 = Iran.name;
+  // E.knockS2 = Canada.name;
+  // E.knockS3 = England.name;
+  // E.knockS4 = Germany.name;
 
-  Coach.knockF1 = Brasil.name;
-  Coach.knockF2 = Mexico.name;
+  // Coach.knockS1 = Ecuador.name;
+  // Coach.knockS2 = Brasil.name;
+  // Coach.knockS3 = Mexico.name;
+  // Coach.knockS4 = Belgium.name;
 
-  Kelly.knockF1 = Italy.name;
-  Kelly.knockF2 = Denmark.name;
+  // Kelly.knockS1 = Iran.name;
+  // Kelly.knockS2 = Italy.name;
+  // Kelly.knockS3 = Denmark.name;
+  // Kelly.knockS4 = Ghana.name;
 
   ////
-  Joe.knockChamp = Argentina.name;
-  Stan.knockChamp = Argentina.name;
-  E.knockChamp = Canada.name;
-  Coach.knockChamp = Brasil.name;
-  Kelly.knockChamp = Italy.name;
+  // Joe.knockF1 = Argentina.name;
+  // Joe.knockF2 = Belgium.name;
+
+  // Stan.knockF1 = Argentina.name;
+  // Stan.knockF2 = Belgium.name;
+
+  // E.knockF1 = Canada.name;
+  // E.knockF2 = Germany.name;
+
+  // Coach.knockF1 = Brasil.name;
+  // Coach.knockF2 = Mexico.name;
+
+  // Kelly.knockF1 = Italy.name;
+  // Kelly.knockF2 = Denmark.name;
+
+  ////
+  // Joe.knockChamp = Argentina.name;
+  // Stan.knockChamp = Argentina.name;
+  // E.knockChamp = Canada.name;
+  // Coach.knockChamp = Brasil.name;
+  // Kelly.knockChamp = Italy.name;
 
   // //////////////////////////////////////////////////
 
-  Ecuador.advanceToQ = true;
-  Argentina.advanceToQ = true;
-  Canada.advanceToQ = true;
-  Brasil.advanceToQ = true;
-  England.advanceToQ = true;
-  Denmark.advanceToQ = true;
-  Belgium.advanceToQ = true;
-  Cameroon.advanceToQ = true;
+  // Ecuador.advanceToQ = true;
+  // Argentina.advanceToQ = true;
+  // Canada.advanceToQ = true;
+  // Brasil.advanceToQ = true;
+  // England.advanceToQ = true;
+  // Denmark.advanceToQ = true;
+  // Belgium.advanceToQ = true;
+  // Cameroon.advanceToQ = true;
 
-  Argentina.advanceToS = true;
-  Brasil.advanceToS = true;
-  Denmark.advanceToS = true;
-  Belgium.advanceToS = true;
+  // Argentina.advanceToS = true;
+  // Brasil.advanceToS = true;
+  // Denmark.advanceToS = true;
+  // Belgium.advanceToS = true;
 
-  Argentina.advanceToF = true;
-  Belgium.advanceToF = true;
+  // Argentina.advanceToF = true;
+  // Belgium.advanceToF = true;
 
-  Argentina.advanceToChamp = true;
+  // Argentina.advanceToChamp = true;
 
   await Promise.all([
     Ecuador.save(),

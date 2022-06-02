@@ -53,15 +53,15 @@ const Team = db.define("teams", {
     defaultValue: 0,
   },
 
-  Pts: {
+  pts: {
     type: INTEGER,
     defaultValue: 0,
   },
 
-  tieExists: {
-    type: BOOLEAN,
-    defaultValue: false,
-  },
+  // tieExists: {
+  //   type: BOOLEAN,
+  //   defaultValue: false,
+  // },
 
   groupIsFinished: {
     type: BOOLEAN,

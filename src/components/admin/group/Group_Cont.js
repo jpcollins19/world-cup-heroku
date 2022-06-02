@@ -1,9 +1,10 @@
 import { useSelector } from "react-redux";
+import Team_Cont from "./Team_Cont";
 
 const Group_Cont = ({ group }) => {
   let groupTeams = useSelector((state) => state.teams)
     .filter((team) => team.group === group)
-    .sort((a, b) => a.name - b.name);
+    .sort((a, b) => a.groupFinishingPosition - b.groupFinishingPosition);
 
   groupTeams = groupTeams.map((team) => ({
     ...team,
@@ -24,40 +25,26 @@ const Group_Cont = ({ group }) => {
 
   return (
     <div>
-      <div className="single-group-cont">
+      <div className="single-group-cont-edit">
         <h3 className="group-header">Group {group}</h3>
         <div className="text-cont">
           <div className="text-header">
-            <div className="team">Team</div>
-            <div>MP</div>
-            <div>W</div>
-            <div>D</div>
-            <div>L</div>
-            <div>GF</div>
-            <div>GA</div>
-            <div>GD</div>
+            <div className="position-edit">Pos</div>
+            <div className="team-edit">Team</div>
+            <div className="header-MP">MP</div>
+            <div className="header-W">W</div>
+            <div className="header-D">D</div>
+            <div className="header-L">L</div>
+            <div className="header-GF">GF</div>
+            <div className="header-GA">GA</div>
+            <div className="header-GD">GD</div>
             <div>Pts</div>
           </div>
 
           {groupTeams &&
             groupTeams
               .filter((team) => team.group === group)
-              .map((team) => (
-                <div key={team.id} className="team-row-cont">
-                  <div className="single-group-cont-text">
-                    <img className="flag" src={team.flag}></img>
-                    <div className="country-name">{team.name}</div>
-                    <div className="MP">{team.MP}</div>
-                    <div className="W">{team.W} </div>
-                    <div className="D">{team.D} </div>
-                    <div className="loss">{team.L} </div>
-                    <div className="GF">{team.GF}</div>
-                    <div className="GA">{team.GA}</div>
-                    <div className="GA">{team.GD}</div>
-                    <div className="pts">{team.Pts}</div>
-                  </div>
-                </div>
-              ))}
+              .map((team) => <Team_Cont key={team.id} team={team} />)}
         </div>
       </div>
     </div>

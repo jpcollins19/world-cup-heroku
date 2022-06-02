@@ -73,13 +73,13 @@
   font-size: 1.5rem;
 }
 
-.flag {
+.flag-gd {
   height: 25px;
   min-width: 45px;
   max-width: 45px;
 }
 
-.country-name {
+.name-gd {
   display: flex;
   align-items: center;
   padding-left: 1rem;
@@ -87,27 +87,27 @@
   max-width: 39.5%;
 }
 
-.MP {
+.MP-gd {
   margin-right: 1.1rem;
   margin-left: 1.2rem;
 }
 
-.W {
+.W-gd {
   margin-right: 1.1rem;
 }
 
-.D {
+.D-gd {
   margin-right: 1rem;
 }
 
-.loss {
+.L-gd {
   margin-right: 1.1rem;
 }
 
-.GF {
+.GF-gd {
   margin-right: 1rem;
 }
 
-.GA {
+.GA-gd {
   margin-right: 1.1rem;
 }
