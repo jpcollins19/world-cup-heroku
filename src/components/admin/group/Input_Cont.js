@@ -1,4 +1,4 @@
-const Input_Cont = ({ entry, value, set, onChange }) => {
+const Input_Cont = ({ entry, value, set, id, onChange }) => {
   return entry === "flag" ? (
     <img className="flag" src={value}></img>
   ) : (
@@ -11,7 +11,7 @@ const Input_Cont = ({ entry, value, set, onChange }) => {
           : "input-space"
       }
       defaultValue={value}
-      onChange={(ev) => onChange(ev.target.value, set)}
+      onChange={(ev) => onChange(ev.target.value, set, id)}
     />
   );
 };

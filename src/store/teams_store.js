@@ -20,10 +20,10 @@ export const loadTeams = () => {
 
 export const updateTeam = (team, history) => {
   return async (dispatch) => {
-    console.log("nugget", team);
+    console.log("team before", team);
     team = (await axios.put(`/api/teams/${team.id}`, team)).data;
     dispatch(_updateTeam(team));
-    history.push("/my_picks");
+    history.push("/group_details");
   };
 };
 
@@ -31,13 +31,14 @@ export const teams = (state = [], action) => {
   switch (action.type) {
     case LOAD_TEAMS:
       return action.teams;
-    case UPDATE_TEAM:
-      return [...state].map((team) => {
-        if (team.id === action.team.id) {
-          team = action.team;
-        }
-        return team;
-      });
+    // case UPDATE_TEAM:
+    //   return [...state].map((team) => {
+    //     console.log("teams state", action);
+    //     if (team.id === action.team.id) {
+    //       team = action.team;
+    //     }
+    //     return team;
+    //   });
     default:
       return state;
   }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { updateTeam } from "../../../store";
@@ -8,6 +8,8 @@ const Team_Cont = ({ team }) => {
   const dispatch = useDispatch();
   const history = useHistory();
 
+  const [id, setId] = useState(team && team.id);
+  const [name, setName] = useState(team && team.name);
   const [position, setposition] = useState(team && team.groupFinishingPosition);
   const [MP, setMP] = useState(team && team.MP);
   const [W, setW] = useState(team && team.W);
@@ -17,6 +19,15 @@ const Team_Cont = ({ team }) => {
   const [GA, setGA] = useState(team && team.GA);
   const [GD, setGD] = useState(team && team.GD);
   const [pts, setpts] = useState(team && team.pts);
+
+  useEffect(() => {
+    console.log("id in use eff", id);
+  }, [id]);
+
+  useEffect(() => {
+    console.log("id in MP use eff", id);
+    console.log("MP", MP);
+  }, [MP]);
 
   const entries = [
     "position",
@@ -32,8 +43,9 @@ const Team_Cont = ({ team }) => {
     "pts",
   ];
 
-  const onChange = (val, set) => {
+  const onChange = (val, set, id) => {
     set(Number(val));
+    setId(id);
   };
 
   const onSubmit = async (evt) => {
@@ -41,8 +53,9 @@ const Team_Cont = ({ team }) => {
 
     try {
       const obj = {
-        id: team.id,
-        position,
+        id,
+        groupFinishingPosition: position,
+        name,
         MP,
         W,
         D,
@@ -53,7 +66,9 @@ const Team_Cont = ({ team }) => {
         pts,
       };
 
-      console.log(obj);
+      console.log("id", id);
+      console.log("obj", obj);
+      console.log("team", team);
 
       dispatch(updateTeam(obj, history));
     } catch (err) {
@@ -76,6 +91,7 @@ const Team_Cont = ({ team }) => {
               entry={entry}
               value={value}
               set={set}
+              id={id}
               onChange={onChange}
             />
           );
