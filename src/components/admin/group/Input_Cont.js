@@ -1,17 +1,14 @@
-const Input_Cont = ({ entry, value, set, id, onChange }) => {
-  return entry === "flag" ? (
-    <img className="flag" src={value}></img>
+const Input_Cont = ({ entry, teamObj, idx, onChange }) => {
+  return entry && entry === "flag" ? (
+    <img key={entry} className={entry} src={teamObj && teamObj[entry]}></img>
   ) : (
     <input
+      key={entry}
       className={
-        entry === "position"
-          ? "position"
-          : entry === "name"
-          ? "name"
-          : "input-space"
+        entry === "position" || entry === "name" ? entry : "input-space"
       }
-      defaultValue={value}
-      onChange={(ev) => onChange(ev.target.value, set, id)}
+      defaultValue={teamObj && teamObj[entry]}
+      onChange={(ev) => onChange(idx, entry, ev.target.value)}
     />
   );
 };

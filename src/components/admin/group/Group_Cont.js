@@ -7,92 +7,6 @@ import Team_Cont from "./Team_Cont";
 const Group_Cont = ({ group }) => {
   const dispatch = useDispatch();
   const history = useHistory();
-  // let teams = useSelector((state) => state.teams);
-
-  // teams = teams.map((team) => ({
-  //   ...team,
-  //   flag: `https://www.sciencekids.co.nz/images/pictures/flags680/${
-  //     team.name === "Saudi Arabia"
-  //       ? "Saudi_Arabia"
-  //       : team.name === "Brasil"
-  //       ? "Brazil"
-  //       : team.name === "Switz"
-  //       ? "Switzerland"
-  //       : team.name === "USA"
-  //       ? "United_States"
-  //       : team.name === "S. Korea"
-  //       ? "South_Korea"
-  //       : team.name
-  //   }.jpg`,
-  // }));
-
-  const entries = [
-    "id",
-    "position",
-    "flag",
-    "name",
-    "MP",
-    "W",
-    "D",
-    "L",
-    "GF",
-    "GA",
-    "GD",
-    "pts",
-  ];
-
-  // const masterObj = teams.reduce((a, team) => {
-  //   // const obj = {};
-
-  //   // entries.forEach((entry) => {
-  //   //   entry === "position"
-  //   //     ? (obj[entry] = team.groupFinishingPosition)
-  //   //     : (obj[entry] = team[entry]);
-  //   // });
-
-  //   if (!a[team.group]) {
-  //     a[team.group] = {};
-  //   }
-
-  //   // a[team.group][team.groupFinishingPosition] = obj;
-
-  //   return a;
-  // }, {});
-
-  // teams.forEach((team) => {
-  //   if (!masterObj[team.group][team.name]) {
-  //     masterObj[team.group][team.name] = {};
-  //   }
-
-  //   // const obj = {};
-  //   // entries.forEach((entry) => {
-  //   //   entry === "position"
-  //   //     ? (obj[entry] = team.groupFinishingPosition)
-  //   //     : (obj[entry] = team[entry]);
-  //   // });
-  // });
-
-  // teams.forEach((team) => {
-  //   const obj = {};
-  //   entries.forEach((entry) => {
-  //     entry === "position"
-  //       ? (obj[entry] = team.groupFinishingPosition)
-  //       : (obj[entry] = team[entry]);
-  //   });
-
-  //   masterObj[team.group][team.name] = obj;
-  // });
-
-  // letters.forEach((letter) => (masterObj[letter] = {}));
-  // letters.forEach((letter) => {
-  //   const obj = {};
-  //   nums.forEach((num) => (obj[num] = {}));
-  //   masterObj[letter] = obj;
-  // });
-
-  // console.log("masterObj", masterObj);
-
-  // console.log("masterObj", masterObj);
 
   const [id0, setId0] = useState(null);
   const [position0, setPosition0] = useState(null);
@@ -146,6 +60,23 @@ const Group_Cont = ({ group }) => {
   const [GD3, setGD3] = useState(null);
   const [pts3, setPts3] = useState(null);
 
+  const entries = [
+    "id",
+    "position",
+    "flag",
+    "name",
+    "MP",
+    "W",
+    "D",
+    "L",
+    "GF",
+    "GA",
+    "GD",
+    "pts",
+  ];
+
+  const headers = ["Pos", "Team", "MP", "W", "D", "L", "GF", "GA", "GD", "Pts"];
+
   let groupTeams = useSelector((state) => state.teams)
     .filter((team) => team.group === group)
     .sort((a, b) => a.groupFinishingPosition - b.groupFinishingPosition);
@@ -166,16 +97,6 @@ const Group_Cont = ({ group }) => {
         : team.name
     }.jpg`,
   }));
-
-  // groupTeams.forEach((team, idx) => {
-  //   entries.forEach((entry) => {
-  //     entry === "position"
-  //       ? (masterObj[idx][entry] = team.groupFinishingPosition)
-  //       : (masterObj[idx][entry] = team[entry]);
-  //   });
-  // });
-
-  // console.log(groupTeams);
 
   useEffect(() => {
     groupTeams.forEach((team, idx) =>
@@ -201,14 +122,6 @@ const Group_Cont = ({ group }) => {
     );
   }, [group]);
 
-  // useEffect(() => {
-  //   console.log("mp", MP0);
-  // }, [MP0]);
-
-  // useEffect(() => {
-  //   console.log("use eff for masterObj", masterObj);
-  // }, [masterObj]);
-
   const onChange = (idx, entry, val) => {
     let set;
 
@@ -225,31 +138,6 @@ const Group_Cont = ({ group }) => {
     }
     set(val);
   };
-
-  // useEffect(() => {
-  //   console.log("id", id0);
-  //   console.log("position", position0);
-  //   console.log("MP", MP0);
-  //   console.log("W", W0);
-  //   console.log("D", D0);
-  //   console.log("L", L0);
-  //   console.log("GF", GF0);
-  //   console.log("GA", GA0);
-  //   console.log("GD", GD0);
-  //   console.log("pts", pts0);
-  // }, [pts0]);
-
-  const headers = ["Pos", "Team", "MP", "W", "D", "L", "GF", "GA", "GD", "Pts"];
-
-  // const nums = [1, 2, 3, 4];
-
-  // const groupTeams = masterObj[group];
-
-  // useEffect(() => {
-  //   groupTeams = masterObj[group];
-  // // }, [group]);
-
-  // console.log("group teams", groupTeams);
 
   const onSubmit = async (evt) => {
     evt.preventDefault();
@@ -277,6 +165,7 @@ const Group_Cont = ({ group }) => {
       console.log(err);
     }
   };
+
   return (
     <form onSubmit={onSubmit} id="submit-group">
       <div className="single-group-cont-edit">
@@ -304,25 +193,9 @@ const Group_Cont = ({ group }) => {
                   teamObj={teamObj}
                   idx={idx}
                   onChange={onChange}
-                  // entries={entries}
                 />
               );
             })}
-          {/* {Object.values(groupTeams)
-            .sort((a, b) => a.position - b.position)
-            .map((teamObj, idx) => {
-              // const obj = Object.values(teamObj);
-              // console.log("obj", teamObj);
-              return (
-                <Team_Cont
-                  key={idx}
-                  teamObj={teamObj}
-                  // group={group}
-                  // num={num}
-                  onChange={onChange}
-                />
-              );
-            })} */}
         </div>
       </div>
     </form>

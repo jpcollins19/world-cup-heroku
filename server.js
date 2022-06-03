@@ -1,6 +1,8 @@
-////add admin page for updating group info
-//on step to submit data
+////admin page for updating group info
 //add feature to obtain "group is finished for all teams at once"
+
+////group details
+//make the page cleaner
 
 ////add admin page for updating individual team info
 ////add edit name page
