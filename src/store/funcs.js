@@ -459,6 +459,18 @@ const formatSelectedUser = (obj) => {
   return { value: obj, label: obj.name };
 };
 
+const capFirstLetter = (str) => {
+  return str
+    .split("")
+    .map((letter, idx) => {
+      if (idx === 0) {
+        letter = letter.toUpperCase();
+      }
+      return letter;
+    })
+    .join("");
+};
+
 module.exports = {
   singleGroupCalc,
   totalScoreCalc,
@@ -473,4 +485,5 @@ module.exports = {
   urlWord,
   findTeam,
   formatSelectedUser,
+  capFirstLetter,
 };

@@ -81,7 +81,7 @@ const Group_Admin_Page = () => {
         {group.length > 0 && <Group_Cont group={group} />}
       </div>
       {group.length > 0 && (
-        <button type="submit" form="group-submit">
+        <button type="submit" form="submit-group">
           Submit
         </button>
       )}

@@ -4,82 +4,72 @@ import { useHistory } from "react-router-dom";
 import { updateTeam } from "../../../store";
 import Input_Cont from "./Input_Cont";
 
-const Team_Cont = ({ team }) => {
-  const dispatch = useDispatch();
-  const history = useHistory();
+const Team_Cont = ({ teamObj, idx, onChange }) => {
+  // const obj = masterObj[idx];
+  // let teamObj = masterObj[group][num];
 
-  const [id, setId] = useState(team && team.id);
-  const [name, setName] = useState(team && team.name);
-  const [position, setposition] = useState(team && team.groupFinishingPosition);
-  const [MP, setMP] = useState(team && team.MP);
-  const [W, setW] = useState(team && team.W);
-  const [D, setD] = useState(team && team.D);
-  const [L, setL] = useState(team && team.L);
-  const [GF, setGF] = useState(team && team.GF);
-  const [GA, setGA] = useState(team && team.GA);
-  const [GD, setGD] = useState(team && team.GD);
-  const [pts, setpts] = useState(team && team.pts);
+  // // const [id, setId] = useState(null);
+  // const [position, setPosition] = useState(teamObj && teamObj.position);
+  // // const [flag, setFlag] = useState(null);
+  // const [name, setName] = useState(teamObj && teamObj.name);
+  // const [MP, setMP] = useState(teamObj && teamObj.MP);
+  // const [W, setW] = useState(teamObj && teamObj.W);
+  // const [D, setD] = useState(teamObj && teamObj.D);
+  // const [L, setL] = useState(teamObj && teamObj.L);
+  // const [GF, setGF] = useState(teamObj && teamObj.GF);
+  // const [GA, setGA] = useState(teamObj && teamObj.GA);
+  // const [GD, setGD] = useState(teamObj && teamObj.GD);
+  // const [pts, setPts] = useState(teamObj && teamObj.pts);
 
-  useEffect(() => {
-    console.log("id in use eff", id);
-  }, [id]);
+  // useEffect(() => {
+  //   console.log("group");
+  // }, []);
 
-  useEffect(() => {
-    console.log("id in MP use eff", id);
-    console.log("MP", MP);
-  }, [MP]);
+  // useEffect(() => {
+  //   teamObj = masterObj[group][num];
+  //   console.log("group", group);
+  //   console.log("teamObj", teamObj);
+  // }, [teamObj]);
 
-  const entries = [
-    "position",
-    "flag",
-    "name",
-    "MP",
-    "W",
-    "D",
-    "L",
-    "GF",
-    "GA",
-    "GD",
-    "pts",
-  ];
+  // const dispatch = useDispatch();
+  // const history = useHistory();
 
-  const onChange = (val, set, id) => {
-    set(Number(val));
-    setId(id);
-  };
+  // const onSubmit = async (evt) => {
+  //   evt.preventDefault();
 
-  const onSubmit = async (evt) => {
-    evt.preventDefault();
+  //   try {
+  //     const obj = {
+  //       id,
+  //       groupFinishingPosition: position,
+  //       name,
+  //       MP,
+  //       W,
+  //       D,
+  //       L,
+  //       GF,
+  //       GA,
+  //       GD,
+  //       pts,
+  //     };
 
-    try {
-      const obj = {
-        id,
-        groupFinishingPosition: position,
-        name,
-        MP,
-        W,
-        D,
-        L,
-        GF,
-        GA,
-        GD,
-        pts,
-      };
+  //     console.log("id", id);
+  //     console.log("obj", obj);
+  //     console.log("team", team);
 
-      console.log("id", id);
-      console.log("obj", obj);
-      console.log("team", team);
+  //     dispatch(updateTeam(obj, history));
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // }
 
-      dispatch(updateTeam(obj, history));
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  const entries = Object.keys(teamObj).filter(
+    (entry) => entry !== "id" && entry !== "group"
+  );
 
   return (
-    <form onSubmit={onSubmit} id="group-submit" className="team-row-cont">
+    <div className="team-row-cont">
       <div className="single-group-cont-text">
-        {entries.map((entry, idx) => {
+        {/* {entries.map((entry, idx) => {
           const value =
             entry === "position" ? team.groupFinishingPosition : team[entry];
 
@@ -95,10 +85,54 @@ const Team_Cont = ({ team }) => {
               onChange={onChange}
             />
           );
-        })}
+        })} */}
+        {entries.map((entry) =>
+          entry === "flag" ? (
+            <img key={entry} className={entry} src={teamObj[entry]}></img>
+          ) : (
+            <input
+              key={entry}
+              className={
+                entry === "position" || entry === "name" ? entry : "input-space"
+              }
+              defaultValue={teamObj[entry]}
+              onChange={(ev) => onChange(idx, entry, ev.target.value)}
+            />
+          )
+        )}
+        {/* {entries.map((entry) =>
+          entry === "flag" ? (
+            <img key={entry} className={entry} src={teamObj[entry]}></img>
+          ) : (
+            <input
+              key={entry}
+              // type="text"
+              className={
+                entry === "position" || entry === "name" ? entry : "input-space"
+              }
+              value={eval(entry)}
+              onChange={(ev) => {}}
+              // onBlur={updateInput}
+              // value={teamObj[entry]}
+              // onChange={(ev) => onChange(teamObj, entry, ev.target.value)
+            />
+          )
+        )} */}
       </div>
-    </form>
+    </div>
   );
 };
 
 export default Team_Cont;
+
+{
+  /* <input className="name" defaultValue={team && team.name} />
+        <input className="input-space" defaultValue={team && team.MP} />
+        <input className="input-space" defaultValue={team && team.W} />
+        <input className="input-space" defaultValue={team && team.D} />
+        <input className="input-space" defaultValue={team && team.L} />
+        <input className="input-space" defaultValue={team && team.GF} />
+        <input className="input-space" defaultValue={team && team.GA} />
+        <input className="input-space" defaultValue={team && team.GD} />
+        <input className="input-space" defaultValue={team && team.pts} /> */
+}

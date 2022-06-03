@@ -1,6 +1,15 @@
 import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { loadTeams } from "../../store";
 
 const Single_Cont = ({ group }) => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadTeams());
+  }, []);
+
   let groupTeams = useSelector((state) => state.teams)
     .filter((team) => team.group === group)
     .sort((a, b) => a.groupFinishingPosition - b.groupFinishingPosition);
