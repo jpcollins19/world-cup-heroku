@@ -193,6 +193,8 @@ const knockoutPartTeamPush = (part, position) => {
 const knockoutPartClassPush = (part, teams, position) => {
   const partPick = part[`knock${position}`];
 
+  const teamAnswer = teams.find((team) => team.name === partPick);
+
   const round = position === "Champ" ? "Champ" : position.split("")[0];
   const number = position === "Champ" ? "Champ" : position.split("")[1] * 1;
 
@@ -219,7 +221,7 @@ const knockoutPartClassPush = (part, teams, position) => {
     },
   };
 
-  let advancingTeam, knockoutPos;
+  let advancingTeam, knockoutPos, team;
 
   if (position !== "Champ") {
     knockoutPos = placeObj[round][number];
@@ -227,25 +229,27 @@ const knockoutPartClassPush = (part, teams, position) => {
 
   switch (round) {
     case "Q":
-      advancingTeam = teams.find(
+      team = teams.find(
         (team) =>
           team[`advanceTo${round}`] &&
           (team.knockoutPosition === knockoutPos[0] ||
             team.knockoutPosition === knockoutPos[1])
-      ).name;
+      );
+      advancingTeam = team && team.name;
       break;
     case "S":
-      advancingTeam = teams.find(
+      team = teams.find(
         (team) =>
           team[`advanceTo${round}`] &&
           (team.knockoutPosition === knockoutPos[0] ||
             team.knockoutPosition === knockoutPos[1] ||
             team.knockoutPosition === knockoutPos[2] ||
             team.knockoutPosition === knockoutPos[3])
-      ).name;
+      );
+      advancingTeam = team && team.name;
       break;
     case "F":
-      advancingTeam = teams.find(
+      team = teams.find(
         (team) =>
           team[`advanceTo${round}`] &&
           (team.knockoutPosition === knockoutPos[0] ||
@@ -256,16 +260,22 @@ const knockoutPartClassPush = (part, teams, position) => {
             team.knockoutPosition === knockoutPos[5] ||
             team.knockoutPosition === knockoutPos[6] ||
             team.knockoutPosition === knockoutPos[7])
-      ).name;
+      );
+      advancingTeam = team && team.name;
       break;
     case "Champ":
-      advancingTeam = teams.find((team) => team[`advanceTo${round}`]).name;
+      team = teams.find((team) => team[`advanceTo${round}`]);
+      advancingTeam = team && team.name;
       break;
     default:
       throw "error";
   }
 
-  return partPick === advancingTeam ? "correct" : "wrong";
+  if (partPick === advancingTeam) {
+    return "correct";
+  } else {
+    return teamAnswer && teamAnswer.outOfTourney ? "wrong" : "";
+  }
 };
 
 const currentScoresObj = (parts, teams, actualGoalsScored = null) => {
@@ -471,6 +481,10 @@ const capFirstLetter = (str) => {
     .join("");
 };
 
+const findEntry = (str) => {
+  return str.split("advanceTo")[1];
+};
+
 module.exports = {
   singleGroupCalc,
   totalScoreCalc,
@@ -486,4 +500,5 @@ module.exports = {
   findTeam,
   formatSelectedUser,
   capFirstLetter,
+  findEntry,
 };

@@ -17,7 +17,6 @@
 .user-admin-container {
   display: flex;
   flex-direction: column;
-  border: solid 4px red;
 }
 
 .user-admin-header {

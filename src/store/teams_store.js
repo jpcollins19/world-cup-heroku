@@ -22,7 +22,7 @@ export const updateTeam = (team, history) => {
   return async (dispatch) => {
     team = (await axios.put(`/api/teams/${team.id}`, team)).data;
     dispatch(_updateTeam(team));
-    history.push("/group_details");
+    history.push("/pool_picks");
   };
 };
 

@@ -14,7 +14,7 @@ const Header = () => {
   const { pathname } = useLocation();
 
   const auth = useSelector((state) => state.auth);
-  const adminOptions = ["users", "groups"];
+  const adminOptions = ["users", "groups", "teams"];
   const navOptions = ["leaderboard", "my picks", "pool picks", "group details"];
 
   return (

@@ -12,20 +12,15 @@ const Champ_Game_L = ({ selectedUser }) => {
   const teams = useSelector((state) => state.teams);
 
   const userAudit = user.knockChamp;
-  const advancingTeams = teams.filter((team) => team.advanceToChamp);
 
   return (
     <div className="white-text CL">
       <div
-        className={
-          advancingTeams.length
-            ? knockoutPartClassPush(
-                pathname === "/pool_picks" ? selectedUser : user,
-                teams,
-                "Champ"
-              )
-            : ""
-        }
+        className={knockoutPartClassPush(
+          pathname === "/pool_picks" ? selectedUser : user,
+          teams,
+          "Champ"
+        )}
       >
         {userAudit &&
           knockoutPartTeamPush(

@@ -1,10 +1,8 @@
-////admin page for updating group info
-//add feature to obtain "group is finished for all teams at once"
+////add missing teams for groups D & E if applicable
+//adjust excel doc for all tabs
+//adjust seed info
+//adjust test specs
 
-////group details
-//make the page cleaner
-
-////add admin page for updating individual team info
 ////add edit name page
 
 ////login and create account pages
@@ -21,11 +19,14 @@
 
 ////test/apply all error handling in local state
 
+////roll through the entire tourney lifecycle to make sure all is working
+
 ////incorporate web sockets for teams and parts -- send to heroku without websockets and test first
 
 //figure out a forgot pw route
 
 ////test/apply all error handling in heroku state
+////roll through the entire tourney lifecycle in heroku state
 
 /////////////////////////////////
 // Tourney Stage Info //

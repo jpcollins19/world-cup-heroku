@@ -60,6 +60,8 @@ const Group_Cont = ({ group }) => {
   const [GD3, setGD3] = useState(null);
   const [pts3, setPts3] = useState(null);
 
+  const [groupFinished, setGroupFinished] = useState(null);
+
   const entries = [
     "id",
     "position",
@@ -99,7 +101,9 @@ const Group_Cont = ({ group }) => {
   }));
 
   useEffect(() => {
-    groupTeams.forEach((team, idx) =>
+    groupTeams.forEach((team, idx) => {
+      idx === 0 && setGroupFinished(team.groupIsFinished);
+
       entries.forEach((entry) => {
         let set;
 
@@ -118,8 +122,8 @@ const Group_Cont = ({ group }) => {
         entry === "position"
           ? set(team.groupFinishingPosition)
           : set(team[entry]);
-      })
-    );
+      });
+    });
   }, [group]);
 
   const onChange = (idx, entry, val) => {
@@ -159,12 +163,16 @@ const Group_Cont = ({ group }) => {
           return a;
         }, {});
 
+        obj.groupIsFinished = groupFinished;
+
         dispatch(updateTeam(obj, history));
       });
     } catch (err) {
       console.log(err);
     }
   };
+
+  const toggle = () => setGroupFinished((value) => !value);
 
   return (
     <form onSubmit={onSubmit} id="submit-group">
@@ -196,6 +204,15 @@ const Group_Cont = ({ group }) => {
                 />
               );
             })}
+        </div>
+        <div className="group-finished-cont">
+          Group Finished:
+          <input
+            type="checkbox"
+            defaultValue={groupFinished}
+            onChange={toggle}
+            checked={groupFinished ? groupFinished : !!groupFinished}
+          ></input>
         </div>
       </div>
     </form>

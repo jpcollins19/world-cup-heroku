@@ -13,6 +13,7 @@ import My_Picks_Unlocked_Page from "./components/my_picks/unlocked/My_Picks_Unlo
 import Pool_Picks_Page from "./components/pool_picks/Pool_Picks_Page";
 import User_Admin_Page from "./components/admin/user/User_Admin_Page";
 import Group_Admin_Page from "./components/admin/group/Group_Admin_Page";
+import Team_Admin_Page from "./components/admin/team/Team_Admin_Page";
 
 const Routes = () => {
   const dispatch = useDispatch();
@@ -28,6 +29,7 @@ const Routes = () => {
   const routeObjsAdmin = [
     { path: "/admin/users", component: User_Admin_Page },
     { path: "/admin/groups", component: Group_Admin_Page },
+    { path: "/admin/teams", component: Team_Admin_Page },
   ];
 
   const routeObjs = [

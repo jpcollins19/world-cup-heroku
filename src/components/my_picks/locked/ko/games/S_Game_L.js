@@ -12,9 +12,6 @@ const S_Game_L = ({ game, gameNum, selectedUser }) => {
   const teams = useSelector((state) => state.teams);
 
   const userAudit = user.knockChamp;
-  const advancingTeams = teams.filter((team) => team.advanceToS);
-
-  const teamNum = game.split("")[1];
 
   let gameClass;
 
@@ -32,15 +29,11 @@ const S_Game_L = ({ game, gameNum, selectedUser }) => {
   return (
     <div className={`white-text ${gameClass}`}>
       <div
-        className={
-          advancingTeams.length >= teamNum
-            ? knockoutPartClassPush(
-                pathname === "/pool_picks" ? selectedUser : user,
-                teams,
-                game
-              )
-            : ""
-        }
+        className={knockoutPartClassPush(
+          pathname === "/pool_picks" ? selectedUser : user,
+          teams,
+          game
+        )}
       >
         {userAudit &&
           knockoutPartTeamPush(

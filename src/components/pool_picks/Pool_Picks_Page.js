@@ -134,11 +134,15 @@ const Pool_Picks_Page = () => {
             <div className="top box">
               <div className="box left">
                 <div className="predictions-cont">
-                  <Knockout_Cont selectedUser={selectedUser.value} />
+                  <Knockout_Cont
+                    selectedUser={selectedUser && selectedUser.value}
+                  />
                 </div>
               </div>
               <div className="box right">
-                <Total_Points_Cont selectedUser={selectedUser.value} />
+                <Total_Points_Cont
+                  selectedUser={selectedUser && selectedUser.value}
+                />
               </div>
             </div>
           )}
@@ -153,7 +157,7 @@ const Pool_Picks_Page = () => {
                   <Single_Group_Cont
                     key={letter}
                     group={letter}
-                    selectedUser={selectedUser.value}
+                    selectedUser={selectedUser && selectedUser.value}
                   />
                 ))}
               </div>

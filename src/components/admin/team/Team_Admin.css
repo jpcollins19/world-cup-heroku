@@ -1,4 +1,4 @@
-.group-admin-page {
+.team-admin-page {
   background: linear-gradient(
     to bottom,
     rgb(6, 241, 233) 0%,
@@ -17,11 +17,11 @@
   align-items: center;
 }
 
-.group-admin-dropdown-cont {
+.team-admin-dropdown-cont {
   margin-top: 5%;
 }
 
-.group-admin-dropdown {
+.team-admin-dropdown {
   background: linear-gradient(
     to bottom,
     rgb(159, 159, 147) 0%,
@@ -33,13 +33,13 @@
   border-radius: 0.5rem;
 }
 
-.group-cont {
+.team-cont {
   display: flex;
   align-items: center;
   padding-top: 2%;
 }
 
-.single-group-cont-edit {
+.single-team-cont-edit {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,11 +54,11 @@
     rgb(159, 159, 147) 100%
   );
   border-radius: 4rem;
-  width: 43rem;
-  height: 20rem;
+  width: 20rem;
+  height: 14rem;
 }
 
-.group-header {
+.team-header {
   margin-top: 0rem;
   margin-bottom: 0.5rem;
   font-size: 1.7rem;
@@ -66,99 +66,17 @@
   border-bottom: solid 2px rgb(175, 170, 170);
 }
 
-.text-header {
-  display: flex;
-}
-
-.text-header > div {
-  min-width: 1.5rem;
-  text-align: center;
-}
-
-.header-Pos {
-  padding-right: 1rem;
-}
-
-.header-Team {
-  padding-right: 11.5rem;
-}
-
-.header-MP {
-  padding-right: 1.1rem;
-}
-
-.header-W {
-  padding-right: 1.4rem;
-}
-
-.header-D {
-  padding-right: 1.6rem;
-}
-
-.header-L {
-  padding-right: 1.6rem;
-}
-
-.header-GF {
-  padding-right: 1.1rem;
-}
-
-.header-GA {
-  padding-right: 1rem;
-}
-
-.header-GD {
-  padding-right: 0.8rem;
-}
-
-.team-row-cont {
-  margin-bottom: 1%;
-  border-bottom: solid 2px rgb(175, 170, 170);
-}
-
-.single-group-cont-text {
-  display: flex;
-  align-items: center;
-}
-
-.single-group-cont-text > input {
-  font-size: 1.5rem;
-  width: 2rem;
-  text-align: center;
-}
-
-.position {
-  margin-right: 1rem;
-}
-
-.flag {
-  height: 25px;
-  min-width: 45px;
-  max-width: 45px;
-}
-
-.name {
-  display: flex;
-  align-items: center;
-  margin-left: 1rem;
-  min-width: 25%;
-  max-width: 25%;
-}
-.input-space {
-  margin-left: 2%;
-}
-
-.group-finished-cont {
+.check-box-cont {
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
 }
-.group-finished-cont > input {
+.check-box-cont > input {
   margin-left: 1%;
 }
 
-.group-admin-page > button {
+.team-admin-page > button {
   margin-top: 2%;
   width: 10rem;
   height: 2.5rem;

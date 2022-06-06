@@ -99,6 +99,11 @@ const Team = db.define("teams", {
     type: BOOLEAN,
     defaultValue: false,
   },
+
+  outOfTourney: {
+    type: BOOLEAN,
+    defaultValue: false,
+  },
 });
 
 module.exports = Team;

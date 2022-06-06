@@ -34,7 +34,7 @@ export const updateUser = (user, history) => {
   return async (dispatch) => {
     user = (await axios.put(`/api/users/${user.id}`, user)).data;
     dispatch(_updateUser(user));
-    history.push("/my_picks");
+    history.push("/pool_picks");
   };
 };
 

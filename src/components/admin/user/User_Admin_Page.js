@@ -31,6 +31,8 @@ const User_Admin_Page = () => {
     }, [])
     .sort((a, b) => a.rank - b.rank);
 
+  const joe = users && users.find((user) => (user.label = "joe@gmail.com"));
+
   const [selectedUser, setSelectedUser] = useState({});
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -246,56 +248,57 @@ const User_Admin_Page = () => {
       const Ss = [1, 2, 3, 4];
       const Fs = [1, 2];
 
-      koLetters.forEach((letter) => {
-        switch (letter) {
-          case "Q":
-            Qs.forEach((num) => {
-              const team = eval(`${letter}${num}`);
+      joe.tourneyStage === 4 &&
+        koLetters.forEach((letter) => {
+          switch (letter) {
+            case "Q":
+              Qs.forEach((num) => {
+                const team = eval(`${letter}${num}`);
 
-              if (team.length === 0) {
+                if (team.length === 0) {
+                  setKoError(true);
+                  errorAudit.push(1);
+                } else {
+                  userObj[`knock${letter}${num}`] = team;
+                }
+              });
+              break;
+            case "S":
+              Ss.forEach((num) => {
+                const team = eval(`${letter}${num}`);
+
+                if (team.length === 0) {
+                  setKoError(true);
+                  errorAudit.push(1);
+                } else {
+                  userObj[`knock${letter}${num}`] = team;
+                }
+              });
+              break;
+            case "F":
+              Fs.forEach((num) => {
+                const team = eval(`${letter}${num}`);
+
+                if (team.length === 0) {
+                  setKoError(true);
+                  errorAudit.push(1);
+                } else {
+                  userObj[`knock${letter}${num}`] = team;
+                }
+              });
+              break;
+            case "champ":
+              if (champ.length === 0) {
                 setKoError(true);
                 errorAudit.push(1);
               } else {
-                userObj[`knock${letter}${num}`] = team;
+                userObj.knockChamp = champ;
               }
-            });
-            break;
-          case "S":
-            Ss.forEach((num) => {
-              const team = eval(`${letter}${num}`);
-
-              if (team.length === 0) {
-                setKoError(true);
-                errorAudit.push(1);
-              } else {
-                userObj[`knock${letter}${num}`] = team;
-              }
-            });
-            break;
-          case "F":
-            Fs.forEach((num) => {
-              const team = eval(`${letter}${num}`);
-
-              if (team.length === 0) {
-                setKoError(true);
-                errorAudit.push(1);
-              } else {
-                userObj[`knock${letter}${num}`] = team;
-              }
-            });
-            break;
-          case "champ":
-            if (champ.length === 0) {
-              setKoError(true);
-              errorAudit.push(1);
-            } else {
-              userObj.knockChamp = champ;
-            }
-            break;
-          default:
-            break;
-        }
-      });
+              break;
+            default:
+              break;
+          }
+        });
 
       !tiebreakerError &&
         !errorAudit.length &&
@@ -418,7 +421,7 @@ const User_Admin_Page = () => {
             <button className="admin-button">Submit Picks</button>
           </div>
         </div>
-        {Object.values(selectedUser).length > 0 && (
+        {joe && joe.value.tourneyStage >= 4 && (
           <div className="user-admin">
             <div className="predictions-cont">
               <Knockout_Cont_Unlocked
