@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { updateUser, dupeValInArr } from "../../../store";
+import { updateUser, dupeValInArr, loadUsers } from "../../../store";
 import Input_Cont from "./Input_Cont";
 import Single_Group_Cont_Unlocked from "./group/Single_Group_Cont_Unlocked";
 import Knockout_Cont_Unlocked from "./ko/Knockout_Cont_Unlocked";
@@ -126,6 +126,10 @@ const User_Admin_Page = () => {
 
   const groupLetters = ["A", "B", "C", "D", "E", "F", "G", "H"];
   const koLetters = ["Q", "S", "F", "champ"];
+
+  useEffect(() => {
+    dispatch(loadUsers());
+  }, []);
 
   useEffect(() => {
     setName(selectedUser.name);
@@ -377,51 +381,57 @@ const User_Admin_Page = () => {
               className="user-admin-dropdown"
             />
           </div>
-          <div className="user-details-cont">
-            <div>
+          {Object.keys(selectedUser).length ? (
+            <div className="user-details-cont">
               <div>
-                <div className="user-detail-title">Name:</div>
-                <Input_Cont
-                  selectedUser={selectedUser}
-                  val="Name"
-                  setName={setName}
-                />
+                <div>
+                  <div className="user-detail-title">Name:</div>
+                  <Input_Cont
+                    selectedUser={selectedUser}
+                    val="Name"
+                    setName={setName}
+                  />
+                </div>
+                <div>
+                  <div className="user-detail-title">Password:</div>
+                  <Input_Cont
+                    selectedUser={selectedUser}
+                    val="Password"
+                    setPassword={setPassword}
+                  />
+                </div>
               </div>
               <div>
-                <div className="user-detail-title">Password:</div>
-                <Input_Cont
-                  selectedUser={selectedUser}
-                  val="Password"
-                  setPassword={setPassword}
-                />
-              </div>
-            </div>
-            <div>
-              <div>
-                <div className="user-detail-title">Tourney Stage:</div>
-                <Input_Cont
-                  selectedUser={selectedUser}
-                  val="TourneyStage"
-                  setTourneyStage={setTourneyStage}
-                />
+                <div>
+                  <div className="user-detail-title">Tourney Stage:</div>
+                  <Input_Cont
+                    selectedUser={selectedUser}
+                    val="TourneyStage"
+                    setTourneyStage={setTourneyStage}
+                  />
+                </div>
+
+                <div>
+                  <div className="paid-cont">Paid:</div>
+                  <input
+                    className="checkbox-cont"
+                    type="checkbox"
+                    defaultValue={paid}
+                    onChange={togglePaid}
+                    checked={paid ? paid : !!paid}
+                  ></input>
+                </div>
               </div>
 
-              <div>
-                <div className="paid-cont">Paid:</div>
-                <input
-                  className="checkbox-cont"
-                  type="checkbox"
-                  defaultValue={paid}
-                  onChange={togglePaid}
-                  checked={paid ? paid : !!paid}
-                ></input>
-              </div>
+              <button className="admin-button">Submit Picks</button>
             </div>
-
-            <button className="admin-button">Submit Picks</button>
-          </div>
+          ) : (
+            ""
+          )}
         </div>
-        {joe && joe.value.tourneyStage >= 4 && (
+        {joe &&
+        joe.value.tourneyStage >= 4 &&
+        Object.keys(selectedUser).length ? (
           <div className="user-admin">
             <div className="predictions-cont">
               <Knockout_Cont_Unlocked
@@ -476,6 +486,8 @@ const User_Admin_Page = () => {
               />
             </div>
           </div>
+        ) : (
+          ""
         )}
 
         {Object.values(selectedUser).length > 0 && (

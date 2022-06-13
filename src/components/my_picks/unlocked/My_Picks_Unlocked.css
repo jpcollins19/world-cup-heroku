@@ -7,7 +7,7 @@
     rgb(7, 20, 77) 75%,
     rgb(2, 8, 35) 100%
   );
-  width: 99.5vw;
+  width: 100vw;
   max-height: 84vh;
   min-height: 84vh;
   overflow: auto;
@@ -16,6 +16,7 @@
 .my-picks-container-ul {
   display: flex;
   flex-direction: column;
+  margin-top: 1%;
 }
 
 .my-picks-header-ul {
@@ -115,6 +116,7 @@
 .single-group-cont-edit-picks {
   width: 18rem;
   margin: 0% 2% 0% 2%;
+  padding-bottom: 1%;
   /* border: solid 4px rgb(165, 239, 165); */
 }
 
@@ -163,10 +165,10 @@ section > div {
 }
 
 .single-group-cont-edit-picks > div > div > div {
-  /* margin: 0.17rem; */
   margin: 0rem 0.17rem 0.5rem 0rem;
   font-size: 1rem;
   height: 2.3rem;
+  /* border: solid 4px rgb(165, 239, 165); */
 }
 
 .rank-cont > div {
@@ -174,6 +176,8 @@ section > div {
   align-items: center;
   justify-content: center;
   border: solid black 1px;
+  width: 2.2rem;
+  border-radius: 0.2rem;
 }
 
 .prediction-cont-edit {
@@ -191,27 +195,6 @@ section > div {
   ); */
   border-radius: 0.5rem;
 }
-
-/* .prediction-cont-edit > select {
-  margin: 0.1rem;
-  width: 10rem;
-  border: solid black 1px;
-  background: linear-gradient(
-    to bottom,
-    rgb(159, 159, 147) 0%,
-    rgb(222, 222, 212) 25%,
-    rgb(203, 203, 192) 50%,
-    rgb(222, 222, 212) 75%,
-    rgb(159, 159, 147) 100%
-  );
-  font-size: 1rem;
-  height: 1.5rem;
-}
-
-.prediction-cont-edit > select > option {
-  text-align: center;
-  margin: 0.1rem;
-} */
 
 /*/////////////////////////////*/
 /*/ ///knockout stuff below////*/
@@ -232,8 +215,8 @@ section > div {
 }
 
 .knockout-cont-edit > div > div {
-  min-width: 10rem;
-  max-width: 13rem;
+  min-width: 9rem;
+  max-width: 9rem;
   text-align: center;
   /* border: solid 4px red;  */
 }
@@ -254,46 +237,48 @@ section > div {
     rgb(11, 11, 11) 50%,
     rgb(159, 159, 147) 100%
   );
-  font-size: 1.5rem;
+  font-size: 17px;
   text-shadow: 2px 2px black;
   color: white;
   text-align: center;
   cursor: pointer;
   margin: 0.5rem 0rem 0.5rem 0rem;
+  min-width: 9rem;
+  max-width: 9rem;
 }
 
 .reg-input {
   height: 3rem;
-  min-width: 11rem;
-  max-width: 11rem;
+  min-width: 9rem;
+  max-width: 9rem;
 }
 
 .Q1UL {
-  margin-top: 37%;
+  margin-top: 43%;
 }
 
 .Q2UL {
-  margin-top: 50%;
+  margin-top: 64%;
 }
 
 .Q3UL {
-  margin-top: 50%;
+  margin-top: 61%;
 }
 
 .Q4UL {
-  margin-top: 50%;
+  margin-top: 60%;
 }
 
 .S1UL {
-  margin-top: 72%;
+  margin-top: 90%;
 }
 
 .S2UL {
-  margin-top: 127%;
+  margin-top: 155%;
 }
 
 .FUL {
-  margin-top: 147%;
+  margin-top: 183%;
 }
 
 .ko-edit-red {
@@ -306,14 +291,11 @@ section > div {
 
 .champ-edit > div {
   width: 12rem;
-  margin-top: 120%;
+  margin-top: 176%;
 }
 
 .champ-input {
   height: 4rem;
   font-weight: bold;
   font-size: 2rem;
-  /* margin-top: 50%; */
-  max-width: 13rem;
-  min-width: 13rem;
 }

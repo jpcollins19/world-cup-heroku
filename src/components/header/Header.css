@@ -1,3 +1,10 @@
+.body-cont {
+  overflow: auto;
+  height: 84vh;
+  width: 100vw;
+  z-index: 1;
+}
+
 .header-cont {
   position: sticky;
   top: 0;
@@ -48,9 +55,4 @@
 
 .login-cont > a {
   color: blue;
-}
-
-.body-cont {
-  overflow: auto;
-  height: 84vh;
 }

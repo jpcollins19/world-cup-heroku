@@ -12,11 +12,13 @@
 .pool-picks-container {
   display: flex;
   flex-direction: column;
+  width: 98vw;
 }
 
 .pool-picks-header {
   display: flex;
   margin-top: 2rem;
+  padding-top: 2%;
 }
 
 .pool-picks-header-name {

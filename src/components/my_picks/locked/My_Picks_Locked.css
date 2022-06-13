@@ -1,6 +1,6 @@
 .my-picks-page {
   background-image: url("https://as01.epimg.net/futbol/imagenes/2020/04/10/primera/1586529604_835391_1586529700_noticia_normal.jpg");
-  width: 99.5vw;
+  width: 100vw;
   max-height: 84vh;
   min-height: 84vh;
   background-size: cover;
@@ -10,12 +10,13 @@
 .my-picks-container {
   display: flex;
   flex-direction: column;
+  width: 99vw;
 }
 
 .my-picks-header {
   display: flex;
   margin-top: 2rem;
-  padding-top: 1%;
+  padding-top: 2%;
 }
 
 .point-system-table-cont {
@@ -74,15 +75,20 @@
 
 .my-picks-header-name {
   display: flex;
+  flex-direction: column;
   flex: 0.23;
   justify-content: center;
-  /* border: solid 4px dodgerblue; */
+  align-items: center;
 }
 
 .my-picks-header-name > h1 {
   display: flex;
   align-items: center;
   font-size: 3rem;
+}
+
+.my-picks-header-name > a {
+  color: white;
 }
 
 .white-text {
@@ -100,14 +106,14 @@
   /* border: solid 4px purple; */
 }
 
-.button-cont-picks > button {
+.button-cont-picks > a > button {
   cursor: pointer;
   width: 17rem;
   height: 3rem;
   background-color: rgb(204, 200, 200);
 }
 
-.button-cont-picks > button > a {
+.button-cont-picks > a {
   color: black;
 }
 
@@ -130,6 +136,13 @@
   flex-direction: column;
   padding: 0;
   /* border: solid 4px green; */
+}
+
+.right {
+  width: 17%;
+  display: flex;
+  justify-content: center;
+  /* border: solid 4px purple; */
 }
 
 .predictions-cont {
@@ -256,13 +269,6 @@
   background-color: orange;
 }
 
-.right {
-  width: 12%;
-  display: flex;
-  justify-content: center;
-  /* border: solid 4px purple; */
-}
-
 .total-points-cont {
   padding-top: 0.3rem;
   padding-bottom: 0.1rem;
@@ -344,7 +350,6 @@
   justify-content: space-around;
   flex-direction: column;
   width: 100%;
-  /* border: solid 4px yellow; */
 }
 
 .knockout-cont > div {
@@ -353,9 +358,10 @@
 }
 
 .knockout-cont > div > div {
-  min-width: 10rem;
-  max-width: 13rem;
+  min-width: 9rem;
+  max-width: 9rem;
   text-align: center;
+  /* border: solid 4px dodgerblue; */
 }
 
 .knockout-cont > div > div > h2 {
@@ -377,15 +383,17 @@
     rgb(11, 11, 11) 50%,
     rgb(159, 159, 147) 100%
   );
-  font-size: 1.5rem;
+  font-size: 17px;
+  min-width: 9rem;
+  max-width: 9rem;
   /* border: solid 4px dodgerblue; */
 }
 
 .knockout-cont > div > .champ > div > div {
   height: 4rem;
   font-weight: bold;
-  font-size: 2rem;
-  width: 12rem;
+  font-size: 1.5rem;
+  width: 9rem;
 }
 
 .R16 > div {
@@ -406,31 +414,31 @@
 }
 
 .Q1L {
-  margin-top: 38%;
+  margin-top: 43%;
 }
 
 .Q2L {
-  margin-top: 50%;
+  margin-top: 56%;
 }
 
 .Q3L {
-  margin-top: 50%;
+  margin-top: 55%;
 }
 
 .Q4L {
-  margin-top: 50%;
+  margin-top: 55%;
 }
 
 .S1l {
-  margin-top: 73%;
+  margin-top: 85%;
 }
 
 .S2l {
-  margin-top: 128%;
+  margin-top: 138%;
 }
 
 .FL {
-  margin-top: 148%;
+  margin-top: 167%;
 }
 
 .CL {
@@ -438,11 +446,11 @@
 }
 
 .champ {
-  width: 12.5rem;
+  width: 10rem;
 }
 
 .champ > div {
-  width: 12rem;
+  width: 10rem;
 }
 
 .trophy {
@@ -450,6 +458,7 @@
   background-image: url("/public/pics/trophy.jpg");
   height: 11.5rem;
   border-radius: 1rem;
-  max-width: 10rem;
-  margin: 1rem;
+  max-width: 9rem;
+  background-position: center;
+  margin-top: 35%;
 }

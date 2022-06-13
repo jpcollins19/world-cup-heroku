@@ -31,13 +31,13 @@ const Login_Page = () => {
     setShowPW(!showPW);
   };
 
-  const joe = useSelector((state) => state.users).find(
-    (user) => user.name === "Joe"
-  );
+  // const joe = useSelector((state) => state.users).find(
+  //   (user) => user.name === "Joe"
+  // );
 
-  if (!joe) {
-    return null;
-  }
+  // if (!joe) {
+  //   return null;
+  // }
 
   const onChange = (ev) => {
     ev.target.name === "email"

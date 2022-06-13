@@ -1,14 +1,16 @@
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import Point_System_Cont from "../my_picks/locked/Point_System_Cont";
 import Single_Group_Cont from "../my_picks/locked/group/Single_Group_Cont_Locked";
 import Total_Points_Cont from "../my_picks/locked/Total_Points_Cont";
 import Knockout_Cont from "../my_picks/locked/ko/Knockout_Cont_Locked";
 import Select from "react-select";
-import { formatSelectedUser } from "../../store";
+import { formatSelectedUser, loadUsers } from "../../store";
 import "./Pool_Picks.css";
 
 const Pool_Picks_Page = () => {
+  const dispatch = useDispatch();
+
   const [selectedUser, setSelectedUser] = useState(
     formatSelectedUser(useSelector((state) => state.auth))
   );
@@ -24,6 +26,10 @@ const Pool_Picks_Page = () => {
     .map((user) => {
       return { value: user, label: user.name };
     });
+
+  useEffect(() => {
+    dispatch(loadUsers());
+  }, []);
 
   const onChange = async (user) => {
     const part = users.find((part) => part.value.id === user.value.id);

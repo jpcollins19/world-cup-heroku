@@ -39,24 +39,23 @@ const My_Picks_Locked_Page = () => {
 
           <div className="my-picks-header-name">
             <h1 className="white-text">{user.name}</h1>
+            <Link to="/edit_name" style={{ textDecoration: "none" }}>
+              Edit Name
+            </Link>
           </div>
           <div className="button-cont-picks">
             {joe.tourneyStage === 1 && (
-              <button>
-                <Link
-                  to="/my_picks_edit_group"
-                  style={{ textDecoration: "none" }}
-                >
-                  Select / Adjust Group Picks
-                </Link>
-              </button>
+              <Link
+                to="/my_picks_edit_group"
+                style={{ textDecoration: "none" }}
+              >
+                <button>Select / Adjust Group Picks </button>
+              </Link>
             )}
             {joe.tourneyStage === 4 && user.tiebreaker && (
-              <button>
-                <Link to="/my_picks_edit_ko" style={{ textDecoration: "none" }}>
-                  Select / Adjust Knockout Picks
-                </Link>
-              </button>
+              <Link to="/my_picks_edit_ko" style={{ textDecoration: "none" }}>
+                <button> Select / Adjust Knockout Picks </button>
+              </Link>
             )}
           </div>
         </div>

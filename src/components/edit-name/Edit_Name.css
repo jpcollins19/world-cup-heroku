@@ -1,0 +1,59 @@
+.edit-name-page {
+  padding-top: 5%;
+  width: 100vw;
+  height: 84vh;
+  display: flex;
+  justify-content: center;
+}
+
+.black-text {
+  margin: 0;
+  text-align: center;
+  color: black;
+}
+
+.main-cont-edit-name {
+  border-radius: 1rem;
+  padding: 0.5rem;
+  background: black;
+  height: 22rem;
+  width: 30rem;
+  margin-top: 6%;
+}
+
+.main-cont1-edit-name {
+  border-radius: 1rem;
+  padding: 1rem;
+  height: 21rem;
+  background: linear-gradient(
+    to bottom,
+    rgb(159, 159, 147) 0%,
+    rgb(222, 222, 212) 25%,
+    rgb(203, 203, 192) 50%,
+    rgb(222, 222, 212) 75%,
+    rgb(159, 159, 147) 100%
+  );
+}
+
+.main-text-container-edit-name > h1 {
+  margin: 0;
+  padding: 1rem 0rem 0rem 0rem;
+}
+
+.main-cont-edit-name > div main > div > input {
+  margin: 7% 0% 12% 0%;
+  width: 100%;
+  font-size: 2rem;
+  text-align: center;
+  background: transparent;
+}
+
+.main-cont-edit-name > div main > div > a {
+  margin-top: 2%;
+}
+
+.main-cont-edit-name > div main > div > a > button {
+  font-size: 1.3rem;
+  cursor: pointer;
+  width: 7rem;
+}

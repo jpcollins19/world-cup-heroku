@@ -11,6 +11,7 @@ import Rules_Page from "./components/rules/Rules_Page";
 import My_Picks_Locked_Page from "./components/my_picks/locked/My_Picks_Locked_Page";
 import My_Picks_Unlocked_Page from "./components/my_picks/unlocked/My_Picks_Unlocked_Page";
 import Pool_Picks_Page from "./components/pool_picks/Pool_Picks_Page";
+import Edit_Name_Page from "./components/edit-name/Edit_Name_Page";
 import User_Admin_Page from "./components/admin/user/User_Admin_Page";
 import Group_Admin_Page from "./components/admin/group/Group_Admin_Page";
 import Team_Admin_Page from "./components/admin/team/Team_Admin_Page";
@@ -39,6 +40,7 @@ const Routes = () => {
       { path: "/pool_picks", component: Pool_Picks_Page },
       { path: "/group_details", component: Group_Details_Page },
       { path: "/rules", component: Rules_Page },
+      { path: "/edit_name", component: Edit_Name_Page },
     ],
     [
       { path: "/", component: Pre_Login_Page },
@@ -92,7 +94,6 @@ const Routes = () => {
           component={route.component}
         />
       ))}
-      {/* <Redirect to="/login" /> */}
     </Switch>
   );
 };

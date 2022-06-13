@@ -28,6 +28,8 @@
 ////test/apply all error handling in heroku state
 ////roll through the entire tourney lifecycle in heroku state
 
+////bugz
+//my-picks-unlocked - stage 1 - when you scroll down on the page, the team dropdown options for each group have a higher zIndex than the navbar text
 /////////////////////////////////
 // Tourney Stage Info //
 
