@@ -20,12 +20,12 @@ const teamInfo = [
   { name: "Poland", group: "C" },
 
   { name: "France", group: "D" },
-  { name: "Russia", group: "D" },
+  { name: "Australia", group: "D" },
   { name: "Denmark", group: "D" },
   { name: "Tunisia", group: "D" },
 
   { name: "Spain", group: "E" },
-  { name: "Italy", group: "E" },
+  { name: "Costa Rica", group: "E" },
   { name: "Germany", group: "E" },
   { name: "Japan", group: "E" },
 
@@ -68,13 +68,13 @@ const users = [
     groupC3: "Mexico",
     groupC4: "Saudi Arabia",
 
-    groupD1: "France",
-    groupD2: "Denmark",
-    groupD3: "Russia",
+    groupD1: "Denmark",
+    groupD2: "Australia",
+    groupD3: "France",
     groupD4: "Tunisia",
 
-    groupE1: "Italy",
-    groupE2: "Germany",
+    groupE1: "Germany",
+    groupE2: "Costa Rica",
     groupE3: "Japan",
     groupE4: "Spain",
 
@@ -116,13 +116,13 @@ const users = [
     groupC3: "Mexico",
     groupC4: "Saudi Arabia",
 
-    groupD1: "France",
-    groupD2: "Denmark",
-    groupD3: "Russia",
+    groupD1: "Denmark",
+    groupD2: "Australia",
+    groupD3: "France",
     groupD4: "Tunisia",
 
-    groupE1: "Italy",
-    groupE2: "Germany",
+    groupE1: "Germany",
+    groupE2: "Costa Rica",
     groupE3: "Japan",
     groupE4: "Spain",
 
@@ -163,14 +163,14 @@ const users = [
     groupC3: "Poland",
     groupC4: "Saudi Arabia",
 
-    groupD1: "Denmark",
-    groupD2: "France",
+    groupD1: "Australia",
+    groupD2: "Denmark",
     groupD3: "Tunisia",
-    groupD4: "Russia",
+    groupD4: "France",
 
-    groupE1: "Germany",
+    groupE1: "Costa Rica",
     groupE2: "Japan",
-    groupE3: "Italy",
+    groupE3: "Germany",
     groupE4: "Spain",
 
     groupF1: "Morocco",
@@ -210,13 +210,13 @@ const users = [
     groupC3: "Mexico",
     groupC4: "Saudi Arabia",
 
-    groupD1: "France",
-    groupD2: "Denmark",
-    groupD3: "Russia",
+    groupD1: "Denmark",
+    groupD2: "Australia",
+    groupD3: "France",
     groupD4: "Tunisia",
 
-    groupE1: "Italy",
-    groupE2: "Germany",
+    groupE1: "Germany",
+    groupE2: "Costa Rica",
     groupE3: "Japan",
     groupE4: "Spain",
 
@@ -258,13 +258,13 @@ const users = [
     groupC3: "Saudi Arabia",
     groupC4: "Argentina",
 
-    groupD1: "Denmark",
+    groupD1: "Australia",
     groupD2: "Tunisia",
-    groupD3: "Russia",
-    groupD4: "France",
+    groupD3: "France",
+    groupD4: "Denmark",
 
-    groupE1: "Italy",
-    groupE2: "Germany",
+    groupE1: "Germany",
+    groupE2: "Costa Rica",
     groupE3: "Japan",
     groupE4: "Spain",
 
@@ -311,11 +311,11 @@ const syncAndSeed = async () => {
     Mexico,
     Poland,
     France,
-    Russia,
+    Australia,
     Denmark,
     Tunisia,
     Spain,
-    Italy,
+    Costa_Rica,
     Germany,
     Japan,
     Belgium,
@@ -411,8 +411,8 @@ const syncAndSeed = async () => {
   Mexico.groupFinishingPosition = 2;
   Poland.groupFinishingPosition = 3;
   Saudi_Arabia.groupFinishingPosition = 4;
-  Italy.groupFinishingPosition = 1;
-  Germany.groupFinishingPosition = 2;
+  Germany.groupFinishingPosition = 1;
+  Costa_Rica.groupFinishingPosition = 2;
   Japan.groupFinishingPosition = 3;
   Spain.groupFinishingPosition = 4;
   Brasil.groupFinishingPosition = 1;
@@ -423,9 +423,9 @@ const syncAndSeed = async () => {
   Iran.groupFinishingPosition = 2;
   USA.groupFinishingPosition = 3;
   Wales.groupFinishingPosition = 4;
-  Denmark.groupFinishingPosition = 1;
-  France.groupFinishingPosition = 2;
-  Russia.groupFinishingPosition = 3;
+  Australia.groupFinishingPosition = 1;
+  Denmark.groupFinishingPosition = 2;
+  France.groupFinishingPosition = 3;
   Tunisia.groupFinishingPosition = 4;
   Belgium.groupFinishingPosition = 1;
   Canada.groupFinishingPosition = 2;
@@ -450,9 +450,9 @@ const syncAndSeed = async () => {
   Saudi_Arabia.groupIsFinished = true;
   Denmark.groupIsFinished = true;
   France.groupIsFinished = true;
-  Russia.groupIsFinished = true;
+  Australia.groupIsFinished = true;
   Tunisia.groupIsFinished = true;
-  Italy.groupIsFinished = true;
+  Costa_Rica.groupIsFinished = true;
   Germany.groupIsFinished = true;
   Japan.groupIsFinished = true;
   Spain.groupIsFinished = true;
@@ -475,7 +475,7 @@ const syncAndSeed = async () => {
   Joe.knockQ3 = Canada.name;
   Joe.knockQ4 = Brasil.name;
   Joe.knockQ5 = England.name;
-  Joe.knockQ6 = Denmark.name;
+  Joe.knockQ6 = Australia.name;
   Joe.knockQ7 = Belgium.name;
   Joe.knockQ8 = Cameroon.name;
 
@@ -484,7 +484,7 @@ const syncAndSeed = async () => {
   Stan.knockQ3 = Canada.name;
   Stan.knockQ4 = Brasil.name;
   Stan.knockQ5 = England.name;
-  Stan.knockQ6 = Denmark.name;
+  Stan.knockQ6 = Australia.name;
   Stan.knockQ7 = Belgium.name;
   Stan.knockQ8 = Cameroon.name;
 
@@ -493,13 +493,13 @@ const syncAndSeed = async () => {
   E.knockQ3 = Canada.name;
   E.knockQ4 = Brasil.name;
   E.knockQ5 = England.name;
-  E.knockQ6 = Denmark.name;
-  E.knockQ7 = Germany.name;
+  E.knockQ6 = Australia.name;
+  E.knockQ7 = Costa_Rica.name;
   E.knockQ8 = Cameroon.name;
 
   Coach.knockQ1 = Ecuador.name;
   Coach.knockQ2 = Argentina.name;
-  Coach.knockQ3 = Italy.name;
+  Coach.knockQ3 = Germany.name;
   Coach.knockQ4 = Brasil.name;
   Coach.knockQ5 = England.name;
   Coach.knockQ6 = Mexico.name;
@@ -508,28 +508,28 @@ const syncAndSeed = async () => {
 
   Kelly.knockQ1 = Iran.name;
   Kelly.knockQ2 = Argentina.name;
-  Kelly.knockQ3 = Italy.name;
+  Kelly.knockQ3 = Germany.name;
   Kelly.knockQ4 = Brasil.name;
   Kelly.knockQ5 = England.name;
-  Kelly.knockQ6 = Denmark.name;
+  Kelly.knockQ6 = Australia.name;
   Kelly.knockQ7 = Belgium.name;
   Kelly.knockQ8 = Ghana.name;
 
   //
   Joe.knockS1 = Argentina.name;
   Joe.knockS2 = Brasil.name;
-  Joe.knockS3 = Denmark.name;
+  Joe.knockS3 = Australia.name;
   Joe.knockS4 = Belgium.name;
 
   Stan.knockS1 = Argentina.name;
   Stan.knockS2 = Brasil.name;
-  Stan.knockS3 = Denmark.name;
+  Stan.knockS3 = Australia.name;
   Stan.knockS4 = Belgium.name;
 
   E.knockS1 = Iran.name;
   E.knockS2 = Canada.name;
   E.knockS3 = England.name;
-  E.knockS4 = Germany.name;
+  E.knockS4 = Costa_Rica.name;
 
   Coach.knockS1 = Ecuador.name;
   Coach.knockS2 = Brasil.name;
@@ -537,32 +537,32 @@ const syncAndSeed = async () => {
   Coach.knockS4 = Belgium.name;
 
   Kelly.knockS1 = Iran.name;
-  Kelly.knockS2 = Italy.name;
-  Kelly.knockS3 = Denmark.name;
+  Kelly.knockS2 = Germany.name;
+  Kelly.knockS3 = Australia.name;
   Kelly.knockS4 = Ghana.name;
 
   //
   Joe.knockF1 = Argentina.name;
-  Joe.knockF2 = Belgium.name;
+  Joe.knockF2 = Australia.name;
 
   Stan.knockF1 = Argentina.name;
-  Stan.knockF2 = Belgium.name;
+  Stan.knockF2 = Australia.name;
 
   E.knockF1 = Canada.name;
-  E.knockF2 = Germany.name;
+  E.knockF2 = Costa_Rica.name;
 
   Coach.knockF1 = Brasil.name;
   Coach.knockF2 = Mexico.name;
 
-  Kelly.knockF1 = Italy.name;
-  Kelly.knockF2 = Denmark.name;
+  Kelly.knockF1 = Germany.name;
+  Kelly.knockF2 = Ghana.name;
 
   //
   Joe.knockChamp = Argentina.name;
   Stan.knockChamp = Argentina.name;
   E.knockChamp = Canada.name;
   Coach.knockChamp = Brasil.name;
-  Kelly.knockChamp = Italy.name;
+  Kelly.knockChamp = Germany.name;
 
   // //////////////////////////////////////////////////
 
@@ -571,22 +571,22 @@ const syncAndSeed = async () => {
   Canada.advanceToQ = true;
   Brasil.advanceToQ = true;
   England.advanceToQ = true;
-  Denmark.advanceToQ = true;
+  Australia.advanceToQ = true;
   Belgium.advanceToQ = true;
   Cameroon.advanceToQ = true;
 
   Iran.outOfTourney = true;
-  France.outOfTourney = true;
-  Italy.outOfTourney = true;
+  Denmark.outOfTourney = true;
+  Germany.outOfTourney = true;
   S_Korea.outOfTourney = true;
   Netherlands.outOfTourney = true;
   Mexico.outOfTourney = true;
-  Germany.outOfTourney = true;
+  Costa_Rica.outOfTourney = true;
   Ghana.outOfTourney = true;
 
   Argentina.advanceToS = true;
   Brasil.advanceToS = true;
-  Denmark.advanceToS = true;
+  Australia.advanceToS = true;
   Belgium.advanceToS = true;
 
   Ecuador.outOfTourney = true;
@@ -595,14 +595,14 @@ const syncAndSeed = async () => {
   Cameroon.outOfTourney = true;
 
   Argentina.advanceToF = true;
-  Belgium.advanceToF = true;
+  Australia.advanceToF = true;
 
   Brasil.outOfTourney = true;
-  Denmark.outOfTourney = true;
+  Belgium.outOfTourney = true;
 
   Argentina.advanceToChamp = true;
 
-  Belgium.outOfTourney = true;
+  Australia.outOfTourney = true;
 
   await Promise.all([
     Ecuador.save(),
@@ -613,7 +613,7 @@ const syncAndSeed = async () => {
     Mexico.save(),
     Poland.save(),
     Saudi_Arabia.save(),
-    Italy.save(),
+    Costa_Rica.save(),
     Germany.save(),
     Japan.save(),
     Spain.save(),
@@ -627,7 +627,7 @@ const syncAndSeed = async () => {
     Wales.save(),
     Denmark.save(),
     France.save(),
-    Russia.save(),
+    Australia.save(),
     Tunisia.save(),
     Belgium.save(),
     Canada.save(),

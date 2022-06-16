@@ -52,8 +52,12 @@
   margin-top: 2%;
 }
 
-.main-cont-edit-name > div main > div > a > button {
+.main-cont-edit-name > div main > div > button {
   font-size: 1.3rem;
   cursor: pointer;
   width: 7rem;
+}
+
+.error-cont-login-edit-name {
+  height: 2rem;
 }

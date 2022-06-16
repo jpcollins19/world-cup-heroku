@@ -30,11 +30,11 @@ export const addUser = (user) => {
   };
 };
 
-export const updateUser = (user, history) => {
+export const updateUser = (user, history, page = "") => {
   return async (dispatch) => {
     user = (await axios.put(`/api/users/${user.id}`, user)).data;
     dispatch(_updateUser(user));
-    history.push("/pool_picks");
+    page === "name" ? history.push("/my_picks") : history.push("/pool_picks");
   };
 };
 

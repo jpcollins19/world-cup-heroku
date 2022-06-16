@@ -87,8 +87,8 @@
   font-size: 3rem;
 }
 
-.my-picks-header-name > a {
-  color: white;
+.my-picks-header-name > a > button {
+  cursor: pointer;
 }
 
 .white-text {

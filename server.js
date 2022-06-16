@@ -1,10 +1,3 @@
-////add missing teams for groups D & E if applicable
-//adjust excel doc for all tabs
-//adjust seed info
-//adjust test specs
-
-////add edit name page
-
 ////login and create account pages
 //make it so the email is all lower case letters when submitted
 //change submit button to something better

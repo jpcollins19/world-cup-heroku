@@ -39,8 +39,9 @@ const My_Picks_Locked_Page = () => {
 
           <div className="my-picks-header-name">
             <h1 className="white-text">{user.name}</h1>
+
             <Link to="/edit_name" style={{ textDecoration: "none" }}>
-              Edit Name
+              <button>Edit Name</button>
             </Link>
           </div>
           <div className="button-cont-picks">
