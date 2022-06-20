@@ -1,9 +1,3 @@
-////login and create account pages
-//make it so the email is all lower case letters when submitted
-//change submit button to something better
-
-////all pages that have a submit/edit buttons - do css work on these
-
 ////rules page
 //adjust rules/scoring accordingly
 //adjust payment and submitting info
@@ -12,9 +6,11 @@
 
 ////test/apply all error handling in local state
 
-////roll through the entire tourney lifecycle to make sure all is working
+////roll through the entire tourney lifecycle to make sure all is working as expected
 
-////incorporate web sockets for teams and parts -- send to heroku without websockets and test first
+////incorporate web sockets for teams and parts -- send to heroku without websockets and test first though
+
+//roll through each file and remove any commented out info
 
 //figure out a forgot pw route
 

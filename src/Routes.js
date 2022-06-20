@@ -4,7 +4,9 @@ import { me } from "./store";
 import { useSelector, useDispatch } from "react-redux";
 import Pre_Login_Page from "./components/login_create_account/Pre_Login_Page";
 import Login_Page from "./components/login_create_account/Login_Page";
+import Login_Page_Leaderboard from "./components/leaderboard/Login_Page_Leaderboard";
 import Create_Account_Page from "./components/login_create_account/Create_Account_Page";
+import Account_Created_Confirmation from "./components/login_create_account/Account_Created_Confirmation";
 import Leaderboard_Page from "./components/leaderboard/Leaderboard_Page";
 import Group_Details_Page from "./components/group_details/Group_Details_Page";
 import Rules_Page from "./components/rules/Rules_Page";
@@ -46,7 +48,12 @@ const Routes = () => {
       { path: "/", component: Pre_Login_Page },
       { path: "/login", component: Login_Page },
       { path: "/create_account", component: Create_Account_Page },
+      {
+        path: "/account_created",
+        component: Account_Created_Confirmation,
+      },
       { path: "/rules", component: Rules_Page },
+      { path: "/leaderboard", component: Login_Page_Leaderboard },
     ],
   ];
 

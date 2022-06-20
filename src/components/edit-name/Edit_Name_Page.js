@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
-import { updateUser } from "../../store";
+import { updateUser, getUserNames } from "../../store";
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
@@ -18,13 +18,9 @@ const Edit_Name_Page = () => {
   const [name, setName] = useState(auth.name);
   const [error, setError] = useState(null);
 
-  const userNames = useSelector((state) => state.users).map((user) => {
-    const name = user.name
-      .split("")
-      .map((letter) => letter.toLowerCase())
-      .join("");
-    return name;
-  });
+  const users = useSelector((state) => state.users);
+
+  const userNames = users && getUserNames(users);
 
   const onChange = (ev) => {
     setName(ev.target.value);

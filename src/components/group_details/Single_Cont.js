@@ -28,6 +28,8 @@ const Single_Cont = ({ group }) => {
         ? "United_States"
         : team.name === "S. Korea"
         ? "South_Korea"
+        : team.name === "Costa Rica"
+        ? "Costa_Rica"
         : team.name
     }.jpg`,
   }));

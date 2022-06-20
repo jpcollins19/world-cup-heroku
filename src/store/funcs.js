@@ -485,6 +485,31 @@ const findEntry = (str) => {
   return str.split("advanceTo")[1];
 };
 
+const formatEmail = (email) => {
+  const regex = /[a-zA-Z]/g;
+
+  email = email
+    .split("")
+    .map((letter) => {
+      if (letter.match(regex)) {
+        letter = letter.toLowerCase();
+      }
+      return letter;
+    })
+    .join("");
+  return email;
+};
+
+const getUserNames = (arr) => {
+  return arr.map((user) => {
+    const name = user.name
+      .split("")
+      .map((letter) => letter.toLowerCase())
+      .join("");
+    return name;
+  });
+};
+
 module.exports = {
   singleGroupCalc,
   totalScoreCalc,
@@ -501,4 +526,6 @@ module.exports = {
   formatSelectedUser,
   capFirstLetter,
   findEntry,
+  formatEmail,
+  getUserNames,
 };

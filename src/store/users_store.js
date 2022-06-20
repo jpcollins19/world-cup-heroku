@@ -23,18 +23,19 @@ export const loadUsers = () => {
   };
 };
 
-export const addUser = (user) => {
+export const addUser = (user, history) => {
   return async (dispatch) => {
     user = (await axios.post("/api/add/user", user)).data;
     dispatch(_addUser(user));
+    history.push("/account_created");
   };
 };
 
-export const updateUser = (user, history, page = "") => {
+export const updateUser = (user, history) => {
   return async (dispatch) => {
     user = (await axios.put(`/api/users/${user.id}`, user)).data;
     dispatch(_updateUser(user));
-    page === "name" ? history.push("/my_picks") : history.push("/pool_picks");
+    history.push("/leaderboard");
   };
 };
 

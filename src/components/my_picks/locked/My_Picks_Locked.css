@@ -111,6 +111,8 @@
   width: 17rem;
   height: 3rem;
   background-color: rgb(204, 200, 200);
+  border-radius: 0.3rem;
+  font-size: 15px;
 }
 
 .button-cont-picks > a {

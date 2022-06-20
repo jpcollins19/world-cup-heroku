@@ -1,14 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { authenticate } from "../../store";
+import { useDispatch } from "react-redux";
+import { authenticate, formatEmail } from "../../store";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import Alert from "@mui/material/Alert";
 
 const useStyles = makeStyles((theme) => ({
   textField: {
@@ -23,25 +22,26 @@ const Login_Page = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPW, setShowPW] = useState(false);
-  const [error, setError] = useState("");
 
   const classes = useStyles();
+
+  const inputs = [
+    { label: "Email Address", name: "email", marginLeft: "25%", type: "" },
+    {
+      label: "Password",
+      name: "password",
+      marginLeft: "30%",
+      type: showPW ? "text" : "password",
+    },
+  ];
 
   const showPwClick = () => {
     setShowPW(!showPW);
   };
 
-  // const joe = useSelector((state) => state.users).find(
-  //   (user) => user.name === "Joe"
-  // );
-
-  // if (!joe) {
-  //   return null;
-  // }
-
   const onChange = (ev) => {
     ev.target.name === "email"
-      ? setEmail(ev.target.value)
+      ? setEmail(formatEmail(ev.target.value))
       : setPassword(ev.target.value);
   };
 
@@ -75,77 +75,46 @@ const Login_Page = () => {
                   Sign in
                 </Typography>
 
-                <div className="error-cont-login">
-                  <Alert severity="error">Alert goes here blah blah blah</Alert>
-                </div>
                 <Box component="form" onSubmit={onSubmit} sx={{ mt: 1 }}>
-                  <TextField
-                    onChange={onChange}
-                    sx={{
-                      margin: 1,
-                      padding: 0,
-                      width: 275,
-                    }}
-                    margin="normal"
-                    required
-                    label="Email Address"
-                    variant="filled"
-                    name="email"
-                    InputProps={{ disableUnderline: true }}
-                    inputProps={{
-                      style: {
-                        color: "black",
-                        fontWeight: "bold",
-                        textAlign: "center",
-                      },
-                    }}
-                    InputLabelProps={{
-                      style: {
-                        display: "flex",
-                        justifyContent: "center",
-                        color: "black",
-                        marginLeft: "25%",
-                      },
-                    }}
-                    className={classes.textField}
-                  />
-                  <TextField
-                    onChange={onChange}
-                    sx={{
-                      margin: 1,
-                      padding: 0,
-                      width: 275,
-                    }}
-                    margin="normal"
-                    required
-                    label="Password"
-                    variant="filled"
-                    name="password"
-                    InputProps={{ disableUnderline: true }}
-                    inputProps={{
-                      style: {
-                        textAlign: "center",
-                        color: "black",
-                        fontWeight: "bold",
-                      },
-                    }}
-                    InputLabelProps={{
-                      style: {
-                        textAlign: "center",
-                        color: "black",
-                        marginLeft: "30%",
-                      },
-                    }}
-                    className={classes.textField}
-                    // type={showPW ? "text" : "password"}
-                  />
+                  {inputs.map((input) => (
+                    <TextField
+                      key={input.name}
+                      onChange={onChange}
+                      sx={{
+                        margin: 1,
+                        padding: 0,
+                        width: 275,
+                      }}
+                      margin="normal"
+                      required
+                      label={input.label}
+                      variant="filled"
+                      name={input.name}
+                      InputProps={{ disableUnderline: true }}
+                      inputProps={{
+                        style: {
+                          textAlign: "center",
+                          color: "black",
+                          fontWeight: "bold",
+                        },
+                      }}
+                      InputLabelProps={{
+                        style: {
+                          textAlign: "center",
+                          color: "black",
+                          marginLeft: input.marginLeft,
+                        },
+                      }}
+                      className={classes.textField}
+                      type={input.type}
+                    />
+                  ))}
+
                   <div className="view-pw" onClick={() => showPwClick()}>
                     View Password
                   </div>
                   <div className="button-cont">
-                    <button disabled={!email || !password}>
-                      <span className="button_top"> Sign In</span>
-                    </button>
+                    <button disabled={!email || !password}>Sign In</button>
                   </div>
                   <div className="forgot-pw-cont">
                     <Link to="/forgot_pw" style={{ textDecoration: "none" }}>
