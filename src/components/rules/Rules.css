@@ -1,6 +1,5 @@
-.rules_page {
-  margin-top: 1rem;
-  padding-left: 2rem;
+.rules-page {
+  padding-top: 3%;
   background: linear-gradient(
     to bottom,
     rgb(159, 159, 147) 0%,
@@ -9,19 +8,32 @@
     rgb(222, 222, 212) 75%,
     rgb(159, 159, 147) 100%
   );
+  width: 100vw;
+  height: 84vh;
+  background-size: cover;
+  overflow: auto;
 }
 
-.rules_page > div > h2 {
-  padding-top: 1rem;
+.rules-page > div > h2 {
+  padding-top: 1%;
+  margin-left: 2%;
 }
 
-.rules_page > div > ul {
+.rules-page > div > ul {
   padding-right: 9rem;
 }
 
-.rules_page > div > ul > li {
-  padding-left: 2rem;
-  font-size: 1.3rem;
+.rules-page > div > ul > li {
+  padding-left: 4%;
+  font-size: 1rem;
+}
+
+.margin-top {
+  margin-top: 1%;
+}
+
+.important {
+  font-weight: bold;
 }
 
 .to-do {

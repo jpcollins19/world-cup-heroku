@@ -93,14 +93,25 @@ const Routes = () => {
     </Switch>
   ) : (
     <Switch>
-      {routeObjs[1].map((route) => (
-        <Route
-          key={route.path}
-          exact
-          path={route.path}
-          component={route.component}
-        />
-      ))}
+      {joe && joe.tourneyStage !== 1
+        ? routeObjs[1]
+            .filter((route) => route.path !== "/create_account")
+            .map((route) => (
+              <Route
+                key={route.path}
+                exact
+                path={route.path}
+                component={route.component}
+              />
+            ))
+        : routeObjs[1].map((route) => (
+            <Route
+              key={route.path}
+              exact
+              path={route.path}
+              component={route.component}
+            />
+          ))}
     </Switch>
   );
 };

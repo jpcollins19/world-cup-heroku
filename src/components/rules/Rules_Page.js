@@ -1,21 +1,28 @@
 import "./Rules.css";
 
 const Rules_Page = () => {
+  const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+
   return (
-    <main className="rules_page">
+    <main className="rules-page">
       <div>
         <h2>There are 2 stages:</h2>
         <ul>
-          <li className="to-do">
+          <li>
             Stage 1 - Rank where you think each country will finish in their
-            respective group. Due date for stage 1 is ???.
+            respective group. Due date for your stage 1 picks is 11/20/22.
           </li>
-          <li className="to-do">
+          <li className="margin-top">
             Stage 2 - Complete a round of 16 bracket. We won't know the round of
-            16 info until the afternoon of 12/2. I'll be sending out an email
-            that day for you to complete your Knockout picks. The Knockout Stage
-            commences the very next day (12/3) so there will be a tight
+            16 info until the afternoon of 12/2/22. I'll be sending out an email
+            that afternoon for you to complete your Knockout picks. The Knockout
+            Stage commences the very next day (12/3/22) so there will be a tight
             turnaround with this stage.
+          </li>
+          <li className="important">
+            ** If you do not make your picks by the AM deadline on 12/3/22, your
+            Knockout picks will be null, and you will not recieve any points for
+            this stage.**
           </li>
         </ul>
 
@@ -56,11 +63,11 @@ const Rules_Page = () => {
           <li>Total number of goals in the tourney - Price is Right rules.</li>
         </ul>
 
-        <h2>Submitting Your Picks:</h2>
+        <h2>Getting Started:</h2>
         <ul>
           <li>
             Create an Account, then sign in; the link to create an account is
-            located on the Sign In page.
+            located via the Sign In page.
           </li>
           <li>Once signed in, navigate to the My Picks tab.</li>
         </ul>

@@ -7,6 +7,55 @@
   overflow: auto;
 }
 
+.payout {
+  margin-top: 4%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  position: absolute;
+  top: 200;
+  right: 150;
+}
+
+.payout > h4 {
+  margin: 0;
+}
+
+.payout-cont-f {
+  position: absolute;
+  top: 25;
+  left: -16;
+}
+
+.payout-text-cont {
+  border: solid 2px rgb(200, 192, 192);
+  display: flex;
+  text-align: center;
+  width: 140%;
+}
+
+.place-col-cont {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.place-col-cont > div {
+  border: solid 1px rgb(200, 192, 192);
+}
+
+.dollar-col-cont {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+}
+
+.dollar-col-cont > div {
+  border: solid 1px rgb(200, 192, 192);
+}
+
 .table-cont {
   display: flex;
   align-items: center;
@@ -44,7 +93,7 @@
   text-align: center;
   text-shadow: 2px 2px black;
   color: white;
-  padding-top: 5%;
+  margin-top: 3%;
 }
 
 .rank-column {

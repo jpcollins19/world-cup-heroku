@@ -1,24 +1,34 @@
-////rules page
-//adjust rules/scoring accordingly
-//adjust payment and submitting info
-
 //write test specs to determine scenario #11 in excel doc "java testing-audit info" - "tiebreaker testing" tab
 
-////test/apply all error handling in local state
+//add website loading feature for when someone signs in - see masters app - maybe incorporate spinners?
 
-////roll through the entire tourney lifecycle to make sure all is working as expected
+////roll through each file and remove any commented out info
+//admin
+//edit-name
+//group-details
+//header
+//leaderboard
+//login
+//my-picks
+//pool-picks
+//rules
 
-////incorporate web sockets for teams and parts -- send to heroku without websockets and test first though
+/////local state
+//test/apply all error handling
+//roll through the entire tourney lifecycle to make sure all is working as expected
 
-//roll through each file and remove any commented out info
+////send to heroku
 
 //figure out a forgot pw route
 
-////test/apply all error handling in heroku state
-////roll through the entire tourney lifecycle in heroku state
+/////heroku state
+//test/apply all error handling
+//roll through the entire tourney lifecycle to make sure all is working as expected
+//test forgot pw route too
 
 ////bugz
 //my-picks-unlocked - stage 1 - when you scroll down on the page, the team dropdown options for each group have a higher zIndex than the navbar text
+
 /////////////////////////////////
 // Tourney Stage Info //
 

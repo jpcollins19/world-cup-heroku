@@ -1,6 +1,6 @@
-import { Link, useHistory } from "react-router-dom";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { Link, useHistory } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import { authenticate, formatEmail } from "../../store";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -24,6 +24,10 @@ const Login_Page_Leaderboard = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPW, setShowPW] = useState(false);
+
+  const joe = useSelector((state) => state.users).find(
+    (user) => user.name === "Joe"
+  );
 
   const inputs = [
     { label: "Email Address", name: "email", marginLeft: "25%", type: "" },
@@ -126,12 +130,14 @@ const Login_Page_Leaderboard = () => {
                     <Link to="/forgot_pw" style={{ textDecoration: "none" }}>
                       <h4>Forgot Password</h4>
                     </Link>
-                    <Link
-                      to="/create_account"
-                      style={{ textDecoration: "none" }}
-                    >
-                      <h4>Create Account</h4>
-                    </Link>
+                    {joe && joe.tourneyStage === 1 && (
+                      <Link
+                        to="/create_account"
+                        style={{ textDecoration: "none" }}
+                      >
+                        <h4>Create Account</h4>
+                      </Link>
+                    )}
                     <Link to="/" style={{ textDecoration: "none" }}>
                       <h4>Cancel</h4>
                     </Link>

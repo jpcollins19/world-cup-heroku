@@ -1,6 +1,6 @@
-import { Link, useHistory } from "react-router-dom";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import { authenticate, formatEmail } from "../../store";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -8,6 +8,7 @@ import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import { JoinLeft } from "@mui/icons-material";
 
 const useStyles = makeStyles((theme) => ({
   textField: {
@@ -24,6 +25,10 @@ const Login_Page = () => {
   const [showPW, setShowPW] = useState(false);
 
   const classes = useStyles();
+
+  const joe = useSelector((state) => state.users).find(
+    (user) => user.name === "Joe"
+  );
 
   const inputs = [
     { label: "Email Address", name: "email", marginLeft: "25%", type: "" },
@@ -120,12 +125,14 @@ const Login_Page = () => {
                     <Link to="/forgot_pw" style={{ textDecoration: "none" }}>
                       <h4>Forgot Password</h4>
                     </Link>
-                    <Link
-                      to="/create_account"
-                      style={{ textDecoration: "none" }}
-                    >
-                      <h4>Create Account</h4>
-                    </Link>
+                    {joe && joe.tourneyStage === 1 && (
+                      <Link
+                        to="/create_account"
+                        style={{ textDecoration: "none" }}
+                      >
+                        <h4>Create Account</h4>
+                      </Link>
+                    )}
                     <Link to="/" style={{ textDecoration: "none" }}>
                       <h4>Cancel</h4>
                     </Link>

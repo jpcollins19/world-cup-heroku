@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { loadUsers } from "../../store";
+import Payout from "./Payout";
 import Leaderboard_Cont from "./Leaderboard_Cont";
 import "./Leaderboard.css";
 
@@ -18,6 +19,7 @@ const Leaderboard_Page = () => {
   return (
     <main className="leaderboard-page">
       <div>
+        <Payout />
         <div className="table-cont">
           {joe && joe.tourneyStage === 1 ? (
             <div>
