@@ -3,21 +3,22 @@ import { paidStatus } from "../../store";
 
 const Name = ({ rankInfo }) => {
   const users = useSelector((state) => state.users);
-  const names = Object.keys(rankInfo && rankInfo);
 
   return (
     <div className="name-column">
       <h2 className="white-text">Name</h2>
-      {names &&
-        names.map((name) => {
-          const paid = paidStatus(users, name);
+      {rankInfo &&
+        rankInfo.map((user, idx) => {
+          const paid = paidStatus(users && users, user.name);
           return (
-            <div key={name}>
+            <div key={idx}>
               <input
                 className={`name-box center bold ${
-                  rankInfo[name].tie && "tie-tie"
+                  user.tieExists ? "tie-tie" : ""
                 } ${!paid && "not-paid"}`}
-                defaultValue={`${name}${!paid ? " - not paid" : ""}`}
+                defaultValue={`${user.name}${!paid ? " - not paid" : ""}${
+                  user.tieExists ? " - same tiebreaker" : ""
+                }`}
               />
             </div>
           );

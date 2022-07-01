@@ -10,7 +10,10 @@ const Leaderboard_Cont = () => {
   );
   const auth = useSelector((state) => state.auth);
   const teams = useSelector((state) => state.teams);
-  const rankInfo = currentScoresObj(users, teams, 152);
+
+  let rankInfo = currentScoresObj(users, teams, 152);
+
+  rankInfo = rankInfo && rankInfo.sort((a, b) => a.rank - b.rank);
 
   return (
     auth.tiebreaker && (

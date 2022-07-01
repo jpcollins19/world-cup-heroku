@@ -1,8 +1,8 @@
-const singleGroupCalc = (partObj, teams, group) => {
-  const partPrediction1 = partObj[`group${group}1`];
-  const partPrediction2 = partObj[`group${group}2`];
-  const partPrediction3 = partObj[`group${group}3`];
-  const partPrediction4 = partObj[`group${group}4`];
+const singleGroupCalc = (userObj, teams, group) => {
+  const userPrediction1 = userObj[`group${group}1`];
+  const userPrediction2 = userObj[`group${group}2`];
+  const userPrediction3 = userObj[`group${group}3`];
+  const userPrediction4 = userObj[`group${group}4`];
 
   return teams
     .filter((team) => team.group === group)
@@ -12,24 +12,24 @@ const singleGroupCalc = (partObj, teams, group) => {
         if (teamObj.groupIsFinished) {
           switch (teamObj.groupFinishingPosition) {
             case 1:
-              teamObj.name === partPrediction1
+              teamObj.name === userPrediction1
                 ? (a.R1 += 3)
-                : teamObj.name === partPrediction2
+                : teamObj.name === userPrediction2
                 ? a.R1++
                 : "";
               break;
             case 2:
-              teamObj.name === partPrediction2
+              teamObj.name === userPrediction2
                 ? (a.R2 += 2)
-                : teamObj.name === partPrediction1
+                : teamObj.name === userPrediction1
                 ? a.R2++
                 : ";";
               break;
             case 3:
-              teamObj.name === partPrediction3 ? (a.R3 += 1) : "";
+              teamObj.name === userPrediction3 ? (a.R3 += 1) : "";
               break;
             case 4:
-              teamObj.name === partPrediction4 ? (a.R4 += 1) : "";
+              teamObj.name === userPrediction4 ? (a.R4 += 1) : "";
               break;
           }
         }
@@ -45,14 +45,14 @@ const singleGroupCalc = (partObj, teams, group) => {
     );
 };
 
-const knockoutRoundCalc = (round, partObj, teams) => {
-  let advancingTeams, partPicks;
+const knockoutRoundCalc = (round, userObj, teams) => {
+  let advancingTeams, userPicks;
 
   switch (round) {
     case "quarters":
       advancingTeams = teams.filter((team) => team.advanceToQ);
 
-      partPicks = Object.entries(partObj).reduce((a, arr) => {
+      userPicks = Object.entries(userObj).reduce((a, arr) => {
         const key = arr[0];
 
         if (
@@ -75,7 +75,7 @@ const knockoutRoundCalc = (round, partObj, teams) => {
     case "semis":
       advancingTeams = teams.filter((team) => team.advanceToS);
 
-      partPicks = Object.entries(partObj).reduce((a, arr) => {
+      userPicks = Object.entries(userObj).reduce((a, arr) => {
         const key = arr[0];
         if (
           key === "knockS1" ||
@@ -92,7 +92,7 @@ const knockoutRoundCalc = (round, partObj, teams) => {
     case "finals":
       advancingTeams = teams.filter((team) => team.advanceToF);
 
-      partPicks = Object.entries(partObj).reduce((a, arr) => {
+      userPicks = Object.entries(userObj).reduce((a, arr) => {
         const key = arr[0];
         if (key === "knockF1" || key === "knockF2") {
           a.push(arr[1]);
@@ -104,7 +104,7 @@ const knockoutRoundCalc = (round, partObj, teams) => {
     case "champ":
       advancingTeams = teams.filter((team) => team.advanceToChamp);
 
-      partPicks = Object.entries(partObj).reduce((a, arr) => {
+      userPicks = Object.entries(userObj).reduce((a, arr) => {
         const key = arr[0];
         if (key === "knockChamp") {
           a.push(arr[1]);
@@ -116,7 +116,7 @@ const knockoutRoundCalc = (round, partObj, teams) => {
   const knockoutObj = { [round]: 0 };
 
   return advancingTeams.reduce((a, team) => {
-    if (partPicks.includes(team.name)) {
+    if (userPicks.includes(team.name)) {
       const points =
         round === "quarters"
           ? 2
@@ -186,14 +186,14 @@ const totalScoreCalc = (
   return points.reduce((a, b) => a + b);
 };
 
-const knockoutPartTeamPush = (part, position) => {
-  return part[`knock${position}`];
+const knockoutPartTeamPush = (user, position) => {
+  return user[`knock${position}`];
 };
 
-const knockoutPartClassPush = (part, teams, position) => {
-  const partPick = part[`knock${position}`];
+const knockoutPartClassPush = (user, teams, position) => {
+  const userPick = knockoutPartTeamPush(user, position);
 
-  const teamAnswer = teams.find((team) => team.name === partPick);
+  const teamAnswer = teams.find((team) => team.name === userPick);
 
   const round = position === "Champ" ? "Champ" : position.split("")[0];
   const number = position === "Champ" ? "Champ" : position.split("")[1] * 1;
@@ -271,164 +271,304 @@ const knockoutPartClassPush = (part, teams, position) => {
       throw "error";
   }
 
-  if (partPick === advancingTeam) {
+  if (userPick === advancingTeam) {
     return "correct";
   } else {
     return teamAnswer && teamAnswer.outOfTourney ? "wrong" : "";
   }
 };
 
-const currentScoresObj = (parts, teams, actualGoalsScored = null) => {
-  const scores = [];
+const createCountObj = (arr, key) => {
+  return arr.reduce((a, obj) => {
+    a[obj[key]] ? a[obj[key]]++ : (a[obj[key]] = 1);
+    return a;
+  }, {});
+};
 
-  return parts
-    .reduce((a, part) => {
+const audit = (arr, actualGoalsScored) => {
+  let rank = arr[0].rank;
+
+  const tiebreakers = createCountObj(arr, "tiebreaker");
+
+  const audit = arr
+    .map((userObj) => {
+      userObj.numOfTimes = tiebreakers[userObj.tiebreaker];
+      userObj.tiebreakerStatus =
+        userObj.tiebreaker === actualGoalsScored
+          ? "exact"
+          : userObj.tiebreaker < actualGoalsScored
+          ? "notOver"
+          : "over";
+
+      return userObj;
+    })
+    .map((userObj) => {
+      if (userObj.numOfTimes > 1) userObj.tieExists = true;
+
+      return userObj;
+    })
+    .sort((a, b) => {
+      let fa = a.tiebreakerStatus,
+        fb = b.tiebreakerStatus;
+
+      return fa < fb ? -1 : fa > fb ? 1 : 0;
+    });
+
+  const auditObj = {
+    exact: [],
+    notOver: [],
+    over: [],
+  };
+
+  audit.forEach((user) => auditObj[user.tiebreakerStatus].push(user));
+
+  let answer = [];
+
+  Object.keys(auditObj).forEach((key) => {
+    const keySorted = auditObj[key].sort((a, b) =>
+      key === "over" ? a.tiebreaker - b.tiebreaker : b.tiebreaker - a.tiebreaker
+    );
+
+    answer = [...answer, ...keySorted];
+  });
+
+  return answer.map((userObj) => {
+    userObj.rank = rank;
+    rank++;
+
+    return userObj;
+  });
+};
+
+const currentScoresObj = (users, teams, actualGoalsScored = null) => {
+  let rank = 1;
+
+  const firstAudit = users
+    .reduce((a, user) => {
       const total = totalScoreCalc(
-        singleGroupCalc(part, teams, "A"),
-        singleGroupCalc(part, teams, "B"),
-        singleGroupCalc(part, teams, "C"),
-        singleGroupCalc(part, teams, "D"),
-        singleGroupCalc(part, teams, "E"),
-        singleGroupCalc(part, teams, "F"),
-        singleGroupCalc(part, teams, "G"),
-        singleGroupCalc(part, teams, "H"),
-        knockoutRoundCalc("quarters", part, teams),
-        knockoutRoundCalc("semis", part, teams),
-        knockoutRoundCalc("finals", part, teams),
-        knockoutRoundCalc("champ", part, teams)
+        singleGroupCalc(user, teams, "A"),
+        singleGroupCalc(user, teams, "B"),
+        singleGroupCalc(user, teams, "C"),
+        singleGroupCalc(user, teams, "D"),
+        singleGroupCalc(user, teams, "E"),
+        singleGroupCalc(user, teams, "F"),
+        singleGroupCalc(user, teams, "G"),
+        singleGroupCalc(user, teams, "H"),
+        knockoutRoundCalc("quarters", user, teams),
+        knockoutRoundCalc("semis", user, teams),
+        knockoutRoundCalc("finals", user, teams),
+        knockoutRoundCalc("champ", user, teams)
       );
 
-      let partObj = {};
-      partObj[part.name] = total;
-      partObj.tiebreaker = part.tiebreaker;
+      const userObj = {
+        name: user.name,
+        tiebreaker: user.tiebreaker,
+        total,
+        tieExists: false,
+      };
 
-      a.push(partObj);
+      a.push(userObj);
 
       return a;
     }, [])
-    .sort((a, b) => Object.values(b)[0] - Object.values(a)[0])
-    .reduce((a, partObj) => {
-      const name = Object.keys(partObj)[0];
-      const tiebreaker = Object.values(partObj)[1];
-      const score = Object.values(partObj)[0];
+    .sort((a, b) => b.total - a.total)
+    .map((user) => {
+      user.rank = rank;
+      rank++;
+      return user;
+    });
 
-      if (scores.includes(score)) {
-        const previousPart = a.pop();
-        const previousPartName = Object.keys(previousPart)[0];
-        const previousPartNameTiebreaker = Object.values(previousPart)[1];
+  let readyToRun = false;
 
-        if (
-          //throw error
-          tiebreaker === previousPartNameTiebreaker
-        ) {
-          throw "Error";
-        } else if (
-          //both are over - scenario 7 & 8
-          tiebreaker > actualGoalsScored &&
-          previousPartNameTiebreaker > actualGoalsScored
-        ) {
-          if (tiebreaker > previousPartNameTiebreaker) {
-            a.push(previousPart);
+  firstAudit.forEach((user) => {
+    if (user.total !== 0) readyToRun = true;
+  });
 
-            partObj = {};
-            partObj[name] = score;
-            partObj.tiebreaker = tiebreaker;
-            a.push(partObj);
-          } else {
-            partObj = {};
-            partObj[name] = score;
-            partObj.tiebreaker = tiebreaker;
-            a.push(partObj);
+  if (readyToRun) {
+    let dupeScores = [];
+    let nonDupeScores = [];
+    let newDupeScores = [];
 
-            a.push(previousPart);
-          }
-        } else if (
-          //both are under - scenario 9 & 10
-          tiebreaker < actualGoalsScored &&
-          previousPartNameTiebreaker < actualGoalsScored
-        ) {
-          if (tiebreaker > previousPartNameTiebreaker) {
-            partObj = {};
-            partObj[name] = score;
-            partObj.tiebreaker = tiebreaker;
-            a.push(partObj);
+    const scores = createCountObj(firstAudit, "total");
 
-            a.push(previousPart);
-          } else {
-            a.push(previousPart);
+    firstAudit.forEach((user) => {
+      scores[user.total] === 1
+        ? nonDupeScores.push(user)
+        : dupeScores.push(user);
+    });
 
-            partObj = {};
-            partObj[name] = score;
-            partObj.tiebreaker = tiebreaker;
-            a.push(partObj);
-          }
-        } else if (
-          //scenario 4 & 6
-          tiebreaker === actualGoalsScored &&
-          previousPartNameTiebreaker !== actualGoalsScored
-        ) {
-          partObj = {};
-          partObj[name] = score;
-          partObj.tiebreaker = tiebreaker;
-          a.push(partObj);
-
-          a.push(previousPart);
-        } else if (
-          //scenario 3 & 5
-          tiebreaker !== actualGoalsScored &&
-          previousPartNameTiebreaker === actualGoalsScored
-        ) {
-          a.push(previousPart);
-
-          partObj = {};
-          partObj[name] = score;
-          partObj.tiebreaker = tiebreaker;
-          a.push(partObj);
-        } else if (
-          //scenario 1
-          tiebreaker > actualGoalsScored &&
-          previousPartNameTiebreaker < actualGoalsScored
-        ) {
-          a.push(previousPart);
-
-          partObj = {};
-          partObj[name] = score;
-          partObj.tiebreaker = tiebreaker;
-          a.push(partObj);
-        } else if (
-          //scenario 2
-          tiebreaker < actualGoalsScored &&
-          previousPartNameTiebreaker > actualGoalsScored
-        ) {
-          partObj = {};
-          partObj[name] = score;
-          partObj.tiebreaker = tiebreaker;
-          a.push(partObj);
-
-          a.push(previousPart);
-        }
-
+    if (dupeScores.length) {
+      const scoreObj = dupeScores.reduce((a, user) => {
+        a[user.total] ? a[user.total].push(user) : (a[user.total] = [user]);
         return a;
-      } else {
-        partObj = {};
+      }, {});
 
-        partObj[name] = score;
-        partObj.tiebreaker = tiebreaker;
+      Object.keys(scoreObj).forEach((key) => {
+        const newRanking = audit(scoreObj[key], actualGoalsScored);
 
-        scores.push(score);
-        a.push(partObj);
-        return a;
-      }
-    }, [])
-    .reduce((a, partObj) => {
-      const name = Object.keys(partObj)[0];
-      const score = Object.values(partObj)[0];
+        newDupeScores = [...newDupeScores, ...newRanking];
+      });
 
-      a[name] = score;
-      scores.push(score);
-      return a;
-    }, {});
+      return [...newDupeScores, ...nonDupeScores];
+    }
+
+    return nonDupeScores;
+  }
+
+  // return firstAudit;
 };
+
+// const currentScoresObj = (parts, teams, actualGoalsScored = null) => {
+//   const scores = [];
+
+//   return parts
+//     .reduce((a, part) => {
+//       const total = totalScoreCalc(
+//         singleGroupCalc(part, teams, "A"),
+//         singleGroupCalc(part, teams, "B"),
+//         singleGroupCalc(part, teams, "C"),
+//         singleGroupCalc(part, teams, "D"),
+//         singleGroupCalc(part, teams, "E"),
+//         singleGroupCalc(part, teams, "F"),
+//         singleGroupCalc(part, teams, "G"),
+//         singleGroupCalc(part, teams, "H"),
+//         knockoutRoundCalc("quarters", part, teams),
+//         knockoutRoundCalc("semis", part, teams),
+//         knockoutRoundCalc("finals", part, teams),
+//         knockoutRoundCalc("champ", part, teams)
+//       );
+
+//       let partObj = {};
+//       partObj[part.name] = total;
+//       partObj.tiebreaker = part.tiebreaker;
+
+//       a.push(partObj);
+
+//       return a;
+//     }, [])
+//     .sort((a, b) => Object.values(b)[0] - Object.values(a)[0])
+//     .reduce((a, partObj) => {
+//       const name = Object.keys(partObj)[0];
+//       const tiebreaker = Object.values(partObj)[1];
+//       const score = Object.values(partObj)[0];
+
+//       if (scores.includes(score)) {
+//         const previousPart = a.pop();
+//         const previousPartName = Object.keys(previousPart)[0];
+//         const previousPartNameTiebreaker = Object.values(previousPart)[1];
+
+//         if (
+//           //throw error
+//           tiebreaker === previousPartNameTiebreaker
+//         ) {
+//           throw "Error";
+//         } else if (
+//           //both are over - scenario 7 & 8
+//           tiebreaker > actualGoalsScored &&
+//           previousPartNameTiebreaker > actualGoalsScored
+//         ) {
+//           if (tiebreaker > previousPartNameTiebreaker) {
+//             a.push(previousPart);
+
+//             partObj = {};
+//             partObj[name] = score;
+//             partObj.tiebreaker = tiebreaker;
+//             a.push(partObj);
+//           } else {
+//             partObj = {};
+//             partObj[name] = score;
+//             partObj.tiebreaker = tiebreaker;
+//             a.push(partObj);
+
+//             a.push(previousPart);
+//           }
+//         } else if (
+//           //both are under - scenario 9 & 10
+//           tiebreaker < actualGoalsScored &&
+//           previousPartNameTiebreaker < actualGoalsScored
+//         ) {
+//           if (tiebreaker > previousPartNameTiebreaker) {
+//             partObj = {};
+//             partObj[name] = score;
+//             partObj.tiebreaker = tiebreaker;
+//             a.push(partObj);
+
+//             a.push(previousPart);
+//           } else {
+//             a.push(previousPart);
+
+//             partObj = {};
+//             partObj[name] = score;
+//             partObj.tiebreaker = tiebreaker;
+//             a.push(partObj);
+//           }
+//         } else if (
+//           //scenario 4 & 6
+//           tiebreaker === actualGoalsScored &&
+//           previousPartNameTiebreaker !== actualGoalsScored
+//         ) {
+//           partObj = {};
+//           partObj[name] = score;
+//           partObj.tiebreaker = tiebreaker;
+//           a.push(partObj);
+
+//           a.push(previousPart);
+//         } else if (
+//           //scenario 3 & 5
+//           tiebreaker !== actualGoalsScored &&
+//           previousPartNameTiebreaker === actualGoalsScored
+//         ) {
+//           a.push(previousPart);
+
+//           partObj = {};
+//           partObj[name] = score;
+//           partObj.tiebreaker = tiebreaker;
+//           a.push(partObj);
+//         } else if (
+//           //scenario 1
+//           tiebreaker > actualGoalsScored &&
+//           previousPartNameTiebreaker < actualGoalsScored
+//         ) {
+//           a.push(previousPart);
+
+//           partObj = {};
+//           partObj[name] = score;
+//           partObj.tiebreaker = tiebreaker;
+//           a.push(partObj);
+//         } else if (
+//           //scenario 2
+//           tiebreaker < actualGoalsScored &&
+//           previousPartNameTiebreaker > actualGoalsScored
+//         ) {
+//           partObj = {};
+//           partObj[name] = score;
+//           partObj.tiebreaker = tiebreaker;
+//           a.push(partObj);
+
+//           a.push(previousPart);
+//         }
+
+//         return a;
+//       } else {
+//         partObj = {};
+
+//         partObj[name] = score;
+//         partObj.tiebreaker = tiebreaker;
+
+//         scores.push(score);
+//         a.push(partObj);
+//         return a;
+//       }
+//     }, [])
+//     .reduce((a, partObj) => {
+//       const name = Object.keys(partObj)[0];
+//       const score = Object.values(partObj)[0];
+
+//       a[name] = score;
+//       scores.push(score);
+//       return a;
+//     }, {});
+// };
 
 const knockoutR16Push = (teams, finishingPosition) => {
   return teams.find((team) => team.knockoutPosition === finishingPosition).name;
@@ -510,6 +650,18 @@ const getUserNames = (arr) => {
   });
 };
 
+const addFakeUser = (obj, name) => {
+  const keys = Object.keys(obj);
+
+  const fakeUser = {};
+
+  keys.forEach((key) => {
+    key === "name" ? (fakeUser.name = name) : (fakeUser[key] = obj[key]);
+  });
+
+  return fakeUser;
+};
+
 module.exports = {
   singleGroupCalc,
   totalScoreCalc,
@@ -528,4 +680,5 @@ module.exports = {
   findEntry,
   formatEmail,
   getUserNames,
+  addFakeUser,
 };

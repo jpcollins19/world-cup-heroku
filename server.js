@@ -1,8 +1,11 @@
-//write test specs to determine scenario #11 in excel doc "java testing-audit info" - "tiebreaker testing" tab
+//need to figure out how to get the paid satus to update right away
+//^^ add a paidStatus to the leaderboard calc func?
 
 //add website loading feature for when someone signs in - see masters app - maybe incorporate spinners?
 
 ////roll through each file and remove any commented out info
+//everything in server
+//everything in store
 //admin
 //edit-name
 //group-details
