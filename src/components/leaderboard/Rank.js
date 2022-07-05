@@ -1,16 +1,10 @@
-import { useSelector } from "react-redux";
-
-const Rank = () => {
-  const users = useSelector((state) => state.users).filter(
-    (user) => user.tiebreaker
-  );
-
+const Rank = ({ rankInfo }) => {
   return (
     <div className="rank-column">
       <h2 className="white-text">Rank</h2>
-      {users &&
-        users.map((user, idx) => (
-          <div key={user.name}>
+      {rankInfo &&
+        rankInfo.map((user, idx) => (
+          <div key={idx}>
             <input className="small-box center bold" defaultValue={idx + 1} />
           </div>
         ))}

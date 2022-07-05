@@ -141,7 +141,7 @@ const users = [
     groupH3: "Portugal",
     groupH4: "S. Korea",
 
-    tiebreaker: 152,
+    tiebreaker: 140,
   },
   {
     email: "e@gmail.com",

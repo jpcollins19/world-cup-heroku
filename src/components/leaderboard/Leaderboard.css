@@ -1,3 +1,15 @@
+.loading-cont {
+  width: 100vw;
+  max-height: 84vh;
+  min-height: 84vh;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: grey;
+}
+
 .leaderboard-page {
   background-image: url("https://i.dailymail.co.uk/i/newpix/2018/07/22/14/4E7C3EE900000578-0-image-a-28_1532264549141.jpg");
   width: 100vw;

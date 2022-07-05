@@ -3,6 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { authenticate, formatEmail } from "../../store";
 import { makeStyles } from "@material-ui/core/styles";
+import { SpinnerCircularFixed } from "spinners-react";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
@@ -25,6 +26,8 @@ const Login_Page_Leaderboard = () => {
   const [password, setPassword] = useState("");
   const [showPW, setShowPW] = useState(false);
 
+  const [loading, setLoading] = useState(true);
+
   const joe = useSelector((state) => state.users).find(
     (user) => user.name === "Joe"
   );
@@ -45,6 +48,10 @@ const Login_Page_Leaderboard = () => {
     setShowPW(!showPW);
   };
 
+  setTimeout(() => {
+    setLoading(false);
+  }, 1000);
+
   const onChange = (ev) => {
     ev.target.name === "email"
       ? setEmail(formatEmail(ev.target.value))
@@ -62,7 +69,17 @@ const Login_Page_Leaderboard = () => {
     }
   };
 
-  return (
+  return loading ? (
+    <div className="loading-cont">
+      <SpinnerCircularFixed
+        size={100}
+        thickness={100}
+        speed={147}
+        color="white"
+        secondaryColor="black"
+      />
+    </div>
+  ) : (
     <main className="login-page">
       <div className="main-cont-login">
         <div className="main-cont1-login">

@@ -365,6 +365,7 @@ const currentScoresObj = (users, teams, actualGoalsScored = null) => {
         tiebreaker: user.tiebreaker,
         total,
         tieExists: false,
+        paid: user.paid,
       };
 
       a.push(userObj);
@@ -583,10 +584,6 @@ const teamRankSort = (teams) => {
   }, {});
 };
 
-const paidStatus = (users, name) => {
-  return users.find((user) => user.name === name).paid;
-};
-
 const dupeValInArr = (arr) => {
   return arr.length === new Set(arr).size;
 };
@@ -671,7 +668,6 @@ module.exports = {
   currentScoresObj,
   knockoutR16Push,
   teamRankSort,
-  paidStatus,
   dupeValInArr,
   urlWord,
   findTeam,

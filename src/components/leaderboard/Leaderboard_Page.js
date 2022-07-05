@@ -1,22 +1,32 @@
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { loadUsers } from "../../store";
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import { SpinnerCircularFixed } from "spinners-react";
 import Payout from "./Payout";
 import Leaderboard_Cont from "./Leaderboard_Cont";
 import "./Leaderboard.css";
 
 const Leaderboard_Page = () => {
-  const dispatch = useDispatch();
+  const [loading, setLoading] = useState(true);
 
   const joe = useSelector((state) => state.users).find(
     (user) => user.email === "joe@gmail.com"
   );
 
-  useEffect(() => {
-    dispatch(loadUsers());
-  }, []);
+  setTimeout(() => {
+    setLoading(false);
+  }, 1000);
 
-  return (
+  return loading ? (
+    <div className="loading-cont">
+      <SpinnerCircularFixed
+        size={100}
+        thickness={100}
+        speed={147}
+        color="white"
+        secondaryColor="black"
+      />
+    </div>
+  ) : (
     <main className="leaderboard-page">
       <div>
         <Payout />
