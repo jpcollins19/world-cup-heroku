@@ -5,7 +5,6 @@ const EditText = ({ onChange, lastUpdatedAnswer }) => {
         defaultValue={lastUpdatedAnswer && lastUpdatedAnswer}
         onChange={(ev) => onChange(ev.target.value)}
       />
-
       <button
         type="submit"
         id="submit-last-updated"

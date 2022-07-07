@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const LOAD_UPDATED = "LOAD_UPDATED";
-// const CHANGE_UPDATED = "CHANGE_UPDATED";
 
 const _loadUpdated = (update) => {
   return { type: LOAD_UPDATED, update };

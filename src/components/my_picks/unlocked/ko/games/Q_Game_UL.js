@@ -80,7 +80,6 @@ const Q_Game_UL = ({
   switch (gameNum) {
     case 1:
       gameClass = "Q1UL";
-      // user.knockQ1 && setTeam(setNextGameVar, user.knockQ1);
       break;
     case 5:
       gameClass = "Q1UL";

@@ -70,7 +70,6 @@
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   min-width: 31rem;
-  /* border: solid 4px purple; */
 }
 
 .my-picks-header-name {
@@ -103,7 +102,6 @@
   flex: 0.4;
   justify-content: center;
   align-items: center;
-  /* border: solid 4px purple; */
 }
 
 .button-cont-picks > a > button {
@@ -124,11 +122,9 @@
   padding: 0;
   margin: 0;
   justify-content: center;
-  /* border: solid 4px red; */
 }
 
 .box {
-  /* padding: 1rem; */
   margin-left: 0.5rem;
 }
 
@@ -137,14 +133,12 @@
   width: 83%;
   flex-direction: column;
   padding: 0;
-  /* border: solid 4px green; */
 }
 
 .right {
   width: 17%;
   display: flex;
   justify-content: center;
-  /* border: solid 4px purple; */
 }
 
 .predictions-cont {
@@ -152,19 +146,16 @@
   width: 100%;
   flex-wrap: wrap;
   justify-content: space-around;
-  /* border: solid 4px orange; */
 }
 
 .single-group-cont-picks-pre-ko {
   min-width: 15rem;
   margin: 1% 4% 2% 4%;
-  /* border: solid 4px dodgerblue; */
 }
 
 .single-group-cont-picks {
   width: 23.5rem;
   margin: 1% 0% 2% 0%;
-  /* border: solid 4px dodgerblue; */
 }
 
 .single-group-cont-picks-pre-ko > h4 {
@@ -277,7 +268,6 @@
   min-width: 17rem;
   max-width: 17rem;
   margin: 0;
-  /* border: solid 4px red; */
 }
 
 .total-points-cont > div {
@@ -288,7 +278,6 @@
   list-style: none;
   overflow: auto;
   min-width: 10rem;
-  /* border: solid 4px blue; */
 }
 
 .total-points-cont > h3 {
@@ -363,7 +352,6 @@
   min-width: 9rem;
   max-width: 9rem;
   text-align: center;
-  /* border: solid 4px dodgerblue; */
 }
 
 .knockout-cont > div > div > h2 {
@@ -388,7 +376,6 @@
   font-size: 17px;
   min-width: 9rem;
   max-width: 9rem;
-  /* border: solid 4px dodgerblue; */
 }
 
 .knockout-cont > div > .champ > div > div {

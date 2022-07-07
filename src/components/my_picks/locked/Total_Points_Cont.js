@@ -1,16 +1,26 @@
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import {
   singleGroupCalc,
   knockoutRoundCalc,
   totalScoreCalc,
+  loadUsers,
+  loadTeams,
 } from "../../../store";
 
 const Total_Points_Cont = ({ selectedUser }) => {
+  const dispatch = useDispatch();
+
   const { pathname } = useLocation();
 
   const user = useSelector((state) => state.auth);
   const teams = useSelector((state) => state.teams);
+
+  useEffect(() => {
+    dispatch(loadUsers());
+    dispatch(loadTeams());
+  }, []);
 
   const groupTotal = totalScoreCalc(
     singleGroupCalc(

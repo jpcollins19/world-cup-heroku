@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const db = require("../db.js");
 require("dotenv").config();
 
-const { STRING, UUID, UUIDV4, BOOLEAN, INTEGER } = Sequelize;
+const { STRING, UUID, UUIDV4, BOOLEAN, INTEGER, DATE, NOW } = Sequelize;
 
 const SALT_ROUNDS = 5;
 
@@ -33,6 +33,14 @@ const User = db.define("users", {
     validate: {
       notEmpty: true,
     },
+  },
+  tempPW: {
+    type: UUID,
+    defaultValue: UUIDV4,
+  },
+  pwResetURL: {
+    type: UUID,
+    defaultValue: UUIDV4,
   },
   admin: {
     type: BOOLEAN,

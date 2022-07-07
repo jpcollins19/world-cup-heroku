@@ -29,7 +29,7 @@ export const addUser = (user, history) => {
 export const updateUser = (user, history) => {
   return async (dispatch) => {
     user = (await axios.put(`/api/users/${user.id}`, user)).data;
-    history.push("/leaderboard");
+    history !== "dont update" && history.push("/my_picks");
   };
 };
 

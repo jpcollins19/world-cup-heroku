@@ -105,7 +105,7 @@
   text-align: center;
   text-shadow: 2px 2px black;
   color: white;
-  margin-top: 3%;
+  margin-top: 4%;
 }
 
 .rank-column {
@@ -164,4 +164,23 @@
 .score-column > div {
   flex: 0.5;
   padding-left: 14%;
+}
+
+.edit-total-goals > button {
+  cursor: pointer;
+}
+
+.edit-total-goals > div {
+  display: flex;
+  align-items: center;
+}
+
+.edit-total-goals > div > input {
+  text-align: center;
+}
+
+.edit-total-goals > div > button {
+  margin-top: 1%;
+  width: 5rem;
+  cursor: pointer;
 }

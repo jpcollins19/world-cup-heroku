@@ -1,28 +1,13 @@
-////roll through each file and remove any commented out info
-//everything in server
-//everything in store
-//admin
-//edit-name
-//group-details
-//header
-//leaderboard
-//login
-//my-picks
-//pool-picks
-//rules
+//figure out a forgot pw route
 
-/////local state
-//test/apply all error handling
-//roll through the entire tourney lifecycle to make sure all is working as expected
+//roll through forgot pw and store and api pages to delete any unecessary code
 
 ////send to heroku
-
-//figure out a forgot pw route
 
 /////heroku state
 //test/apply all error handling
 //roll through the entire tourney lifecycle to make sure all is working as expected
-//test forgot pw route too
+//test forgot pw route
 
 ////bugz
 //my-picks-unlocked - stage 1 - when you scroll down on the page, the team dropdown options for each group have a higher zIndex than the navbar text
@@ -46,6 +31,7 @@ app.use(express.json());
 
 app.use("/dist", express.static(path.join(__dirname, "dist")));
 
+app.use("/", require("./server/api/sendForgotPW"));
 app.use("/", require("./server/api/updated"));
 app.use("/", require("./server/api/users"));
 app.use("/", require("./server/api/auth"));

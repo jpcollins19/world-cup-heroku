@@ -6,6 +6,7 @@ const Input_Cont = ({
   setTourneyStage,
 }) => {
   const setFunc = eval(`set${val}`);
+
   const value = val
     .split("")
     .map((letter, idx) => {

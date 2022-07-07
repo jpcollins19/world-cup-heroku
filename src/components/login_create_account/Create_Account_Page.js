@@ -117,7 +117,6 @@ const Create_Account_Page = () => {
       dispatch(addUser({ email, name, password }, history));
     } catch (err) {
       console.log("nugget", err);
-      // setError(err);
     }
   };
 

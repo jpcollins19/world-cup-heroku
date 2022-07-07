@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { me } from "../../../store";
+import { me, loadUsers } from "../../../store";
 import Point_System_Cont from "./Point_System_Cont";
 import Single_Group_Cont_Locked from "./group/Single_Group_Cont_Locked";
 import Total_Points_Cont from "./Total_Points_Cont";
@@ -13,6 +13,7 @@ const My_Picks_Locked_Page = () => {
 
   useEffect(() => {
     dispatch(me());
+    dispatch(loadUsers());
   }, []);
 
   const user = useSelector((state) => state.auth);
@@ -21,9 +22,7 @@ const My_Picks_Locked_Page = () => {
     (user) => user.email === "joe@gmail.com"
   );
 
-  if (!joe) {
-    return null;
-  }
+  const auth = useSelector((state) => state.auth);
 
   const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
 
@@ -31,21 +30,23 @@ const My_Picks_Locked_Page = () => {
     <main className="my-picks-page white text">
       <div className="my-picks-container">
         <div className="my-picks-header">
-          {joe.tourneyStage === 3 && user.tiebreaker ? (
+          {joe && joe.tourneyStage === 3 && user && user.tiebreaker ? (
             <Point_System_Cont />
           ) : (
             <div className="point-system-table-cont"></div>
           )}
 
           <div className="my-picks-header-name">
-            <h1 className="white-text">{user.name}</h1>
+            <h1 className="white-text">{user && user.name}</h1>
 
-            <Link to="/edit_name" style={{ textDecoration: "none" }}>
-              <button>Edit Name</button>
-            </Link>
+            {auth && auth.tiebreaker && (
+              <Link to="/edit_name" style={{ textDecoration: "none" }}>
+                <button>Edit Name</button>
+              </Link>
+            )}
           </div>
           <div className="button-cont-picks">
-            {joe.tourneyStage === 1 && (
+            {joe && joe.tourneyStage === 1 && (
               <Link
                 to="/my_picks_edit_group"
                 style={{ textDecoration: "none" }}
@@ -53,14 +54,14 @@ const My_Picks_Locked_Page = () => {
                 <button>Select / Adjust Group Picks </button>
               </Link>
             )}
-            {joe.tourneyStage === 4 && user.tiebreaker && (
+            {joe && joe.tourneyStage === 4 && user && user.tiebreaker && (
               <Link to="/my_picks_edit_ko" style={{ textDecoration: "none" }}>
                 <button> Select / Adjust Knockout Picks </button>
               </Link>
             )}
           </div>
         </div>
-        {joe.tourneyStage >= 4 && user.tiebreaker && (
+        {joe && joe.tourneyStage >= 4 && user && user.tiebreaker && (
           <div className="top box">
             <div className="box left">
               <div className="predictions-cont">
@@ -84,7 +85,7 @@ const My_Picks_Locked_Page = () => {
               </div>
             </div>
             <div className="box right">
-              {joe.tourneyStage <= 3 && <Total_Points_Cont />}
+              {joe && joe.tourneyStage <= 3 && <Total_Points_Cont />}
             </div>
           </div>
         )}

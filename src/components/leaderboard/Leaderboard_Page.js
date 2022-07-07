@@ -12,6 +12,8 @@ const Leaderboard_Page = () => {
     (user) => user.email === "joe@gmail.com"
   );
 
+  const auth = useSelector((state) => state.auth);
+
   setTimeout(() => {
     setLoading(false);
   }, 1000);
@@ -29,7 +31,7 @@ const Leaderboard_Page = () => {
   ) : (
     <main className="leaderboard-page">
       <div>
-        <Payout />
+        {auth && auth.tiebreaker && <Payout />}
         <div className="table-cont">
           {joe && joe.tourneyStage === 1 ? (
             <div>

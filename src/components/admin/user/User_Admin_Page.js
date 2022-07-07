@@ -173,7 +173,6 @@ const User_Admin_Page = () => {
           break;
         case "champ":
           setChamp(selectedUser.knockChamp);
-
           break;
         default:
           break;
@@ -410,7 +409,6 @@ const User_Admin_Page = () => {
                     setTourneyStage={setTourneyStage}
                   />
                 </div>
-
                 <div>
                   <div className="paid-cont">Paid:</div>
                   <input
@@ -422,13 +420,13 @@ const User_Admin_Page = () => {
                   ></input>
                 </div>
               </div>
-
               <button className="admin-button">Submit Picks</button>
             </div>
           ) : (
             ""
           )}
         </div>
+
         {joe &&
         joe.value.tourneyStage >= 4 &&
         Object.keys(selectedUser).length ? (

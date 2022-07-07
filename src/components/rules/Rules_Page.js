@@ -1,8 +1,6 @@
 import "./Rules.css";
 
 const Rules_Page = () => {
-  const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
-
   return (
     <main className="rules-page">
       <div>

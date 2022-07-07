@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { updateUser, dupeValInArr } from "../../../store";
 import Alert from "@mui/material/Alert";

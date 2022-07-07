@@ -8,7 +8,6 @@ import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import { JoinLeft } from "@mui/icons-material";
 
 const useStyles = makeStyles((theme) => ({
   textField: {

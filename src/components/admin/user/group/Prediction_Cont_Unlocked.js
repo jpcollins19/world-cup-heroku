@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import Select from "react-select";
 import { findTeam } from "../../../../store";
+import Select from "react-select";
 
 const Prediction_Cont_Unlocked = ({ group, onChange, selectedUser }) => {
   const teams = useSelector((state) => state.teams)

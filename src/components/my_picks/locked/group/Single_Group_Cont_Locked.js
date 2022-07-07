@@ -11,14 +11,14 @@ const Single_Group_Cont_Locked = ({ group, selectedUser }) => {
     (user) => user.email === "joe@gmail.com"
   );
 
-  if (!joe) {
-    return null;
-  }
+  // if (!joe) {
+  //   return null;
+  // }
 
   return user.groupA1 ? (
     <div
       className={
-        joe.tourneyStage <= 2
+        joe && joe.tourneyStage <= 2
           ? "single-group-cont-picks-pre-ko"
           : "single-group-cont-picks"
       }
@@ -27,8 +27,8 @@ const Single_Group_Cont_Locked = ({ group, selectedUser }) => {
       <div>
         <Rank_Cont_Locked />
         <Prediction_Cont_Locked group={group} selectedUser={selectedUser} />
-        {joe.tourneyStage >= 3 && <Outcome_Cont_Locked group={group} />}
-        {joe.tourneyStage >= 3 && (
+        {joe && joe.tourneyStage >= 3 && <Outcome_Cont_Locked group={group} />}
+        {joe && joe.tourneyStage >= 3 && (
           <Points_Cont_Locked group={group} selectedUser={selectedUser} />
         )}
       </div>

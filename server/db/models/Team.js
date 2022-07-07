@@ -58,11 +58,6 @@ const Team = db.define("teams", {
     defaultValue: 0,
   },
 
-  // tieExists: {
-  //   type: BOOLEAN,
-  //   defaultValue: false,
-  // },
-
   groupIsFinished: {
     type: BOOLEAN,
     defaultValue: false,

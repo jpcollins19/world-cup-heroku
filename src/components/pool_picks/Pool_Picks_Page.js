@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { formatSelectedUser, loadUsers } from "../../store";
 import Point_System_Cont from "../my_picks/locked/Point_System_Cont";
 import Single_Group_Cont from "../my_picks/locked/group/Single_Group_Cont_Locked";
 import Total_Points_Cont from "../my_picks/locked/Total_Points_Cont";
 import Knockout_Cont from "../my_picks/locked/ko/Knockout_Cont_Locked";
 import Select from "react-select";
-import { formatSelectedUser, loadUsers } from "../../store";
 import "./Pool_Picks.css";
 
 const Pool_Picks_Page = () => {

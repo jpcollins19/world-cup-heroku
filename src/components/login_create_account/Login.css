@@ -5,6 +5,12 @@
   background-size: cover;
 }
 
+.forgot-pw-page {
+  width: 100vw;
+  height: 84vh;
+  padding-top: 10%;
+}
+
 .login-page {
   padding-top: 5%;
   width: 100vw;
@@ -31,7 +37,23 @@
   border-radius: 1rem;
   padding: 0.5rem;
   background: black;
-  height: 31rem;
+  height: 33rem;
+  width: 30rem;
+}
+
+.main-cont-forgot-pw {
+  border-radius: 1rem;
+  padding: 0.5rem;
+  border: solid 2px black;
+  height: 22rem;
+  width: 30rem;
+}
+
+.main-cont-reset-pw {
+  border-radius: 1rem;
+  padding: 0.5rem;
+  border: solid 2px black;
+  height: 32rem;
   width: 30rem;
 }
 
@@ -46,7 +68,7 @@
 .main-cont1-login {
   border-radius: 1rem;
   padding: 1rem;
-  height: 30rem;
+  height: 32rem;
   background: linear-gradient(
     to right,
     blue 0%,
@@ -114,6 +136,14 @@
   justify-content: center;
 }
 
+.forgot-pw-button-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+  flex-direction: column;
+}
+
 .button-cont > button {
   width: 12rem;
   height: 2.5rem;
@@ -123,53 +153,51 @@
   padding: 0.3rem 0rem 0.3rem 0rem;
 }
 
-/*
-
-.button-cont > button {
-  --button_radius: 0.75em;
-  --button_color: #e8e8e8;
-  --button_outline_color: #000000;
-  font-size: 17px;
-  font-weight: bold;
-  border: none;
-  border-radius: var(--button_radius);
-  background: var(--button_outline_color);
-  width: 10rem;
-} */
-
-/* .button_top {
-  display: block;
-  box-sizing: border-box;
-  border: 2px solid var(--button_outline_color);
-  border-radius: var(--button_radius);
-  padding: 0.75em;
-  background: var(--button_color);
-  color: var(--button_outline_color);
-  transform: translateY(-0.2em);
-  transition: transform 0.1s ease;
+.forgot-pw-button-cont > button {
+  width: 12rem;
+  height: 2.5rem;
   cursor: pointer;
-} */
-
-/* .button-cont > button:hover .button_top {
-  transform: translateY(-0.33em);
+  font-size: 20px;
+  border-radius: 0.3rem;
+  padding: 0.3rem 0rem 0.3rem 0rem;
 }
 
-.button-cont > button:active .button_top {
-  transform: translateY(0);
-} */
-
 .forgot-pw-cont {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   padding: 1rem 1rem 0.5rem 1rem;
 }
 
 .forgot-pw-cont > a > h4 {
   margin: 0.5rem;
+  max-width: 10rem;
+}
+
+.email-instructions {
+  padding-top: 5%;
+}
+
+.email-instructions > ul > li {
+  padding-top: 2%;
+}
+
+.email-instructions > ul > li > a {
+  color: white;
 }
 
 .click-to-sign-in {
   margin-top: 40%;
 }
 
+.click-to-sign-in-f {
+  margin-top: 20%;
+}
+
 .click-to-sign-in > a {
+  color: white;
+}
+
+.click-to-sign-in-f > a {
   color: white;
 }

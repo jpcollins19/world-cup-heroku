@@ -34,6 +34,12 @@ export const authenticate = (email, password) => async (dispatch) => {
   }
 };
 
+export const sendForgotPW = (message) => {
+  return async (dispatch) => {
+    const data = await axios.post("/api/send-email", message);
+  };
+};
+
 export const logout = () => {
   window.localStorage.removeItem(TOKEN);
   return {
