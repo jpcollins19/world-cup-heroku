@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { Link, useHistory, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { loadUsers, sendForgotPW, updateUser } from "../../store";
+import { loadUsers, updateUser } from "../../../store";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
@@ -9,7 +9,6 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Alert from "@mui/material/Alert";
-import { SettingsSuggestRounded } from "@mui/icons-material";
 
 const useStyles = makeStyles((theme) => ({
   textField: {
@@ -21,7 +20,6 @@ const useStyles = makeStyles((theme) => ({
 const Reset_PW_Page = () => {
   const dispatch = useDispatch();
   let { pathname } = useLocation();
-  const history = useHistory();
 
   const [user, seUser] = useState({});
   const [tempPW, setTempPW] = useState("");

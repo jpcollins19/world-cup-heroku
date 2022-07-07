@@ -2,14 +2,13 @@ import { useEffect } from "react";
 import { withRouter, Route, Switch, Redirect } from "react-router-dom";
 import { me } from "./store";
 import { useSelector, useDispatch } from "react-redux";
-import Pre_Login_Page from "./components/login_create_account/Pre_Login_Page";
-import Login_Page from "./components/login_create_account/Login_Page";
+import Pre_Login_Page from "./components/user_account/login/Pre_Login_Page";
+import Login_Page from "./components/user_account/login/Login_Page";
 import Login_Page_Leaderboard from "./components/leaderboard/Login_Page_Leaderboard";
-import Create_Account_Page from "./components/login_create_account/Create_Account_Page";
-import Account_Created_Confirmation from "./components/login_create_account/Account_Created_Confirmation";
-import Forgot_PW_Confirmation from "./components/login_create_account/Forgot_PW_Confirmation";
-import Forgot_PW_Page from "./components/login_create_account/Forgot_PW_Page";
-import Reset_PW_Page from "./components/login_create_account/Reset_PW_Page";
+import Create_Account_Page from "./components/user_account/create_account/Create_Account_Page";
+import Action_Confirmation from "./components/user_account/Action_Confirmation";
+import Forgot_PW_Page from "./components/user_account/forgot_pw/Forgot_PW_Page";
+import Reset_PW_Page from "./components/user_account/forgot_pw/Reset_PW_Page";
 import Leaderboard_Page from "./components/leaderboard/Leaderboard_Page";
 import Group_Details_Page from "./components/group_details/Group_Details_Page";
 import Rules_Page from "./components/rules/Rules_Page";
@@ -53,15 +52,15 @@ const Routes = () => {
       { path: "/create_account", component: Create_Account_Page },
       {
         path: "/account_created",
-        component: Account_Created_Confirmation,
+        component: Action_Confirmation,
       },
       {
         path: "/pw_reset_confirmation",
-        component: Account_Created_Confirmation,
+        component: Action_Confirmation,
       },
       {
         path: "/forgot_pw_confirmation",
-        component: Forgot_PW_Confirmation,
+        component: Action_Confirmation,
       },
       { path: "/rules", component: Rules_Page },
       { path: "/leaderboard", component: Login_Page_Leaderboard },

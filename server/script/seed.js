@@ -47,7 +47,7 @@ const teamInfo = [
 
 const users = [
   {
-    email: "jpatcollins@gmail.com",
+    email: "joe@gmail.com",
     password: "nugget",
     name: "Joe",
     admin: true,

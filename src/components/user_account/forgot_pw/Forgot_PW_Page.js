@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { sendForgotPW, updateUser } from "../../store";
+import { sendForgotPW, updateUser } from "../../../store";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
@@ -52,13 +52,6 @@ const Forgot_PW_Page = () => {
     );
   };
 
-  // const getFutureDate = () => {
-  //   let date = new Date();
-  //   date.setDate(date.getDate() + 1);
-
-  //   return date.toISOString();
-  // };
-
   const onSubmit = async (ev) => {
     ev.preventDefault();
 
@@ -74,8 +67,7 @@ const Forgot_PW_Page = () => {
       };
 
       dispatch(updateUser(obj, "dont update"));
-
-      dispatch(sendForgotPW(obj));
+      dispatch(sendForgotPW(obj, history));
     } catch (err) {
       console.log(err.response);
       setError(err.response);
@@ -99,7 +91,6 @@ const Forgot_PW_Page = () => {
               <Typography component="h1" variant="h">
                 Forgot Password
               </Typography>
-
               <div className="error-cont-login">
                 {error ? (
                   <Alert severity="error">Email Address not on file</Alert>
@@ -110,7 +101,6 @@ const Forgot_PW_Page = () => {
                   </div>
                 )}
               </div>
-
               <Box component="form" onSubmit={onSubmit} sx={{ mt: 1 }}>
                 <TextField
                   onChange={onChange}

@@ -34,9 +34,10 @@ export const authenticate = (email, password) => async (dispatch) => {
   }
 };
 
-export const sendForgotPW = (message) => {
+export const sendForgotPW = (message, history) => {
   return async (dispatch) => {
     const data = await axios.post("/api/send-email", message);
+    history.push("/forgot_pw_confirmation");
   };
 };
 

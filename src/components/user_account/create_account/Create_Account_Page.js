@@ -1,13 +1,14 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { authenticate, formatEmail } from "../../store";
+import { Link, useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addUser, formatEmail, getUserNames } from "../../../store";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import Alert from "@mui/material/Alert";
 
 const useStyles = makeStyles((theme) => ({
   textField: {
@@ -16,54 +17,84 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Login_Page = () => {
+const Create_Account_Page = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+  const [password1, setPassword1] = useState("");
   const [showPW, setShowPW] = useState(false);
+  const [error, setError] = useState(null);
 
-  const classes = useStyles();
+  const users = useSelector((state) => state.users);
+  const userNames = users && getUserNames(users);
 
-  const joe = useSelector((state) => state.users).find(
-    (user) => user.name === "Joe"
+  const userEmails = useSelector((state) => state.users).map(
+    (user) => user.email
   );
 
-  const inputs = [
-    { label: "Email Address", name: "email", marginLeft: "25%", type: "" },
-    {
-      label: "Password",
-      name: "password",
-      marginLeft: "30%",
-      type: showPW ? "text" : "password",
-    },
-  ];
+  const classes = useStyles();
 
   const showPwClick = () => {
     setShowPW(!showPW);
   };
 
+  const validateEmail = (inputText) => {
+    const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+    return inputText.match(mailformat) ? true : false;
+  };
+
+  const inputs = [
+    { label: "Email Address", name: "Email", marginLeft: "25%", type: "" },
+    { label: "Name", name: "Name", marginLeft: "35%", type: "" },
+    {
+      label: "Password",
+      name: "Password",
+      marginLeft: "30%",
+      type: showPW ? "text" : "password",
+    },
+    {
+      label: "Confirm Password",
+      name: "Password1",
+      marginLeft: "20%",
+      type: showPW ? "text" : "password",
+    },
+  ];
+
   const onChange = (ev) => {
-    ev.target.name === "email"
-      ? setEmail(formatEmail(ev.target.value))
-      : setPassword(ev.target.value);
+    setError(null);
+    const set = eval(`set${ev.target.name}`);
+    ev.target.name === "Email"
+      ? set(formatEmail(ev.target.value))
+      : set(ev.target.value);
   };
 
   const onSubmit = async (ev) => {
     ev.preventDefault();
     try {
-      dispatch(authenticate(email, password));
-      location.hash = "#/leaderboard";
+      if (!validateEmail(email)) return setError("Email format not valid");
+
+      if (userEmails.includes(email))
+        return setError("Email is already in use");
+
+      if (userNames.includes(formatEmail(name)))
+        return setError("Name is already in use");
+
+      if (password !== password1) return setError("Password is not identical");
+
+      dispatch(addUser({ email, name, password }, history));
     } catch (err) {
-      console.log(err.response);
-      setError(err.response);
+      console.log("nugget", err);
     }
   };
 
   return (
-    <main className="login-page">
-      <div className="main-cont-login">
-        <div className="main-cont1-login">
+    <main className="create-account-page">
+      <div className="main-cont-create-account">
+        <div className="main-cont1-create-account">
           <div className="main-text-container-login black-text">
             <Container component="main" maxWidth="xs">
               <CssBaseline />
@@ -76,16 +107,24 @@ const Login_Page = () => {
                 }}
               >
                 <Typography component="h1" variant="h">
-                  Sign in
+                  Create Account
                 </Typography>
-
-                <Box component="form" onSubmit={onSubmit} sx={{ mt: 1 }}>
-                  {inputs.map((input) => (
+                <div className="error-cont-login">
+                  {error && <Alert severity="error">{error}</Alert>}
+                </div>
+                <Box
+                  component="form"
+                  onSubmit={onSubmit}
+                  sx={{ mt: 1 }}
+                  display="flex"
+                  flexDirection="column"
+                >
+                  {inputs.map((input, idx) => (
                     <TextField
-                      key={input.name}
+                      key={idx}
                       onChange={onChange}
                       sx={{
-                        margin: 1,
+                        margin: 0.5,
                         padding: 0,
                         width: 275,
                       }}
@@ -118,20 +157,13 @@ const Login_Page = () => {
                     View Password
                   </div>
                   <div className="button-cont">
-                    <button disabled={!email || !password}>Sign In</button>
+                    <button
+                      disabled={!email || !name || !password || !password1}
+                    >
+                      Create Account
+                    </button>
                   </div>
                   <div className="forgot-pw-cont">
-                    <Link to="/forgot_pw" style={{ textDecoration: "none" }}>
-                      <h4>Forgot Password</h4>
-                    </Link>
-                    {joe && joe.tourneyStage === 1 && (
-                      <Link
-                        to="/create_account"
-                        style={{ textDecoration: "none" }}
-                      >
-                        <h4>Create Account</h4>
-                      </Link>
-                    )}
                     <Link to="/" style={{ textDecoration: "none" }}>
                       <h4>Cancel</h4>
                     </Link>
@@ -146,4 +178,4 @@ const Login_Page = () => {
   );
 };
 
-export default Login_Page;
+export default Create_Account_Page;

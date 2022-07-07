@@ -1,6 +1,4 @@
-//figure out a forgot pw route
-
-//roll through forgot pw and store and api pages to delete any unecessary code
+////forgot pw route - test with kellys email, try her school email too
 
 ////send to heroku
 

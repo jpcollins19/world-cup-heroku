@@ -17,8 +17,6 @@ const sendEmail = async (incomingMsg) => {
     },
   };
 
-  console.log("finalMessage", finalMessage);
-
   await sendgrid
     .send(finalMessage)
     .then(() => {
