@@ -15,7 +15,9 @@ import Rules_Page from "./components/rules/Rules_Page";
 import My_Picks_Locked_Page from "./components/my_picks/locked/My_Picks_Locked_Page";
 import My_Picks_Unlocked_Page from "./components/my_picks/unlocked/My_Picks_Unlocked_Page";
 import Pool_Picks_Page from "./components/pool_picks/Pool_Picks_Page";
-import Edit_Name_Page from "./components/edit-name/Edit_Name_Page";
+import Edit_Name_Page from "./components/user_account/user_details/Edit_Name_Page";
+import Change_PW from "./components/user_account/user_details/Change_PW";
+import User_Profile from "./components/user_account/user_details/User_Profile";
 import User_Admin_Page from "./components/admin/user/User_Admin_Page";
 import Group_Admin_Page from "./components/admin/group/Group_Admin_Page";
 import Team_Admin_Page from "./components/admin/team/Team_Admin_Page";
@@ -44,7 +46,9 @@ const Routes = () => {
       { path: "/pool_picks", component: Pool_Picks_Page },
       { path: "/group_details", component: Group_Details_Page },
       { path: "/rules", component: Rules_Page },
+      { path: "/profile", component: User_Profile },
       { path: "/edit_name", component: Edit_Name_Page },
+      { path: "/change_password", component: Change_PW },
     ],
     [
       { path: "/", component: Pre_Login_Page },

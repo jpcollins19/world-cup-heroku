@@ -1,11 +1,11 @@
-////forgot pw route - test with kellys email, try her school email too
-
 ////send to heroku
 
 /////heroku state
 //test/apply all error handling
 //roll through the entire tourney lifecycle to make sure all is working as expected
-//test forgot pw route
+//test forgot pw route with all three emails
+
+////general after heroku testing - change joe email back to joe@gmail.com
 
 ////bugz
 //my-picks-unlocked - stage 1 - when you scroll down on the page, the team dropdown options for each group have a higher zIndex than the navbar text

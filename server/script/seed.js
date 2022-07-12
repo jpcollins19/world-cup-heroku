@@ -99,7 +99,6 @@ const users = [
     email: "stanley@gmail.com",
     password: "stanley",
     name: "Stanley",
-    admin: true,
 
     groupA1: "Ecuador",
     groupA2: "Netherlands",
@@ -144,7 +143,7 @@ const users = [
     tiebreaker: 140,
   },
   {
-    email: "e@gmail.com",
+    email: "joseph.collins@toasttab.com",
     password: "e",
     name: "E",
 

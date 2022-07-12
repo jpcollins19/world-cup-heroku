@@ -38,12 +38,6 @@ const My_Picks_Locked_Page = () => {
 
           <div className="my-picks-header-name">
             <h1 className="white-text">{user && user.name}</h1>
-
-            {auth && auth.tiebreaker && (
-              <Link to="/edit_name" style={{ textDecoration: "none" }}>
-                <button>Edit Name</button>
-              </Link>
-            )}
           </div>
           <div className="button-cont-picks">
             {joe && joe.tourneyStage === 1 && (

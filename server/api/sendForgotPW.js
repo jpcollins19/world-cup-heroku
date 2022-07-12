@@ -11,11 +11,12 @@ const sendEmail = async (incomingMsg) => {
     templateId: "d-b933afbbc42c4793a7cf5235953b84d0",
     dynamicTemplateData: {
       name,
-      email,
       tempPW,
       pwResetURL,
     },
   };
+
+  console.log(finalMessage);
 
   await sendgrid
     .send(finalMessage)

@@ -41,7 +41,8 @@ export const sendForgotPW = (message, history) => {
   };
 };
 
-export const logout = () => {
+export const logout = (history) => {
+  history.push("/login");
   window.localStorage.removeItem(TOKEN);
   return {
     type: SET_AUTH,

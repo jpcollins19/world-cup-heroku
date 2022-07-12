@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
-import { updateUser, getUserNames } from "../../store";
+import { updateUser, getUserNames } from "../../../store";
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Alert from "@mui/material/Alert";
-import "./Edit_Name.css";
 
 const Edit_Name_Page = () => {
   const dispatch = useDispatch();
@@ -72,10 +71,13 @@ const Edit_Name_Page = () => {
                 <div className="error-cont-login-edit-name">
                   {error && <Alert severity="error">{error}</Alert>}
                 </div>
-                <input
-                  onChange={onChange}
-                  defaultValue={auth && auth.name}
-                ></input>
+                <div className="input-cont edit-name">
+                  <input
+                    onChange={onChange}
+                    defaultValue={auth && auth.name}
+                  ></input>
+                </div>
+
                 <button>Submit</button>
                 <Link style={{ textDecoration: "none" }} to="/my_picks">
                   cancel

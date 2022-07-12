@@ -53,6 +53,6 @@
   padding-bottom: 2rem;
 }
 
-.login-cont > a {
-  color: blue;
+.user-dropdown {
+  cursor: pointer;
 }
