@@ -1,19 +1,20 @@
-//add redirect logic like you have in 2023 masters doc
+////userDetails work
+//do all folders - on sign-in
 
-//add NoMatch when you do Redirect work
+//add toaster for when a pw is changed?
 
-//once the above is complete, see what it looks like if the user logs in with invalid cridentials, ie what does the login page on the scorecard url look like
+//once finished with the above, remove the css file info from the sign in page
 
-//fix page height on scorecard page
-
-//adjust user-details folder to mimic masters 2023 work
-//add toaster for hen a pw is changed?
+//delete the old user_account page
 
 //add a loading File and apply it to all applicable pages
 
 //add an Error File and apply it to all applicable pages
 
 //add a Button File and apply it to all applicable pages
+
+////do ocd css work on every page
+//fix page height on all pages
 
 /////heroku state
 //test/apply all error handling

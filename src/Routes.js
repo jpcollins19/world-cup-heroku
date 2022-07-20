@@ -3,7 +3,7 @@ import { withRouter, Route, Switch, Redirect } from "react-router-dom";
 import { me } from "./store";
 import { useSelector, useDispatch } from "react-redux";
 import Pre_Login_Page from "./components/user_account/login/Pre_Login_Page";
-import Login_Page from "./components/user_account/login/Login_Page";
+import Sign_In_Page from "./components/userAccount/SignIn/Sign_In_Page";
 import Login_Page_Leaderboard from "./components/leaderboard/Login_Page_Leaderboard";
 import Create_Account_Page from "./components/user_account/create_account/Create_Account_Page";
 import Action_Confirmation from "./components/user_account/Action_Confirmation";
@@ -28,13 +28,17 @@ const Routes = () => {
 
   const user = useSelector((state) => state.auth);
 
+  const joe = useSelector((state) => state.users).find(
+    (user) => user.email === "joe@gmail.com"
+  );
+
   const token = window.localStorage.getItem("token");
 
   useEffect(() => dispatch(me()), []);
 
   const nonUserRoutes = [
     { path: "/", component: Pre_Login_Page },
-    { path: "/login", component: Login_Page },
+    { path: "/login", component: Sign_In_Page },
     { path: "/create_account", component: Create_Account_Page },
     {
       path: "/account_created",
@@ -93,6 +97,18 @@ const Routes = () => {
           </Route>
         )}
 
+        {user && user.email === "joe@gmail.com" && user.tourneyStage === 1 && (
+          <Route path="/my_picks_edit_group">
+            {!token ? <Redirect to="/" /> : <My_Picks_Unlocked_Page />}
+          </Route>
+        )}
+
+        {user && user.email === "joe@gmail.com" && user.tourneyStage === 4 && (
+          <Route path="/my_picks_edit_ko">
+            {!token ? <Redirect to="/" /> : <My_Picks_Unlocked_Page />}
+          </Route>
+        )}
+
         <Route path="/leaderboard">
           {!token ? <Redirect to="/" /> : <Leaderboard_Page />}
         </Route>
@@ -122,41 +138,6 @@ const Routes = () => {
     </div>
   );
 
-  // return auth.id ? (
-  //   <Switch>
-  //     {auth.email === "joe@gmail.com" &&
-  //       routeObjsAdmin.map((route) => (
-  //         <Route
-  //           key={route.path}
-  //           exact
-  //           path={route.path}
-  //           component={route.component}
-  //         />
-  //       ))}
-  //     {routeObjs[0].map((route) => (
-  //       <Route
-  //         key={route.path}
-  //         exact
-  //         path={route.path}
-  //         component={route.component}
-  //       />
-  //     ))}
-  //     {joe && joe.tourneyStage === 1 && (
-  //       <Route
-  //         exact
-  //         path="/my_picks_edit_group"
-  //         component={My_Picks_Unlocked_Page}
-  //       />
-  //     )}
-  //     {joe && joe.tourneyStage === 4 && (
-  //       <Route
-  //         exact
-  //         path="/my_picks_edit_ko"
-  //         component={My_Picks_Unlocked_Page}
-  //       />
-  //     )}
-  //   </Switch>
-  // ) : (
   //   <Switch>
   //     {joe && joe.tourneyStage !== 1
   //       ? routeObjs[1]
