@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Rules.css";
 
 const Rules_Page = () => {
@@ -64,8 +65,7 @@ const Rules_Page = () => {
         <h2>Getting Started:</h2>
         <ul>
           <li>
-            Create an Account, then sign in; the link to create an account is
-            located via the Sign In page.
+            <Link to="create_account">Create an Account</Link>, then sign in.
           </li>
           <li>Once signed in, navigate to the My Picks tab.</li>
         </ul>

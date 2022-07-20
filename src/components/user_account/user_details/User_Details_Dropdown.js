@@ -68,11 +68,10 @@ const User_Details_Dropdown = () => {
                     id="composition-menu"
                     aria-labelledby="composition-button"
                   >
-                    <MenuItem>
-                      <Link style={{ textDecoration: "none" }} to="/profile">
-                        My Profile
-                      </Link>
-                    </MenuItem>
+                    <Link style={{ textDecoration: "none" }} to="/profile">
+                      <MenuItem>My Profile</MenuItem>
+                    </Link>
+
                     <MenuItem onClick={() => dispatch(logout(history))}>
                       Sign Out
                     </MenuItem>

@@ -1,4 +1,19 @@
-////send to heroku
+//add redirect logic like you have in 2023 masters doc
+
+//add NoMatch when you do Redirect work
+
+//once the above is complete, see what it looks like if the user logs in with invalid cridentials, ie what does the login page on the scorecard url look like
+
+//fix page height on scorecard page
+
+//adjust user-details folder to mimic masters 2023 work
+//add toaster for hen a pw is changed?
+
+//add a loading File and apply it to all applicable pages
+
+//add an Error File and apply it to all applicable pages
+
+//add a Button File and apply it to all applicable pages
 
 /////heroku state
 //test/apply all error handling
