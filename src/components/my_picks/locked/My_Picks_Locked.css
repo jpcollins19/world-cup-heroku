@@ -97,7 +97,7 @@
   color: white;
 }
 
-.button-cont-picks {
+/* .button-cont-picks {
   display: flex;
   flex: 0.4;
   justify-content: center;
@@ -115,7 +115,7 @@
 
 .button-cont-picks > a {
   color: black;
-}
+} */
 
 .top {
   display: flex;

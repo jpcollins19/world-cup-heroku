@@ -1,3 +1,9 @@
+const validateEmail = (inputText) => {
+  const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+  return inputText.match(mailformat) ? true : false;
+};
+
 const singleGroupCalc = (userObj, teams, group) => {
   const userPrediction1 = userObj[`group${group}1`];
   const userPrediction2 = userObj[`group${group}2`];
@@ -508,6 +514,7 @@ const addFakeUser = (obj, name) => {
 };
 
 module.exports = {
+  validateEmail,
   singleGroupCalc,
   totalScoreCalc,
   knockoutRoundCalc,

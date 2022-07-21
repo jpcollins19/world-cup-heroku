@@ -7,7 +7,7 @@ import {
   validateEmail,
   getUserNames,
 } from "../../../store";
-import Error from "../../Misc/Error";
+import toast, { Toaster } from "react-hot-toast";
 import Button from "../../Misc/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -18,7 +18,7 @@ import Box from "@mui/material/Box";
 
 const useStyles = makeStyles((theme) => ({
   textField: {
-    border: "solid 2px yellow",
+    border: "solid 2px black",
     borderRadius: "9px",
   },
 }));
@@ -32,7 +32,6 @@ const Create_Account_Page = () => {
   const [password, setPassword] = useState("");
   const [password1, setPassword1] = useState("");
   const [showPW, setShowPW] = useState(false);
-  const [error, setError] = useState(null);
 
   const classes = useStyles();
 
@@ -40,26 +39,29 @@ const Create_Account_Page = () => {
     setShowPW(!showPW);
   };
 
+  const showError = (text) => {
+    toast(text, { duration: 50000 });
+  };
+
   const inputs = [
-    { label: "Email Address", name: "Email", marginLeft: "20%", type: "" },
+    { label: "Email Address", name: "Email", marginLeft: "25%", type: "" },
     { label: "Name", name: "Name", marginLeft: "35%", type: "" },
     {
       label: "Password",
       name: "Password",
-      marginLeft: "28%",
+      marginLeft: "30%",
       type: showPW ? "text" : "password",
     },
     {
       label: "Confirm Password",
       name: "Password1",
-      marginLeft: "18%",
+      marginLeft: "20%",
       type: showPW ? "text" : "password",
     },
   ];
 
   const options = [
     { route: "/sign_in", text: "Sign In here" },
-    { route: "/forgot_pw", text: "Forgot Password" },
     { route: "/", text: "Cancel" },
   ];
 
@@ -70,7 +72,7 @@ const Create_Account_Page = () => {
   const userNames = getUserNames(users);
 
   const onChange = (ev) => {
-    setError(null);
+    toast.dismiss();
 
     const set = eval(`set${ev.target.name}`);
 
@@ -82,15 +84,22 @@ const Create_Account_Page = () => {
   const onSubmit = async (ev) => {
     ev.preventDefault();
     try {
-      if (!validateEmail(email)) return setError("Invalid Email Address");
-
-      if (userEmails.includes(email))
-        return setError("Email is already in use");
-
-      if (userNames.includes(formatEmail(name)))
-        return setError("Name is already in use");
-
-      if (password !== password1) return setError("Password is not identical");
+      if (
+        !validateEmail(email) ||
+        userEmails.includes(email) ||
+        userNames.includes(formatEmail(name)) ||
+        password !== password1
+      ) {
+        return showError(
+          !validateEmail(email)
+            ? "Error: Invalid Email Address"
+            : userEmails.includes(email)
+            ? "Error: Email already in use"
+            : userNames.includes(formatEmail(name))
+            ? "Error: Name already in use"
+            : "Error: Password is not identical"
+        );
+      }
 
       const user = {
         email,
@@ -100,7 +109,7 @@ const Create_Account_Page = () => {
 
       dispatch(addUser(user, history));
     } catch (err) {
-      console.log(err.response);
+      console.log(err);
     }
   };
 
@@ -111,13 +120,22 @@ const Create_Account_Page = () => {
         alignItems: "center",
         flexDirection: "column",
       }}
-      height="100vh"
+      height="84vh"
       className="create-account-page"
     >
-      <div className="create-account-cont-outside white-text">
+      <Toaster
+        toastOptions={{
+          className: "toaster-error",
+          style: {
+            background: "#f0c5c5",
+            color: "red",
+          },
+        }}
+      />
+      <main className="create-account-cont-outside">
         <div className="create-account-cont-inside">
           <div>
-            <Container component="main" maxWidth="s">
+            <Container component="main" maxWidth="xs">
               <CssBaseline />
               <Box
                 sx={{
@@ -130,16 +148,15 @@ const Create_Account_Page = () => {
                 <Typography component="h1" variant="h">
                   Create Account
                 </Typography>
-                <Error error={error} />
                 <Box
                   component="form"
                   onSubmit={onSubmit}
-                  id="create-account"
                   sx={{ mt: 1 }}
                   display="flex"
                   flexDirection="column"
+                  id="create-account"
                 >
-                  {inputs.map((input) => (
+                  {inputs.map((input, idx) => (
                     <TextField
                       key={input.name}
                       onChange={onChange}
@@ -149,7 +166,6 @@ const Create_Account_Page = () => {
                       }}
                       margin="normal"
                       required
-                      fullWidth
                       label={input.label}
                       variant="filled"
                       name={input.name}
@@ -157,14 +173,14 @@ const Create_Account_Page = () => {
                       inputProps={{
                         style: {
                           textAlign: "center",
-                          color: "#ECEFF1",
+                          color: "black",
                           fontWeight: "bold",
                         },
                       }}
                       InputLabelProps={{
                         style: {
                           textAlign: "center",
-                          color: "#ECEFF1",
+                          color: "black",
                           marginLeft: input.marginLeft,
                         },
                       }}
@@ -172,8 +188,9 @@ const Create_Account_Page = () => {
                       type={input.type}
                     />
                   ))}
+
                   <div className="view-pw" onClick={() => showPwClick()}>
-                    View Passwords
+                    View Password
                   </div>
                   <Button
                     text="Create Account"
@@ -181,15 +198,18 @@ const Create_Account_Page = () => {
                     form="create-account"
                   />
                   {options.map((option) => (
-                    <div key={option.text} className="option-cont">
+                    <div
+                      key={option.text}
+                      className="option-cont-create-account"
+                    >
                       {option.route === "/sign_in" && (
                         <div>Already have an account?</div>
                       )}
                       <Link
                         to={option.route}
-                        style={{ textDecoration: "none" }}
+                        style={{ textDecoration: "none", color: "blue" }}
                       >
-                        <h4 className="white-text">{option.text}</h4>
+                        <h4>{option.text}</h4>
                       </Link>
                     </div>
                   ))}
@@ -198,7 +218,7 @@ const Create_Account_Page = () => {
             </Container>
           </div>
         </div>
-      </div>
+      </main>
     </Box>
   );
 };

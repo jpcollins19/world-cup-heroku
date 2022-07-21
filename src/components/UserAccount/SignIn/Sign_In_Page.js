@@ -9,7 +9,6 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
-import "../UserAccount.css";
 
 const useStyles = makeStyles((theme) => ({
   textField: {
@@ -78,10 +77,8 @@ const Sign_In_Page = () => {
       }}
       height="84vh"
       className="login-page"
-
-      //remove white-text below and adjust input box settings for email address, pw and viewing pw
     >
-      <div className="login-cont-outside white-text">
+      <div className="login-cont-outside">
         <div className="login-cont-inside">
           <div>
             <Container component="main" maxWidth="xs">
@@ -123,14 +120,14 @@ const Sign_In_Page = () => {
                       inputProps={{
                         style: {
                           textAlign: "center",
-                          color: "#ECEFF1",
+                          color: "black",
                           fontWeight: "bold",
                         },
                       }}
                       InputLabelProps={{
                         style: {
                           textAlign: "center",
-                          color: "#ECEFF1",
+                          color: "black",
                           marginLeft: input.marginLeft,
                         },
                       }}
@@ -150,9 +147,9 @@ const Sign_In_Page = () => {
                     <div key={option.text} className="option-cont">
                       <Link
                         to={option.route}
-                        style={{ textDecoration: "none" }}
+                        style={{ textDecoration: "none", color: "blue" }}
                       >
-                        <h4 className="white-text">{option.text}</h4>
+                        <h4>{option.text}</h4>
                       </Link>
                     </div>
                   ))}

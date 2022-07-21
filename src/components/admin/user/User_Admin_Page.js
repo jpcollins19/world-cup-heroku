@@ -305,7 +305,7 @@ const User_Admin_Page = () => {
 
       !tiebreakerError &&
         !errorAudit.length &&
-        dispatch(updateUser(userObj, history));
+        dispatch(updateUser(userObj, history, "admin"));
     } catch (err) {
       console.log("reeeed error", err);
     }

@@ -48,8 +48,8 @@ const User_Profile_Dropdown = () => {
           <UserIcon
             sx={{
               fontSize: 50,
-              color: "yellow",
-              background: "#2E7D32",
+              color: "white",
+              background: "blue",
               margin: 0,
               borderRadius: 1,
             }}

@@ -86,13 +86,13 @@
   padding-right: 5%;
 }
 
-.admin-button {
+/* .admin-button {
   margin: 1% 10% 0% 10%;
   cursor: pointer;
   width: 10rem;
   height: 3rem;
   background-color: rgb(204, 200, 200);
-}
+} */
 
 .user-admin {
   display: flex;

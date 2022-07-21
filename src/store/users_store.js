@@ -26,10 +26,10 @@ export const addUser = (user, history) => {
   };
 };
 
-export const updateUser = (user, history) => {
+export const updateUser = (user, history, route) => {
   return async (dispatch) => {
     user = (await axios.put(`/api/users/${user.id}`, user)).data;
-    history !== "dont update" && history.push("/my_picks");
+    history.push(route === "admin" ? "/pool_picks" : route);
   };
 };
 

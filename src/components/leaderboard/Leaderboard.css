@@ -165,22 +165,3 @@
   flex: 0.5;
   padding-left: 14%;
 }
-
-.edit-total-goals > button {
-  cursor: pointer;
-}
-
-.edit-total-goals > div {
-  display: flex;
-  align-items: center;
-}
-
-.edit-total-goals > div > input {
-  text-align: center;
-}
-
-.edit-total-goals > div > button {
-  margin-top: 1%;
-  width: 5rem;
-  cursor: pointer;
-}

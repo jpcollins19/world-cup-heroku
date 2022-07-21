@@ -1,20 +1,21 @@
 ////userDetails work
-//do all folders - on sign-in
+//userProfile - do all - on change pw route
+//action confirmation - do forgot pw stuff
+//forgotPW - do all
 
 //add toaster for when a pw is changed?
 
-//once finished with the above, remove the css file info from the sign in page
-
 //delete the old user_account page
 
-//add a loading File and apply it to all applicable pages
+//add a loading File to all applicable pages
 
-//add an Error File and apply it to all applicable pages
+//add an Error File to all applicable pages
 
-//add a Button File and apply it to all applicable pages
+//add a Button File to all applicable pages
 
 ////do ocd css work on every page
-//fix page height on all pages
+//fix css on leaderboard sign in page
+//admin pages too
 
 /////heroku state
 //test/apply all error handling

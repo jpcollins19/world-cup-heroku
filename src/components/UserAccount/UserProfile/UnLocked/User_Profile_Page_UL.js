@@ -68,7 +68,7 @@ const User_Profile_Page = () => {
         alignItems: "center",
         flexDirection: "column",
       }}
-      height="100vh"
+      height="84vh"
       className="user-profile-page"
     >
       {loading ? (
@@ -91,11 +91,11 @@ const User_Profile_Page = () => {
                   }}
                 >
                   <Typography
+                    className="white-text"
                     component="h1"
                     variant="h"
                     sx={{
-                      color: "yellow",
-                      // mb: ".5rem",
+                      color: "white",
                     }}
                   >
                     Edit Name

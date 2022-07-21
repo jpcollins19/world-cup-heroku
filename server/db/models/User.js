@@ -249,6 +249,7 @@ User.addHook("beforeSave", async function (user) {
 User.byToken = async (token) => {
   try {
     const { id } = jwt.verify(token, process.env.JWT);
+
     const user = await User.findByPk(id);
     if (user) {
       return user;

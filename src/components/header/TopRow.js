@@ -1,9 +1,15 @@
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { me } from "../../store";
 import Link from "@mui/material/Link";
-import User_Details_Dropdown from "../user_account/user_details/User_Details_Dropdown";
+import User_Profile_Dropdown from "../userAccount/User_Profile_Dropdown";
 import LastUpdated from "./LastUpdated";
 
 const TopRow = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => dispatch(me()), []);
+
   const auth = useSelector((state) => state.auth);
 
   return (
@@ -11,9 +17,12 @@ const TopRow = () => {
       <LastUpdated />
       <div className="login-cont">
         {auth.id ? (
-          <User_Details_Dropdown />
+          <User_Profile_Dropdown />
         ) : (
-          <Link href="#/login" style={{ textDecoration: "none" }}>
+          <Link
+            href="#/sign_in"
+            style={{ textDecoration: "none", color: "blue" }}
+          >
             Sign In
           </Link>
         )}

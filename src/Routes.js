@@ -5,8 +5,8 @@ import { useSelector, useDispatch } from "react-redux";
 import Pre_Login_Page from "./components/user_account/login/Pre_Login_Page";
 import Sign_In_Page from "./components/userAccount/SignIn/Sign_In_Page";
 import Login_Page_Leaderboard from "./components/leaderboard/Login_Page_Leaderboard";
-import Create_Account_Page from "./components/user_account/create_account/Create_Account_Page";
-import Action_Confirmation from "./components/user_account/Action_Confirmation";
+import Create_Account_Page from "./components/userAccount/CreateAccount/Create_Account_Page";
+import Action_Confirmation from "./components/userAccount/Action_Confirmation";
 import Forgot_PW_Page from "./components/user_account/forgot_pw/Forgot_PW_Page";
 import Reset_PW_Page from "./components/user_account/forgot_pw/Reset_PW_Page";
 import Leaderboard_Page from "./components/leaderboard/Leaderboard_Page";
@@ -15,9 +15,8 @@ import Rules_Page from "./components/rules/Rules_Page";
 import My_Picks_Locked_Page from "./components/my_picks/locked/My_Picks_Locked_Page";
 import My_Picks_Unlocked_Page from "./components/my_picks/unlocked/My_Picks_Unlocked_Page";
 import Pool_Picks_Page from "./components/pool_picks/Pool_Picks_Page";
-import Edit_Name_Page from "./components/user_account/user_details/Edit_Name_Page";
-import Change_PW from "./components/user_account/user_details/Change_PW";
-import User_Profile from "./components/user_account/user_details/User_Profile";
+import User_Profile_Page_L from "./components/UserAccount/UserProfile/Locked/User_Profile_Page_L";
+import User_Profile_Page_UL from "./components/UserAccount/UserProfile/UnLocked/User_Profile_Page_UL";
 import User_Admin_Page from "./components/admin/user/User_Admin_Page";
 import Group_Admin_Page from "./components/admin/group/Group_Admin_Page";
 import Team_Admin_Page from "./components/admin/team/Team_Admin_Page";
@@ -38,7 +37,7 @@ const Routes = () => {
 
   const nonUserRoutes = [
     { path: "/", component: Pre_Login_Page },
-    { path: "/login", component: Sign_In_Page },
+    { path: "/sign_in", component: Sign_In_Page },
     { path: "/create_account", component: Create_Account_Page },
     {
       path: "/account_created",
@@ -121,14 +120,12 @@ const Routes = () => {
         <Route path="/group_details">
           {!token ? <Redirect to="/" /> : <Group_Details_Page />}
         </Route>
-        <Route path="/profile">
-          {!token ? <Redirect to="/" /> : <User_Profile />}
+        <Route path="/my_profile">
+          {!token ? <Redirect to="/" /> : <User_Profile_Page_L />}
         </Route>
-        <Route path="/edit_name">
-          {!token ? <Redirect to="/" /> : <Edit_Name_Page />}
-        </Route>
-        <Route path="/change_password">
-          {!token ? <Redirect to="/" /> : <Change_PW />}
+
+        <Route path="/edit_profile_name">
+          {!token ? <Redirect to="/" /> : <User_Profile_Page_UL />}
         </Route>
 
         <Route path="*">

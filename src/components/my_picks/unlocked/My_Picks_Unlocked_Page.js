@@ -191,7 +191,7 @@ const My_Picks_Unlocked_Page = () => {
 
         !tiebreakerError &&
           !errorAudit.length &&
-          dispatch(updateUser(userObj, history));
+          dispatch(updateUser(userObj, history, "my_picks"));
       }
 
       if (joe && joe.tourneyStage === 4) {

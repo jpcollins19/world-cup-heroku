@@ -15,6 +15,7 @@ export const me = () => async (dispatch) => {
         authorization: token,
       },
     });
+
     return dispatch(setAuth(response.data));
   }
 };
@@ -42,7 +43,7 @@ export const sendForgotPW = (message, history) => {
 };
 
 export const logout = (history) => {
-  history.push("/login");
+  history.push("/sign_in");
   window.localStorage.removeItem(TOKEN);
   return {
     type: SET_AUTH,
