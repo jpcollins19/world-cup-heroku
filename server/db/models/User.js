@@ -26,6 +26,10 @@ const User = db.define("users", {
     type: STRING,
     allowNull: false,
   },
+  passwordUpdated: {
+    type: STRING,
+    defaultValue: null,
+  },
   name: {
     type: STRING,
     defaultValue: null,

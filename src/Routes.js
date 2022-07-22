@@ -2,13 +2,13 @@ import { useEffect } from "react";
 import { withRouter, Route, Switch, Redirect } from "react-router-dom";
 import { me } from "./store";
 import { useSelector, useDispatch } from "react-redux";
-import Pre_Login_Page from "./components/user_account/login/Pre_Login_Page";
+import Pre_Sign_In_Page from "./components/PreSignIn/Pre_Sign_In_Page";
 import Sign_In_Page from "./components/userAccount/SignIn/Sign_In_Page";
 import Login_Page_Leaderboard from "./components/leaderboard/Login_Page_Leaderboard";
 import Create_Account_Page from "./components/userAccount/CreateAccount/Create_Account_Page";
 import Action_Confirmation from "./components/userAccount/Action_Confirmation";
-import Forgot_PW_Page from "./components/user_account/forgot_pw/Forgot_PW_Page";
-import Reset_PW_Page from "./components/user_account/forgot_pw/Reset_PW_Page";
+import Forgot_PW_Page from "./components/UserAccount/ForgotPW/Forgot_PW_Page";
+import Reset_PW_Page from "./components/UserAccount/ForgotPW/Reset_PW_Page";
 import Leaderboard_Page from "./components/leaderboard/Leaderboard_Page";
 import Group_Details_Page from "./components/group_details/Group_Details_Page";
 import Rules_Page from "./components/rules/Rules_Page";
@@ -27,16 +27,12 @@ const Routes = () => {
 
   const user = useSelector((state) => state.auth);
 
-  const joe = useSelector((state) => state.users).find(
-    (user) => user.email === "joe@gmail.com"
-  );
-
   const token = window.localStorage.getItem("token");
 
   useEffect(() => dispatch(me()), []);
 
   const nonUserRoutes = [
-    { path: "/", component: Pre_Login_Page },
+    { path: "/", component: Pre_Sign_In_Page },
     { path: "/sign_in", component: Sign_In_Page },
     { path: "/create_account", component: Create_Account_Page },
     {
@@ -125,6 +121,10 @@ const Routes = () => {
         </Route>
 
         <Route path="/edit_profile_name">
+          {!token ? <Redirect to="/" /> : <User_Profile_Page_UL />}
+        </Route>
+
+        <Route path="/edit_profile_password">
           {!token ? <Redirect to="/" /> : <User_Profile_Page_UL />}
         </Route>
 

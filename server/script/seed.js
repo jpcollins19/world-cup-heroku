@@ -96,7 +96,7 @@ const users = [
     tiebreaker: 152,
   },
   {
-    email: "stanley@gmail.com",
+    email: "jpatcollins@gmail.com",
     password: "stanley",
     name: "Stanley",
 

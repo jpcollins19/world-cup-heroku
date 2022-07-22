@@ -3,10 +3,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { me } from "../../../../store";
 import Loading from "../../../Misc/Loading";
-// import Name from "../../../MyPicks/Name";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import toast, { Toaster } from "react-hot-toast";
 
 const User_Profile_Page = () => {
   const dispatch = useDispatch();
@@ -17,17 +17,33 @@ const User_Profile_Page = () => {
 
   if (!user) return null;
 
+  const pwUpdated = () => {
+    toast("Your password has been updated", { duration: 5000 });
+  };
+
   useEffect(() => {
     dispatch(me());
   }, []);
 
   setTimeout(() => {
     setLoading(false);
-  }, 500);
+
+    const month = user && Number(user.passwordUpdated.split(" ")[0]);
+    const date = user && Number(user.passwordUpdated.split(" ")[1]);
+    const time = user && Number(user.passwordUpdated.split(" ")[2]);
+
+    const monthNow = new Date().getMonth() + 1;
+    const dateNow = new Date().getDate();
+    const timeNow = new Date().getTime();
+
+    if (month === monthNow && date === dateNow) {
+      if (timeNow - time < 2000) pwUpdated();
+    }
+  }, 1000);
 
   const options = [
     { route: "/edit_profile_name", text: "Edit Name" },
-    { route: "/edit_profile_pw", text: "Change Password" },
+    { route: "/edit_profile_password", text: "Change Password" },
   ];
 
   const inputs = [
@@ -45,6 +61,11 @@ const User_Profile_Page = () => {
       height="84vh"
       className="user-profile-page"
     >
+      <Toaster
+        toastOptions={{
+          className: "toaster-submit-confirmation",
+        }}
+      />
       {loading ? (
         <Loading />
       ) : (

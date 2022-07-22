@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import { getUserNames, formatEmail, updateUser } from "../../../../store";
-import toast, { Toaster } from "react-hot-toast";
 import Loading from "../../../Misc/Loading";
 import Error from "../../../Misc/Error";
 import Button from "../../../Misc/Button";
@@ -15,47 +14,87 @@ import Container from "@mui/material/Container";
 const User_Profile_Page = () => {
   const dispatch = useDispatch();
   const history = useHistory();
+  const { pathname } = useLocation();
 
   const user = useSelector((state) => state.auth);
+
+  const page = pathname
+    .split("/edit_profile_")[1]
+    .split("")
+    .map((letter, idx) => {
+      if (idx === 0) {
+        letter = letter.toUpperCase();
+      }
+      return letter;
+    })
+    .join("");
 
   if (!user) return null;
 
   const [loading, setLoading] = useState(true);
   const [name, setName] = useState(null);
+  const [nameChanged, setNameChanged] = useState(false);
+  const [password, setPassword] = useState(null);
+  const [password1, setPassword1] = useState(null);
+  const [passwordChanged, setPasswordChanged] = useState(false);
   const [error, setError] = useState(null);
+  const [showPW, setShowPW] = useState(false);
+
+  const showPwClick = () => {
+    setShowPW(!showPW);
+  };
 
   setTimeout(() => {
     name === null && setName(user.name);
+    password === null && setPassword(user.password);
+    password1 === null && setPassword1(user.password);
     setLoading(false);
   }, 1000);
 
   const userNames = getUserNames(useSelector((state) => state.users));
 
-  const messageSent = () => {
-    toast(
-      `Thank you Joe!\n\nYour information has been sent to Adam Hoover, he will respond shortly.`,
-      { duration: 50000 }
-    );
-  };
-
   const onChange = (ev) => {
     setError(null);
-    setName(ev.target.value);
+
+    if (ev.target.name === "Name") {
+      setName(ev.target.value);
+      setNameChanged(true);
+    } else {
+      setPasswordChanged(true);
+      ev.target.name === "Password"
+        ? setPassword(ev.target.value)
+        : setPassword1(ev.target.value);
+    }
   };
 
   const onSubmit = async (ev) => {
     ev.preventDefault();
     try {
-      if (userNames.includes(formatEmail(name)))
-        return setError("Name is already in use");
-
       const userObj = {
         id: user.id,
-        name,
       };
 
+      if (nameChanged) {
+        if (userNames.includes(formatEmail(name)))
+          return setError("Name is already in use");
+
+        userObj.name = name;
+      }
+
+      if (passwordChanged) {
+        if (password !== password1) return setError("Passwords do not match");
+
+        const month = new Date().getMonth() + 1;
+        const date = new Date().getDate();
+        const time = new Date().getTime();
+
+        const dateInfo = `${month} ${date} ${time}`;
+
+        userObj.passwordUpdated = dateInfo;
+        userObj.password = password;
+      }
+
       dispatch(updateUser(userObj, history, "my_profile"));
-      messageSent();
     } catch (err) {
       console.log(err);
     }
@@ -98,7 +137,7 @@ const User_Profile_Page = () => {
                       color: "white",
                     }}
                   >
-                    Edit Name
+                    Edit {page}
                   </Typography>
 
                   {error ? (
@@ -110,19 +149,22 @@ const User_Profile_Page = () => {
                   <Input_Cont
                     onChange={onChange}
                     name={"Name"}
-                    defaultValue={name}
+                    showPW={showPW}
                   />
+                  {page && page === "Password" && (
+                    <div
+                      className="view-pw white-text"
+                      onClick={() => showPwClick()}
+                    >
+                      View Password
+                    </div>
+                  )}
 
                   <Cancel link="/my_profile" />
                 </Box>
               </Container>
             </div>
           </div>
-          <Toaster
-            toastOptions={{
-              className: "toaster-submit-confirmation",
-            }}
-          />
         </form>
       )}
     </Box>

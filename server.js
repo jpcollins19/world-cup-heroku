@@ -1,21 +1,11 @@
-////userDetails work
-//userProfile - do all - on change pw route
-//action confirmation - do forgot pw stuff
-//forgotPW - do all
-
-//add toaster for when a pw is changed?
-
-//delete the old user_account page
-
-//add a loading File to all applicable pages
-
-//add an Error File to all applicable pages
-
-//add a Button File to all applicable pages
-
-////do ocd css work on every page
+////do ocd css work on every user-signed in page - start with admin on right and move your way to the left of the navbar in the app
 //fix css on leaderboard sign in page
-//admin pages too
+
+///////////****///////////////
+//add a loading File to all applicable pages
+//add an Error File to all applicable pages
+//add a Button File to all applicable pages
+///////////****///////////////
 
 /////heroku state
 //test/apply all error handling
