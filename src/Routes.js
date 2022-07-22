@@ -20,7 +20,7 @@ import User_Profile_Page_UL from "./components/UserAccount/UserProfile/UnLocked/
 import User_Admin_Page from "./components/admin/user/User_Admin_Page";
 import Group_Admin_Page from "./components/admin/group/Group_Admin_Page";
 import Team_Admin_Page from "./components/admin/team/Team_Admin_Page";
-import NoMatch from "./components/Misc/No_Match";
+import NoMatch from "./components/Miscel/No_Match";
 
 const Routes = () => {
   const dispatch = useDispatch();

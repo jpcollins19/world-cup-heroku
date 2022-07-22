@@ -8,7 +8,7 @@ import {
   getUserNames,
 } from "../../../store";
 import toast, { Toaster } from "react-hot-toast";
-import Button from "../../Misc/Button";
+import Button from "../../Miscel/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";

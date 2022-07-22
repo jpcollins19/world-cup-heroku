@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { authenticate, formatEmail } from "../../../store";
 import { Link } from "react-router-dom";
-import Button from "../../Misc/Button";
+import Button from "../../Miscel/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
