@@ -1,6 +1,4 @@
 ////do ocd css work on every user-signed in page - start with rules on left and move your way to the left of the navbar in the app
-///my picks - unlocked - selecting ko picks
-///pool picks
 ///leaderboard - fix css on leaderboard sign in page
 ///admin - teams
 ///admin - groups

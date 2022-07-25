@@ -27,7 +27,7 @@ const R16_UL = ({
 
   return (
     teams.length && (
-      <div className="R16">
+      <div>
         <h2>Round of 16</h2>
         {nums.map((num, idx) => {
           return (

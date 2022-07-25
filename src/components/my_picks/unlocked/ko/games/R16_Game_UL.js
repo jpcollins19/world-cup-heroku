@@ -74,7 +74,7 @@ const R16_Game_UL = ({
   });
 
   return (
-    <div className="white-text">
+    <div className="R16-game white-text">
       {twoTeams.map((team, idx) => (
         <input
           key={idx}

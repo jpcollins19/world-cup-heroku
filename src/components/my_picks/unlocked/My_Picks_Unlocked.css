@@ -15,6 +15,7 @@
 
 .my-picks-container-ul {
   margin-top: 5%;
+  width: 90vw;
 }
 
 .error-cont-placeholder {
@@ -108,7 +109,7 @@
 /*/ ///knockout stuff below////*/
 /*/////////////////////////////*/
 
-/* .knockout-cont-edit {
+.knockout-cont-edit {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -152,6 +153,10 @@
   max-width: 9rem;
 }
 
+.R16-game {
+  margin-bottom: 2rem;
+}
+
 .reg-input {
   height: 3rem;
   min-width: 9rem;
@@ -159,15 +164,15 @@
 }
 
 .Q1UL {
-  margin-top: 43%;
+  margin-top: 36%;
 }
 
 .Q2UL {
-  margin-top: 64%;
+  margin-top: 60%;
 }
 
 .Q3UL {
-  margin-top: 61%;
+  margin-top: 60%;
 }
 
 .Q4UL {
@@ -175,7 +180,7 @@
 }
 
 .S1UL {
-  margin-top: 90%;
+  margin-top: 80%;
 }
 
 .S2UL {
@@ -183,7 +188,7 @@
 }
 
 .FUL {
-  margin-top: 183%;
+  margin-top: 170%;
 }
 
 .ko-edit-red {
@@ -196,11 +201,11 @@
 
 .champ-edit > div {
   width: 12rem;
-  margin-top: 176%;
+  margin-top: 162%;
 }
 
 .champ-input {
   height: 4rem;
   font-weight: bold;
   font-size: 2rem;
-} */
+}

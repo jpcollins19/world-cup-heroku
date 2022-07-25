@@ -139,7 +139,7 @@
 
 .single-group-cont-picks {
   width: 23.5rem;
-  margin: 1% 0% 2% 0%;
+  margin: 1% 1% 2% 1%;
 }
 
 .single-group-cont-picks-pre-ko > h4 {
@@ -344,6 +344,13 @@
   margin-top: 0.2rem;
 }
 
+.knockout-cont > div > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .knockout-cont > div > div > div > div {
   display: flex;
   align-items: center;
@@ -360,15 +367,14 @@
   font-size: 17px;
   min-width: 8rem;
   max-width: 8rem;
-  margin-right: 1rem;
-  margin-left: 0.7rem;
+  /* margin: 0rem 1rem 0rem 1rem; */
 }
 
 .knockout-cont > div > .champ > div > div {
   height: 4rem;
   font-weight: bold;
   font-size: 1.5rem;
-  width: rem;
+  width: 8rem;
 }
 
 .R16 > div {
@@ -393,27 +399,27 @@
 }
 
 .Q2L {
-  margin-top: 53%;
+  margin-top: 57%;
 }
 
 .Q3L {
-  margin-top: 52%;
+  margin-top: 59%;
 }
 
 .Q4L {
-  margin-top: 52%;
+  margin-top: 58%;
 }
 
 .S1l {
-  margin-top: 79%;
+  margin-top: 82%;
 }
 
 .S2l {
-  margin-top: 135%;
+  margin-top: 143%;
 }
 
 .FL {
-  margin-top: 160%;
+  margin-top: 165%;
 }
 
 .CL {
@@ -428,6 +434,8 @@
 }
 
 .champ > div {
+  display: flex;
+  justify-content: center;
   width: 10rem;
 }
 

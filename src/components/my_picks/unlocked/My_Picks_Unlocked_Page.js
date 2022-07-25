@@ -261,7 +261,8 @@ const My_Picks_Unlocked_Page = () => {
           }
         });
 
-        !errorAudit.length && dispatch(updateUser(userObj, history));
+        !errorAudit.length &&
+          dispatch(updateUser(userObj, history, "my_picks"));
       }
     } catch (err) {
       console.log("reeeed error", err);
@@ -316,6 +317,7 @@ const My_Picks_Unlocked_Page = () => {
 
           <div className="error-cont-placeholder">
             {tiebreakerError && <Error error="Invalid Tiebreaker Above" />}
+            {koError && <Error error="Incomplete Picks Below" />}
           </div>
 
           <div className="edit-group-picks">
