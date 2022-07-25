@@ -1,12 +1,19 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { updateUser, dupeValInArr, loadUsers } from "../../../store";
+import {
+  updateUser,
+  dupeValInArr,
+  loadUsers,
+  capFirstLetter,
+} from "../../../store";
+import Button from "../../Miscel/Button";
+import Dropdown from "../../Miscel/Dropdown";
 import Input_Cont from "./Input_Cont";
 import Single_Group_Cont_Unlocked from "./group/Single_Group_Cont_Unlocked";
 import Knockout_Cont_Unlocked from "./ko/Knockout_Cont_Unlocked";
 import Alert from "@mui/material/Alert";
-import Select from "react-select";
+import Box from "@mui/material/Box";
 import "./User_Admin.css";
 
 const User_Admin_Page = () => {
@@ -311,116 +318,50 @@ const User_Admin_Page = () => {
     }
   };
 
-  const styles = {
-    placeholder: (styles) => {
-      return {
-        ...styles,
-        color: "black",
-      };
-    },
-    dropdownIndicator: (styles) => {
-      return {
-        ...styles,
-        color: "black",
-        "&:hover": {
-          color: "black",
-        },
-      };
-    },
-    indicatorSeparator: (styles) => {
-      return {
-        ...styles,
-        background: "black",
-      };
-    },
-    control: (styles) => {
-      return {
-        ...styles,
-        background: "none",
-        color: "black",
-        border: "solid black 2px",
-        cursor: "pointer",
-        width: "19rem",
-        borderRadius: "0.5rem",
-        fontSize: "1.2rem",
-        textAlign: "center",
-        "&:hover": {
-          border: "solid black 2px",
-        },
-      };
-    },
-    option: (styles) => {
-      return {
-        ...styles,
-        background: "white",
-        color: "black",
-        borderBottom: "solid lightGrey 2px",
-        cursor: "pointer",
-        width: "19rem",
-        fontSize: "1.2rem",
-        textAlign: "center",
-        "&:hover": {
-          background: "rgb(242, 242, 234)",
-        },
-      };
-    },
-  };
+  const inputs = ["name", "password", "tourneyStage"];
 
   return (
-    <main className="user-admin-page white text">
-      <form className="user-admin-container" onSubmit={onSubmit}>
+    <Box
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "column",
+      }}
+      height="84vh"
+      className="admin-page-user"
+    >
+      <form
+        id="admin-update-user"
+        className="admin-container-user"
+        onSubmit={onSubmit}
+      >
         <div className="user-admin-header">
-          <div className="user-admin-dropdown-cont">
-            <Select
-              options={users.length && users}
-              placeholder={"Select User"}
-              onChange={(user) => setSelectedUser(user.value)}
-              styles={styles}
-              isSearchable={false}
-              className="user-admin-dropdown"
-            />
-          </div>
+          <Dropdown
+            placeholder="Select User"
+            options={users}
+            set={setSelectedUser}
+          />
           {Object.keys(selectedUser).length ? (
             <div className="user-details-cont">
-              <div>
-                <div>
-                  <div className="user-detail-title">Name:</div>
-                  <Input_Cont
-                    selectedUser={selectedUser}
-                    val="Name"
-                    setName={setName}
-                  />
-                </div>
-                <div>
-                  <div className="user-detail-title">Password:</div>
-                  <Input_Cont
-                    selectedUser={selectedUser}
-                    val="Password"
-                    setPassword={setPassword}
-                  />
-                </div>
+              {inputs.map((input) => (
+                <Input_Cont
+                  key={input}
+                  selectedUser={selectedUser}
+                  name={input}
+                  set={eval(`set${capFirstLetter(input)}`)}
+                />
+              ))}
+              <div className="input-cont-admin-user">
+                <div>Paid?</div>
+                <input
+                  className="checkbox-cont"
+                  type="checkbox"
+                  defaultValue={paid}
+                  onChange={togglePaid}
+                  checked={paid ? paid : !!paid}
+                ></input>
               </div>
-              <div>
-                <div>
-                  <div className="user-detail-title">Tourney Stage:</div>
-                  <Input_Cont
-                    selectedUser={selectedUser}
-                    val="TourneyStage"
-                    setTourneyStage={setTourneyStage}
-                  />
-                </div>
-                <div>
-                  <div className="paid-cont">Paid:</div>
-                  <input
-                    className="checkbox-cont"
-                    type="checkbox"
-                    defaultValue={paid}
-                    onChange={togglePaid}
-                    checked={paid ? paid : !!paid}
-                  ></input>
-                </div>
-              </div>
-              <button className="admin-button">Submit Picks</button>
+              <Button text="Submit" form="admin-update-user" />
             </div>
           ) : (
             ""
@@ -533,7 +474,7 @@ const User_Admin_Page = () => {
           </div>
         )}
       </form>
-    </main>
+    </Box>
   );
 };
 

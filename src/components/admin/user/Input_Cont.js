@@ -1,24 +1,12 @@
-const Input_Cont = ({
-  selectedUser,
-  val,
-  setName,
-  setPassword,
-  setTourneyStage,
-}) => {
-  const setFunc = eval(`set${val}`);
+import { capFirstLetter } from "../../../store";
 
-  const value = val
-    .split("")
-    .map((letter, idx) => {
-      return idx === 0 ? letter.toLowerCase() : letter;
-    })
-    .join("");
-
+const Input_Cont = ({ selectedUser, name, set }) => {
   return (
-    <div className="input-cont">
+    <div className="input-cont-admin-user">
+      <div>{capFirstLetter(name && name)}:</div>
       <input
-        defaultValue={selectedUser[value]}
-        onChange={(ev) => setFunc(ev.target.value)}
+        defaultValue={selectedUser && selectedUser[name]}
+        onChange={(ev) => set(ev.target.value)}
       ></input>
     </div>
   );

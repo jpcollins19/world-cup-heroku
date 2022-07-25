@@ -1,4 +1,4 @@
-////do ocd css work on every user-signed in page - start with admin on right and move your way to the left of the navbar in the app
+////do ocd css work on every user-signed in page - start with rules on left and move your way to the left of the navbar in the app
 //fix css on leaderboard sign in page
 
 ///////////****///////////////

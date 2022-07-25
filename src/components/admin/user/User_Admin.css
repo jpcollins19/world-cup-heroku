@@ -1,4 +1,4 @@
-.user-admin-page {
+.admin-page-user {
   background: linear-gradient(
     to bottom,
     rgb(6, 241, 233) 0%,
@@ -7,21 +7,18 @@
     rgb(2, 82, 79) 75%,
     rgb(0, 12, 11) 100%
   );
-  width: 100vw;
-  max-height: 84vh;
-  min-height: 84vh;
-  background-size: cover;
-  overflow: auto;
 }
 
-.user-admin-container {
+.admin-container-user {
   display: flex;
   flex-direction: column;
-  margin-top: 2%;
+  margin-top: 1%;
+  border: solid 2px red;
 }
 
 .user-admin-header {
   display: flex;
+  flex-direction: column;
   margin-top: 3rem;
   margin-bottom: 1%;
 }
@@ -47,35 +44,18 @@
 
 .user-details-cont {
   display: flex;
-  flex: 1;
+  justify-content: space-around;
   font-weight: bold;
+  margin-top: 1%;
 }
 
-.user-detail-title {
-  min-width: 27%;
-}
-
-.user-details-cont > div {
-  display: flex;
-  flex: 1;
-  padding-left: 1%;
-  flex-direction: column;
-}
-
-.user-details-cont > div > div {
+.input-cont-admin-user {
   display: flex;
   align-items: center;
-}
-
-.user-details-cont > div > div > div {
-  font-size: 1.5rem;
-}
-
-.input-cont {
   padding-left: 1%;
 }
 
-.input-cont > input {
+.input-cont-admin-user > input {
   background: transparent;
   font-size: 1.5rem;
   text-align: center;
@@ -85,14 +65,6 @@
 .paid-cont {
   padding-right: 5%;
 }
-
-/* .admin-button {
-  margin: 1% 10% 0% 10%;
-  cursor: pointer;
-  width: 10rem;
-  height: 3rem;
-  background-color: rgb(204, 200, 200);
-} */
 
 .user-admin {
   display: flex;
