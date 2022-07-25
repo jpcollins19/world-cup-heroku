@@ -66,6 +66,7 @@
   align-items: center;
   flex-direction: column;
   background-color: rgb(224, 218, 218);
+  width: 100%;
 }
 
 /*/ //////////////////////*/

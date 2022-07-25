@@ -27,6 +27,10 @@ const Routes = () => {
 
   const user = useSelector((state) => state.auth);
 
+  const joe = useSelector((state) => state.users).find(
+    (user) => user.email === "joe@gmail.com"
+  );
+
   const token = window.localStorage.getItem("token");
 
   useEffect(() => dispatch(me()), []);
@@ -92,13 +96,12 @@ const Routes = () => {
           </Route>
         )}
 
-        {user && user.email === "joe@gmail.com" && user.tourneyStage === 1 && (
+        {joe && joe.tourneyStage === 1 && user && user.id && (
           <Route path="/my_picks_edit_group">
             {!token ? <Redirect to="/" /> : <My_Picks_Unlocked_Page />}
           </Route>
         )}
-
-        {user && user.email === "joe@gmail.com" && user.tourneyStage === 4 && (
+        {joe && joe.tourneyStage === 4 && user && user.id && (
           <Route path="/my_picks_edit_ko">
             {!token ? <Redirect to="/" /> : <My_Picks_Unlocked_Page />}
           </Route>

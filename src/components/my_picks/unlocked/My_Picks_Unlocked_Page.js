@@ -1,16 +1,25 @@
-import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { updateUser, dupeValInArr } from "../../../store";
-import Alert from "@mui/material/Alert";
+import Loading from "../../Misc/Loading";
+import Button from "../../Misc/Button";
+import Cancel from "../../Misc/Cancel";
+import Error from "../../Misc/Error";
 import Group_Cont_Unlocked from "./group/Group_Cont_Unlocked";
 import Knockout_Cont_Unlocked from "./ko/Knockout_Cont_Unlocked";
+import Box from "@mui/material/Box";
 import "./My_Picks_Unlocked.css";
 
 const My_Picks_Unlocked_Page = () => {
   const dispatch = useDispatch();
-
   const history = useHistory();
+
+  const [loading, setLoading] = useState(true);
+
+  setTimeout(() => {
+    setLoading(false);
+  }, 1000);
 
   const user = useSelector((state) => state.auth);
 
@@ -260,40 +269,40 @@ const My_Picks_Unlocked_Page = () => {
   };
 
   return (
-    <main className="my-picks-page-ul ">
-      <form onSubmit={onSubmit} className="my-picks-container-ul">
-        <div className="my-picks-header-ul">
-          <div className="edit-picks-instruction-cont">
-            <h3 className="white-text-ul">
-              {joe &&
-                joe.tourneyStage === 1 &&
-                "Select a country from the dropdowns to rank where you think they will finish in their group"}
-              {joe &&
-                joe.tourneyStage === 4 &&
-                "Click on the country you think will win each game"}
-            </h3>
-          </div>
-        </div>
-        <div className="cancel-cont">
-          <Link to="/my_picks" style={{ textDecoration: "none" }}>
-            Cancel
-          </Link>
-        </div>
-        <div className="button-cont-edit-picks">
-          <button>Submit Picks</button>
-        </div>
-        <div className="error-cont-tiebreaker">
-          <div className="error-cont-login">
-            {tiebreakerError && (
-              <Alert severity="error">Invalid Tiebreaker</Alert>
-            )}
-            {koError && <Alert severity="error">Incomplete Picks</Alert>}
-          </div>
-        </div>
-        {joe && joe.tourneyStage === 1 && (
-          <div className="tiebreaker-cont-edit-picks white-text">
-            <h3>Tiebreaker - total number of goals scored:</h3>
-            <div>
+    <Box
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "column",
+      }}
+      height="84vh"
+      className="my-picks-unlocked-page"
+    >
+      {loading ? (
+        <Loading />
+      ) : (
+        <form
+          onSubmit={onSubmit}
+          id="update-user"
+          className="my-picks-container-ul"
+        >
+          <h3 className="white-text">
+            {joe &&
+              joe.tourneyStage === 1 &&
+              "Select a country from the dropdowns to rank where you think they will finish in their group"}
+            {joe &&
+              joe.tourneyStage === 4 &&
+              "Click on the country you think will win each game"}
+          </h3>
+
+          <Button text="Submit Picks" form="update-user" />
+
+          <Cancel link="my_picks" />
+
+          {joe && joe.tourneyStage === 1 && (
+            <div className="tiebreaker-cont-edit-picks white-text">
+              <h3>Tiebreaker - total number of goals scored:</h3>
+
               <input
                 className="white-text"
                 defaultValue={tiebreaker}
@@ -303,69 +312,75 @@ const My_Picks_Unlocked_Page = () => {
                 }}
               ></input>
             </div>
+          )}
+
+          <div className="error-cont-placeholder">
+            {tiebreakerError && <Error error="Invalid Tiebreaker Above" />}
           </div>
-        )}
-        <div className="edit-full-cont">
-          {joe && joe.tourneyStage === 1 && (
-            <Group_Cont_Unlocked
-              onChangeSelectionObj={onChangeSelectionObj}
-              groupErrorObj={groupErrorObj}
-            />
-          )}
-          {joe && joe.tourneyStage === 4 && user.tiebreaker && (
-            <Knockout_Cont_Unlocked
-              setTeam={setTeam}
-              setChanged={setChanged}
-              setKoError={setKoError}
-              Q1={Q1}
-              setQ1={setQ1}
-              Q2={Q2}
-              setQ2={setQ2}
-              Q3={Q3}
-              setQ3={setQ3}
-              Q4={Q4}
-              setQ4={setQ4}
-              Q5={Q5}
-              setQ5={setQ5}
-              Q6={Q6}
-              setQ6={setQ6}
-              Q7={Q7}
-              setQ7={setQ7}
-              Q8={Q8}
-              setQ8={setQ8}
-              S1={S1}
-              setS1={setS1}
-              S1Changed={S1Changed}
-              setS1Changed={setS1Changed}
-              S2={S2}
-              setS2={setS2}
-              S2Changed={S2Changed}
-              setS2Changed={setS2Changed}
-              S3={S3}
-              setS3={setS3}
-              S3Changed={S3Changed}
-              setS3Changed={setS3Changed}
-              S4={S4}
-              setS4={setS4}
-              S4Changed={S4Changed}
-              setS4Changed={setS4Changed}
-              F1={F1}
-              setF1={setF1}
-              F1Changed={F1Changed}
-              setF1Changed={setF1Changed}
-              F2={F2}
-              setF2={setF2}
-              F2Changed={F2Changed}
-              setF2Changed={setF2Changed}
-              champ={champ}
-              setChamp={setChamp}
-              champChanged={champChanged}
-              setChampChanged={setChampChanged}
-            />
-          )}
-        </div>
-      </form>
-    </main>
+
+          <div className="edit-group-picks">
+            {joe && joe.tourneyStage === 1 && (
+              <Group_Cont_Unlocked
+                onChangeSelectionObj={onChangeSelectionObj}
+                groupErrorObj={groupErrorObj}
+              />
+            )}
+
+            {joe && joe.tourneyStage === 4 && user.tiebreaker && (
+              <Knockout_Cont_Unlocked
+                setTeam={setTeam}
+                setChanged={setChanged}
+                setKoError={setKoError}
+                Q1={Q1}
+                setQ1={setQ1}
+                Q2={Q2}
+                setQ2={setQ2}
+                Q3={Q3}
+                setQ3={setQ3}
+                Q4={Q4}
+                setQ4={setQ4}
+                Q5={Q5}
+                setQ5={setQ5}
+                Q6={Q6}
+                setQ6={setQ6}
+                Q7={Q7}
+                setQ7={setQ7}
+                Q8={Q8}
+                setQ8={setQ8}
+                S1={S1}
+                setS1={setS1}
+                S1Changed={S1Changed}
+                setS1Changed={setS1Changed}
+                S2={S2}
+                setS2={setS2}
+                S2Changed={S2Changed}
+                setS2Changed={setS2Changed}
+                S3={S3}
+                setS3={setS3}
+                S3Changed={S3Changed}
+                setS3Changed={setS3Changed}
+                S4={S4}
+                setS4={setS4}
+                S4Changed={S4Changed}
+                setS4Changed={setS4Changed}
+                F1={F1}
+                setF1={setF1}
+                F1Changed={F1Changed}
+                setF1Changed={setF1Changed}
+                F2={F2}
+                setF2={setF2}
+                F2Changed={F2Changed}
+                setF2Changed={setF2Changed}
+                champ={champ}
+                setChamp={setChamp}
+                champChanged={champChanged}
+                setChampChanged={setChampChanged}
+              />
+            )}
+          </div>
+        </form>
+      )}
+    </Box>
   );
 };
 

@@ -2,7 +2,6 @@
   overflow: auto;
   height: 84vh;
   width: 100vw;
-  z-index: 1;
   cursor: default;
 }
 

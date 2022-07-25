@@ -1,4 +1,4 @@
-.my-picks-page-ul {
+.my-picks-unlocked-page {
   background: linear-gradient(
     to bottom,
     rgb(6, 41, 241) 0%,
@@ -8,65 +8,17 @@
     rgb(2, 8, 35) 100%
   );
   width: 100vw;
-  max-height: 84vh;
-  min-height: 84vh;
+  height: 84vh;
+  background-size: cover;
   overflow: auto;
 }
 
 .my-picks-container-ul {
-  display: flex;
-  flex-direction: column;
-  margin-top: 1%;
+  margin-top: 5%;
 }
 
-.my-picks-header-ul {
-  display: flex;
-  justify-content: center;
-  margin-top: 2%;
-}
-
-.edit-picks-instruction-cont {
-  display: flex;
-  justify-content: center;
-}
-
-.white-text-ul {
-  text-align: center;
-  text-shadow: 2px 2px black;
-  color: white;
-  margin-bottom: 0;
-}
-
-.cancel-cont {
-  display: flex;
-  justify-content: end;
-}
-
-.cancel-cont > a {
-  color: white;
-  font-size: 1.5rem;
-  padding-right: 10%;
-}
-
-.button-cont-edit-picks {
-  display: flex;
-  justify-content: center;
-}
-
-.button-cont-edit-picks > button {
-  cursor: pointer;
-  width: 10rem;
-  height: 3rem;
-  background-color: rgb(204, 200, 200);
-  border-radius: 0.3rem;
-  font-size: 15px;
-}
-
-.error-cont-tiebreaker {
-  display: flex;
-  justify-content: center;
-  padding: 0.5rem 0rem 0.5rem 0rem;
-  min-height: 4rem;
+.error-cont-placeholder {
+  min-height: 5.2rem;
 }
 
 .tiebreaker-cont-edit-picks {
@@ -80,14 +32,7 @@
   padding-right: 0.5%;
 }
 
-.tiebreaker-cont-edit-picks > div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-}
-
-.tiebreaker-cont-edit-picks > div > input {
+.tiebreaker-cont-edit-picks > input {
   background: transparent;
   border: solid 1px white;
   max-width: 4rem;
@@ -95,51 +40,37 @@
   font-size: 1.5rem;
 }
 
-.edit-full-cont {
+.edit-group-picks {
   display: flex;
   justify-content: space-around;
-  padding-top: 1%;
 }
 
 .predictions-cont-edit {
   display: flex;
-  width: 70%;
+  width: 90%;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
-.single-group-cont-edit-picks {
+.single-group-cont-edit-picks-outside {
   width: 18rem;
-  margin: 0% 2% 0% 2%;
+  margin: 0% 1% 0% 1%;
   padding-bottom: 1%;
 }
 
-.single-group-cont-edit-picks > h4 {
+.single-group-cont-edit-picks-outside > h4 {
   text-shadow: 2px 2px black;
   color: white;
   text-align: center;
-  margin-top: 0.5rem;
-  margin-bottom: 0.3rem;
+  margin: 0rem 0rem 0.3rem 0rem;
   font-size: 1.5rem;
 }
 
-section {
-  min-width: 17rem;
-  min-height: 2.5rem;
-  max-height: 2.5rem;
-}
-
-section > div {
-  display: flex;
-  justify-content: center;
-}
-
-.single-group-cont-edit-picks > div {
+.single-group-cont-edit-picks-inside {
   display: flex;
   justify-content: center;
   text-align: center;
   font-size: 1rem;
-  border: solid black 2px;
   border-radius: 1rem;
   background: linear-gradient(
     to bottom,
@@ -154,11 +85,11 @@ section > div {
   min-height: 12rem;
 }
 
-.single-group-cont-edit-picks > div > div > h5 {
+.single-group-cont-edit-picks-inside > div > h5 {
   margin: 0rem;
 }
 
-.single-group-cont-edit-picks > div > div > div {
+.single-group-cont-edit-picks-inside > div > div {
   margin: 0rem 0.17rem 0.5rem 0rem;
   font-size: 1rem;
   height: 2.3rem;
@@ -168,16 +99,8 @@ section > div {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: solid black 1px;
+  border: solid black 2px;
   width: 2.2rem;
-  border-radius: 0.2rem;
-}
-
-.prediction-cont-edit {
-  max-width: 10rem;
-}
-
-.group-dropdown {
   border-radius: 0.5rem;
 }
 
@@ -185,7 +108,7 @@ section > div {
 /*/ ///knockout stuff below////*/
 /*/////////////////////////////*/
 
-.knockout-cont-edit {
+/* .knockout-cont-edit {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -280,4 +203,4 @@ section > div {
   height: 4rem;
   font-weight: bold;
   font-size: 2rem;
-}
+} */

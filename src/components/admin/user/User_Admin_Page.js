@@ -339,7 +339,8 @@ const User_Admin_Page = () => {
           <Dropdown
             placeholder="Select User"
             options={users}
-            set={setSelectedUser}
+            width="19rem"
+            set={(option) => setSelectedUser(option.value)}
           />
           {Object.keys(selectedUser).length ? (
             <div className="user-details-cont">

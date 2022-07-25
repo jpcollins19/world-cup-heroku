@@ -11,10 +11,6 @@ const Single_Group_Cont_Locked = ({ group, selectedUser }) => {
     (user) => user.email === "joe@gmail.com"
   );
 
-  // if (!joe) {
-  //   return null;
-  // }
-
   return user.groupA1 ? (
     <div
       className={

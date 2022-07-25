@@ -1,30 +1,20 @@
 .my-picks-page {
   background-image: url("https://as01.epimg.net/futbol/imagenes/2020/04/10/primera/1586529604_835391_1586529700_noticia_normal.jpg");
-  width: 100vw;
-  max-height: 84vh;
-  min-height: 84vh;
   background-size: cover;
   overflow: auto;
 }
 
-.my-picks-container {
+.my-picks-page > div {
   display: flex;
   flex-direction: column;
-  width: 99vw;
-}
-
-.my-picks-header {
-  display: flex;
-  margin-top: 2rem;
-  padding-top: 2%;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3rem;
 }
 
 .point-system-table-cont {
   display: flex;
   padding: 1rem 0rem 0rem 1rem;
-  align-items: center;
-  flex: 0.37;
-  justify-content: center;
 }
 
 .point-system-table-text {
@@ -72,22 +62,14 @@
   min-width: 31rem;
 }
 
-.my-picks-header-name {
+.name-cont {
   display: flex;
-  flex-direction: column;
-  flex: 0.23;
-  justify-content: center;
   align-items: center;
+  margin-top: 3%;
 }
 
-.my-picks-header-name > h1 {
-  display: flex;
-  align-items: center;
+.name-cont > h1 {
   font-size: 3rem;
-}
-
-.my-picks-header-name > a > button {
-  cursor: pointer;
 }
 
 .white-text {
@@ -121,7 +103,7 @@
   display: flex;
   padding: 0;
   margin: 0;
-  justify-content: center;
+  /* justify-content: space-around; */
 }
 
 .box {
@@ -130,13 +112,15 @@
 
 .left {
   display: flex;
-  width: 83%;
+  flex: 1.5;
+  width: 86%;
   flex-direction: column;
   padding: 0;
+  align-items: center;
 }
 
 .right {
-  width: 17%;
+  width: 16%;
   display: flex;
   justify-content: center;
 }
@@ -181,7 +165,7 @@
   justify-content: center;
   text-align: center;
   font-size: 1rem;
-  border: solid black 2px;
+  /* border: solid black 2px; */
   border-radius: 1rem;
   background: linear-gradient(
     to bottom,
@@ -191,8 +175,7 @@
     rgb(222, 222, 212) 75%,
     rgb(159, 159, 147) 100%
   );
-  padding-top: 0.3rem;
-  padding-bottom: 0.3rem;
+  padding: 0.5rem 0rem 0.5rem 0rem;
 }
 
 .single-group-cont-picks > div {
@@ -200,7 +183,7 @@
   justify-content: center;
   text-align: center;
   font-size: 1rem;
-  border: solid black 2px;
+  /* border: solid black 2px; */
   border-radius: 1rem;
   background: linear-gradient(
     to bottom,
@@ -210,8 +193,7 @@
     rgb(222, 222, 212) 75%,
     rgb(159, 159, 147) 100%
   );
-  padding-top: 0.3rem;
-  padding-bottom: 0.3rem;
+  padding: 0.5rem 0rem 0.5rem 0rem;
 }
 
 .single-group-cont-picks-pre-ko > div > div > h5 {
@@ -265,8 +247,8 @@
 .total-points-cont {
   padding-top: 0.3rem;
   padding-bottom: 0.1rem;
-  min-width: 17rem;
-  max-width: 17rem;
+  min-width: 15rem;
+  max-width: 15rem;
   margin: 0;
 }
 
@@ -299,7 +281,7 @@
 }
 
 .total-points-text-cont > div {
-  border: solid 2px black;
+  /* border: solid 2px black; */
   background: linear-gradient(
     to bottom,
     rgb(159, 159, 147) 0%,
@@ -308,7 +290,8 @@
     rgb(222, 222, 212) 75%,
     rgb(159, 159, 147) 100%
   );
-  margin: 0.2rem 0.2rem 0.2rem 0rem;
+  margin: 0.5rem 0.3rem 0.5rem 0rem;
+  border-radius: 0.2rem;
 }
 
 .bold {
@@ -320,7 +303,7 @@
 }
 
 .total-points-points-cont > div {
-  border: solid 2px black;
+  /* border: solid 2px black; */
   background: linear-gradient(
     to bottom,
     rgb(159, 159, 147) 0%,
@@ -329,7 +312,8 @@
     rgb(222, 222, 212) 75%,
     rgb(159, 159, 147) 100%
   );
-  margin: 0.2rem 0.2rem 0.2rem 0rem;
+  margin: 0.5rem 0.2rem 0.5rem 0rem;
+  border-radius: 0.2rem;
 }
 
 /*/////////////////////////////*/
@@ -349,8 +333,8 @@
 }
 
 .knockout-cont > div > div {
-  min-width: 9rem;
-  max-width: 9rem;
+  min-width: 9.5rem;
+  max-width: 9.5rem;
   text-align: center;
 }
 
@@ -374,15 +358,17 @@
     rgb(159, 159, 147) 100%
   );
   font-size: 17px;
-  min-width: 9rem;
-  max-width: 9rem;
+  min-width: 8rem;
+  max-width: 8rem;
+  margin-right: 1rem;
+  margin-left: 0.7rem;
 }
 
 .knockout-cont > div > .champ > div > div {
   height: 4rem;
   font-weight: bold;
   font-size: 1.5rem;
-  width: 9rem;
+  width: rem;
 }
 
 .R16 > div {
@@ -403,31 +389,31 @@
 }
 
 .Q1L {
-  margin-top: 43%;
+  margin-top: 42%;
 }
 
 .Q2L {
-  margin-top: 56%;
+  margin-top: 53%;
 }
 
 .Q3L {
-  margin-top: 55%;
+  margin-top: 52%;
 }
 
 .Q4L {
-  margin-top: 55%;
+  margin-top: 52%;
 }
 
 .S1l {
-  margin-top: 85%;
+  margin-top: 79%;
 }
 
 .S2l {
-  margin-top: 138%;
+  margin-top: 135%;
 }
 
 .FL {
-  margin-top: 167%;
+  margin-top: 160%;
 }
 
 .CL {
@@ -435,6 +421,9 @@
 }
 
 .champ {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 10rem;
 }
 
@@ -449,5 +438,5 @@
   border-radius: 1rem;
   max-width: 9rem;
   background-position: center;
-  margin-top: 35%;
+  margin: 35% 0% 0% 0%;
 }
