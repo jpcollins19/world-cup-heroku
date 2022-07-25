@@ -1,10 +1,17 @@
 ////do ocd css work on every user-signed in page - start with rules on left and move your way to the left of the navbar in the app
-//fix css on leaderboard sign in page
+///group details
+///pool picks
+///my picks
+///leaderboard - fix css on leaderboard sign in page
+///admin - teams
+///admin - groups
+///admin - users
 
 ///////////****///////////////
 //add a loading File to all applicable pages
 //add an Error File to all applicable pages
 //add a Button File to all applicable pages
+//add a Dropdown File to all applicable pages
 ///////////****///////////////
 
 /////heroku state

@@ -564,43 +564,43 @@ const syncAndSeed = async () => {
 
   // //////////////////////////////////////////////////
 
-  // Ecuador.advanceToQ = true;
-  // Argentina.advanceToQ = true;
-  // Canada.advanceToQ = true;
-  // Brasil.advanceToQ = true;
-  // England.advanceToQ = true;
-  // Australia.advanceToQ = true;
-  // Belgium.advanceToQ = true;
-  // Cameroon.advanceToQ = true;
+  Ecuador.advanceToQ = true;
+  Argentina.advanceToQ = true;
+  Canada.advanceToQ = true;
+  Brasil.advanceToQ = true;
+  England.advanceToQ = true;
+  Australia.advanceToQ = true;
+  Belgium.advanceToQ = true;
+  Cameroon.advanceToQ = true;
 
-  // Iran.outOfTourney = true;
-  // Denmark.outOfTourney = true;
-  // Germany.outOfTourney = true;
-  // S_Korea.outOfTourney = true;
-  // Netherlands.outOfTourney = true;
-  // Mexico.outOfTourney = true;
-  // Costa_Rica.outOfTourney = true;
-  // Ghana.outOfTourney = true;
+  Iran.outOfTourney = true;
+  Denmark.outOfTourney = true;
+  Germany.outOfTourney = true;
+  S_Korea.outOfTourney = true;
+  Netherlands.outOfTourney = true;
+  Mexico.outOfTourney = true;
+  Costa_Rica.outOfTourney = true;
+  Ghana.outOfTourney = true;
 
-  // Argentina.advanceToS = true;
-  // Brasil.advanceToS = true;
-  // Australia.advanceToS = true;
-  // Belgium.advanceToS = true;
+  Argentina.advanceToS = true;
+  Brasil.advanceToS = true;
+  Australia.advanceToS = true;
+  Belgium.advanceToS = true;
 
-  // Ecuador.outOfTourney = true;
-  // Canada.outOfTourney = true;
-  // England.outOfTourney = true;
-  // Cameroon.outOfTourney = true;
+  Ecuador.outOfTourney = true;
+  Canada.outOfTourney = true;
+  England.outOfTourney = true;
+  Cameroon.outOfTourney = true;
 
-  // Argentina.advanceToF = true;
-  // Australia.advanceToF = true;
+  Argentina.advanceToF = true;
+  Australia.advanceToF = true;
 
-  // Brasil.outOfTourney = true;
-  // Belgium.outOfTourney = true;
+  Brasil.outOfTourney = true;
+  Belgium.outOfTourney = true;
 
-  // Argentina.advanceToChamp = true;
+  Argentina.advanceToChamp = true;
 
-  // Australia.outOfTourney = true;
+  Australia.outOfTourney = true;
 
   await Promise.all([
     Ecuador.save(),
